@@ -1,0 +1,59 @@
+/*=========================================================
+	11 -> FOOTER
+===========================================================*/
+
+#footer {
+    background: #132539;
+    color: #B9BABC;
+}
+
+#bottom-footer {
+    background: #fc5332;
+}
+
+.footer {
+    margin: 30px 0px;
+}
+
+.footer .footer-title {
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 0px 0px 30px;
+}
+
+.footer-links li+li {
+    margin-top: 15px;
+}
+
+.footer-links li a {
+    color: #B9BABC;
+}
+
+.footer-links li i {
+    margin-right: 15px;
+    color: #fc5332;
+    width: 14px;
+    text-align: center;
+}
+
+.footer-links li a:hover {
+    color: #fc5332;
+}
+
+.copyright {
+    margin-top: 30px;
+    display: block;
+    font-size: 12px;
+}
+
+.footer-payments li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.footer-payments li a {
+    color: #15161D;
+    font-size: 36px;
+    display: block;
+}

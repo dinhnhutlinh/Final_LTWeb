@@ -1,0 +1,144 @@
+body {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    /*font-size: 14px;*/
+    /*font-family: Arial;*/
+}
+
+
+#main {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    color: black;
+}
+
+#main .container {
+    display: flex;
+    justify-content: center;
+
+}
+
+#main .container .two_main {
+    padding: 20px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    width: 60%;
+    display: flex;
+    /* background-image:url("/image/IMG_0126.JPG") ; */
+}
+
+#main .container .two_main .left {
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+}
+
+#main .left .signIn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#main .left .signIn .fas {
+    padding-right: 10px;
+    margin-top: 8px;
+}
+
+#main .left .signIn .text {
+    font-size: 20px;
+}
+
+#main .left .text_mini {
+    font-size: 15px;
+    color: #a9a9a9;
+    margin-bottom: 55px;
+}
+
+/*#main .left .button_fa {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    background-color: #4d6aac;*/
+/*    width: 90%;*/
+/*    color: white;*/
+/*    border-radius: 5px;*/
+/*    margin-left: 5px;*/
+/*    margin-top: 60px;*/
+/*    height: 31px;*/
+/*    text-align: center;*/
+/*    padding-top: 9px;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*#main .left .button_fa .fab {*/
+/*    padding-right: 10px;*/
+/*}*/
+
+#main .left .end_text {
+    display: flex;
+    justify-content: center;
+}
+
+#main .left .end_text .not_acc {
+    color: #384650;
+    margin-right: 5px;
+}
+
+#main .left .end_text .sign_in {
+    color: #fc5332;
+    /* margin-top: 13px; */
+}
+
+#main .right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 20px;
+    border-left: 0.1px solid lightgray;
+
+}
+
+#main .right .nav1 {
+    color: black;
+}
+
+#main .right .same {
+    margin-bottom: 30px;
+}
+
+#main .right .ant-input {
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    border: solid 1px #cbd4da;
+    background-color: #fff;
+    margin-top: 4px;
+}
+
+#main .right .sign_in {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #fc5332 !important;
+    margin-top: 28px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 4px 0 rgb(152 152 152 / 50%);
+}
+
+#main .right .forgot .text {
+    color: #888888;
+}
+
+#main .sign_in .text {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#main .btn {
+    background-color: #fc5332;
+    width: 100%;
+}

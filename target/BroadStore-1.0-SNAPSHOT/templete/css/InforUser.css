@@ -1,0 +1,186 @@
+.bg {
+    background-color: white;
+}
+
+.profile {
+    background-color: white;
+    float: left;
+    width: 100%;
+
+}
+
+.profile .title_profile {
+
+    box-shadow: 0 1px 10px #999999;
+    color: #666;
+    float: left;
+
+    font-size: 30px;
+    font-weight: 300;
+    height: 100px;
+    line-height: 98px;
+    text-align: center;
+    width: 100%;
+}
+
+.profile .content_profile {
+    float: left;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1230px;
+    padding: 0;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+
+.profile .content_profile .info_profile {
+    float: left;
+    width: 400px;
+}
+
+.profile .content_profile .info_profile .info_title {
+    border: 1px solid #e1e1e1;
+    float: left;
+    height: 220px;
+    width: 100%;
+    border-top: none;
+    position: relative;
+}
+
+.profile .content_profile .info_profile .info_title .image {
+    border: 4px solid #e1e1e1;
+    border-radius: 90px;
+    float: left;
+    height: 119px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: -60px;
+    width: 119px;
+}
+
+.profile .content_profile .info_profile .info_title .name {
+    color: #666;
+    float: left;
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 70px;
+    text-align: center;
+    width: 100%;
+}
+
+.profile .content_profile .info_profile .info_title .email {
+    color: #999;
+    float: left;
+    font-size: 18px;
+    font-weight: 200;
+    text-align: center;
+    width: 100%;
+}
+
+.profile .content_profile .info_profile .info_content {
+    border: 1px solid #e1e1e1;
+    float: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 15px 15px 15px 25px;
+    width: 100%;
+}
+
+.profile .content_profile .info_profile .info_content .title {
+    color: #666;
+    float: left;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.profile .content_profile .info_profile .info_content .title a.editinfo {
+    background: #fff;
+    border: 1px solid #b8b8b8;
+    border-radius: 2px;
+    color: #404040;
+    float: right;
+    font-size: 12px;
+    font-weight: 200;
+    height: 28px;
+    line-height: 26px;
+    text-align: center;
+    text-decoration: none;
+    width: 72px;
+}
+
+.profile .content_profile .info_profile .info_content .content,
+.profile .content_profile .info_profile .info_content .content .content_text {
+    float: left;
+    width: 100%;
+}
+
+.profile .content_profile .info_profile .info_content .content p {
+    color: #666;
+    float: left;
+
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 27px;
+    margin: 0 0 10px;
+    position: relative;
+    width: 100%;
+}
+
+.profile .content_profile .info_profile .info_content .content .content_form {
+    float: left;
+    width: 100%;
+    display: none;
+}
+
+.profile .content_profile .info_profile .info_content .content p {
+    color: #666;
+    float: left;
+
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 27px;
+    margin: 0 0 10px;
+    position: relative;
+    width: 100%;
+}
+
+.profile .content_profile .orders_list {
+    border: 1px solid #e1e1e1;
+    float: right;
+    margin: 20px 0;
+    width: 730px;
+}
+
+.profile .content_profile .orders_list .title_o {
+    color: #666;
+    float: left;
+    font-size: 18px;
+    font-weight: 300;
+    height: 56px;
+    line-height: 56px;
+    padding-left: 25px;
+    width: 100%;
+}
+
+.profile .content_profile .orders_list .content_o {
+    float: left;
+    width: 100%;
+}

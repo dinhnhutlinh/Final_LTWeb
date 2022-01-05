@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>details news</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+
+
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/news.css">
+
+</head>
+
+<body>
+	<!-- HEADER -->
+	<header>
+		<!-- MAIN HEADER -->
+		<div id="header">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- LOGO -->
+					<div class="col-md-3">
+						<div class="header-logo">
+							<a href="index.html" class="logo">
+								<img src="./img/BoardStore.png" style="height: 70px;" alt="">
+							</a>
+						</div>
+					</div>
+					<!-- /LOGO -->
+
+					<!-- SEARCH BAR -->
+					<div class="col-md-6">
+						<div class="header-search">
+							<form class="d-flex">
+								<input class="input flex-grow-1" placeholder="Tìm kiếm sản phẩm">
+								<button class="search-btn">TÌM KIẾM</button>
+							</form>
+						</div>
+					</div>
+					<!-- /SEARCH BAR -->
+
+					<!-- ACCOUNT -->
+					<div class="col-md-3 clearfix">
+						<div class="header-ctn">
+							<!-- Wishlist -->
+							<div class="dropdown">
+								<a href="#" class="dropdown-toggle" role="button" id="dropdownUser"
+								   data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-user-circle-o"></i>
+									<span>Tài khoản</span>
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownUser">
+									<li><a class="dropdown-item" href="SignIn.html">Đăng nhập</a></li>
+									<li><a class="dropdown-item" href="SignUp.html">Đăng ký</a></li>
+								</ul>
+							</div>
+							<!-- /Wishlist -->
+							<!-- Cart -->
+							<div class="dropdown">
+								<a href="#" class="dropdown-toggle" id="dropdownCart" role="button"
+								   data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-shopping-cart"></i>
+									<span>Giỏ hàng</span>
+									<div class="qty">3</div>
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownCart">
+									<div style="width: 360px; padding: 10px;">
+										<div class="cart-list border-bottom">
+											<div class="product-cart row align-items-center">
+												<div class="product-img col-3">
+													<img class="img-thumbnail" src="./img/product02.png" alt="">
+												</div>
+												<div class="product-body col-7">
+													<h3 class="product-name"><a href="product.html">Sản phẩm 1</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>98000</h4>
+												</div>
+												<a class="htn btn-close col-2" href="#"
+												   onclick="return confirm('Bạn Muốn xóa sản phẩm?');"></a>
+											</div>
+
+											<div class="product-cart row align-items-center">
+												<div class="product-img col-3">
+													<img class="img-thumbnail" src="./img/product02.png" alt="">
+												</div>
+												<div class="product-body col-7">
+													<h3 class="product-name"><a href="product.html">Sản phẩm 2</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>98000</h4>
+												</div>
+												<a class="htn btn-close col-2" href="#"
+												   onclick="return confirm('Bạn Muốn xóa sản phẩm?');"></a>
+											</div>
+											<div class="product-cart row align-items-center">
+												<div class="product-img col-3">
+													<img class="img-thumbnail" src="./img/product02.png" alt="">
+												</div>
+												<div class="product-body col-7">
+													<h3 class="product-name"><a href="product.html">Sản phẩm 3</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>98000</h4>
+												</div>
+												<a class="htn btn-close col-2" href="#"
+												   onclick="return confirm('Bạn Muốn xóa sản phẩm?');"></a>
+											</div>
+										</div>
+										<div class="cart-summary ">
+											<small>Số sản phẩm: 3</small>
+											<h5>Tổng Tiền: 29400000</h5>
+										</div>
+
+										<a href="cart.html" class="btn btn-orange w-100 mb-2">Xem giỏ hàng</a>
+										<a href="checkout.html" class="p1 btn btn-dark w-100">Thanh toán</a>
+									</div>
+
+								</ul>
+							</div>
+							<!-- /Cart -->
+
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
+							<!-- /Menu Toogle -->
+						</div>
+					</div>
+					<!-- /ACCOUNT -->
+				</div>
+				<!-- row -->
+			</div>
+			<!-- container -->
+		</div>
+		<!-- /MAIN HEADER -->
+	</header>
+	<!-- /HEADER -->
+
+	<!-- NAVIGATION -->
+	<nav id="navigation">
+		<!-- container -->
+		<div class="container">
+			<!-- responsive-nav -->
+			<div id="responsive-nav">
+				<!-- NAV -->
+				<ul class="main-nav nav">
+					<li class="nav-item"><a href="index.html">TRANG CHỦ</a></li>
+					<li class="nav-item">
+						<div class="dropdown">
+							<a class="dropdown-toggle text-white text-uppercase" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+								aria-expanded="false" href="cart.html">
+								Danh Mục Sản Phẩm
+							</a>
+							<ul class="dropdown-menu" style="margin: 0px;">
+								<li><a class="dropdown-item" href="store.html">Tất Cả sản phẩm</a></li>
+								<li><a class="dropdown-item" href="store.html">Sản phẩm sale</a></li>
+								<li><a class="dropdown-item" href="store.html">Broadgame gia đình</a></li>
+								<li><a class="dropdown-item" href="store.html">Broadgame trí tuệ</a></li>
+								<li><a class="dropdown-item" href="store.html">Broadgame Chiến thuật</a></li>
+								<li><a class="dropdown-item" href="store.html">Broadgame Thẻ bài</a></li>
+								<li><a class="dropdown-item" href="store.html">Đồ chơi nhóm</a></li>
+								<li><a class="dropdown-item" href="store.html">Phụ Kiện BroadGame</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item"><a href="news.html">TIN TỨC</a></li>
+					<li class="nav-item"><a href="about_us.html">GIỚI THIỆU</a></li>
+					<li class="nav-item"><a href="store.html">KHUYẾN MÃI</a></li>
+				</ul>
+				<!-- /NAV -->
+			</div>
+			<!-- /responsive-nav -->
+		</div>
+		<!-- /container -->
+	</nav>
+	<!-- /NAVIGATION -->
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb" class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="breadcrumb-tree">
+						<li><a href="index.html">Trang chủ</a></li>
+						<li class=""><a href="news.html">Tin tức</a></li>
+						<li>Azul: Summer Pavilion - Liệu có vượt qua được người tiền nhiệm? </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<div class="head-title">
+				<h3>
+					Azul: Summer Pavilion - Liệu có vượt qua được người tiền nhiệm?
+				</h3>
+				<div class="card-subtitle">Đăng Ngày: 14/11/2021</div>
+				<div class="line"></div>
+			</div>
+			<div class="content_description w-75 m-auto	">
+				<p dir="ltr" style="line-height:1.38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e">
+						<span
+							style="font-size: 16px; font-family: Arial; background-color: transparent; font-style: italic; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">
+							90% những người ghiền board game đều đã chơi qua Bang, liệu trong đó có bạn?</span>
+					</span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e">
+						<span
+							style="font-size: 16px; font-family: Arial; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">&nbsp;</span><br>
+						<span
+							style="font-size: 16px; font-family: Arial; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">
+							Ra mắt lần đầu vào năm 2002, Bang đã giành được nhiều giải thưởng board game, đề cử uy tín
+							thế giới như “Trò chơi thẻ bài truyền thông hay nhất”, “Trò chơi có thiết kế đẹp nhất”, giải
+							Golden Geek cho party game hay nhất,... 19 năm đã trôi qua, Bang! vẫn giữ được sức hút của
+							mình khi đạt 4.8/5 điểm review cho độ vui và cơ chế chơi trên trang Amazon. Vậy board game
+							này có gì đặc biệt mà khiến cả cộng đồng người chơi say mê đến thế, hãy cùng Board Game VN
+							tìm hiểu nhé!</span></span>
+				</p>
+				</p>
+				<h1 dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e">
+						<span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">
+							1.Đánh giá tổng quát</span></span>
+				</h1>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;margin-left:0pt;">
+					<br>
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e">
+						<span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">
+							Trước khi đi vào chi tiết, Board Game VN muốn giới thiệu cho các bạn một số thông tin tổng
+							quan về board game này. Đây là bảng đánh giá dựa trên phiên bản Việt hóa được Board Game VN
+							mua bản quyền và độc quyền phát hành tại Việt Nam.*</span></span>
+				</p>
+				<p>
+					&nbsp;</p>
+				<div dir="ltr" style="margin-left:0pt;">
+					<table
+						style="border-width: initial; border-style: none; border-color: initial; border-collapse: collapse;">
+						<colgroup>
+							<col width="300">
+							<col width="230">
+						</colgroup>
+						<tbody>
+							<tr style="height:0pt">
+								<td
+									style="border-left:solid #000000 1pt;border-right:solid #000000 1pt;border-bottom:solid #000000 1pt;border-top:solid #000000 1pt;vertical-align:top;padding:5pt 5pt 5pt 5pt;overflow:hidden;overflow-wrap:break-word;">
+									<p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;">
+										<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+												style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Artwork
+												phiên bản Việt hóa</span></span>
+									</p>
+								</td>
+								<td
+									style="border-left:solid #000000 1pt;border-right:solid #000000 1pt;border-bottom:solid #000000 1pt;border-top:solid #000000 1pt;vertical-align:top;padding:5pt 5pt 5pt 5pt;overflow:hidden;overflow-wrap:break-word;">
+									<p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;">
+										<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+												style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">4/5</span></span>
+									</p>
+								</td>
+							</tr>
+							<tr style="height:0pt">
+								<td
+									style="border-left:solid #000000 1pt;border-right:solid #000000 1pt;border-bottom:solid #000000 1pt;border-top:solid #000000 1pt;vertical-align:top;padding:5pt 5pt 5pt 5pt;overflow:hidden;overflow-wrap:break-word;">
+									<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+										<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+												style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Độ
+												phức tạp</span></span>
+									</p>
+								</td>
+								<td
+									style="border-left:solid #000000 1pt;border-right:solid #000000 1pt;border-bottom:solid #000000 1pt;border-top:solid #000000 1pt;vertical-align:top;padding:5pt 5pt 5pt 5pt;overflow:hidden;overflow-wrap:break-word;">
+									<p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;">
+										<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+												style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">1.6/5</span></span>
+									</p>
+								</td>
+							</tr>
+							<tr style="height:0pt">
+								<td
+									style="border-left:solid #000000 1pt;border-right:solid #000000 1pt;border-bottom:solid #000000 1pt;border-top:solid #000000 1pt;vertical-align:top;padding:5pt 5pt 5pt 5pt;overflow:hidden;overflow-wrap:break-word;">
+									<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+										<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+												style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Khả
+												năng chơi lại</span></span>
+									</p>
+								</td>
+								<td
+									style="border-left:solid #000000 1pt;border-right:solid #000000 1pt;border-bottom:solid #000000 1pt;border-top:solid #000000 1pt;vertical-align:top;padding:5pt 5pt 5pt 5pt;overflow:hidden;overflow-wrap:break-word;">
+									<p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;">
+										<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+												style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">4/5</span></span>
+									</p>
+								</td>
+							</tr>
+							<tr style="height:0pt">
+								<td
+									style="border-left:solid #000000 1pt;border-right:solid #000000 1pt;border-bottom:solid #000000 1pt;border-top:solid #000000 1pt;vertical-align:top;padding:5pt 5pt 5pt 5pt;overflow:hidden;overflow-wrap:break-word;">
+									<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+										<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+												style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Độ
+												tương tác giữa người chơi</span></span>
+									</p>
+								</td>
+								<td
+									style="border-left:solid #000000 1pt;border-right:solid #000000 1pt;border-bottom:solid #000000 1pt;border-top:solid #000000 1pt;vertical-align:top;padding:5pt 5pt 5pt 5pt;overflow:hidden;overflow-wrap:break-word;">
+									<p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;">
+										<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+												style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">4/5</span></span>
+									</p>
+								</td>
+							</tr>
+							<tr style="height:0pt">
+								<td
+									style="border-left:solid #000000 1pt;border-right:solid #000000 1pt;border-bottom:solid #000000 1pt;border-top:solid #000000 1pt;vertical-align:top;padding:5pt 5pt 5pt 5pt;overflow:hidden;overflow-wrap:break-word;">
+									<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+										<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+												style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Chất
+												lượng component Việt hóa</span></span>
+									</p>
+								</td>
+								<td
+									style="border-left:solid #000000 1pt;border-right:solid #000000 1pt;border-bottom:solid #000000 1pt;border-top:solid #000000 1pt;vertical-align:top;padding:5pt 5pt 5pt 5pt;overflow:hidden;overflow-wrap:break-word;">
+									<p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:0pt;">
+										<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+												style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">4/5</span></span>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p>
+					&nbsp;</p>
+				<p>
+					<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">Những
+						điều bạn có thể thích khi chơi Bang:</span>
+				</p>
+				<ul>
+					<li style="box-sizing: border-box;">
+						<span style="box-sizing: border-box; font-size: 16px; font-family: Arial;">Đa dạng về chiến
+							thuật.</span>
+					</li>
+					<li style="box-sizing: border-box;">
+						Yêu cầu khả năng tương tác và thuyết phục.</li>
+					<li style="box-sizing: border-box;">
+						Yếu tố ẩn vai.</li>
+				</ul>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Điểm
+							bạn có thể không thích ở Bang:&nbsp;</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					&nbsp;</p>
+				<ul dir="ltr">
+					<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+						Dễ bị loại nếu đi sau cùng.</li>
+					<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+						Mất thời gian cho việc chờ lượt chơi.</li>
+				</ul>
+				<p dir="ltr" role="presentation" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					&nbsp;</p>
+				<p role="presentation"
+					style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;">
+					<img alt="" src="img/news//board game Bang.png" style="width: 600px; height: 600px;">
+				</p>
+				<p role="presentation"
+					style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;">
+					<i>Bạn có thể nhìn thấy điểm đặc biệt trong phiên bản Bang này không?</i>
+				</p>
+				<p dir="ltr" role="presentation"
+					style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;">
+					&nbsp;</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					&nbsp;</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					<span
+						style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px; font-weight: 700;">2.
+						Những điểm độc đáo có trong Bang phiên bản Việt hóa chính hãng</span>
+				</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					&nbsp;</p>
+				<p>
+					<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">So
+						với phiên bản phát hành trên thế giới, phiên bản do Board Game VN phát hành sở hữu những điểm
+						đặc biệt mà chỉ duy nhất bản này mới có được bao gồm:</span>
+				</p>
+				<ul>
+					<li>
+						<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">14
+							lá bài chơi theo chủ đề Việt Nam.</span>
+					</li>
+					<li>
+						7 bảng chơi.</li>
+					<li>
+						30 token viên đạn.</li>
+				</ul>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Những
+							lá bài đặc biệt này lấy cảm hứng từ những nét văn hóa truyền thống đặc trưng của Việt Nam và
+							đây là nỗ lực của Board Game VN khi mong muốn quảng bá Việt Nam trên bản đồ board game thế
+							giới.</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					&nbsp;</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;">
+					<span><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;"><img
+								alt="" src="img/news//review board game Bang thẻ bài việt nam 2(1).png"
+								style="width: 300px; height: 300px;"><img alt=""
+								src="img/news//review board game Bang thẻ bài Việt Nam(1).png"
+								style="width: 300px; height: 300px;"></span></span>
+				</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;">
+					<em>&nbsp; Bạn có nhận ra những hình ảnh quen thuộc này?</em>
+				</p>
+				<p>
+					&nbsp;</p>
+				<p>
+					<span
+						style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px; font-weight: 700;">3.
+						Cốt truyện của Bang</span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Bối
+							cảnh của Bang </span><span
+							style="font-size: 16px; font-family: Arial; color: rgb(68, 42, 26); background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">đưa
+							người chơi du hành ngược thời gian quay về vùng đất Texas những năm của thế kỷ 19. Khi đó,
+							những cuộc đọ súng diễn ra hằng ngày giữa những người bảo vệ công lý và tội phạm hung ác.
+							Nguyên nhân của cuộc chiến là vì sự xung đột lợi ích giữa hai thế lực. Một bên muốn trở
+							thành bá chủ thao túng cả vùng đất rộng lớn và một bên để bảo vệ sự yên bình cho người dân
+							lương thiện.&nbsp;</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					&nbsp;</p>
+				<p>
+					<span
+						style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px; font-weight: 700;">4.
+						Thành phần của board game Bang</span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">Bộ
+						board game Bang! phiên bản Việt hóa bao gồm 103 lá bài chia thành:</span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					&nbsp;</p>
+				<ul dir="ltr">
+					<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+						<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">7
+							lá vai trò (1 cảnh sát trưởng, 2 cảnh sát phó, 3 tội phạm và 1 kẻ phản bội).</span>
+					</li>
+					<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+						<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">16
+							lá nhân vật.</span>
+					</li>
+					<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+						<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">80
+							lá hành động và trang bị.</span>
+					</li>
+					<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+						<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">14
+							lá đặc biệt chủ đề Việt Nam.</span>
+					</li>
+					<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+						<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">7
+							lá hướng dẫn cơ bản.</span>
+					</li>
+					<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+						<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">7
+							bảng chơi.</span>
+					</li>
+					<li style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+						1 cuốn luật chơi.</li>
+				</ul>
+				<p style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					&nbsp;</p>
+				<p dir="ltr" role="presentation"
+					style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;">
+					<img alt="" src="img/news//review board game Bang thành phần (1)(1).jpg"
+						style="width: 600px; height: 600px;">
+				</p>
+				<p dir="ltr" role="presentation"
+					style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;">
+					<em>Toàn bộ thành phần của Bang trong phiên bản tại Việt Nam</em>
+				</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;">
+					&nbsp;</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					<span
+						style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px; font-weight: 700;">Cách
+						chơi cơ bản của Bang</span>
+				</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					&nbsp;</p>
+				<p>
+					<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">Người
+						chơi sẽ được chia thành 3 phe: Cảnh sát là những người thực thi công lý chính nghĩa, tội phạm -
+						những kẻ luôn muốn tiêu diệt lực lượng cảnh sát để nắm quyền kiểm soát thị trấn và cuối cùng là
+						kẻ phản bội 2 mặt đa mang.&nbsp;</span>
+				</p>
+				<p>
+					<strong><span
+							style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">Dưới
+							đây là danh tính trong game tương ứng với nhiệm vụ chiến thắng:</span></strong>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Cảnh
+							sát trưởng: Tiêu diệt tội phạm và kẻ phản bội</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Cảnh
+							sát: Bảo vệ cảnh sát trưởng và tiêu diệt tội phạm</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Tội
+							phạm: Loại cảnh sát trưởng</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Kẻ
+							phản bội: Trở thành người sống sót cuối cùng.</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					&nbsp;</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;">
+					<span><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;"><img
+								alt="" src="img/news//review board game Bang thẻ bài cảnh sát trưởng(1).png"
+								style="width: 300px; height: 300px;"><img alt=""
+								src="img/news//review board game Bang thẻ bài outlaw.png"
+								style="width: 300px; height: 300px;"><img alt=""
+								src="img/news//review board game Bang thẻ bài phản bội(1).png"
+								style="width: 300px; height: 300px;"></span></span>
+				</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;">
+					<em>&nbsp;Bạn sẽ là ai trong cuộc chiến này?</em>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					&nbsp;</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					<span
+						style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px; font-weight: 700;">Trò
+						chơi sẽ diễn ra theo các bước sau đây:</span>
+				</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					&nbsp;</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">Bước
+						1: Mỗi người chơi được chia 1 lá nhân vật, tất cả đều ẩn danh trừ nhân vật Cảnh sát trưởng. Cảnh
+						sát trưởng lật bài và được cộng thêm 1 máu.</span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Bước
+							2: </span><span
+							style="font-size: 16px; font-family: Arial; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Mỗi
+							người được phát 2 lá nhân vật. Người chơi phải chọn 1 trong 2 lá nhân vật , và lật lên cho
+							mọi người biết, lá còn lại úp xuống để đánh dấu số máu của mình.</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Bước
+							3: Xào các lá bài chơi và phát cho mỗi người số bài bằng số máu của mình.</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Bước
+							4: Cảnh sát trưởng sẽ là người đi đầu tiên. Người chơi lần lượt đi theo chiều kim đồng
+							hồ.&nbsp;</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					&nbsp;</p>
+				<p>
+					<strong><span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+								style="font-size: 16px; font-family: Arial; background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Mỗi
+								lượt của một người chơi sẽ có 3 hành động bao gồm:</span></span></strong>
+				</p>
+				<p dir="ltr"
+					style="line-height:1.38;text-align: justify;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 8pt 0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; color: rgb(51, 51, 51); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">1
+							- Rút 2 lá từ chồng bài.</span></span>
+				</p>
+				<p dir="ltr"
+					style="line-height:1.38;text-align: justify;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 8pt 0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; color: rgb(51, 51, 51); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">2
+							- Đánh các quân bài trên tay.</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">3
+							- Giữ số bài bằng số máu mình đang có.</span></span>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					&nbsp;</p>
+				<p>
+					<span
+						style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px; font-weight: 700;">Lưu
+						ý:</span>
+				</p>
+				<p>
+					<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">+1)
+						Người chơi được rút 2 lá bài và sử dụng theo nội dung chức năng lá bài, sử dụng xong thì người
+						chơi sẽ phải rút lá bài mới. Người chơi sẽ chết nếu hết máu mà không hồi lại được và bị công
+						khai thân phận.</span>
+				</p>
+				<p>
+					<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">+2)
+						Nếu người chết là kẻ cướp, người giết cướp được ngay 3 lá bài. Cuộc chơi tiếp tục cho đến khi có
+						1 phe đạt được mục tiêu chiến thắng của mình.</span>
+				</p>
+				<p dir="ltr"
+					style="line-height:1.38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 16pt 0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e">&nbsp;</span><span
+						style="color: rgb(51, 51, 51); font-family: Arial; font-size: 16px;">+3)
+						Lá Bang chỉ sử dụng duy nhất một lần trong một lượt chơi</span>
+				</p>
+				<p dir="ltr"
+					style="line-height:1.38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 16pt 0pt;">
+					<span style="color: rgb(51, 51, 51); font-family: Arial; font-size: 16px;">+4)
+						Người chơi chỉ được trang bị cho mình 1 lá lên núi, 1 vũ khí, 1 ống nhòm và 1 ngựa.</span>
+				</p>
+				<p dir="ltr"
+					style="line-height:1.38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 16pt 0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; color: rgb(51, 51, 51); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">+5)
+							Người chơi chỉ có thể dùng Vũ khí mới khi thay thế cho Vũ khí cũ.</span></span>
+				</p>
+				<p dir="ltr"
+					style="line-height:1.38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 16pt 0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e"><span
+							style="font-size: 16px; font-family: Arial; color: rgb(51, 51, 51); font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">+6)
+							Khi sử dụng thể bài chức năng đặc biệt dành riêng cho Việt Nam, người chơi bỏ lá bài có chức
+							năng tượng tự trong bộ bài gốc.</span></span>
+				</p>
+				<p dir="ltr"
+					style="line-height:1.38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 16pt 0pt;">
+					<span id="docs-internal-guid-f218c805-7fff-76d0-692a-5188661bf41e">&nbsp;</span><span
+						style="font-family: Arial; font-size: 16px; font-weight: 700;">5. Ai sẽ
+						là người không thể bỏ qua Bang!</span>
+				</p>
+				<p dir="ltr"
+					style="line-height:1.38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 16pt 0pt;">
+					<span
+						style="font-size: 16px; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">Đây
+						là bộ board game dành cho người chơi </span><span
+						style="font-size: 16px; font-family: Arial; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">trên
+						8 tuổ</span><span
+						style="font-size: 16px; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">i.
+						Số lượng người chơi từ </span><span
+						style="font-size: 16px; font-family: Arial; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">4-7
+						người</span><span
+						style="font-size: 16px; font-family: Arial; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline;">
+						và thời gian cho một ván từ 20-40 phút. Cho nên, Bang! cực kỳ phù hợp với những bạn làm việc tại
+						các văn phòng hoặc học sinh/sinh viên có quỹ thời gian eo hẹp nhưng vẫn muốn kết nối và giải trí
+						với nhau.&nbsp;</span><span style="font-family: Arial; font-size: 16px;">Đặc biệt nếu bạn là
+						một
+						người thích những board game cần sự đấu trí hoặc chứng tỏ bản lĩnh lãnh đạo của mình thì đừng bỏ
+						qua Bang! nhé.</span>
+				</p>
+				<p dir="ltr"
+					style="line-height:1.38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 16pt 0pt;">
+					<span style="font-family: Arial; font-size: 16px; font-weight: 700;">6. Mức
+						độ chơi lại của Bang!</span>
+				</p>
+				<p dir="ltr"
+					style="line-height:1.38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 16pt 0pt;">
+					<span style="font-family: Arial; font-size: 16px;">Bang! có khá nhiều nhân
+						vật để ẩn danh, chức năng và mục tiêu mỗi lá bài đa dạng, khiến cho mỗi ván đấu đều là một cuộc
+						chiến hoàn toàn mới! Điều này khiến game trở nên gây nghiện ngay từ lần chơi đầu tiên. Thật dễ
+						hiểu khi Bang đạt 4/5 điểm cho hạng mục này.</span>
+				</p>
+				<p dir="ltr"
+					style="line-height: 1.38; background-color: rgb(255, 255, 255); margin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 16pt; text-align: center;">
+					<span style="font-family: Arial; font-size: 16px;"><img alt=""
+							src="img/news/review board game Bang thẻ bài black jack(1).png"
+							style="width: 300px; height: 300px;"><img alt=""
+							src="img/news/review board game bang thẻ bài hành động 4(2).png"
+							style="width: 300px; height: 300px;"><img alt=""
+							src="img/news/review board game Bang thẻ bài hành động (2)(1).png"
+							style="width: 300px; height: 300px;"></span>
+				</p>
+				<p dir="ltr"
+					style="line-height: 1.38; background-color: rgb(255, 255, 255); margin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 16pt; text-align: center;">
+					<em>Sự đa dạng về chiến thuật Bang do số lượng thẻ bài hành động lớn</em>
+				</p>
+				<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">
+					&nbsp;</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					<span
+						style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px; font-weight: 700;">7.
+						Tổng kết</span>
+				</p>
+				<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;">
+					&nbsp;</p>
+				<p>
+					<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">Sau
+						khi đọc xong bài viết này, bạn có tưởng tượng ra được hình bóng quen thuộc của những người bạn
+						mình khi chơi Bang không? </span><span
+						style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">Kẻ
+						phản bội hẳn là vai diễn dành cho thằng bạn thích chơi hard core 1 mình chống cả thế giới và đòi
+						hỏi kỹ năng chiến đấu ẩn vai cực cao! </span><span
+						style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">Lại
+						còn cả những đứa bạn chỉ thích ngồi không, chỉ đạo và nhìn cả đám “bắn” loạn xì ngầu và xu nịnh
+						mình, có phải cảnh sát trưởng là dành cho họ? M</span><span
+						style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">ột
+						cuộc chơi Bang đơn giản chỉ là ngồi cười nói với nhau sau khoảng thời gian dài không gặp mặt.
+					</span>
+				</p>
+				<p>
+					<span style="background-color: rgb(255, 255, 255); font-family: Arial; font-size: 16px;">Nếu
+						đúng là như thế, thì đừng ngại thử sức với Bang! - Cuộc chiến Viễn Tây. Chắc chắn bạn sẽ phải
+						thốt lên những tiếng wow khi nhìn thấy bộ bài trên tay và bị cuốn ngay vào game.</span>
+				</p>
+			</div>
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /SECTION -->
+
+	<!-- FOOTER -->
+	<footer id="footer">
+		<!-- top footer -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Vể chúng tôi</h3>
+							<p>BroadStore là công ti phân phối và bán sảm phẩm game broad</p>
+							<ul class="footer-links">
+								<li><a href="#"><i class="fa fa-map-marker"></i>25/5 Thăng Long, Phường 4, Quận Tân
+										Bình, TP. Hồ Chí Minh</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>0938 424 289
+									</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o"></i>admin@BoardStore.vn</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Danh Mục</h3>
+							<ul class="footer-links">
+								<li><a href="#">Board Game Chiến thuật</a></li>
+								<li><a href="#">Board Game Gia đình</a></li>
+								<li><a href="#">Card Game</a></li>
+								<li><a href="#">Board Game Party</a></li>
+								<li><a href="#">Phụ kiện Board Game</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Thông tin</h3>
+							<ul class="footer-links">
+								<li><a href="about_us.html">Vể chúng tôi</a></li>
+								<li><a href="termsAndConditions.html">Chính sách và điều khoản</a></li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Dịch vụ</h3>
+							<ul class="footer-links">
+								<li><a href="InforUser.html">Tài khoản</a></li>
+								<li><a href="cart.html">Giỏ hàng</a></li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /top footer -->
+
+		<!-- bottom footer -->
+		<div id="bottom-footer" class="section">
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-payments">
+							<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+							<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+						</ul>
+
+
+
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /bottom footer -->
+	</footer>
+	<!-- /FOOTER -->
+
+	<!-- jQuery Plugins -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.bundle.js"></script>
+	<script src="js/slick.min.js"></script>
+	
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>

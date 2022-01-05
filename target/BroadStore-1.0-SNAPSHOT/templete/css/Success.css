@@ -1,0 +1,26 @@
+.success{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+.success .container{
+    width: 50%;
+}
+.img{
+    margin-left: 250px;
+    margin-bottom: 20px;
+    height: 15%;
+    width: 15%;
+   content: url(/img/success.png);
+}
+.success .text_mini{
+    color: lightgray;
+    font-size: 10px;
+    margin-bottom: 20px;
+   
+}
+.success .test{
+    color: blue;
+    font-size: 13px;
+    margin-left: 220px;
+}

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Checkout</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/timeline.css">
+
+</head>
+
+<body>
+	<!-- HEADER -->
+	<header>
+		<!-- MAIN HEADER -->
+		<div id="header">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- LOGO -->
+					<div class="col-md-3">
+						<div class="header-logo">
+							<a href="index.html" class="logo">
+								<img src="./img/BoardStore.png" style="height: 70px;" alt="">
+							</a>
+						</div>
+					</div>
+					<!-- /LOGO -->
+
+					<!-- SEARCH BAR -->
+					<div class="col-md-6">
+						<div class="header-search">
+							<form class="d-flex">
+								<input class="input flex-grow-1" placeholder="Tìm kiếm sản phẩm">
+								<button class="search-btn">TÌM KIẾM</button>
+							</form>
+						</div>
+					</div>
+					<!-- /SEARCH BAR -->
+
+					<!-- ACCOUNT -->
+					<div class="col-md-3 clearfix">
+						<div class="header-ctn">
+							<!-- Wishlist -->
+							<div class="dropdown">
+								<a href="#" class="dropdown-toggle" role="button" id="dropdownUser"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-user-circle-o"></i>
+									<span>Tài khoản</span>
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownUser">
+									<li><a class="dropdown-item" href="SignIn.html">Đăng nhập</a></li>
+									<li><a class="dropdown-item" href="SignUp.html">Đăng ký</a></li>
+								</ul>
+							</div>
+							<!-- /Wishlist -->
+							<!-- Cart -->
+							<div class="dropdown">
+								<a href="#" class="dropdown-toggle" id="dropdownCart" role="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-shopping-cart"></i>
+									<span>Giỏ hàng</span>
+									<div class="qty">3</div>
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownCart">
+									<div style="width: 360px; padding: 10px;">
+										<div class="cart-list border-bottom">
+											<div class="product-cart row align-items-center">
+												<div class="product-img col-3">
+													<img class="img-thumbnail" src="./img/product02.png" alt="">
+												</div>
+												<div class="product-body col-7">
+													<h3 class="product-name"><a href="product.html">Sản phẩm 1</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>98000</h4>
+												</div>
+												<a class="htn btn-close col-2" href="#"
+													onclick="return confirm('Bạn Muốn xóa sản phẩm?');"></a>
+											</div>
+
+											<div class="product-cart row align-items-center">
+												<div class="product-img col-3">
+													<img class="img-thumbnail" src="./img/product02.png" alt="">
+												</div>
+												<div class="product-body col-7">
+													<h3 class="product-name"><a href="product.html">Sản phẩm 2</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>98000</h4>
+												</div>
+												<a class="htn btn-close col-2" href="#"
+													onclick="return confirm('Bạn Muốn xóa sản phẩm?');"></a>
+											</div>
+											<div class="product-cart row align-items-center">
+												<div class="product-img col-3">
+													<img class="img-thumbnail" src="./img/product02.png" alt="">
+												</div>
+												<div class="product-body col-7">
+													<h3 class="product-name"><a href="product.html">Sản phẩm 3</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>98000</h4>
+												</div>
+												<a class="htn btn-close col-2" href="#"
+													onclick="return confirm('Bạn Muốn xóa sản phẩm?');"></a>
+											</div>
+										</div>
+										<div class="cart-summary ">
+											<small>Số sản phẩm: 3</small>
+											<h5>Tổng Tiền: 29400000</h5>
+										</div>
+
+										<a href="cart.html" class="btn btn-orange w-100 mb-2">Xem giỏ hàng</a>
+										<a href="checkout.html" class="p1 btn btn-dark w-100">Thanh toán</a>
+									</div>
+
+								</ul>
+							</div>
+							<!-- /Cart -->
+
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
+							<!-- /Menu Toogle -->
+						</div>
+					</div>
+					<!-- /ACCOUNT -->
+				</div>
+				<!-- row -->
+			</div>
+			<!-- container -->
+		</div>
+		<!-- /MAIN HEADER -->
+	</header>
+	<!-- /HEADER -->
+
+	<!-- NAVIGATION -->
+	<nav id="navigation">
+		<!-- container -->
+		<div class="container">
+			<!-- responsive-nav -->
+			<div id="responsive-nav">
+				<!-- NAV -->
+				<ul class="main-nav nav">
+					<li class="nav-item"><a href="index.html">TRANG CHỦ</a></li>
+					<li class="nav-item">
+						<div class="dropdown">
+							<a class="dropdown-toggle text-white text-uppercase" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+								aria-expanded="false" href="cart.html">
+								Danh Mục Sản Phẩm
+							</a>
+							<ul class="dropdown-menu" style="margin: 0px;">
+								<li><a class="dropdown-item" href="store.html">Tất Cả sản phẩm</a></li>
+								<li><a class="dropdown-item" href="store.html">Sản phẩm sale</a></li>
+								<li><a class="dropdown-item" href="store.html">Broadgame gia đình</a></li>
+								<li><a class="dropdown-item" href="store.html">Broadgame trí tuệ</a></li>
+								<li><a class="dropdown-item" href="store.html">Broadgame Chiến thuật</a></li>
+								<li><a class="dropdown-item" href="store.html">Broadgame Thẻ bài</a></li>
+								<li><a class="dropdown-item" href="store.html">Đồ chơi nhóm</a></li>
+								<li><a class="dropdown-item" href="store.html">Phụ Kiện BroadGame</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item"><a href="news.html">TIN TỨC</a></li>
+					<li class="nav-item"><a href="about_us.html">GIỚI THIỆU</a></li>
+					<li class="nav-item"><a href="store.html">KHUYẾN MÃI</a></li>
+				</ul>
+				<!-- /NAV -->
+			</div>
+			<!-- /responsive-nav -->
+		</div>
+		<!-- /container -->
+	</nav>
+	<!-- /NAVIGATION -->
+
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-7">
+					<!-- Billing Details -->
+					<div class="billing-details">
+						<div class="section-title">
+							<h3 class="title">ĐỊA CHỈ NHẬN HÀNG</h3>
+						</div>
+						<div class="mb-3">
+							<input class="form-control" type="text" name="name" placeholder="Tên Khách Hàng">
+						</div>
+						<div class="mb-3">
+							<input class="form-control" type="email" name="email" placeholder="Email">
+						</div>
+						<div class="mb-3">
+							<input class="form-control" type="tel" name="phone" placeholder="Số điện thoại">
+						</div>
+						<select class="form-select mb-3" name="Thành Phố">
+							<option value="" selected="selected">-- Chọn tỉnh/ thành phố --</option>
+							<option value="508">Hà Nội</option>
+							<option value="485">An Giang</option>
+							<option value="486">Bà Rịa - Vũng Tàu</option>
+							<option value="487">Bạc Liêu</option>
+							<option value="488">Bắc Cạn</option>
+							<option value="489">Bắc Giang</option>
+							<option value="490">Bắc Ninh</option>
+							<option value="491">Bến Tre</option>
+							<option value="492">Bình Dương</option>
+							<option value="493">Bình Định</option>
+							<option value="494">Bình Phước</option>
+							<option value="495">Bình Thuận</option>
+							<option value="496">Cà Mau</option>
+							<option value="497">Cao Bằng</option>
+							<option value="498">Cần Thơ</option>
+							<option value="499">Đà Nẵng</option>
+							<option value="500">Đắc Lắc</option>
+							<option value="501">Đắc Nông</option>
+							<option value="502">Điện Biên</option>
+							<option value="503">Đồng Nai</option>
+							<option value="504">Đồng Tháp</option>
+							<option value="505">Gia Lai</option>
+							<option value="506">Hà Giang</option>
+							<option value="507">Hà Nam</option>
+							<option value="509">Hà Tĩnh</option>
+							<option value="510">Hải Dương</option>
+							<option value="511">Hải Phòng</option>
+							<option value="512">Hậu Giang</option>
+							<option value="513">Hòa Bình</option>
+							<option value="514">Hồ Chí Minh</option>
+							<option value="515">Hưng Yên</option>
+							<option value="516">Khánh Hoà</option>
+							<option value="517">Kiên Giang</option>
+							<option value="518">Kon Tum</option>
+							<option value="519">Lai Châu</option>
+							<option value="520">Lạng Sơn</option>
+							<option value="521">Lào Cai</option>
+							<option value="522">Lâm Đồng</option>
+							<option value="523">Long An</option>
+							<option value="524">Nam Định</option>
+							<option value="525">Nghệ An</option>
+							<option value="526">Ninh Bình</option>
+							<option value="527">Ninh Thuận</option>
+							<option value="528">Phú Thọ</option>
+							<option value="529">Phú Yên</option>
+							<option value="530">Quảng Bình</option>
+							<option value="531">Quảng Nam</option>
+							<option value="532">Quảng Ngãi</option>
+							<option value="533">Quảng Ninh</option>
+							<option value="534">Quảng Trị</option>
+							<option value="535">Sóc Trăng</option>
+							<option value="536">Sơn La</option>
+							<option value="537">Tây Ninh</option>
+							<option value="538">Thái Bình</option>
+							<option value="539">Thái Nguyên</option>
+							<option value="540">Thanh Hoá</option>
+							<option value="541">Thừa Thiên Huế</option>
+							<option value="542">Tiền Giang</option>
+							<option value="543">Trà Vinh</option>
+							<option value="544">Tuyên Quang</option>
+							<option value="545">Vĩnh Long</option>
+							<option value="546">Vĩnh Phúc</option>
+							<option value="547">Yên Bái</option>
+						</select>
+						<select class="form-select mb-3" name="Quận/Huyện">
+							<option value="" selected="selected">-- Hãy chọn Quận/Huyện --</option>
+							<option value="72">Quận 1</option>
+							<option value="73">Quận 2</option>
+							<option value="74">Quận 3</option>
+							<option value="75">Quận 4</option>
+							<option value="76">Quận 5</option>
+							<option value="77">Quận 6</option>
+							<option value="78">Quận 7</option>
+							<option value="79">Quận 8</option>
+							<option value="80">Quận 9</option>
+							<option value="81">Quận 10</option>
+							<option value="82">Quận 11</option>
+							<option value="83">Quận 12</option>
+							<option value="84">Quận Gò Vấp</option>
+							<option value="85">Quận Tân Bình</option>
+							<option value="86">Quận Tân Phú</option>
+							<option value="87">Quận Bình Thạnh</option>
+							<option value="88">Quận Phú Nhuận</option>
+							<option value="89">Quận Thủ Đức</option>
+							<option value="90">Quận Bình Tân</option>
+							<option value="91">Huyện Củ Chi</option>
+							<option value="92">Huyện Hóc Môn</option>
+							<option value="93">Huyện Bình Chánh</option>
+							<option value="94">Huyện Nhà Bè</option>
+							<option value="95">Huyện Cần Giờ</option>
+						</select>
+						<div class="mb-3">
+							<input class="form-control" type="text" name="address" placeholder="Tòa nhà, tên đường...">
+						</div>
+					</div>
+					<!-- /Billing Details -->
+					<!-- Order notes -->
+					<div class="order-notes">
+						<textarea class="input" placeholder="Ghi chú về đơn hàng"></textarea>
+					</div>
+					<!-- /Order notes -->
+				</div>
+				<!-- Order Details -->
+				<div class="col-md-5 order-details border-r10">
+					<div class="section-title text-center">
+						<h3 class="title">Thanh toán</h3>
+					</div>
+					<div class="order-summary">
+						<div class="order-col">
+							<div><strong>SẢN PHẨM</strong></div>
+							<div><strong>GIÁ</strong></div>
+						</div>
+						<div class="order-products">
+							<div class="order-col">
+								<div>1x Sản phẩm 1</div>
+								<div>120.000VND</div>
+							</div>
+							<div class="order-col">
+								<div>2x Sản phẩm 2</div>
+								<div>120.000VND</div>
+							</div>
+						</div>
+						<div class="order-col">
+							<div>TIỀN VẬN CHUYỂN</div>
+							<div><strong>MIỄN PHÍ</strong></div>
+						</div>
+						<div class="order-col">
+							<div><strong>TỔNG TIỀN</strong></div>
+							<div><strong class="order-total">240.000VND</strong></div>
+						</div>
+					</div>
+					<div class="payment-method">
+						<div class="order-col mb-3">
+							<div><strong>Phương thức thanh toán</strong></div>
+						</div>
+						<div class="input-radio">
+							<input type="radio" name="payment" id="payment-1">
+							<label for="payment-1">
+								<span></span>
+								Trực tiếp khi nhận hàng
+							</label>
+							<div class="caption">
+								<p>Bạn sẽ thanh toán khi nhận được hàng</p>
+							</div>
+						</div>
+						<div class="input-radio">
+							<input type="radio" name="payment" id="payment-2">
+							<label for="payment-2">
+								<span></span>
+								Ví MOMO
+							</label>
+							<div class="caption">
+								<p>Bạn bật app MOMO để quét mã QR để xác nhận thanh toán đơn hàng</p>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="primary-btn order-submit">Thanh Toán</a>
+				</div>
+				<!-- /Order Details -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /SECTION -->
+
+	<!-- FOOTER -->
+	<footer id="footer">
+		<!-- top footer -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Vể chúng tôi</h3>
+							<p>BroadStore là công ti phân phối và bán sảm phẩm game broad</p>
+							<ul class="footer-links">
+								<li><a href="#"><i class="fa fa-map-marker"></i>25/5 Thăng Long, Phường 4, Quận Tân
+										Bình, TP. Hồ Chí Minh</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>0938 424 289
+									</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o"></i>admin@BoardStore.vn</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Danh Mục</h3>
+							<ul class="footer-links">
+								<li><a href="#">Board Game Chiến thuật</a></li>
+								<li><a href="#">Board Game Gia đình</a></li>
+								<li><a href="#">Card Game</a></li>
+								<li><a href="#">Board Game Party</a></li>
+								<li><a href="#">Phụ kiện Board Game</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Thông tin</h3>
+							<ul class="footer-links">
+								<li><a href="about_us.html">Vể chúng tôi</a></li>
+								<li><a href="termsAndConditions.html">Chính sách và điều khoản</a></li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Dịch vụ</h3>
+							<ul class="footer-links">
+								<li><a href="InforUser.html">Tài khoản</a></li>
+								<li><a href="cart.html">Giỏ hàng</a></li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /top footer -->
+
+		<!-- bottom footer -->
+		<div id="bottom-footer" class="section">
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-payments">
+							<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+							<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /bottom footer -->
+	</footer>
+	<!-- /FOOTER -->
+
+	<!-- jQuery Plugins -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.bundle.js"></script>
+	<script src="js/slick.min.js"></script>
+
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
