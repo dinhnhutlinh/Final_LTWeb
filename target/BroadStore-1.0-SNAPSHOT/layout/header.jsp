@@ -16,7 +16,6 @@
                     </div>
                 </div>
                 <!-- /LOGO -->
-
                 <!-- SEARCH BAR -->
                 <div class="col-md-6">
                     <div class="header-search">
@@ -27,7 +26,6 @@
                     </div>
                 </div>
                 <!-- /SEARCH BAR -->
-
                 <!-- ACCOUNT -->
                 <div class="col-md-3 clearfix">
                     <div class="header-ctn">
