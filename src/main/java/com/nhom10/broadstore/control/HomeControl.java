@@ -1,11 +1,5 @@
 package com.nhom10.broadstore.control;
 
-import com.nhom10.broadstore.bean.Category;
-import com.nhom10.broadstore.dao.CategoryDAO;
-import com.nhom10.broadstore.db.DBConnect;
-import com.nhom10.broadstore.db.JDBIConnector;
-import org.jdbi.v3.core.Jdbi;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

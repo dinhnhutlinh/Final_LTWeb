@@ -6,13 +6,13 @@ import java.time.LocalDateTime;
 
 
 public class Category implements Serializable {
-    private long id;
+    private int id;
     private String name;
     private String desc;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Category(long id, String name, String desc, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Category(int id, String name, String desc, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.desc = desc;
@@ -24,11 +24,11 @@ public class Category implements Serializable {
     }
 
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

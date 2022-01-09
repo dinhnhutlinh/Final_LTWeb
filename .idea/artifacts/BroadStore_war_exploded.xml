@@ -39,7 +39,6 @@
           <element id="library" level="project" name="Maven: org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec:1.0.6.Final" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.26" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
-          <element id="library" level="project" name="Maven: org.jdbi:jdbi3-sqlobject:3.27.0" />
           <element id="library" level="project" name="Maven: org.jdbi:jdbi3-core:3.26.1" />
           <element id="library" level="project" name="Maven: org.antlr:antlr4-runtime:4.9.2" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.32" />

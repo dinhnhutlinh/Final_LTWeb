@@ -20,22 +20,22 @@ public class CategoryService {
     }
 
     public List<Category> getAll() {
-        return JDBIConnector.get().withExtension(CategoryDAO.class, dao -> dao.getAllCategory());
+        return CategoryDAO.getALl();
+    }
+
+    public Category getByID(int id) {
+        return CategoryDAO.getByID(id);
     }
 
     public int insert(Category category) {
-        return JDBIConnector.get().withExtension(CategoryDAO.class, dao -> {
-            long id= dao.insertCategory(category);
-            System.out.println(id);
-            return 1;
-        });
+        return CategoryDAO.insert(category);
     }
 
-    public long delete(int id) {
-        return JDBIConnector.get().withExtension(CategoryDAO.class, dao -> {
-            final long i = dao.deleteCategory(id);
-            System.out.println("id: " + i);
-            return i;
-        });
+    public int update(Category category) {
+        return CategoryDAO.update(category);
+    }
+
+    public int delete(int id) {
+        return CategoryDAO.delete(id);
     }
 }
