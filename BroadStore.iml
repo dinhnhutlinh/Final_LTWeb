@@ -29,8 +29,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxrs:3.4.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-core:3.4.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxrs:3.4.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-core:3.4.5" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.4" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jaxb:txw2:2.3.4" level="project" />
     <orderEntry type="library" name="Maven: com.sun.istack:istack-commons-runtime:3.0.12" level="project" />
@@ -40,8 +40,8 @@
     <orderEntry type="library" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" level="project" />
     <orderEntry type="library" name="Maven: jakarta.ws.rs:jakarta.ws.rs-api:2.1.6" level="project" />
     <orderEntry type="library" name="Maven: jakarta.annotation:jakarta.annotation-api:1.3.5" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-transports-http:3.4.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-security:3.4.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-transports-http:3.4.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-security:3.4.5" level="project" />
     <orderEntry type="library" name="Maven: jakarta.xml.ws:jakarta.xml.ws-api:2.3.3" level="project" />
     <orderEntry type="library" name="Maven: jakarta.jws:jakarta.jws-api:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: jakarta.xml.soap:jakarta.xml.soap-api:1.4.2" level="project" />
@@ -50,7 +50,6 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.sun.xml.messaging.saaj:saaj-impl:1.5.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jvnet.staxex:stax-ex:1.8.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec:1.0.6.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
@@ -59,10 +58,11 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.1" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.26" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
-    <orderEntry type="library" name="Maven: org.jdbi:jdbi3-core:3.26.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jdbi:jdbi3-core:3.27.0" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.9.2" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.32" level="project" />
     <orderEntry type="library" name="Maven: io.leangen.geantyref:geantyref:1.3.13" level="project" />
     <orderEntry type="library" name="Maven: com.github.ben-manes.caffeine:caffeine:3.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.jdbi:jdbi3-sqlobject:3.27.0" level="project" />
   </component>
 </module>

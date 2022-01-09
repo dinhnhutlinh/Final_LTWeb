@@ -3,15 +3,15 @@ package com.nhom10.broadstore.bean;
 import java.time.LocalDateTime;
 
 public class CartItem {
-    private int cartID;
+    private int cartId;
     private int productId;
     private int quantity;
     private int price;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public CartItem(int cartID, int productId, int quantity, int price, LocalDateTime createAt, LocalDateTime updateAt) {
-        this.cartID = cartID;
+    public CartItem(int cartId, int productId, int quantity, int price, LocalDateTime createAt, LocalDateTime updateAt) {
+        this.cartId = cartId;
         this.productId = productId;
         this.quantity = quantity;
         this.price = price;
@@ -22,12 +22,12 @@ public class CartItem {
     public CartItem() {
     }
 
-    public int getCartID() {
-        return cartID;
+    public int getCartId() {
+        return cartId;
     }
 
-    public void setCartID(int cartID) {
-        this.cartID = cartID;
+    public void setCartId(int cartId) {
+        this.cartId = cartId;
     }
 
     public int getProductId() {
@@ -73,7 +73,7 @@ public class CartItem {
     @Override
     public String toString() {
         return "CartItem{" +
-                "cartID=" + cartID +
+                "cartID=" + cartId +
                 ", productId=" + productId +
                 ", quantity=" + quantity +
                 ", price=" + price +

@@ -1,58 +1,34 @@
 package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.bean.Category;
-import com.nhom10.broadstore.db.JDBIConnector;
-import org.jdbi.v3.core.result.ResultBearing;
-import org.jdbi.v3.core.result.ResultIterable;
-import org.jdbi.v3.core.statement.Update;
+import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
+import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.customizer.BindBean;
+import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
+import org.jdbi.v3.sqlobject.statement.SqlQuery;
+import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
 import java.util.List;
 
-public class CategoryDAO {
-    private final static String ALL_SQL = "SELECT * FROM `category`";
-    private final static String GET_BY_ID_SQL = "SELECT * FROM `category` WHERE `id`=?";
-    private final static String INSERT_SQL = "INSERT INTO `category`( `name`, `desc`, `create_at`, `update_at`) " +
-            "VALUES (?,?,now(),now())";
-    private final static String UPDATE_SQL = "UPDATE `category` SET" +
-            "`name`=?,`desc`=?,`update_at`=now() WHERE `id`=?";
-    private final static String DELETE_SQL = "DELETE FROM `category` WHERE `id`=?";
+public interface CategoryDAO {
 
-    public static List<Category> getALl() {
-        return JDBIConnector.get().withHandle(
-                handle -> handle.select(ALL_SQL).mapToBean(Category.class).list());
-    }
+    @SqlQuery(value = "SELECT * FROM `category`")
+    @RegisterBeanMapper(Category.class)
+    List<Category> getAll();
 
-    public static Category getByID(int id) {
-        return JDBIConnector.get().withHandle(
-                handle -> handle.select(GET_BY_ID_SQL).bind(0, id).mapToBean(Category.class).one());
-    }
+    @SqlQuery(value = "SELECT * FROM `category` WHERE `id`=:id")
+    @RegisterBeanMapper(Category.class)
+    Category getByID(@Bind("id") int id);
 
-    public static int insert(Category category) {
-        return JDBIConnector.get().withHandle(handle -> {
-            Update update = handle.createUpdate(INSERT_SQL)
-                    .bind(0, category.getName())
-                    .bind(1, category.getDesc());
-            ResultBearing resultBearing = update.executeAndReturnGeneratedKeys("id");
-            ResultIterable<Integer> id = resultBearing.mapTo(Integer.class);
-            return id.first();
-        });
-    }
+    @SqlUpdate(value = "INSERT INTO `category`( `name`, `desc`, `create_at`, `update_at`) "
+            + "VALUES (:name,:desc,now(),now())")
+    @GetGeneratedKeys("`id`")
+    int insert(@BindBean Category category);
 
-    public static int update(Category category) {
-        return JDBIConnector.get().withHandle(handle -> {
-            handle.createUpdate(UPDATE_SQL)
-                    .bind(0, category.getName())
-                    .bind(1, category.getDesc())
-                    .bind(2, category.getId()).execute();
-            return category.getId();
-        });
-    }
+    @SqlUpdate(value = "UPDATE `category` SET\" +\n" +
+            "`name`=:name,`desc`=:desc,`update_at`=now() WHERE `id`=:id")
+    void update(@BindBean Category category);
 
-    public static int delete(int id) {
-        return JDBIConnector.get().withHandle(handle -> {
-            handle.createUpdate(DELETE_SQL)
-                    .bind(0, id).execute();
-            return id;
-        });
-    }
+    @SqlUpdate(value = "DELETE FROM `category` WHERE `id`=:id")
+    void delete(@Bind("id") int id);
 }

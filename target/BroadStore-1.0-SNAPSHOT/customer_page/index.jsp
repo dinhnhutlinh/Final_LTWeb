@@ -18,18 +18,18 @@
 
     <!-- Slick-->
     <link type="text/css" rel="stylesheet" href="customer_page/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="/css/slick-theme.css" />
+    <link type="text/css" rel="stylesheet" href="customer_page/css/slick-theme.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
           integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="customer_page/css/font-awesome.min.css">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link type="text/css" rel="stylesheet" href="customer_page/css/style.css"/>
+    <link rel="stylesheet" href="customer_page/css/header.css">
+    <link rel="stylesheet" href="customer_page/css/footer.css">
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -1343,11 +1343,11 @@
 <jsp:include page="layout/footer.jsp"></jsp:include>
 
 <!-- jQuery Plugins -->
-<script src="js/bootstrap.bundle.js"></script>
-<script src="js/slick.min.js"></script>
+<script src="customer_page/js/bootstrap.bundle.js"></script>
+<script src="customer_page/js/slick.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/jquery.zoom.min.js"></script>
-<script src="js/main.js"></script>
+<script src="customer_page/js/jquery.zoom.min.js"></script>
+<script src="customer_page/js/main.js"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"

@@ -7,19 +7,21 @@ public class Blog {
     private int adminID;
     private String title;
     private int imageID;
+    private String content;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Blog(int id, int adminID, String title, int imageID, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Blog() {
+    }
+
+    public Blog(int id, int adminID, String title, int imageID, String content, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.adminID = adminID;
         this.title = title;
         this.imageID = imageID;
+        this.content = content;
         this.createAt = createAt;
         this.updateAt = updateAt;
-    }
-
-    public Blog() {
     }
 
     public int getId() {
@@ -54,6 +56,14 @@ public class Blog {
         this.imageID = imageID;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public LocalDateTime getCreateAt() {
         return createAt;
     }
@@ -68,17 +78,5 @@ public class Blog {
 
     public void setUpdateAt(LocalDateTime updateAt) {
         this.updateAt = updateAt;
-    }
-
-    @Override
-    public String toString() {
-        return "Blog{" +
-                "id=" + id +
-                ", adminID=" + adminID +
-                ", title='" + title + '\'' +
-                ", imageID=" + imageID +
-                ", createAt=" + createAt +
-                ", updateAt=" + updateAt +
-                '}';
     }
 }

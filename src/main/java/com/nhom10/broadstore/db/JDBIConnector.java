@@ -2,6 +2,7 @@ package com.nhom10.broadstore.db;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.jdbi.v3.core.Jdbi;
+import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 
 import java.sql.SQLException;
 
@@ -26,6 +27,7 @@ public class JDBIConnector {
             e.printStackTrace();
         }
         jdbi = Jdbi.create(dataSource);
+        jdbi.installPlugin(new SqlObjectPlugin());
     }
 
     public static Jdbi get() {
