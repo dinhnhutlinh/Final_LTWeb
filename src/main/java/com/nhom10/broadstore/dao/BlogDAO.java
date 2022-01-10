@@ -1,6 +1,7 @@
 package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.bean.Blog;
+import org.jdbi.v3.sqlobject.SingleValue;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
@@ -18,6 +19,7 @@ public interface BlogDAO {
 
     @SqlQuery(value = "SELECT * FROM `blog` WHERE `id`=:id")
     @RegisterBeanMapper(Blog.class)
+    @SingleValue
     Blog getByID(@Bind("id") int id);
 
     @SqlUpdate(value = "INSERT INTO `blog`( `admin_id`, `title`, `image_id`, `content`," +

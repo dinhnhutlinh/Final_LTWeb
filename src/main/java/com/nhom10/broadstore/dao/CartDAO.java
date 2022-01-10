@@ -15,7 +15,6 @@ public interface CartDAO {
     @RegisterBeanMapper(Cart.class)
     Cart getByID(@Bind("id") int id);
 
-
     @SqlUpdate(value = "INSERT INTO `cart`( `customer_id`, `total_price`, `create_at`, `update_at`)" +
             " VALUES (:customerId, totalPrice,now(),now())")
     @GetGeneratedKeys("`id`")

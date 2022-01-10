@@ -1,6 +1,7 @@
 package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.bean.Address;
+import org.jdbi.v3.sqlobject.SingleValue;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMappers;
 import org.jdbi.v3.sqlobject.customizer.Bind;
@@ -13,6 +14,7 @@ public interface AddressDAO {
 
     @SqlQuery(value = "SELECT * FROM `address` WHERE `id`= :id")
     @RegisterBeanMapper(Address.class)
+    @SingleValue
     Address getByID(@Bind("id") int id);
 
     @SqlUpdate(value = "INSERT INTO `address`(`details_address`, `district`, `province`, `create_at`, `update_at`) VALUES (:detailsAddress,:district,:province,now(),now())")

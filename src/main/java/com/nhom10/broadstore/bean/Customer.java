@@ -9,25 +9,27 @@ public class Customer {
     private String password;
     private String avatar;
     private int addressId;
+    private int active;
     private String phone;
     private String email;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Customer(int id, String firstName, String lastName, String password, String avatar, int addressId, String phone, String email, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Customer() {
+    }
+
+    public Customer(int id, String firstName, String lastName, String password, String avatar, int addressId, int active, String phone, String email, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.avatar = avatar;
         this.addressId = addressId;
+        this.active = active;
         this.phone = phone;
         this.email = email;
         this.createAt = createAt;
         this.updateAt = updateAt;
-    }
-
-    public Customer() {
     }
 
     public int getId() {
@@ -78,6 +80,14 @@ public class Customer {
         this.addressId = addressId;
     }
 
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
     public String getPhone() {
         return phone;
     }
@@ -119,6 +129,7 @@ public class Customer {
                 ", password='" + password + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", addressId=" + addressId +
+                ", acvite=" + active +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", createAt=" + createAt +

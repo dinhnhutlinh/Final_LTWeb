@@ -1,6 +1,7 @@
 package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.bean.CartItem;
+import org.jdbi.v3.sqlobject.SingleValue;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
@@ -14,7 +15,8 @@ public interface CartItemDAO {
 
     @SqlQuery(value = "SELECT * FROM `cartitems` WHERE `cartID`=:id")
     @RegisterBeanMapper(CartItemDAO.class)
-    List<CartItem> getByCartID();
+    @SingleValue
+    List<CartItem> getByCartID(@Bind("id") int id);
 
     @SqlUpdate(value = "INSERT INTO `cartitems`(`cart_id`, `product_id`, `quantity`, `price`, `create_at`, `update_at`)" +
             " VALUES (:cartID,:productId,:quantity,:price,now(),now())")

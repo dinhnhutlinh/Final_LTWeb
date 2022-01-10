@@ -1,6 +1,7 @@
 package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.bean.Admin;
+import org.jdbi.v3.sqlobject.SingleValue;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
@@ -16,6 +17,8 @@ public interface AdminDAO {
     List<Admin> getAll();
 
     @SqlQuery(value = "SELECT * FROM `admin` WHERE `id`= :id")
+    @RegisterBeanMapper(Admin.class)
+    @SingleValue
     Admin getByID(@Bind("id") int id);
 
     @SqlUpdate(value = "INSERT INTO `admin`(`first_name`, `last_name`, `password`, `address_id`, " +

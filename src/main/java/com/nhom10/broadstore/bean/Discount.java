@@ -8,17 +8,17 @@ public class Discount {
     private String desc;
     private int discountPercent;
     private int active;
-    private LocalDateTime createAt;
-    private LocalDateTime updateAt;
+    private LocalDateTime fromAt;
+    private LocalDateTime endAt;
 
-    public Discount(int id, String name, String desc, int discountPercent, int active, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Discount(int id, String name, String desc, int discountPercent, int active, LocalDateTime fromAt, LocalDateTime endAt) {
         this.id = id;
         this.name = name;
         this.desc = desc;
         this.discountPercent = discountPercent;
         this.active = active;
-        this.createAt = createAt;
-        this.updateAt = updateAt;
+        this.fromAt = fromAt;
+        this.endAt = endAt;
     }
 
     public Discount() {
@@ -64,20 +64,20 @@ public class Discount {
         this.active = active;
     }
 
-    public LocalDateTime getCreateAt() {
-        return createAt;
+    public LocalDateTime getFromAt() {
+        return fromAt;
     }
 
-    public void setCreateAt(LocalDateTime createAt) {
-        this.createAt = createAt;
+    public void setFromAt(LocalDateTime fromAt) {
+        this.fromAt = fromAt;
     }
 
-    public LocalDateTime getUpdateAt() {
-        return updateAt;
+    public LocalDateTime getEndAt() {
+        return endAt;
     }
 
-    public void setUpdateAt(LocalDateTime updateAt) {
-        this.updateAt = updateAt;
+    public void setEndAt(LocalDateTime endAt) {
+        this.endAt = endAt;
     }
 
     @Override
@@ -88,8 +88,8 @@ public class Discount {
                 ", desc='" + desc + '\'' +
                 ", discountPercent=" + discountPercent +
                 ", active=" + active +
-                ", createAt=" + createAt +
-                ", updateAt=" + updateAt +
+                ", createAt=" + fromAt +
+                ", updateAt=" + endAt +
                 '}';
     }
 }
