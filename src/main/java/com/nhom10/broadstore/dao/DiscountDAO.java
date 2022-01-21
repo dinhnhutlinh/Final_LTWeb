@@ -1,5 +1,6 @@
 package com.nhom10.broadstore.dao;
 
+import com.nhom10.broadstore.bean.Category;
 import com.nhom10.broadstore.bean.Discount;
 import org.jdbi.v3.sqlobject.SingleValue;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
@@ -21,6 +22,10 @@ public interface DiscountDAO {
     @RegisterBeanMapper(Discount.class)
     @SingleValue
     Discount getByID(@Bind("id") int id);
+
+    @SqlQuery(value = "SELECT * FROM `discount` WHERE `id`=(SELECT discount_id FROM product where id=:id)")
+    @RegisterBeanMapper(Category.class)
+    Discount getOfProductById(@Bind("id") int id);
 
     @SqlUpdate(value = "INSERT INTO `discount`( `name`, `desc`, `discount_percent`, `active`, `from_at`, `to_at`)" +
             " VALUES (:name,:desc,:discountPercent,:active,:fromAt,:endAt)")

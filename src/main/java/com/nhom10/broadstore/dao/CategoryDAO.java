@@ -20,6 +20,10 @@ public interface CategoryDAO {
     @RegisterBeanMapper(Category.class)
     Category getByID(@Bind("id") int id);
 
+    @SqlQuery(value = "SELECT * FROM `category` WHERE `id`=(SELECT category_id FROM product where id=:id)")
+    @RegisterBeanMapper(Category.class)
+    Category getOfProductById(@Bind("id") int id);
+
     @SqlUpdate(value = "INSERT INTO `category`( `name`, `desc`, `create_at`, `update_at`) "
             + "VALUES (:name,:desc,now(),now())")
     @GetGeneratedKeys("`id`")

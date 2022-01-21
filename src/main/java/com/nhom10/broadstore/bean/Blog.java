@@ -6,7 +6,7 @@ public class Blog {
     private int id;
     private int adminID;
     private String title;
-    private int imageID;
+    private Image image;
     private String content;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
@@ -14,11 +14,11 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(int id, int adminID, String title, int imageID, String content, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Blog(int id, int adminID, String title, Image image, String content, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.adminID = adminID;
         this.title = title;
-        this.imageID = imageID;
+        this.image = image;
         this.content = content;
         this.createAt = createAt;
         this.updateAt = updateAt;
@@ -48,12 +48,12 @@ public class Blog {
         this.title = title;
     }
 
-    public int getImageID() {
-        return imageID;
+    public Image getImage() {
+        return image;
     }
 
-    public void setImageID(int imageID) {
-        this.imageID = imageID;
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     public String getContent() {

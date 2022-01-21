@@ -1,5 +1,7 @@
 package com.nhom10.broadstore.bean;
 
+import org.jdbi.v3.core.mapper.Nested;
+
 import java.time.LocalDateTime;
 
 public class Customer {
@@ -8,7 +10,7 @@ public class Customer {
     private String lastName;
     private String password;
     private String avatar;
-    private int addressId;
+    private Address address;
     private int active;
     private String phone;
     private String email;
@@ -16,15 +18,16 @@ public class Customer {
     private LocalDateTime updateAt;
 
     public Customer() {
+        this.address=new Address();
     }
 
-    public Customer(int id, String firstName, String lastName, String password, String avatar, int addressId, int active, String phone, String email, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Customer(int id, String firstName, String lastName, String password, String avatar, @Nested("addr") Address address, int active, String phone, String email, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.avatar = avatar;
-        this.addressId = addressId;
+        this.address = address;
         this.active = active;
         this.phone = phone;
         this.email = email;
@@ -72,12 +75,14 @@ public class Customer {
         this.avatar = avatar;
     }
 
-    public int getAddressId() {
-        return addressId;
+    @Nested("addr")
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddressId(int addressId) {
-        this.addressId = addressId;
+    @Nested("addr")
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public int getActive() {
@@ -128,8 +133,8 @@ public class Customer {
                 ", lastName='" + lastName + '\'' +
                 ", password='" + password + '\'' +
                 ", avatar='" + avatar + '\'' +
-                ", addressId=" + addressId +
-                ", acvite=" + active +
+                ", address=" + address +
+                ", active=" + active +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", createAt=" + createAt +

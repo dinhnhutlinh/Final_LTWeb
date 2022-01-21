@@ -1,5 +1,7 @@
 package com.nhom10.broadstore.bean;
 
+import org.jdbi.v3.core.mapper.Nested;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -14,17 +16,17 @@ public class Product implements Serializable {
     private double width;
     private double tall;
     private double weight;
-    private int producerId;
+    private Producer producer;
     private String desc;
     private String imgDisplay;
-    private int categoryId;
+    private Category category;
     private int inventory;
     private int price;
-    private int discountId;
+    private Discount discount;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Product(int id, String name, int age, int minPlayer, int maxPlayer, int timePlay, double height, double width, double tall, double weight, int producerId, String desc, String imgDisplay, int categoryId, int inventory, int price, int discountId, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Product(int id, String name, int age, int minPlayer, int maxPlayer, int timePlay, double height, double width, double tall, double weight, @Nested("prod") Producer producer, String desc, String imgDisplay, @Nested("cat") Category category, int inventory, int price, @Nested("disc") Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -35,17 +37,19 @@ public class Product implements Serializable {
         this.width = width;
         this.tall = tall;
         this.weight = weight;
-        this.producerId = producerId;
+        this.producer = producer;
         this.desc = desc;
         this.imgDisplay = imgDisplay;
-        this.categoryId = categoryId;
+        this.category = category;
         this.inventory = inventory;
         this.price = price;
-        this.discountId = discountId;
+        this.discount = discount;
         this.createAt = createAt;
         this.updateAt = updateAt;
     }
-    public Product(){}
+
+    public Product() {
+    }
 
     public int getId() {
         return id;
@@ -127,12 +131,14 @@ public class Product implements Serializable {
         this.weight = weight;
     }
 
-    public int getProducerId() {
-        return producerId;
+    @Nested("prod")
+    public Producer getProducer() {
+        return producer;
     }
 
-    public void setProducerId(int producerId) {
-        this.producerId = producerId;
+    @Nested("prod")
+    public void setProducer(Producer producer) {
+        this.producer = producer;
     }
 
     public String getDesc() {
@@ -151,12 +157,14 @@ public class Product implements Serializable {
         this.imgDisplay = imgDisplay;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    @Nested("cat")
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    @Nested("cat")
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public int getInventory() {
@@ -175,12 +183,14 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public int getDiscountId() {
-        return discountId;
+    @Nested("disc")
+    public Discount getDiscount() {
+        return discount;
     }
 
-    public void setDiscountId(int discountId) {
-        this.discountId = discountId;
+    @Nested("disc")
+    public void setDiscount(Discount discount) {
+        this.discount = discount;
     }
 
     public LocalDateTime getCreateAt() {
@@ -212,15 +222,17 @@ public class Product implements Serializable {
                 ", width=" + width +
                 ", tall=" + tall +
                 ", weight=" + weight +
-                ", producerId=" + producerId +
+                ", producer=" + producer +
                 ", desc='" + desc + '\'' +
                 ", imgDisplay='" + imgDisplay + '\'' +
-                ", categoryId=" + categoryId +
+                ", category=" + category +
                 ", inventory=" + inventory +
                 ", price=" + price +
-                ", discountId=" + discountId +
+                ", discount=" + discount +
                 ", createAt=" + createAt +
                 ", updateAt=" + updateAt +
                 '}';
     }
+
+
 }

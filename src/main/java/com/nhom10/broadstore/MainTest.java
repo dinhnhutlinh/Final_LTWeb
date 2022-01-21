@@ -1,26 +1,27 @@
 package com.nhom10.broadstore;
 
 import com.nhom10.broadstore.bean.Address;
+import com.nhom10.broadstore.bean.UserSession;
 import com.nhom10.broadstore.dao.AddressDAO;
-import com.nhom10.broadstore.dao.AdminDAO;
 import com.nhom10.broadstore.db.JDBIConnector;
+import com.nhom10.broadstore.service.PasswordHash;
+import com.nhom10.broadstore.service.UserService;
+
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 
 public class MainTest {
-    public static void main(String[] args) {
-        JDBIConnector.get().useExtension(AddressDAO.class, dao -> {
-//            Address address= new Address();
-//            address.setId(2);
-//            address.setDetailsAddress("Ngoai duong");
-//            address.setDistrict("Hoif");
-//            address.setProvince("DOi");
-//            int id=dao.insert(address);
-//            dao.update(address);
-//            System.out.println(id);
+    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
+        String firstname = "Linh";
+        String lastname = "Linh";
+        String email = "linhdinh69@gmail.com";
+        String phone = "0378222302";
+        String password = "linhdinh";
+        String mess= UserService.createAcc(firstname, lastname, email, phone, password);
+        System.out.println(mess);
 
-            System.out.println(dao.getByID(1));
-        });
-        JDBIConnector.get().useExtension(AdminDAO.class, dao -> {
-
-        });
+//        JDBIConnector.get().useExtension(AddressDAO.class, dao->{
+//            dao.insert(new Address());
+//        });
     }
 }

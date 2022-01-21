@@ -4,6 +4,18 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <welcome-file-list>
-        <welcome-file>customer_page/index.jsp</welcome-file>
+        <welcome-file>Home</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>com.nhom10.broadstore.control.user.HomeControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+<!--    <error-page>-->
+<!--        <location></location>-->
+<!--    </error-page>-->
 </web-app>

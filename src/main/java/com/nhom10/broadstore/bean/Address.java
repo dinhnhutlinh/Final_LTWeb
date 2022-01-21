@@ -19,7 +19,13 @@ public class Address implements Serializable {
         this.createAt = createAt;
         this.updateAt = updateAt;
     }
-    public Address(){}
+
+    public Address() {
+        this.id = 0;
+        this.detailsAddress = "";
+        this.district = "";
+        this.province = "";
+    }
 
     public int getId() {
         return id;

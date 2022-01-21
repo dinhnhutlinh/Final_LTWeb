@@ -1,20 +1,22 @@
 package com.nhom10.broadstore.bean;
 
+import org.jdbi.v3.core.mapper.Nested;
+
 import java.time.LocalDateTime;
 
-class Producer {
+public class Producer {
     private long id;
     private String name;
-    private int addressId;
+    private Address address;
     private String email;
     private int phone;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Producer(long id, String name, int addressId, String email, int phone, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Producer(long id, String name, @Nested("addr") Address address, String email, int phone, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
-        this.addressId = addressId;
+        this.address = address;
         this.email = email;
         this.phone = phone;
         this.createAt = createAt;
@@ -32,14 +34,15 @@ class Producer {
         this.name = name;
     }
 
-    public int getAddressId() {
-        return addressId;
+    @Nested("addr")
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddressId(int addressId) {
-        this.addressId = addressId;
+    @Nested("addr")
+    public void setAddress(Address address) {
+        this.address = address;
     }
-
 
     public long getId() {
         return id;
@@ -86,7 +89,7 @@ class Producer {
         return "Producer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", address_id=" + addressId +
+                ", address_id=" + address +
                 ", email='" + email + '\'' +
                 ", phone=" + phone +
                 ", createAt=" + createAt +

@@ -1,5 +1,7 @@
 package com.nhom10.broadstore.bean;
 
+import org.jdbi.v3.core.mapper.Nested;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -8,19 +10,19 @@ public class Admin implements Serializable {
     private String firstName;
     private String lastName;
     private String password;
-    private int addressId;
+    private Address address;
     private String email;
     private String phone;
     private String avatar;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Admin(int id, String firstName, String lastName, String password, int addressId, String email, String phone, String avatar, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Admin(int id, String firstName, String lastName, String password,@Nested("addr") Address address, String email, String phone, String avatar, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
-        this.addressId = addressId;
+        this.address = address;
         this.email = email;
         this.phone = phone;
         this.avatar = avatar;
@@ -63,12 +65,14 @@ public class Admin implements Serializable {
         this.password = password;
     }
 
-    public int getAddressId() {
-        return addressId;
+    @Nested("addr")
+    public Address getAddressId() {
+        return address;
     }
 
-    public void setAddressId(int addressId) {
-        this.addressId = addressId;
+    @Nested("addr")
+    public void setAddressId(Address address) {
+        this.address = address;
     }
 
     public String getEmail() {
@@ -118,7 +122,7 @@ public class Admin implements Serializable {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", password='" + password + '\'' +
-                ", addressId=" + addressId +
+                ", address=" + address +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", avatar='" + avatar + '\'' +

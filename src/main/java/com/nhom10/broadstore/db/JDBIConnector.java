@@ -23,11 +23,13 @@ public class JDBIConnector {
         try {
             dataSource.setUseCompression(true);
             dataSource.setAutoReconnect(true);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
         jdbi = Jdbi.create(dataSource);
         jdbi.installPlugin(new SqlObjectPlugin());
+
     }
 
     public static Jdbi get() {

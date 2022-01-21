@@ -1,18 +1,20 @@
 package com.nhom10.broadstore.bean;
 
+import org.jdbi.v3.core.mapper.Nested;
+
 import java.time.LocalDateTime;
 
 public class OrderItem {
     private int orderId;
-    private int productId;
+    private Product product;
     private int quantity;
     private int price;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public OrderItem(int orderId, int productId, int quantity, int price, LocalDateTime createAt, LocalDateTime updateAt) {
+    public OrderItem(int orderId, @Nested("prod") Product product, int quantity, int price, LocalDateTime createAt, LocalDateTime updateAt) {
         this.orderId = orderId;
-        this.productId = productId;
+        this.product = product;
         this.quantity = quantity;
         this.price = price;
         this.createAt = createAt;
@@ -20,7 +22,6 @@ public class OrderItem {
     }
 
     public OrderItem() {
-
     }
 
     public int getOrderId() {
@@ -31,12 +32,14 @@ public class OrderItem {
         this.orderId = orderId;
     }
 
-    public int getProductId() {
-        return productId;
+    @Nested("prod")
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    @Nested("prod")
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public int getQuantity() {
@@ -75,7 +78,7 @@ public class OrderItem {
     public String toString() {
         return "OrderItem{" +
                 "orderId=" + orderId +
-                ", productId=" + productId +
+                ", product=" + product +
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", createAt=" + createAt +

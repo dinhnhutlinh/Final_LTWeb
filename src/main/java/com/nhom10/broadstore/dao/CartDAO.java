@@ -1,13 +1,17 @@
 package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.bean.Cart;
+import com.nhom10.broadstore.bean.CartItem;
 import com.nhom10.broadstore.bean.Category;
+import org.jdbi.v3.sqlobject.SingleValue;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
+
+import java.util.List;
 
 public interface CartDAO {
 
@@ -26,4 +30,21 @@ public interface CartDAO {
 
     @SqlUpdate(value = "DELETE FROM `cart` WHERE `id`=:id")
     void delete(@Bind("id") int id);
+
+    @SqlQuery(value = "SELECT * FROM `cartitems` WHERE `cartID`=:id")
+    @RegisterBeanMapper(CartItemDAO.class)
+    @SingleValue
+    List<CartItem> getByCartID(@Bind("id") int id);
+
+    @SqlUpdate(value = "INSERT INTO `cartitems`(`cart_id`, `product_id`, `quantity`, `price`, `create_at`, `update_at`)" +
+            " VALUES (:cartID,:productId,:quantity,:price,now(),now())")
+    @GetGeneratedKeys("`cartID`")
+    int insertCartItem(@BindBean CartItem cartItem);
+
+    @SqlUpdate(value = "UPDATE `cartitems` SET `quantity`=:quantity," +
+            "`price`=:price`update_at`=now() WHERE `cart_id`=:cartID AND `product_id`=:productId")
+    void updateCartItem(@BindBean CartItem cartItem);
+
+    @SqlUpdate(value = "DELETE FROM `cartitems` WHERE `cart_id`=:cartID AND `product_id`=:productId")
+    void deleteCartItem(@Bind("cartId") int cartId,@Bind("productId") int productId);
 }

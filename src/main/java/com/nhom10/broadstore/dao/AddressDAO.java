@@ -1,22 +1,12 @@
 package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.bean.Address;
-import org.jdbi.v3.sqlobject.SingleValue;
-import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
-import org.jdbi.v3.sqlobject.config.RegisterBeanMappers;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
-import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
 public interface AddressDAO {
-
-    @SqlQuery(value = "SELECT * FROM `address` WHERE `id`= :id")
-    @RegisterBeanMapper(Address.class)
-    @SingleValue
-    Address getByID(@Bind("id") int id);
-
     @SqlUpdate(value = "INSERT INTO `address`(`details_address`, `district`, `province`, `create_at`, `update_at`) VALUES (:detailsAddress,:district,:province,now(),now())")
     @GetGeneratedKeys("`id`")
     int insert(@BindBean Address address);
@@ -26,5 +16,5 @@ public interface AddressDAO {
 
     @SqlUpdate(value = "DELETE FROM `address` WHERE `id`=:id")
     void delete(@Bind("id") int id);
-}
 
+}
