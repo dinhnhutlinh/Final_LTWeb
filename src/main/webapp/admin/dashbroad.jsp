@@ -9,153 +9,22 @@
     <title>Dashboard</title>
 
     <!-- ========== All CSS files linkup ========= -->
-    <link rel="stylesheet" href="admin/css/bootstrap.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="admin/css/main.css"/>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
 </head>
 
 <body>
-<aside class="sidebar-nav-wrapper">
-    <div class="navbar-logo">
-        <a href="index.html">
-            <img src="img/BoardStore.png" style="height: 70px;" alt="logo"/>
-        </a>
-    </div>
-    <nav class="sidebar-nav">
-        <ul>
-            <li class="nav-item">
-                <a href="Admin/DashBroad">
-            <span class="icon">
-              <i class="fas fa-tachometer-alt"></i>
-            </span>
-                    <span class="text">Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="listCustomer.html">
-            <span class="icon">
-              <i class="fas fa-users"></i>
-            </span>
-                    <span class="text">Khách hàng</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="listOrder.html">
-            <span class="icon">
-              <i class="fas fa-shopping-cart"></i>
-            </span>
-                    <span class="text">Đơn Hàng</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="listcategory.html">
-            <span class="icon">
-              <i class="fas fa-tags"></i>
-            </span>
-                    <span class="text">Danh Mục</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="listproduct.html">
-            <span class="icon">
-              <i class="fas fa-archive"></i>
-            </span>
-                    <span class="text">Sản phẩm</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="listblog.html">
-            <span class="icon">
-              <i class="far fa-newspaper"></i>
-            </span>
-                    <span class="text">Blog</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="producer.html">
-            <span class="icon">
-              <i class="fas fa-store"></i>
-            </span>
-                    <span class="text">Nhà cung cấp</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="discount.html">
-            <span class="icon">
-              <i class="fas fa-percent"></i>
-            </span>
-                    <span class="text">Khuyến mãi</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="slider.html">
-            <span class="icon">
-              <i class="fas fa-sliders-h"></i>
-            </span>
-                    <span class="text">Slider</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="listAdmin.html">
-            <span class="icon">
-              <i class="fas fa-users-cog"></i>
-            </span>
-                    <span class="text">Admin</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</aside>
+<jsp:include page="view/side.jsp"></jsp:include>
 <div class="overlay"></div>
 <!-- ======== sidebar-nav end =========== -->
 
 <!-- ======== main-wrapper start =========== -->
 <main class="main-wrapper">
     <!-- ========== header start ========== -->
-    <header class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-5 col-md-5 col-6">
-                    <div class="header-left d-flex align-items-center">
-                        <div class="menu-toggle-btn mr-20">
-                            <button id="menu-toggle" class="main-btn btn-hover">
-                                <i class="fas fa-bars"></i> Menu
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-7 col-6">
-                    <div class="header-right">
-                        <!-- profile start -->
-                        <div class="profile-box">
-                            <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="profile-info">
-                                    <div class="info">
-                                        <h5>Nguyễn Hoài Bảo</h5>
-                                        <div class="image">
-                                            <img src="images/Sample_User_Icon.png" alt=""/>
-                                            <span class="status"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
-                                <li>
-                                    <a href="#0">Trở về Trang mua hàng </a>
-                                </li>
-                                <li>
-                                    <a href="#0">Đăng xuất</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- profile end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <jsp:include page="view/header.jsp"></jsp:include>
     <!-- ========== section start ========== -->
     <section class="section">
         <div class="container-fluid">
@@ -599,7 +468,9 @@
 
 <!-- ========= All Javascript files linkup ======== -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="admin/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 <script src="admin/js/main.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>

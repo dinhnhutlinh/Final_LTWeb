@@ -1,6 +1,9 @@
 package com.nhom10.broadstore.bean;
 
+import org.jdbi.v3.core.mapper.Nested;
+
 import java.time.LocalDateTime;
+
 
 public class Order {
     private int id;
@@ -8,20 +11,20 @@ public class Order {
     private int customerId;
     private int addressId;
     private int total;
-    private int statusId;
+    private Status status;
     private String name;
     private String phone;
     private String email;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Order(int id, int shipId, int customerId, int addressId, int total, int statusId, String name, String phone, String email, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Order(int id, int shipId, int customerId, int addressId, int total, Status status, String name, String phone, String email, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.shipId = shipId;
         this.customerId = customerId;
         this.addressId = addressId;
         this.total = total;
-        this.statusId = statusId;
+        this.status = status;
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -72,12 +75,14 @@ public class Order {
         this.total = total;
     }
 
-    public int getStatusId() {
-        return statusId;
+    @Nested("s")
+    public Status getStatus() {
+        return status;
     }
 
-    public void setStatusId(int statusId) {
-        this.statusId = statusId;
+    @Nested("s")
+    public void setStatusId(Status status) {
+        this.status = status;
     }
 
     public String getName() {
@@ -128,7 +133,7 @@ public class Order {
                 ", customerId=" + customerId +
                 ", addressId=" + addressId +
                 ", total=" + total +
-                ", statusId=" + statusId +
+                ", statusId=" + status +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +

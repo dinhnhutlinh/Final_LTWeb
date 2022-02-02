@@ -1,76 +1,66 @@
 package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.bean.Product;
-import org.jdbi.v3.sqlobject.CreateSqlObject;
 import org.jdbi.v3.sqlobject.SingleValue;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
-import org.jdbi.v3.sqlobject.customizer.BindBean;
-import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
-import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
 import java.util.List;
 
+@RegisterBeanMapper(Product.class)
 public interface ProductDAO {
 
-    @SqlQuery(value = "SELECT * FROM `product`")
-    @RegisterBeanMapper(Product.class)
-    List<Product> getAllSimple();
+    @SqlQuery(value = "SELECT p.`id`, p.`name`, p.`age`, p.`min_player`, p.`max_player`, p.`time_play`, p.`height`, p.`width`, \n" +
+            "p.`tall`, p.`weight`, p.`producer_id`, p.`desc`, p.`img_display`, p.`inventory`, p.`price`, p.`discount_id`,\n" +
+            "p.`create_at`, p.`update_at`,\n" +
+            "cat.`id` cat_id, cat.`name` cat_name, cat.`desc` cat_desc, cat.`create_at` cat_creatAt, cat.`update_at` cat_updateAt,\n" +
+            "dis.`id` dis_id, dis.`name` dis_name, dis.`desc` dis_desc, dis.`discount_percent` dis_DiscountPercent, \n" +
+            "dis.`active` dis_active, dis.`from_at` dis_fromAt, dis.`to_at`dis_toAt,\n" +
+            "prod.id prod_id, prod.name prod_name\n" +
+            "FROM `product` p \n" +
+            "JOIN category cat ON p.category_id = cat.id\n" +
+            "JOIN discount dis ON p.discount_id= dis.id\n" +
+            "JOIN producer prod ON p.producer_id = prod.id")
+    List<Product> getAllProduct();
 
-    @SqlQuery(value = "SELECT * FROM `product` WHERE `id`=:id")
-    @RegisterBeanMapper(Product.class)
+    @SqlQuery(value = "SELECT p.`id`, p.`name`, p.`age`, p.`min_player`, p.`max_player`, p.`time_play`, p.`height`, p.`width`, \n" +
+            "p.`tall`, p.`weight`, p.`producer_id`, p.`desc`, p.`img_display`, p.`inventory`, p.`price`, p.`discount_id`,\n" +
+            "p.`create_at`, p.`update_at`,\n" +
+            "cat.`id` cat_id, cat.`name` cat_name, cat.`desc` cat_desc, cat.`create_at` cat_creatAt, cat.`update_at` cat_updateAt,\n" +
+            "dis.`id` dis_id, dis.`name` dis_name, dis.`desc` dis_desc, dis.`discount_percent` dis_DiscountPercent, \n" +
+            "dis.`active` dis_active, dis.`from_at` dis_fromAt, dis.`to_at`dis_toAt,\n" +
+            "prod.id prod_id, prod.name prod_name\n" +
+            "FROM `product` p \n" +
+            "JOIN category cat ON p.category_id = cat.id\n" +
+            "JOIN discount dis ON p.discount_id= dis.id\n" +
+            "JOIN producer prod ON p.producer_id = prod.id\n" +
+            "WHERE p.name LIKE :key OR p.desc LIKE :key OR cat.name LIKE :key OR prod.name LIKE :key\n" +
+            "ORDER BY p.update_at DESC\n" +
+            "LIMIT :limit OFFSET :offset")
+    List<Product> findProductWithKey(@Bind("key") String keyword, @Bind("offset") int page, @Bind("limit") int limit);
+
+    @SqlQuery(value = "SELECT p.`id`, p.`name`, p.`age`, p.`min_player`, p.`max_player`, p.`time_play`, p.`height`, p.`width`, \n" +
+            "p.`tall`, p.`weight`, p.`producer_id`, p.`desc`, p.`img_display`, p.`inventory`, p.`price`, p.`discount_id`,\n" +
+            "p.`create_at`, p.`update_at`,\n" +
+            "cat.`id` cat_id, cat.`name` cat_name, cat.`desc` cat_desc, cat.`create_at` cat_creatAt, cat.`update_at` cat_updateAt,\n" +
+            "dis.`id` dis_id, dis.`name` dis_name, dis.`desc` dis_desc, dis.`discount_percent` dis_DiscountPercent, \n" +
+            "dis.`active` dis_active, dis.`from_at` dis_fromAt, dis.`to_at`dis_toAt,\n" +
+            "prod.id prod_id, prod.name prod_name\n" +
+            "FROM `product` p \n" +
+            "JOIN category cat ON p.category_id = cat.id\n" +
+            "JOIN discount dis ON p.discount_id= dis.id\n" +
+            "JOIN producer prod ON p.producer_id = prod.id\n" +
+            "WHERE p.id=:id")
     @SingleValue
-    Product getProductByIdSimple(@Bind("id") int id);
+    Product findProductById(@Bind("id") int id);
 
-    @SqlUpdate(value = "INSERT INTO `product`( `name`, `age`, `min_player`, `max_player`, " +
-            "`time_play`, `height`, `width`, `tall`, `weight`, `producer_id`, `desc`, `img_display`," +
-            " `category_id`, `inventory`, `price`, `discount_id`, `create_at`, `update_at`)" +
-            " VALUES (:name, :age ,: minPlayer, :maxPlayer, :timePlay, :height, :width" +
-            ":tall, :weight, :producerId, :desc, :imgDisplay, :categoryId, :inventory, :price, :discountId, now(),now())")
-    @GetGeneratedKeys("`id`")
-    int insert(@BindBean Product product, @Bind("producerId") int producerId, @Bind("categoryId") int categoryId, @Bind("discountId") int discountId);
+    @SqlQuery(value = "SELECT COUNT(p.id) FROM `product` p\n" +
+            "JOIN category cat ON p.category_id = cat.id\n" +
+            "JOIN discount dis ON p.discount_id= dis.id\n" +
+            "JOIN producer prod ON p.producer_id = prod.id\n" +
+            "WHERE p.name LIKE :key OR p.desc LIKE :key OR cat.name LIKE :key OR prod.name LIKE :key")
+    Integer countProductWithKey(@Bind("key") String keyword);
 
-    @SqlUpdate("UPDATE `product` SET `name`=:name,`age`=:age,`min_player`=:minPlayer,`max_player`=:maxPlayer," +
-            "`time_play`=:timePlay,`height`=:height,`width`=:width,`tall`=:tall,`weight`=:weight,`producer_id`=:producerId," +
-            "`desc`=:desc,`img_display`=:imgDisplay,`category_id`=:categoryId,`inventory`=:inventory,`price`=:price," +
-            "`discount_id`=:discountId, `update_at`=now() WHERE `id`=:id")
-    void update(@BindBean Product product, @Bind("producerId") int producerId, @Bind("categoryId") int categoryId, @Bind("discountId") int discountId);
 
-    @SqlUpdate(value = "DELETE FROM `product` WHERE `id`=:id")
-    void delete(@Bind("id") int id);
-
-    @CreateSqlObject
-    CategoryDAO createCategoryDao();
-
-    @CreateSqlObject
-    DiscountDAO createDiscountDao();
-
-    @CreateSqlObject
-    ProducerDAO createProducerDao();
-
-    default List<Product> getAllProduct() {
-        List<Product> list = getAllSimple();
-        final CategoryDAO catDAO = createCategoryDao();
-        final DiscountDAO disDAO = createDiscountDao();
-        final ProducerDAO proDAO = createProducerDao();
-        for (Product p : list) {
-            int id = p.getId();
-            p.setCategory(catDAO.getOfProductById(id));
-            p.setDiscount(disDAO.getOfProductById(id));
-            p.setProducer(proDAO.getProduceById(id));
-        }
-        return list;
-    }
-
-    default Product getProductById(int id) {
-        Product product = getProductByIdSimple(id);
-        final CategoryDAO catDAO = createCategoryDao();
-        final DiscountDAO disDAO = createDiscountDao();
-        final ProducerDAO proDAO = createProducerDao();
-        product.setCategory(catDAO.getOfProductById(id));
-        product.setDiscount(disDAO.getOfProductById(id));
-        product.setProducer(proDAO.getProduceById(id));
-        return product;
-    }
 }

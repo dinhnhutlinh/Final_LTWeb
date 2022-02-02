@@ -18,10 +18,10 @@ public class Customer {
     private LocalDateTime updateAt;
 
     public Customer() {
-        this.address=new Address();
+        this.address = new Address();
     }
 
-    public Customer(int id, String firstName, String lastName, String password, String avatar, @Nested("addr") Address address, int active, String phone, String email, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Customer(int id, String firstName, String lastName, String password, String avatar, Address address, int active, String phone, String email, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

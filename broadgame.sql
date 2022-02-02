@@ -108,9 +108,9 @@ CREATE TABLE `CartItems` (
 
 CREATE TABLE `Address` (
                            `id` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-                           `details_address` text NOT NULL,
-                           `district` nvarchar(50) NOT NULL,
-                           `province` nvarchar(50) NOT NULL,
+                           `details_address` text,
+                           `district` nvarchar(50),
+                           `province` nvarchar(50),
                            `create_at` datetime NOT NULL,
                            `update_at` datetime NOT NULL
 );

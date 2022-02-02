@@ -9,11 +9,11 @@ public class Producer {
     private String name;
     private Address address;
     private String email;
-    private int phone;
+    private String phone;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Producer(long id, String name, @Nested("addr") Address address, String email, int phone, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Producer(long id, String name, @Nested("addr") Address address, String email, String phone, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -76,11 +76,11 @@ public class Producer {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

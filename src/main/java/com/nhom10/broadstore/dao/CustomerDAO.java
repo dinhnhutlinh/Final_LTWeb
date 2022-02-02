@@ -17,17 +17,18 @@ import java.util.List;
 @RegisterBeanMapper(Customer.class)
 public interface CustomerDAO {
 
-    @SqlQuery(value = "SELECT cus.id id, cus.first_name first_name, cus.last_name last_name, cus.password password," +
-            " cus.avatar avatar, addr.id addr_address_id, addr.details_address addr_details_address, addr.district addr_district," +
-            " addr.province addr_province, addr.create_at addr_create_at, addr.update_at addr_update_at, cus.active active,\n" +
-            "cus.phone phone, cus.email email, cus.create_at create_at, cus.update_at update_at  FROM `customer`" +
-            " cus JOIN `address` addr ON cus.address_id = addr.id")
-    List<Customer> getAll();
+    @SqlQuery(value = "SELECT id, avatar, first_name, last_name, email, phone, active\n" +
+            "FROM customer")
+    List<Customer> getAllCustomers();
 
-    @SqlQuery(value = "SELECT cus.id id, cus.first_name first_name, cus.last_name last_name, cus.password password, cus.avatar avatar, addr.id addr_address_id, addr.details_address addr_details_address, addr.district addr_district, addr.province addr_province, addr.create_at addr_create_at, addr.update_at addr_update_at, cus.active active,\n" +
-            "cus.phone phone, cus.email email, cus.create_at create_at, cus.update_at update_at  FROM `customer` cus JOIN `address` addr ON cus.address_id = addr.id WHERE cus.id=:id")
+    @SqlQuery(value = "SELECT cus.id id, cus.avatar avatar, cus.first_name first_name, cus.last_name last_name,\n" +
+            "cus.email email, cus.phone phone, cus.active active,\n" +
+            "addr.id addr_id, addr.details_address addr_detailsAddress, addr.district addr_district,\n" +
+            "addr.province addr_province, addr.create_at addr_createAt, addr.update_at addr_updateAt\n" +
+            "FROM customer cus\n" +
+            "JOIN address addr ON cus.address_id= addr.id WHERE cus.id=:id")
     @SingleValue
-    Customer getById(@Bind("id") int id);
+    Customer findById(@Bind("id") int id);
 
     @SqlUpdate(value = "INSERT INTO `customer`(`first_name`, `last_name`, `avatar`, `password`, `address_id`," +
             " `active`, `phone`, `email`, `create_at`, `update_at`) VALUES " +

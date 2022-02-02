@@ -16,17 +16,21 @@ public class Product implements Serializable {
     private double width;
     private double tall;
     private double weight;
+    @Nested(value = "prod")
     private Producer producer;
     private String desc;
     private String imgDisplay;
+    @Nested(value = "cat")
     private Category category;
     private int inventory;
     private int price;
+    private float rating;
+    @Nested(value = "dis")
     private Discount discount;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Product(int id, String name, int age, int minPlayer, int maxPlayer, int timePlay, double height, double width, double tall, double weight, @Nested("prod") Producer producer, String desc, String imgDisplay, @Nested("cat") Category category, int inventory, int price, @Nested("disc") Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Product(int id, String name, int age, int minPlayer, int maxPlayer, int timePlay, double height, double width, double tall, double weight, Producer producer, String desc, String imgDisplay, Category category, int inventory, int price, float rating, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -43,12 +47,17 @@ public class Product implements Serializable {
         this.category = category;
         this.inventory = inventory;
         this.price = price;
+        this.rating = rating;
         this.discount = discount;
         this.createAt = createAt;
         this.updateAt = updateAt;
     }
 
     public Product() {
+    }
+
+    public int getCurrentPrice() {
+        return this.price - this.price * discount.getDiscountPercent() / 100;
     }
 
     public int getId() {
@@ -183,12 +192,20 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    @Nested("disc")
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
+
+    @Nested("dis")
     public Discount getDiscount() {
         return discount;
     }
 
-    @Nested("disc")
+    @Nested("dis")
     public void setDiscount(Discount discount) {
         this.discount = discount;
     }

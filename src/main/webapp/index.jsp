@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,15 +14,15 @@
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Slick-->
-    <link type="text/css" rel="stylesheet" href="css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+    <link type="text/css" rel="stylesheet" href="css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
           integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -38,7 +39,7 @@
 </head>
 
 <body>
-<jsp:include page="layout/header.jsp"></jsp:include>
+<jsp:include page="view/header.jsp"></jsp:include>
 <!-- /NAVIGATION -->
 <div class="container-fluid ps-0 pe-0">
     <!--slide show-->
@@ -46,7 +47,8 @@
         <div class="carousel-inner " style=" width:100%; height: 600px !important;">
             <div class=" carousel-item active">
                 <a href="product.html"><img style=" width:100%; height: 600px !important;"
-                                            src="img/slider/8464f02e806c667286ffa47153243965.jpg" class="d-block w-100" alt="...">
+                                            src="img/slider/8464f02e806c667286ffa47153243965.jpg" class="d-block w-100"
+                                            alt="...">
                 </a>
                 <div class="carousel-caption w-100 bg-lg-shadow bottom-0">
                     <h4 class="text-white">Lớp Học Mật Mã</h4>
@@ -63,7 +65,8 @@
             </div>
             <div class=" carousel-item">
                 <a href="product.html"><img style=" width:100%; height: 600px !important;"
-                                            src="img/slider/8464f02e806c667286ffa47153243965.jpg" class="d-block w-100" alt="...">
+                                            src="img/slider/8464f02e806c667286ffa47153243965.jpg" class="d-block w-100"
+                                            alt="...">
                 </a>
                 <div class="carousel-caption w-100 bg-lg-shadow bottom-0">
                     <h4 class="text-white">Lớp Học Mật Mã</h4>
@@ -98,7 +101,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -125,7 +128,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Splendor%20-%20Cuộc%20Chiến%20Đá%20Quý%20-%20SPACE%20Cowboys/3558380071068-1.jpg" />
+                                        src="img/Boardgame%20Splendor%20-%20Cuộc%20Chiến%20Đá%20Quý%20-%20SPACE%20Cowboys/3558380071068-1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name "><a href="product.html">Boardgame Splendor - Cuộc Chiến Đá
@@ -154,7 +157,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Thám%20Tử%20Lừng%20Danh%20Conan%20-%20Hồi%20Kết%20-%20Kèm%20Bộ%20Hồ%20Sơ%2025%20Nhân%20Vật%20Cực%20Chất/boardgameconan_1_.jpg" />
+                                        src="img/Boardgame%20Thám%20Tử%20Lừng%20Danh%20Conan%20-%20Hồi%20Kết%20-%20Kèm%20Bộ%20Hồ%20Sơ%2025%20Nhân%20Vật%20Cực%20Chất/boardgameconan_1_.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Boardgame Thám Tử Lừng Danh Conan -
@@ -183,7 +186,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg" />
+                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
@@ -212,7 +215,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Board-Game-Dungeon-Mayhem-Dragons-mở-rộng-Battle-for-Baldur_s-Gate/00d975a7f27271fe9dc95617b192dc33.jpg" />
+                                        src="img/Board-Game-Dungeon-Mayhem-Dragons-mở-rộng-Battle-for-Baldur_s-Gate/00d975a7f27271fe9dc95617b192dc33.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a
@@ -241,7 +244,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg" />
+                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Bom Lắc - Trò Chơi Định Mệnh</a>
@@ -282,7 +285,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg" />
+                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Bom Lắc - Trò Chơi Định Mệnh</a>
@@ -311,7 +314,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg" />
+                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
@@ -339,7 +342,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -365,7 +368,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg" />
+                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
@@ -392,7 +395,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg" />
+                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Domino AAA LHT HD3A</a></h3>
@@ -420,7 +423,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg" />
+                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
@@ -462,7 +465,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Cờ%20Tướng%20Gỗ%20KINGDOM%20TOYS%20-%200111/co_tuong_go_0111_2_2020_07_29_14_38_45.jpg" />
+                                        src="img/Cờ%20Tướng%20Gỗ%20KINGDOM%20TOYS%20-%200111/co_tuong_go_0111_2_2020_07_29_14_38_45.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tướng Gỗ KINGDOM TOYS - 0111</a>
@@ -490,7 +493,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20trí%20tuệ%20U_K.N.O.W%20phiên%20bản%20Star%20Wars/image_188801%20(1).jpg" />
+                                <img src="img/Cờ%20trí%20tuệ%20U_K.N.O.W%20phiên%20bản%20Star%20Wars/image_188801%20(1).jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ trí tuệ U_K.N.O.W phiên bản Star
@@ -518,7 +521,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/image_244718_1_1762.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/image_244718_1_1762.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -545,7 +548,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -571,7 +574,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg" />
+                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
@@ -598,7 +601,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -637,7 +640,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg" />
+                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
@@ -665,7 +668,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg" />
+                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
@@ -693,7 +696,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg" />
+                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Domino AAA LHT HD3A</a></h3>
@@ -720,7 +723,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -747,7 +750,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Splendor%20-%20Cuộc%20Chiến%20Đá%20Quý%20-%20SPACE%20Cowboys/3558380071068-1.jpg" />
+                                        src="img/Boardgame%20Splendor%20-%20Cuộc%20Chiến%20Đá%20Quý%20-%20SPACE%20Cowboys/3558380071068-1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name "><a href="product.html">Boardgame Splendor - Cuộc Chiến Đá
@@ -775,7 +778,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -813,7 +816,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg" />
+                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Bom Lắc - Trò Chơi Định Mệnh</a>
@@ -842,7 +845,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg" />
+                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
@@ -870,7 +873,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -896,7 +899,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg" />
+                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
@@ -923,7 +926,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg" />
+                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Domino AAA LHT HD3A</a></h3>
@@ -951,7 +954,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg" />
+                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
@@ -993,7 +996,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Cờ%20Tướng%20Gỗ%20KINGDOM%20TOYS%20-%200111/co_tuong_go_0111_2_2020_07_29_14_38_45.jpg" />
+                                        src="img/Cờ%20Tướng%20Gỗ%20KINGDOM%20TOYS%20-%200111/co_tuong_go_0111_2_2020_07_29_14_38_45.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tướng Gỗ KINGDOM TOYS - 0111</a>
@@ -1021,7 +1024,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20trí%20tuệ%20U_K.N.O.W%20phiên%20bản%20Star%20Wars/image_188801%20(1).jpg" />
+                                <img src="img/Cờ%20trí%20tuệ%20U_K.N.O.W%20phiên%20bản%20Star%20Wars/image_188801%20(1).jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ trí tuệ U_K.N.O.W phiên bản Star
@@ -1049,7 +1052,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/image_244718_1_1762.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/image_244718_1_1762.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -1076,7 +1079,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -1102,7 +1105,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg" />
+                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
@@ -1129,7 +1132,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -1168,7 +1171,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg" />
+                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Bom Lắc - Trò Chơi Định Mệnh</a>
@@ -1197,7 +1200,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg" />
+                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
@@ -1225,7 +1228,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -1251,7 +1254,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg" />
+                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
@@ -1278,7 +1281,7 @@
                     <div class="item col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img zoom">
-                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg" />
+                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Cờ Domino AAA LHT HD3A</a></h3>
@@ -1306,7 +1309,7 @@
                         <div class="product">
                             <div class="product-img zoom">
                                 <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg" />
+                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
@@ -1340,10 +1343,12 @@
 
     <!-- /SECTION -->
 </div>
-<jsp:include page="layout/footer.jsp"></jsp:include>
+<jsp:include page="view/footer.jsp"></jsp:include>
 
 <!-- jQuery Plugins -->
-<script src="js/bootstrap.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 <script src="js/slick.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/jquery.zoom.min.js"></script>

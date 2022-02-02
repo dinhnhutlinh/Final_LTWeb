@@ -18,7 +18,6 @@ public class DashBroadControl extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
-        rd.forward(req, resp);
+        doGet(req,resp);
     }
 }

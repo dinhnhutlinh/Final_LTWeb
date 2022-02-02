@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Slick -->
     <link type="text/css" rel="stylesheet" href="css/slick.css"/>
@@ -34,7 +35,7 @@
 </head>
 
 <body>
-<jsp:include page="layout/header.jsp"></jsp:include>
+<jsp:include page="view/header.jsp"></jsp:include>
 <!--BODY-->
 <div id="main">
     <div class="container">
@@ -83,10 +84,12 @@
         </div>
     </div>
 </div>
-<jsp:include page="layout/footer.jsp"></jsp:include>
+<jsp:include page="view/footer.jsp"></jsp:include>
 
 <!-- jQuery Plugins -->
-<script src="js/bootstrap.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 <script src="js/slick.min.js"></script>
 
 <script src="js/jquery.zoom.min.js"></script>

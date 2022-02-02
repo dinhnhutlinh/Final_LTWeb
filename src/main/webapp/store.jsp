@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: HP
-  Date: 04/01/2022
-  Time: 22:37
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,24 +15,25 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+    <link type="text/css" rel="stylesheet" href="css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
 
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 
 </head>
 
 <body>
-<jsp:include page="layout/header.jsp"></jsp:include>
+<jsp:include page="view/header.jsp"></jsp:include>
 <!-- BREADCRUMB -->
 <div id="breadcrumb" class="section">
     <div class="container">
@@ -190,7 +185,7 @@
                         <div class="item col-md-4 col-xs-6">
                             <div class="product">
                                 <div class="product-img zoom">
-                                    <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                    <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -206,7 +201,8 @@
                                     </div>
                                     <div class="add-to-cart">
                                         <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào
-                                            giỏ</button>
+                                            giỏ
+                                        </button>
                                         <button class="d-xl-none add-to-cart-btn w-100"><i
                                                 class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                     </div>
@@ -218,7 +214,7 @@
                             <div class="product">
                                 <div class="product-img zoom">
                                     <img
-                                            src="img/Boardgame%20Splendor%20-%20Cuộc%20Chiến%20Đá%20Quý%20-%20SPACE%20Cowboys/3558380071068-1.jpg" />
+                                            src="img/Boardgame%20Splendor%20-%20Cuộc%20Chiến%20Đá%20Quý%20-%20SPACE%20Cowboys/3558380071068-1.jpg"/>
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-name "><a href="product.html">Boardgame Splendor - Cuộc Chiến
@@ -236,7 +232,8 @@
                                     <div class="add-to-cart">
 
                                         <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào
-                                            giỏ</button>
+                                            giỏ
+                                        </button>
                                         <button class="d-xl-none add-to-cart-btn w-100"><i
                                                 class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                     </div>
@@ -248,7 +245,7 @@
                             <div class="product">
                                 <div class="product-img zoom">
                                     <img
-                                            src="img/Boardgame%20Thám%20Tử%20Lừng%20Danh%20Conan%20-%20Hồi%20Kết%20-%20Kèm%20Bộ%20Hồ%20Sơ%2025%20Nhân%20Vật%20Cực%20Chất/boardgameconan_1_.jpg" />
+                                            src="img/Boardgame%20Thám%20Tử%20Lừng%20Danh%20Conan%20-%20Hồi%20Kết%20-%20Kèm%20Bộ%20Hồ%20Sơ%2025%20Nhân%20Vật%20Cực%20Chất/boardgameconan_1_.jpg"/>
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-name"><a href="product.html">Boardgame Thám Tử Lừng Danh
@@ -266,7 +263,8 @@
                                     <div class="add-to-cart">
 
                                         <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào
-                                            giỏ</button>
+                                            giỏ
+                                        </button>
                                         <button class="d-xl-none add-to-cart-btn w-100"><i
                                                 class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                     </div>
@@ -278,7 +276,7 @@
                             <div class="product">
                                 <div class="product-img zoom">
                                     <img
-                                            src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg" />
+                                            src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ -
@@ -296,7 +294,8 @@
                                     <div class="add-to-cart">
 
                                         <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào
-                                            giỏ</button>
+                                            giỏ
+                                        </button>
                                         <button class="d-xl-none add-to-cart-btn w-100"><i
                                                 class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                     </div>
@@ -308,7 +307,7 @@
                             <div class="product">
                                 <div class="product-img zoom">
                                     <img
-                                            src="img/Board-Game-Dungeon-Mayhem-Dragons-mở-rộng-Battle-for-Baldur_s-Gate/00d975a7f27271fe9dc95617b192dc33.jpg" />
+                                            src="img/Board-Game-Dungeon-Mayhem-Dragons-mở-rộng-Battle-for-Baldur_s-Gate/00d975a7f27271fe9dc95617b192dc33.jpg"/>
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-name"><a
@@ -327,7 +326,8 @@
                                     <div class="add-to-cart">
 
                                         <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào
-                                            giỏ</button>
+                                            giỏ
+                                        </button>
                                         <button class="d-xl-none add-to-cart-btn w-100"><i
                                                 class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                     </div>
@@ -338,7 +338,7 @@
                         <div class="item col-md-4 col-xs-6">
                             <div class="product">
                                 <div class="product-img zoom">
-                                    <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg" />
+                                    <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg"/>
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-name"><a href="product.html">Bom Lắc - Trò Chơi Định Mệnh</a>
@@ -356,7 +356,8 @@
                                     <div class="add-to-cart">
 
                                         <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào
-                                            giỏ</button>
+                                            giỏ
+                                        </button>
                                         <button class="d-xl-none add-to-cart-btn w-100"><i
                                                 class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                     </div>
@@ -373,7 +374,7 @@
                         <div class="item col-md-4 col-xs-6">
                             <div class="product">
                                 <div class="product-img zoom">
-                                    <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg" />
+                                    <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
@@ -389,7 +390,8 @@
                                     </div>
                                     <div class="add-to-cart">
                                         <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào
-                                            giỏ</button>
+                                            giỏ
+                                        </button>
                                         <button class="d-xl-none add-to-cart-btn w-100"><i
                                                 class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                     </div>
@@ -400,7 +402,7 @@
                         <div class="item col-md-4 col-xs-6">
                             <div class="product">
                                 <div class="product-img zoom">
-                                    <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg" />
+                                    <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
@@ -417,7 +419,8 @@
                                     <div class="add-to-cart">
 
                                         <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào
-                                            giỏ</button>
+                                            giỏ
+                                        </button>
                                         <button class="d-xl-none add-to-cart-btn w-100"><i
                                                 class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                     </div>
@@ -428,7 +431,7 @@
                         <div class="item col-md-4 col-xs-6">
                             <div class="product">
                                 <div class="product-img zoom">
-                                    <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg" />
+                                    <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg"/>
                                 </div>
                                 <div class="product-body">
                                     <h3 class="product-name"><a href="product.html">Cờ Domino AAA LHT HD3A</a></h3>
@@ -445,7 +448,8 @@
                                     <div class="add-to-cart">
 
                                         <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào
-                                            giỏ</button>
+                                            giỏ
+                                        </button>
                                         <button class="d-xl-none add-to-cart-btn w-100"><i
                                                 class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                     </div>
@@ -473,93 +477,14 @@
 </div>
 <!-- /SECTION -->
 <!-- FOOTER -->
-<footer id="footer">
-    <!-- top footer -->
-    <div class="section">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-3 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-title">Vể chúng tôi</h3>
-                        <p>BroadStore là công ti phân phối và bán sảm phẩm game broad</p>
-                        <ul class="footer-links">
-                            <li><a href="#"><i class="fa fa-map-marker"></i>25/5 Thăng Long, Phường 4, Quận Tân
-                                Bình, TP. Hồ Chí Minh</a></li>
-                            <li><a href="#"><i class="fa fa-phone"></i>0938 424 289
-                            </a></li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i>admin@BoardStore.vn</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-title">Danh Mục</h3>
-                        <ul class="footer-links">
-                            <li><a href="#">Board Game Chiến thuật</a></li>
-                            <li><a href="#">Board Game Gia đình</a></li>
-                            <li><a href="#">Card Game</a></li>
-                            <li><a href="#">Board Game Party</a></li>
-                            <li><a href="#">Phụ kiện Board Game</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-title">Thông tin</h3>
-                        <ul class="footer-links">
-                            <li><a href="about_us.html">Vể chúng tôi</a></li>
-                            <li><a href="termsAndConditions.html">Chính sách và điều khoản</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-title">Dịch vụ</h3>
-                        <ul class="footer-links">
-                            <li><a href="InforUser.html">Tài khoản</a></li>
-                            <li><a href="cart.html">Giỏ hàng</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /top footer -->
-
-    <!-- bottom footer -->
-    <div id="bottom-footer" class="section">
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <ul class="footer-payments">
-                        <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-                        <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /bottom footer -->
-</footer>
+<jsp:include page="view/footer.jsp"></jsp:include>
 <!-- /FOOTER -->
 
 <!-- jQuery Plugins -->
 <script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 <script src="js/slick.min.js"></script>
 
 <script src="js/jquery.zoom.min.js"></script>

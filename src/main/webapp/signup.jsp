@@ -1,5 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Slick -->
     <link type="text/css" rel="stylesheet" href="css/slick.css"/>
@@ -33,7 +34,7 @@
 </head>
 
 <body>
-<jsp:include page="layout/header.jsp"></jsp:include>
+<jsp:include page="view/header.jsp"></jsp:include>
 <!--BODY-->
 <div id="main">
     <div class="container">
@@ -54,15 +55,15 @@
                 </div>
             </div>
             <div class="right">
-                <form action="SignUp" method="post" class="needs-validation">
+                <form class="needs-validation" action="SignUp" method="post">
                     <div class="mb-3">
                         <label for="lastname" class="form-label">Họ</label>
-                        <input type="text" class="form-control" id="lastname" name="lastname"
+                        <input class="form-control" id="lastname" name="lastname"
                                placeholder="Họ" required>
                     </div>
                     <div class="mb-3">
                         <label for="firstname" class="form-label">Tên</label>
-                        <input type="text" class="form-control" id="firstname" name="firstname"
+                        <input class="form-control" id="firstname" name="firstname"
                                placeholder="Tên" required>
                     </div>
                     <div class="mb-3">
@@ -95,31 +96,33 @@
     </div>
 </div>
 <!-- /BODY-->
-<jsp:include page="layout/footer.jsp"></jsp:include>
+<jsp:include page="view/footer.jsp"></jsp:include>
 
 <!-- jQuery Plugins -->
 <script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/jquery.zoom.min.js"></script>
 <script src="js/main.js"></script>
 <script>
-    (function () {
-        'use strict'
-        var forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-                form.addEventListener('submit', function (event) {
-
-                    if (!form.checkValidity() || !verifyPassword()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-                }, false)
-            })
-    })()
+    // (function () {
+    //     'use strict'
+    //     var forms = document.querySelectorAll('.needs-validation')
+    //
+    //     // Loop over them and prevent submission
+    //     Array.prototype.slice.call(forms)
+    //         .forEach(function (form) {
+    //             form.addEventListener('submit', function (event) {
+    //
+    //                 if (!form.checkValidity() || !verifyPassword()) {
+    //                     event.preventDefault()
+    //                     event.stopPropagation()
+    //                 }
+    //             }, false)
+    //         })
+    // })()
 
     function verifyPassword() {
         var pw = document.getElementById("password").value;
