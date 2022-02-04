@@ -64,7 +64,30 @@
                                                 class="fas fa-plus"></i> Thêm danh mục
                                     </button>
                                 </div>
-                                <!--modal-->
+                                <!--modal confirm-->
+                                <div class="modal fade" id="confirmModal" tabindex="-1"
+                                     aria-labelledby="confirmModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="confirmModalLabel">Thông báo</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Bạn có chắc chắn xóa không
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Không
+                                                </button>
+                                                <button type="button" class="btn btn-orange">Có</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--modal confirm-->
+                                <!--modal input-->
                                 <div class="modal fade" id="modalCat" tabindex="-1"
                                      aria-labelledby="staticBackdropLabel"
                                      aria-hidden="true">
@@ -103,7 +126,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--modal-->>
+                                <!--modal input-->>
                             </div>
                             <div class="card-body">
                                 <table id="tableCat" class="table table-hover">
@@ -121,10 +144,10 @@
                                         <tr>
                                             <td>${cat.getId()}</td>
                                             <td>${cat.getName()}</td>
-<%--                                            <td><fmt:formatDate value="${cat.getUpdateAt()}"--%>
-<%--                                                                pattern="dd-MMM-yyyy"/></td>--%>
                                             <td>
-                                                    ${cat.getUpdateAt()}
+                                                <fmt:parseDate value="${cat.getUpdateAt()}" pattern="yyyy-MM-dd"
+                                                               var="patientDob" type="date"/>
+                                                <fmt:formatDate pattern="dd/MM/yyyy" value="${patientDob}"/>
                                             </td>
                                             <th>${cat.getDesc()}</th>
                                             <td>
@@ -132,7 +155,7 @@
                                                         onclick="edit(${cat.getId()})">
                                                     <i class="fa fa-pen" style="height: 24px;" aria-hidden="true"></i>
                                                 </button>
-                                                <button class="btn btn-danger" onclick="deleteCat(1)">
+                                                <button class="btn btn-danger" onclick="deleteCat(${cat.getId()})">
                                                     <i class="fa fa-trash" style="height: 24px;" aria-hidden="true"></i>
                                                 </button>
                                             </td>
@@ -163,6 +186,7 @@
 <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
 <script>
     var table;
+    var confirmModal = $('#confirmModal');
     $(document).ready(function () {
         table = $('#tableCat').DataTable({
             searching: false,
@@ -204,7 +228,10 @@
                 closeModal();
             },
         });
+    }
 
+    function deleteCat(id) {
+        confirmModal.modal('show')
     }
 
     function refesh() {
