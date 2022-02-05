@@ -213,6 +213,9 @@
                 {"className": "text-end", "targets": 4},
             ],
         });
+        confirmModal.on('show.bs.modal', function (e) {
+
+        });
     });
 
     function saveCat() {
@@ -231,7 +234,8 @@
     }
 
     function deleteCat(id) {
-        confirmModal.modal('show')
+        confirmModal.modal('show');
+
     }
 
     function refesh() {

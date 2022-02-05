@@ -19,7 +19,6 @@ public class SearchControl extends HttpServlet {
 
         String page = req.getParameter("page");
         String keyword = req.getParameter("search").trim();
-        System.out.println(keyword);
         int limit = 32;
         int currentPage;
         if (page == null)

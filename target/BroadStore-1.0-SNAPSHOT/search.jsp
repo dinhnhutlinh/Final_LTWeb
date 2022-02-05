@@ -90,8 +90,9 @@
                     </div>
                     <!-- /store products -->
                     <ul class="reviews-pagination">
-                        <c:if test="${currentPage==1}">
-                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                        <c:if test="${currentPage!=1}">
+                            <li><a href="Search?search=${param["search"]}&page=${1}"><i
+                                    class="fa fa-angle-left"></i></a></li>
                         </c:if>
                         <c:forEach begin="1" end="${totalPage}" var="i">
                             <c:if test="${i==currentPage}">
@@ -105,8 +106,10 @@
                                 </li>
                             </c:if>
                         </c:forEach>
-                        <c:if test="${currentPage==1}">
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        <c:if test="${currentPage!=totalPage}">
+                            <li><a href="Search?search=${param["search"]}&page=${totalPage}"><i
+                                    class="fa fa-angle-right"></i></a>
+                            </li>
                         </c:if>
                     </ul>
                 </div>

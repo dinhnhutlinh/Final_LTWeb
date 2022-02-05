@@ -152,14 +152,14 @@
                             Danh Mục Sản Phẩm
                         </a>
                         <ul class="dropdown-menu" style="margin: 0px;">
-                            <li><a class="dropdown-item" href="store.html">Tất Cả sản phẩm</a></li>
-                            <li><a class="dropdown-item" href="store.html">Sản phẩm sale</a></li>
-                            <li><a class="dropdown-item" href="store.html">Broadgame gia đình</a></li>
-                            <li><a class="dropdown-item" href="store.html">Broadgame trí tuệ</a></li>
-                            <li><a class="dropdown-item" href="store.html">Broadgame Chiến thuật</a></li>
-                            <li><a class="dropdown-item" href="store.html">Broadgame Thẻ bài</a></li>
-                            <li><a class="dropdown-item" href="store.html">Đồ chơi nhóm</a></li>
-                            <li><a class="dropdown-item" href="store.html">Phụ Kiện BroadGame</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=all">Tất Cả sản phẩm</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=sale">Sản phẩm sale</a></li>
+                            <li><a class="dropdown-item" href="Store">Broadgame gia đình</a></li>
+                            <li><a class="dropdown-item" href="Store">Broadgame trí tuệ</a></li>
+                            <li><a class="dropdown-item" href="Store">Broadgame Chiến thuật</a></li>
+                            <li><a class="dropdown-item" href="Store">Broadgame Thẻ bài</a></li>
+                            <li><a class="dropdown-item" href="Store">Đồ chơi nhóm</a></li>
+                            <li><a class="dropdown-item" href="Store">Phụ Kiện BroadGame</a></li>
                         </ul>
                     </div>
                 </li>

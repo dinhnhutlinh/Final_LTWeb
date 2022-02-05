@@ -95,4 +95,29 @@ public class ProductService {
             return category.getId();
         });
     }
+
+    public static List<Product> getProductAll(int price, int old, String sort, int limit, int page) {
+        return JDBIConnector.get().withExtension(ProductDAO.class, dao -> {
+            return dao.getProductCatAll(price, old, sort, limit, page);
+        });
+    }
+
+    public static int countProductWithAll(int price, int old) {
+        return JDBIConnector.get().withExtension(ProductDAO.class, dao -> {
+            return dao.countProductCatAll(price, old);
+        });
+    }
+
+    public static List<Product> getProductSale(int price, int old, String sort, int limit, int currentPage) {
+        return JDBIConnector.get().withExtension(ProductDAO.class, dao -> {
+            return dao.getProductCatSale(price, old, sort, limit, currentPage);
+        });
+    }
+
+
+    public static int countProductWithSale(int price, int old) {
+        return JDBIConnector.get().withExtension(ProductDAO.class, dao -> {
+            return dao.countProductCatSale(price, old);
+        });
+    }
 }
