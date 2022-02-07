@@ -64,6 +64,26 @@
                                                 class="fas fa-plus"></i> Thêm danh mục
                                     </button>
                                 </div>
+                                <!--Mess Modal-->
+                                <div class="modal" id="messModal" tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Thông báo</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Đóng
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Mess Modal-->
                                 <!--modal confirm-->
                                 <div class="modal fade" id="confirmModal" tabindex="-1"
                                      aria-labelledby="confirmModalLabel" aria-hidden="true">
@@ -81,7 +101,8 @@
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     Không
                                                 </button>
-                                                <button type="button" class="btn btn-orange">Có</button>
+                                                <button type="button" id="deleteConfirm" class="btn btn-orange">Có
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +138,7 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-orange" onclick="closeModal()">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     Hủy
                                                 </button>
                                                 <button type="button" class="btn btn-orange" onclick="saveCat()">Lưu
@@ -152,7 +173,7 @@
                                             <th>${cat.getDesc()}</th>
                                             <td>
                                                 <button class="btn btn-warning text-white"
-                                                        onclick="edit(${cat.getId()})">
+                                                        onclick="editCat(${cat.getId()})">
                                                     <i class="fa fa-pen" style="height: 24px;" aria-hidden="true"></i>
                                                 </button>
                                                 <button class="btn btn-danger" onclick="deleteCat(${cat.getId()})">
@@ -187,6 +208,8 @@
 <script>
     var table;
     var confirmModal = $('#confirmModal');
+    var messModal = $('#messModal');
+
     $(document).ready(function () {
         table = $('#tableCat').DataTable({
             searching: false,
@@ -213,8 +236,13 @@
                 {"className": "text-end", "targets": 4},
             ],
         });
-        confirmModal.on('show.bs.modal', function (e) {
-
+        messModal.on('hidden.bs.modal', function (event) {
+            location.reload();
+        });
+        $('#modalCat').on('hidden.bs.modal', function (event) {
+            $('#idCat').val('');
+            $('#nameCat').val('');
+            $('#descCat').val('');
         });
     });
 
@@ -222,36 +250,59 @@
         let id = $('#idCat').val();
         let name = $('#nameCat').val();
         let desc = $('#descCat').val();
+        alert(id);
         $.ajax({
             url: 'Admin-Category',
             method: "POST",
             data: {id: id, name: name, desc: desc},
             success: function (data) {
-                alert('Success');
-                closeModal();
+                $('#modalCat').modal('hide');
+                openModalMess(data);
             },
         });
     }
 
+    function editCat(id) {
+        $.ajax({
+            url: 'Admin-Category?id=' + id,
+            method: "GET",
+            dataType: 'json',
+            success: function (data) {
+                $('#idCat').val(data['id']);
+                $('#nameCat').val(data['name']);
+                $('#descCat').val(data['desc']);
+            }, error: function (data) {
+                console.log('err');
+            }
+        });
+        $('#modalCat').modal('show');
+
+    }
+
     function deleteCat(id) {
         confirmModal.modal('show');
-
+        $('#deleteConfirm').on('click', function (e) {
+            $.ajax({
+                url: 'Admin-Category?id=' + id,
+                method: "DELETE",
+                success: function (data) {
+                    confirmModal.modal('hide');
+                    openModalMess(data);
+                },
+            });
+        })
     }
 
-    function refesh() {
-        var table = $('#tableCat');
-    }
-
-    function closeModal() {
-        $('#modalCat').modal('hide');
-        $('#idCat').val('');
-        $('#nameCat').val('');
-        $('#descCat').val('');
+    function openModalMess(mess) {
+        $('#messModal .modal-body').html(mess);
+        messModal.modal('show');
     }
 
     function newCat() {
         $('#modalCat').modal('show');
     }
+
+
 </script>
 </body>
 

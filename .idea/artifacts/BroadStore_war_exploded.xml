@@ -6,7 +6,6 @@
         <exploded>true</exploded>
         <module>BroadStore</module>
         <packaging>war</packaging>
-        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
@@ -45,6 +44,7 @@
           <element id="library" level="project" name="Maven: com.github.ben-manes.caffeine:caffeine:3.0.3" />
           <element id="library" level="project" name="Maven: org.jdbi:jdbi3-sqlobject:3.27.0" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.9" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -12,14 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/Admin-Product")
+@WebServlet("/Admin-ProductDetail")
 public class ProductDetail extends HttpServlet {
     private List<Category> listCat;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String pareId = req.getParameter("id");
-        List<Status> listStatus = ProductService.getAllStatus();
         List<Category> listCat = ProductService.getAllCategory();
         List<Discount> listDis = ProductService.getAllDiscount();
         List<Producer> listProd = ProductService.getAllProducer();
@@ -32,7 +31,6 @@ public class ProductDetail extends HttpServlet {
         } else {
             req.setAttribute("title", "Thêm sản phẩm");
         }
-        req.setAttribute("listStatus", listStatus);
         req.setAttribute("listCat", listCat);
         req.setAttribute("listDis", listDis);
         req.setAttribute("listProd", listProd);

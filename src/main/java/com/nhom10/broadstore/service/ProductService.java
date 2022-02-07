@@ -89,9 +89,9 @@ public class ProductService {
         });
     }
 
-    public static int edit(Category category) {
+    public static int editCat(Category category) {
         return JDBIConnector.get().withExtension(CategoryDAO.class, dao -> {
-            dao.update(category);
+            dao.update(category, category.getId());
             return category.getId();
         });
     }
@@ -118,6 +118,18 @@ public class ProductService {
     public static int countProductWithSale(int price, int old) {
         return JDBIConnector.get().withExtension(ProductDAO.class, dao -> {
             return dao.countProductCatSale(price, old);
+        });
+    }
+
+    public static void deleteCat(int id) {
+        JDBIConnector.get().useExtension(CategoryDAO.class, dao -> {
+            dao.delete(id);
+        });
+    }
+
+    public static Category findCatById(int id) {
+        return JDBIConnector.get().withExtension(CategoryDAO.class, dao -> {
+            return dao.findById(id);
         });
     }
 }

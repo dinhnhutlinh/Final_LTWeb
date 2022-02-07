@@ -174,25 +174,11 @@
                                            name="inventory" value="${product.getInventory()}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Trạng Thái</label>
-                                    <select class="form-select" name="status">
-                                        <option
-                                                <c:if test="${status.getId()==product.getStatus().getId()}">selected</c:if>>
-                                            disabled>Chọn trạng thái
-                                        </option>
-                                        <c:forEach var="status" items="${listStatus}">
-                                            <option value="${status.getId()}"
-                                                    <c:if test="${status.getId()==product.getStatus().getId()}">selected</c:if>>
-                                                    ${status.getName()}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
-                                <div class="mb-4">
                                     <label class="form-label">Danh mục</label>
                                     <select class="form-select">
                                         <option
-                                                <c:if test="${cat.getId()==product.getCategory().getId()}">selected</c:if>>
-                                            disabled>Chọn Danh Mục
+                                                <c:if test="${cat.getId()==null}">selected</c:if>
+                                                disabled>Chọn Danh Mục
                                         </option>
                                         <c:forEach var="cat" items="${listCat}">
                                             <option value="${cat.getId()}"
@@ -205,8 +191,8 @@
                                     <label class="form-label">Nhà cung cấp</label>
                                     <select class="form-select">
                                         <option
-                                                <c:if test="${prod.getId()==product.getProducer().getId()}">selected</c:if>>
-                                            disabled>Chọn Nhà Cung Cấp
+                                                <c:if test="${prod.getId()==null}">selected</c:if>
+                                                disabled>Chọn Nhà Cung Cấp
                                         </option>
                                         <c:forEach var="prod" items="${listProd}">
                                             <option value="${prod.getId()}"
@@ -219,7 +205,7 @@
                                     <label class="form-label">Khuyến mãi</label>
                                     <select class="form-select " name="discount">
                                         <option
-                                                <c:if test="${dis.getId()==product.getDiscount().getId()}">selected</c:if>>
+                                                <c:if test="${dis.getId()==null}">selected</c:if>>
                                             disabled>Chọn Giảm giá
                                         </option>
                                         <c:forEach var="dis" items="${listDis}">
@@ -292,21 +278,17 @@
             var fileName = $(this).attr('role');
             $('#' + divName).remove();
             if ($('#' + divName).parent().parent().attr('id') === 'imageDisplay') {
-                for (var i = 0; i < imgDisplay.length; i++) {
-                    if (imgDisplay[i].name === fileName) {
-                        imgDisplay.splice(i, 1);
-                    }
-                }
-                document.getElementById('imageDisplay').files = FileListItem(imgDisplay);
+                imgDisplay = [];
+                $('#imageDisplay').files = imgDisplay;
+                $('#imageDisplay').val('');
             } else {
                 for (var i = 0; i < imgArr.length; i++) {
                     if (imgArr[i].name === fileName) {
                         imgArr.splice(i, 1);
                     }
                 }
-                document.getElementById('images').files = FileListItem(imgArr);
+                $('#images').files = FileListItem(imgArr);
             }
-            evt.preventDefault();
         });
 
         function FileListItem(file) {
