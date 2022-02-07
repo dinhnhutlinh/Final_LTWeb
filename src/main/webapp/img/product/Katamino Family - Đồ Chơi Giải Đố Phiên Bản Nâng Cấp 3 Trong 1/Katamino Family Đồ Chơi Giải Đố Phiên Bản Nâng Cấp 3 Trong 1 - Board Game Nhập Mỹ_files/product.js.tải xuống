@@ -1,0 +1,16 @@
+jQuery(document).ready(function(){jQuery("#qty_input").keypress(function(event){if(event.which!=8&&event.which!=0&&(event.which<48||event.which>57))
+{return false;}});jQuery('#next_qty').click(function(){qty=jQuery("#qty_input").val();if(parseInt(qty)>0){qty=addCommas(parseInt(qty));}else{qty=1;}
+qty++;jQuery("#qty_input").val(qty);});jQuery('#pre_qty').click(function(){qty=jQuery("#qty_input").val();if(parseInt(qty)>0){qty=addCommas(parseInt(qty));}else{qty=1;}
+if(qty>1){qty--;}
+jQuery("#qty_input").val(qty);});if(jQuery('#product-info-tab').length!=0){$('#product-info-tab a:first').tab('show');}
+jQuery('#product-info-tab a').click(function(e){e.preventDefault();$(this).tab('show');});$(".att_product").change(function(){checkAttProduct(this.id);});});function checkAttProduct(vid){var att_text=jQuery('#att_text').val();var vdata='';if(att_text!=''){var arr_att=att_text.split(";");if(arr_att.length>0){for(i=0;i<arr_att.length;i++){var arr_key_att=arr_att[i].split(":");if(arr_key_att[0]){if(vdata){vdata+='&';}
+vdata+='att_'+arr_key_att[0]+'='+jQuery('#att_'+arr_key_att[0]).val()+'';}}}}
+if(vdata!=''){vdata+='&product_id='+jQuery('#product_id').val()+'&att_text='+jQuery('#att_text').val()+'&idchange='+vid+'';jQuery(".button-add-to-cart").attr("disabled","disabled");jQuery.ajax({url:jQuery('#url_ajax_att').val(),type:"POST",data:vdata,dataType:"html",success:function(data){jQuery(".button-add-to-cart").removeAttr("disabled");var mycart=JSON.parse(data);if(mycart.action=="success"){jQuery.each(mycart,function(key,value){if(key!='success'&&key!='pid'&&value!=''){$('#'+key).html(value);}
+if(key=='pid'&&value!=''){jQuery('#link_add_to_cart').val(value);}else if(key=='pid'&&value==''){jQuery('#link_add_to_cart').val(jQuery('#link_add_to_cart_old').val());}});}else if(mycart.action=="error"){jQuery('#link_add_to_cart').val(jQuery('#link_add_to_cart_old').val());}},error:function(){jQuery(".btn_datmua").removeAttr("disabled");}});}}
+function buyNow(){if(jQuery(".btn_datmua").attr('disabled')){return false;}
+var vcheck=true;var att_text=jQuery('#att_text').val();if(att_text!=''&&att_text!=undefined){var arr_att=att_text.split(";");if(arr_att.length>0){for(i=0;i<arr_att.length;i++){var arr_key_att=arr_att[i].split(":");if(arr_key_att[0]){if(jQuery('#att_'+arr_key_att[0]).val()==''){alert('Bạn chưa chọn '+arr_key_att[1]+' cho sản phẩm!');jQuery('#att_'+arr_key_att[0]).focus();vcheck=false;break;}}}}}
+var qty=parseInt(jQuery('#qty_input').val())
+if(qty>0){jQuery('input[name=qty-item]').val(qty);}else{jQuery('#qty_input').focus();alert('Bạn chưa nhập số lượng sản phẩm để mua!');vcheck=false;}
+if(vcheck){addtocart();}}
+function addtocart(submitPage){submitPage=(submitPage==undefined)?true:submitPage;var allow=true;if(allow&&submitPage){jQuery('#productAddToCartForm').attr('action',jQuery('#link_add_to_cart').val());jQuery('#productAddToCartForm').submit();}
+return;}

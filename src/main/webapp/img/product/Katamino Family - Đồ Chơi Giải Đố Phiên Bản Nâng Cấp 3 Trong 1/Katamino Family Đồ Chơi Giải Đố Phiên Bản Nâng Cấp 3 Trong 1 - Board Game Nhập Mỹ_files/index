@@ -1,0 +1,143 @@
+(function () {
+    function appendEvent(event, isGroupEvent = false) {
+        let newScript = document.createElement('script');
+        newScript.type = 'text/javascript';
+        newScript.innerHTML = `mePuzz("track", "${event}");`
+        document.body.appendChild(newScript);
+
+        if (!isGroupEvent) {
+            let tomorrow = getDateExpires(1);
+
+            let list_event_added = getCookie('MEPUZZ_LIST_EVENT');
+            if (list_event_added) list_event_added = JSON.parse(list_event_added);
+            else list_event_added = [];
+            
+            if (!list_event_added.includes(event)) {
+                list_event_added.push(event);
+                setCookie('MEPUZZ_LIST_EVENT', JSON.stringify(list_event_added), tomorrow);
+            }
+            checkGroupEvent();
+        }
+    }
+
+    function setCookie(name, value, timeExpires) {
+        let expires = "";
+        if (timeExpires) {
+            expires = "; expires=" + timeExpires;
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0)==' ')
+                c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0)
+                return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function getDateExpires(days) {
+        let day = new Date();
+        let dateExpires = new Date(day);
+        dateExpires.setDate(day.getDate() + parseInt(days));
+        dateExpires.setHours(0);
+        dateExpires.setMinutes(0);
+        dateExpires.setSeconds(0);
+
+        return dateExpires;
+    }
+
+    <!-- conditions -->
+    const contain = 'contain',
+        not_contain = 'not_contain',
+        equal = 'equal';
+
+    <!-- click -->
+    const click_id = 1,
+        click_class = 2,
+        click_tag_name = 3,
+        click_url = 4;
+
+    <!-- check exists click -->
+    let list_click_executed = [];
+    document.addEventListener('click', function(event) {
+        const elementId = event.target.id;
+        const elementClass = event.target.getAttribute('class');
+        const elementTagName = event.target.tagName.toLowerCase();
+        const elementUrl = event.target.getAttribute('href');
+            });
+
+    <!-- scroll -->
+    <!-- check exists scroll -->
+    let list_scroll_executed = [];
+    window.addEventListener('scroll', function() {
+            });
+
+    let url_current = decodeURI(window.location.href);
+    if (url_current) {
+        <!-- page url -->
+        
+        <!-- UTM -->
+        url_current = url_current.toLowerCase();
+            }
+
+    <!-- on page n seconds -->
+    let secondCurrent = 0;
+    let countSecondInterval = setInterval(function() {
+        secondCurrent++;
+            }, 1000);
+    <!-- clear interval on page -->
+    if (countSecondInterval) {
+        setTimeout(function() {
+            clearInterval(countSecondInterval);
+        }, parseInt('0') * 1000);
+    }
+
+    <!-- view n page -->
+    
+    <!-- leave web -->
+    let list_leave_web_executed = [];
+    document.addEventListener('mouseleave', function() {
+            });
+
+    
+    let newVisitor = getCookie('MEPUZZ_NEW_VISITOR');
+    if (!newVisitor) { <!-- new visitor -->
+        let next_7_days = getDateExpires(7);
+        let list_new_visitor_executed = [];
+            }
+    else { <!-- visitor returning -->
+        let list_visitor_returning_executed = [];
+            }
+
+    <!-- check scroll to element and element active -->
+    function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    <!-- let list_element_visible_executed = []; -->
+        
+    function checkGroupEvent() {
+        let tomorrow = getDateExpires(1);
+
+        let list_event_added = getCookie('MEPUZZ_LIST_EVENT');
+        if (list_event_added) list_event_added = JSON.parse(list_event_added);
+        else list_event_added = [];
+
+        let list_group_event_executed = getCookie('MEPUZZ_LIST_GROUP_EVENT_EXECUTED');
+        if (list_group_event_executed) list_group_event_executed = JSON.parse(list_group_event_executed);
+        else list_group_event_executed = [];
+
+            }
+
+})(window);
