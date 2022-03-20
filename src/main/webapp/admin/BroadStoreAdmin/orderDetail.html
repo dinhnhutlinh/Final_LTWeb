@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đơn hàng</title>
+
+  <!-- ========== All CSS files linkup ========= -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+</head>
+
+<body>
+  <!-- ======== sidebar-nav start =========== -->
+  <aside class="sidebar-nav-wrapper">
+    <div class="navbar-logo">
+      <a href="index.html">
+        <img src="images/BoardStore.png" style="height: 70px;" alt="logo" />
+      </a>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li class="nav-item">
+          <a href="dashbroad.html">
+            <span class="icon">
+              <i class="fas fa-tachometer-alt"></i>
+            </span>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listCustomer.html">
+            <span class="icon">
+              <i class="fas fa-users"></i>
+            </span>
+            <span class="text">Khách hàng</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listOrder.html">
+            <span class="icon">
+              <i class="fas fa-shopping-cart"></i>
+            </span>
+            <span class="text">Đơn Hàng</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listcategory.html">
+            <span class="icon">
+              <i class="fas fa-tags"></i>
+            </span>
+            <span class="text">Danh Mục</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listproduct.html">
+            <span class="icon">
+              <i class="fas fa-archive"></i>
+            </span>
+            <span class="text">Sản phẩm</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listblog.html">
+            <span class="icon">
+              <i class="far fa-newspaper"></i>
+            </span>
+            <span class="text">Blog</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="producer.html">
+            <span class="icon">
+              <i class="fas fa-store"></i>
+            </span>
+            <span class="text">Nhà cung cấp</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="discount.html">
+            <span class="icon">
+              <i class="fas fa-percent"></i>
+            </span>
+            <span class="text">Khuyến mãi</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="slider.html">
+            <span class="icon">
+              <i class="fas fa-sliders-h"></i>
+            </span>
+            <span class="text">Slider</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listAdmin.html">
+            <span class="icon">
+              <i class="fas fa-users-cog"></i>
+            </span>
+            <span class="text">Admin</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="overlay"></div>
+  <!-- ======== sidebar-nav end =========== -->
+
+  <!-- ======== main-wrapper start =========== -->
+  <main class="main-wrapper">
+    <!-- ========== header start ========== -->
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-6">
+            <div class="header-left d-flex align-items-center">
+              <div class="menu-toggle-btn mr-20">
+                <button id="menu-toggle" class="main-btn btn-hover">
+                  <i class="fas fa-bars"></i> Menu
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-7 col-6">
+            <div class="header-right">
+              <!-- profile start -->
+              <div class="profile-box">
+                <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="profile-info">
+                    <div class="info">
+                      <h5>Nguyễn Hoài Bảo</h5>
+                      <div class="image">
+                        <img src="images/Sample_User_Icon.png" alt="" />
+                        <span class="status"></span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
+                  <li>
+                    <a href="#0">Trở về Trang mua hàng </a>
+                  </li>
+                  <li>
+                    <a href="#0">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- profile end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="container-fluid">
+        <!-- ========== title-wrapper start ========== -->
+        <div class="title-wrapper pt-3">
+          <div class="d-flex align-items-center">
+            <!-- end col -->
+            <div class="breadcrumb-wrapper">
+
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="#0">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Đơn Hàng
+                </li>
+              </ol>
+
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+        <div class="row">
+          <div class="card">
+            <header class="card-header bg-white">
+              <div class="row align-items-center">
+                <div class="col-6 ">
+                  <h4 class="text-muted">Mã đơn hàng: 3453012</h4>
+                  <span>
+                    <b>16:00 14/11/2021</b>
+                  </span> <br>
+                </div>
+                <div class="col-6 text-end"><button class="btn btn-orange">Lưu</button></div>
+              </div>
+            </header> <!-- card-header end// -->
+            <div class="card-body">
+              <div class="row mb-5">
+                <div class="col-5">
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Mã người mua</div>
+                    <div class="col-6"><input type="text" id="name" class="form-control" value="1" disabled></div>
+                  </div>
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Tên người mua</div>
+                    <div class="col-6"><input type="text" id="name" class="form-control" value="Nguyễn Văn A"></div>
+                  </div>
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Tổng tiền</div>
+                    <div class="col-6">318000 VND</div>
+                  </div>
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Phí vận chuyển</div>
+                    <div class="col-6">30000VND</div>
+                  </div>
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Thành tiền</div>
+                    <div class="col-6">348000VND</div>
+                  </div>
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Hình thức thanh toán</div>
+                    <div class="col-6">
+                      <select class="form-select">
+                        <option value="o" selected>Tiền mặt</option>
+                        <option value="1">MoMo</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Trạng thái</div>
+                    <div class="col-6"><select class="form-select">
+                        <option value="o" selected>Đang xử lý</option>
+                        <option value="1">Đang vận chuyển</option>
+                        <option value="2">Đã nhận được hàng</option>
+                        <option value="3">Hủy đơn hàng</option>
+                      </select></div>
+                  </div>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-5 ">
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Số điện thoại</div>
+                    <div class="col-6"><input type="phone" id="phone" class="form-control" value="03728274392"></div>
+                  </div>
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Địa chỉ</div>
+                    <div class="col-6"><input type="text" id="address" class="form-control"
+                        value="65 Lý Tự Trọng, Bến Nghé"></div>
+                  </div>
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Quận huyện</div>
+                    <div class="col-6"><select class="form-select" name="Quận/Huyện">
+                        <option value="" selected="selected">-- Hãy chọn Quận/Huyện --
+                        </option>
+                        <option value="72">Quận 1</option>
+                        <option value="73">Quận 2</option>
+                        <option value="74">Quận 3</option>
+                        <option value="75">Quận 4</option>
+                        <option value="76">Quận 5</option>
+                        <option value="77">Quận 6</option>
+                        <option value="78">Quận 7</option>
+                        <option value="79">Quận 8</option>
+                        <option value="80">Quận 9</option>
+                        <option value="81">Quận 10</option>
+                        <option value="82">Quận 11</option>
+                        <option value="83">Quận 12</option>
+                        <option value="84">Quận Gò Vấp</option>
+                        <option value="85">Quận Tân Bình</option>
+                        <option value="86">Quận Tân Phú</option>
+                        <option value="87">Quận Bình Thạnh</option>
+                        <option value="88">Quận Phú Nhuận</option>
+                        <option value="89">Quận Thủ Đức</option>
+                        <option value="90">Quận Bình Tân</option>
+                        <option value="91">Huyện Củ Chi</option>
+                        <option value="92">Huyện Hóc Môn</option>
+                        <option value="93">Huyện Bình Chánh</option>
+                        <option value="94">Huyện Nhà Bè</option>
+                        <option value="95">Huyện Cần Giờ</option>
+                      </select></div>
+                  </div>
+                  <div class="row pb-3">
+                    <div class="col-6 fw-bold">Tỉnh/TP</div>
+                    <div class="col-6"><select class="form-select" name="Thành Phố">
+                        <option value="" selected="selected">-- Chọn tỉnh/ thành phố --
+                        </option>
+                        <option value="508">Hà Nội</option>
+                        <option value="485">An Giang</option>
+                        <option value="486">Bà Rịa - Vũng Tàu</option>
+                        <option value="487">Bạc Liêu</option>
+                        <option value="488">Bắc Cạn</option>
+                        <option value="489">Bắc Giang</option>
+                        <option value="490">Bắc Ninh</option>
+                        <option value="491">Bến Tre</option>
+                        <option value="492">Bình Dương</option>
+                        <option value="493">Bình Định</option>
+                        <option value="494">Bình Phước</option>
+                        <option value="495">Bình Thuận</option>
+                        <option value="496">Cà Mau</option>
+                        <option value="497">Cao Bằng</option>
+                        <option value="498">Cần Thơ</option>
+                        <option value="499">Đà Nẵng</option>
+                        <option value="500">Đắc Lắc</option>
+                        <option value="501">Đắc Nông</option>
+                        <option value="502">Điện Biên</option>
+                        <option value="503">Đồng Nai</option>
+                        <option value="504">Đồng Tháp</option>
+                        <option value="505">Gia Lai</option>
+                        <option value="506">Hà Giang</option>
+                        <option value="507">Hà Nam</option>
+                        <option value="509">Hà Tĩnh</option>
+                        <option value="510">Hải Dương</option>
+                        <option value="511">Hải Phòng</option>
+                        <option value="512">Hậu Giang</option>
+                        <option value="513">Hòa Bình</option>
+                        <option value="514">Hồ Chí Minh</option>
+                        <option value="515">Hưng Yên</option>
+                        <option value="516">Khánh Hoà</option>
+                        <option value="517">Kiên Giang</option>
+                        <option value="518">Kon Tum</option>
+                        <option value="519">Lai Châu</option>
+                        <option value="520">Lạng Sơn</option>
+                        <option value="521">Lào Cai</option>
+                        <option value="522">Lâm Đồng</option>
+                        <option value="523">Long An</option>
+                        <option value="524">Nam Định</option>
+                        <option value="525">Nghệ An</option>
+                        <option value="526">Ninh Bình</option>
+                        <option value="527">Ninh Thuận</option>
+                        <option value="528">Phú Thọ</option>
+                        <option value="529">Phú Yên</option>
+                        <option value="530">Quảng Bình</option>
+                        <option value="531">Quảng Nam</option>
+                        <option value="532">Quảng Ngãi</option>
+                        <option value="533">Quảng Ninh</option>
+                        <option value="534">Quảng Trị</option>
+                        <option value="535">Sóc Trăng</option>
+                        <option value="536">Sơn La</option>
+                        <option value="537">Tây Ninh</option>
+                        <option value="538">Thái Bình</option>
+                        <option value="539">Thái Nguyên</option>
+                        <option value="540">Thanh Hoá</option>
+                        <option value="541">Thừa Thiên Huế</option>
+                        <option value="542">Tiền Giang</option>
+                        <option value="543">Trà Vinh</option>
+                        <option value="544">Tuyên Quang</option>
+                        <option value="545">Vĩnh Long</option>
+                        <option value="546">Vĩnh Phúc</option>
+                        <option value="547">Yên Bái</option>
+                      </select></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-5">
+                <label>Ghi chú</label>
+                <fieldset disabled="disabled">
+                  <textarea class="form-control disabled" name="notes" id="notes">Hàng dễ vỡ</textarea>
+                </fieldset>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="table-responsive">
+                    <table id="productTable" class="table table-hover">
+                      <thead>
+                        <th width="10%">#ID</th>
+                        <th width="10%">Ảnh</th>
+                        <th width="50%">Sản phẩm</th>
+                        <th width="20%">Giá</th>
+                        <th width="10%">Số lượng</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td><img src="images/product/Yêu Nhầm F.A/5671556771025.jpg" width="70px" height="70px"
+                              alt=""></td>
+                          <td>Yêu Nhầm F.A</td>
+                          <td>200000 VND</td>
+                          <td><input type="number" class="form-control" value="1"></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td><img src="images/product/Boardgame Ma Sói Việt Hóa/untitled-6509.jpg" width="70px"
+                              height="70px" alt=""></td>
+                          <td>Boardgame Ma Sói Việt Hóa</td>
+                          <td>118000 VND</td>
+                          <td><input type="number" class="form-control" value="2"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div> <!-- table-responsive// -->
+                </div> <!-- col// -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== section end ========== -->
+  </main>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var table = $('#productTable').DataTable({
+        searching: false,
+        paging: false,
+        info: false,
+        language: {
+          processing: "đang tải",
+          search: "Tìm kiếm",
+          lengthMenu: "Số dòng hiển thị _MENU_ ",
+          info: "_START_ đến _END_ trong _TOTAL_ Sản phẩm",
+          infoEmpty: "",
+          loadingRecords: "",
+          infoFiltered: "",
+          zeroRecords: "Không tìm thấy",
+          emptyTable: "Không có dữ liệu",
+          paginate: {
+            first: "Trang đầu",
+            previous: "Trang trước",
+            next: "Trang sau",
+            last: "Trang cuối"
+          },
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>

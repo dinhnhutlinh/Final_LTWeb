@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon" />
+  <title>danh sách nhà phát hành</title>
+
+  <!-- ========== All CSS files linkup ========= -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+</head>
+
+<body>
+  <aside class="sidebar-nav-wrapper">
+    <div class="navbar-logo">
+      <a href="index.html">
+        <img src="images/BoardStore.png" style="height: 70px;" alt="logo" />
+      </a>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li class="nav-item">
+          <a href="dashbroad.html">
+            <span class="icon">
+              <i class="fas fa-tachometer-alt"></i>
+            </span>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listCustomer.html">
+            <span class="icon">
+              <i class="fas fa-users"></i>
+            </span>
+            <span class="text">Khách hàng</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listOrder.html">
+            <span class="icon">
+              <i class="fas fa-shopping-cart"></i>
+            </span>
+            <span class="text">Đơn Hàng</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listcategory.html">
+            <span class="icon">
+              <i class="fas fa-tags"></i>
+            </span>
+            <span class="text">Danh Mục</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listproduct.html">
+            <span class="icon">
+              <i class="fas fa-archive"></i>
+            </span>
+            <span class="text">Sản phẩm</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listblog.html">
+            <span class="icon">
+              <i class="far fa-newspaper"></i>
+            </span>
+            <span class="text">Blog</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="producer.html">
+            <span class="icon">
+              <i class="fas fa-store"></i>
+            </span>
+            <span class="text">Nhà cung cấp</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="discount.html">
+            <span class="icon">
+              <i class="fas fa-percent"></i>
+            </span>
+            <span class="text">Khuyến mãi</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="slider.html">
+            <span class="icon">
+              <i class="fas fa-sliders-h"></i>
+            </span>
+            <span class="text">Slider</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="listAdmin.html">
+            <span class="icon">
+              <i class="fas fa-users-cog"></i>
+            </span>
+            <span class="text">Admin</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="overlay"></div>
+  <!-- ======== sidebar-nav end =========== -->
+
+  <!-- ======== main-wrapper start =========== -->
+  <main class="main-wrapper">
+    <!-- ========== header start ========== -->
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-6">
+            <div class="header-left d-flex align-items-center">
+              <div class="menu-toggle-btn mr-20">
+                <button id="menu-toggle" class="main-btn btn-hover">
+                  <i class="fas fa-bars"></i> Menu
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-7 col-6">
+            <div class="header-right">
+              <!-- profile start -->
+              <div class="profile-box">
+                <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="profile-info">
+                    <div class="info">
+                      <h5>Nguyễn Hoài Bảo</h5>
+                      <div class="image">
+                        <img src="images/Sample_User_Icon.png" alt="" />
+                        <span class="status"></span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
+                  <li>
+                    <a href="#0">Trở về Trang mua hàng </a>
+                  </li>
+                  <li>
+                    <a href="#0">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- profile end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== section start ========== -->
+    <section class="section">
+      <div class="container-fluid">
+        <!-- ========== title-wrapper start ========== -->
+        <div class="title-wrapper pt-3">
+          <div class="d-flex align-items-center">
+            <!-- end col -->
+            <div class="breadcrumb-wrapper">
+
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="#0">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Nhà cung cấp
+                </li>
+              </ol>
+
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+        <div class="row">
+          <section class="content-main">
+            <div class="content-header">
+              <h2 class="content-title">Danh sách nhà cung cấp</h2>
+              <a href="addProducer.html" class="btn btn-orange">Thêm Nhà cung cấp</a>
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <table id="tableUser" class="table table-hover">
+                  <thead>
+                    <th style="width: 5%;">#ID</th>
+                    <th>Nhà cung cấp</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Số lượng sản phẩm</th>
+                    <th class="text-end">Chỉnh sửa</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>
+                        <h6 class="ps-2">BroadGame vn</h6>
+                      </td>
+                      <td>BroadGameVN@gmail.com</td>
+                      <td>0370000000</td>
+                      <td>20</td>
+                      <td>
+                        <a href="addProducer.html" class="btn btn-warning text-white"><i class="fas fa-pen"></i></a>
+                        <button class="btn btn-danger" onclick=""><i class="fas fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>
+                        <h6 class="ps-2">Game thuần việt</h6>
+                      </td>
+                      <td>ThuanViet@gmail.com</td>
+                      <td>0370000000</td>
+                      <td>30</td>
+                      <td>
+                        <a href="addProducer.html" class="btn btn-warning text-white"><i class="fas fa-pen"></i></a>
+                        <button class="btn btn-danger" onclick=""><i class="fas fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>
+                        <h6 class="ps-2">US-UK store</h6>
+                      </td>
+                      <td>UsUKstore@gmail.com</td>
+                      <td>0370000000</td>
+                      <td>40</td>
+                      <td>
+                        <a href="addProducer.html" class="btn btn-warning text-white"><i class="fas fa-pen"></i></a>
+                        <button class="btn btn-danger" onclick=""><i class="fas fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>
+                        <h6 class="ps-2">Tomcity</h6>
+                      </td>
+                      <td>TomcityN@gmail.com</td>
+                      <td>0370000000</td>
+                      <td>20</td>
+                      <td>
+                        <a href="addProducer.html" class="btn btn-warning text-white"><i class="fas fa-pen"></i></a>
+                        <button class="btn btn-danger" onclick=""><i class="fas fa-trash"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> <!-- card-body end// -->
+            </div>
+        </div> <!-- card end// -->
+    </section>
+    </div>
+    <!-- end container -->
+    </section>
+    <!-- ========== section end ========== -->
+  </main>
+  <!-- ======== main-wrapper end =========== -->
+
+  <!-- ========= All Javascript files linkup ======== -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var table = $('#tableUser').DataTable({
+        searching: false,
+        paging: false,
+        info: false,
+        language: {
+          processing: "đang tải",
+          search: "Tìm kiếm",
+          lengthMenu: "Số dòng hiển thị _MENU_ ",
+          info: "Bài viết từ _START_ đến _END_ trong _TOTAL_ Người dùng",
+          infoEmpty: "",
+          loadingRecords: "",
+          infoFiltered: "",
+          zeroRecords: "Không tìm thấy",
+          emptyTable: "Không có dữ liệu",
+          paginate: {
+            first: "Trang đầu",
+            previous: "Trang trước",
+            next: "Trang sau",
+            last: "Trang cuối"
+          },
+        },
+        columnDefs: [
+          { "className": "text-end", "targets": 5 },
+        ],
+      });
+
+
+    });
+  </script>
+</body>
+
+</html>
