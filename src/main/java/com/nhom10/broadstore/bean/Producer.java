@@ -7,13 +7,14 @@ import java.time.LocalDateTime;
 public class Producer {
     private long id;
     private String name;
+    @Nested("addr")
     private Address address;
     private String email;
-    private String phone;
+    private int phone;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Producer(long id, String name, @Nested("addr") Address address, String email, String phone, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Producer(long id, String name, @Nested("addr") Address address, String email, int phone, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -34,7 +35,7 @@ public class Producer {
         this.name = name;
     }
 
-    @Nested("addr")
+    @Nested("add")
     public Address getAddress() {
         return address;
     }
@@ -76,11 +77,11 @@ public class Producer {
         this.email = email;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 

@@ -24,13 +24,14 @@ public class Product implements Serializable {
     private Category category;
     private int inventory;
     private int price;
-    private float rating;
+    @Nested(value = "rating")
+    private Rating rating;
     @Nested(value = "dis")
     private Discount discount;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Product(int id, String name, int age, int minPlayer, int maxPlayer, int timePlay, double height, double width, double tall, double weight, Producer producer, String desc, String imgDisplay, Category category, int inventory, int price, float rating, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Product(int id, String name, int age, int minPlayer, int maxPlayer, int timePlay, double height, double width, double tall, double weight, @Nested("prod") Producer producer, String desc, String imgDisplay, Category category, int inventory, int price, @Nested(value="rating") Rating rating, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -192,11 +193,13 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public float getRating() {
+    @Nested("rating")
+    public Rating getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    @Nested("rating")
+    public void setRating(Rating rating) {
         this.rating = rating;
     }
 
@@ -241,8 +244,8 @@ public class Product implements Serializable {
                 ", weight=" + weight +
                 ", producer=" + producer +
                 ", desc='" + desc + '\'' +
-                ", imgDisplay='" + imgDisplay + '\'' +
-                ", category=" + category +
+                ", imgDisplay='" + imgDisplay+ '\'' +
+                ", category=" + category  +
                 ", inventory=" + inventory +
                 ", price=" + price +
                 ", discount=" + discount +

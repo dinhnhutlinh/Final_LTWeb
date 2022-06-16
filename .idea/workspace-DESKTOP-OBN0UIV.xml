@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e7eb9d59-8423-4f70-bd7a-a07fbbeb3ce6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_6_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_ben_manes_caffeine_caffeine_3_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_messaging_saaj_saaj_impl_1_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_leangen_geantyref_geantyref_1_3_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_jws_jakarta_jws_api_2_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_ws_rs_jakarta_ws_rs_api_2_1_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_soap_jakarta_xml_soap_api_1_4_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_ws_jakarta_xml_ws_api_2_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_core_3_4_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_security_3_4_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_transports_http_3_4_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jta_1_1_spec_1_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ws_xmlschema_xmlschema_core_2_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_4_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Discount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Rating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Rating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Slider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom10/broadstore/bean/Slider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/ForgetPass.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/ForgetPass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/InforUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/InforUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/SignIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/SignIn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/SignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/SignUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/Success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/Success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/about_us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/blanknew.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/blanknew.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/changePassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/detailnews.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/detailnews.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/store.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/templete/termsAndConditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templete/termsAndConditions.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2AY3Bas6Z9n5wzravZZPmDFgHYS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/nbao1/OneDrive/Máy tính/Final_LTWeb",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7eb9d59-8423-4f70-bd7a-a07fbbeb3ce6" name="Changes" comment="" />
+      <created>1655172559203</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655172559203</updated>
+      <workItem from="1655172569646" duration="2394000" />
+      <workItem from="1655177034931" duration="3663000" />
+      <workItem from="1655190523226" duration="372000" />
+      <workItem from="1655256670878" duration="9104000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

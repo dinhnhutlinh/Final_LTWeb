@@ -7,10 +7,14 @@ import java.time.LocalDateTime;
 
 public class Order {
     private int id;
-    private int shipId;
-    private int customerId;
-    private int addressId;
+    @Nested(value = "ship")
+    private Ship ship;
+    @Nested(value = "cus")
+    private Customer customer;
+    @Nested(value = "addr")
+    private Address address;
     private int total;
+    @Nested(value = "status")
     private Status status;
     private String name;
     private String phone;
@@ -18,11 +22,11 @@ public class Order {
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Order(int id, int shipId, int customerId, int addressId, int total, Status status, String name, String phone, String email, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Order(int id, @Nested(value = "ship") Ship ship, @Nested(value = "cus") Customer customer, @Nested(value = "addr") Address address, int total, @Nested(value = "status") Status status, String name, String phone, String email, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
-        this.shipId = shipId;
-        this.customerId = customerId;
-        this.addressId = addressId;
+        this.ship = ship;
+        this.customer = customer;
+        this.address = address;
         this.total = total;
         this.status = status;
         this.name = name;
@@ -43,28 +47,34 @@ public class Order {
         this.id = id;
     }
 
-    public int getShipId() {
-        return shipId;
+    @Nested(value = "ship")
+    public Ship getShip() {
+        return ship;
     }
 
-    public void setShipId(int shipId) {
-        this.shipId = shipId;
+    @Nested(value = "ship")
+    public void setShip(Ship ship) {
+        this.ship = ship;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    @Nested(value = "cus")
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    @Nested(value = "cus")
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public int getAddressId() {
-        return addressId;
+    @Nested(value = "addr")
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddressId(int addressId) {
-        this.addressId = addressId;
+    @Nested(value = "addr")
+    public void setAddress(Address addressId) {
+        this.address = address;
     }
 
     public int getTotal() {
@@ -75,12 +85,12 @@ public class Order {
         this.total = total;
     }
 
-    @Nested("s")
+    @Nested("status")
     public Status getStatus() {
         return status;
     }
 
-    @Nested("s")
+    @Nested("status")
     public void setStatusId(Status status) {
         this.status = status;
     }
@@ -129,9 +139,9 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", shipId=" + shipId +
-                ", customerId=" + customerId +
-                ", addressId=" + addressId +
+                ", shipId=" + ship +
+                ", customerId=" + customer +
+                ", addressId=" + address +
                 ", total=" + total +
                 ", statusId=" + status +
                 ", name='" + name + '\'' +

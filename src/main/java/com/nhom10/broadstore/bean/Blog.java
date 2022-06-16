@@ -1,5 +1,7 @@
 package com.nhom10.broadstore.bean;
 
+import org.jdbi.v3.core.mapper.Nested;
+
 import java.time.LocalDateTime;
 
 public class Blog {
@@ -14,12 +16,13 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(int id, int adminID, String title, Image image, String content, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Blog(int id, int adminID, String title, Image image, String content, @Nested("per") Permission permission, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.adminID = adminID;
         this.title = title;
         this.image = image;
         this.content = content;
+
         this.createAt = createAt;
         this.updateAt = updateAt;
     }
