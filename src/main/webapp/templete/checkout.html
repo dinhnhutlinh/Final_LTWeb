@@ -203,19 +203,19 @@
 					<!-- Billing Details -->
 					<div class="billing-details">
 						<div class="section-title">
-							<h3 class="title">ĐỊA CHỈ NHẬN HÀNG</h3>
+							<h3 class="title">DELIVERY ADDRESS</h3>
 						</div>
 						<div class="mb-3">
-							<input class="form-control" type="text" name="name" placeholder="Tên Khách Hàng">
+							<input class="form-control" type="text" name="name" placeholder="Custom name">
 						</div>
 						<div class="mb-3">
 							<input class="form-control" type="email" name="email" placeholder="Email">
 						</div>
 						<div class="mb-3">
-							<input class="form-control" type="tel" name="phone" placeholder="Số điện thoại">
+							<input class="form-control" type="tel" name="phone" placeholder="Number phone">
 						</div>
 						<select class="form-select mb-3" name="Thành Phố">
-							<option value="" selected="selected">-- Chọn tỉnh/ thành phố --</option>
+							<option value="" selected="selected">-- Province/ City --</option>
 							<option value="508">Hà Nội</option>
 							<option value="485">An Giang</option>
 							<option value="486">Bà Rịa - Vũng Tàu</option>
@@ -281,7 +281,7 @@
 							<option value="547">Yên Bái</option>
 						</select>
 						<select class="form-select mb-3" name="Quận/Huyện">
-							<option value="" selected="selected">-- Hãy chọn Quận/Huyện --</option>
+							<option value="" selected="selected">-- District --</option>
 							<option value="72">Quận 1</option>
 							<option value="73">Quận 2</option>
 							<option value="74">Quận 3</option>
@@ -308,25 +308,25 @@
 							<option value="95">Huyện Cần Giờ</option>
 						</select>
 						<div class="mb-3">
-							<input class="form-control" type="text" name="address" placeholder="Tòa nhà, tên đường...">
+							<input class="form-control" type="text" name="address" placeholder="Building, Street...">
 						</div>
 					</div>
 					<!-- /Billing Details -->
 					<!-- Order notes -->
 					<div class="order-notes">
-						<textarea class="input" placeholder="Ghi chú về đơn hàng"></textarea>
+						<textarea class="input" placeholder="Notes on orders"></textarea>
 					</div>
 					<!-- /Order notes -->
 				</div>
 				<!-- Order Details -->
 				<div class="col-md-5 order-details border-r10">
 					<div class="section-title text-center">
-						<h3 class="title">Thanh toán</h3>
+						<h3 class="title">Payment</h3>
 					</div>
 					<div class="order-summary">
 						<div class="order-col">
-							<div><strong>SẢN PHẨM</strong></div>
-							<div><strong>GIÁ</strong></div>
+							<div><strong>PRODUCT</strong></div>
+							<div><strong>TOTAL</strong></div>
 						</div>
 						<div class="order-products">
 							<div class="order-col">
@@ -339,23 +339,23 @@
 							</div>
 						</div>
 						<div class="order-col">
-							<div>TIỀN VẬN CHUYỂN</div>
-							<div><strong>MIỄN PHÍ</strong></div>
+							<div>SHIPPING COST</div>
+							<div><strong>Free</strong></div>
 						</div>
 						<div class="order-col">
-							<div><strong>TỔNG TIỀN</strong></div>
+							<div><strong>TOTAL MONEY</strong></div>
 							<div><strong class="order-total">240.000VND</strong></div>
 						</div>
 					</div>
 					<div class="payment-method">
 						<div class="order-col mb-3">
-							<div><strong>Phương thức thanh toán</strong></div>
+							<div><strong>PAYMENT METHOD</strong></div>
 						</div>
 						<div class="input-radio">
 							<input type="radio" name="payment" id="payment-1">
 							<label for="payment-1">
 								<span></span>
-								Trực tiếp khi nhận hàng
+								Directly when receiving goods
 							</label>
 							<div class="caption">
 								<p>Bạn sẽ thanh toán khi nhận được hàng</p>
@@ -365,14 +365,14 @@
 							<input type="radio" name="payment" id="payment-2">
 							<label for="payment-2">
 								<span></span>
-								Ví MOMO
+								MOMO
 							</label>
 							<div class="caption">
-								<p>Bạn bật app MOMO để quét mã QR để xác nhận thanh toán đơn hàng</p>
+								<p>Open MOMO app to scan QR code to confirm order payment</p>
 							</div>
 						</div>
 					</div>
-					<a href="#" class="primary-btn order-submit">Thanh Toán</a>
+					<a href="#" class="primary-btn order-submit">Payment</a>
 				</div>
 				<!-- /Order Details -->
 			</div>

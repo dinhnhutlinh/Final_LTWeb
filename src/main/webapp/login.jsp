@@ -43,16 +43,15 @@
             <div class="left">
                 <div class="signIn">
 
-                    <p class="text"> ĐĂNG NHẬP</p>
+                    <p class="text"> SIGN IN</p>
                 </div>
                 <div class="text_mini">
-                    <p> Đăng nhập để mua hàng và khám phá thế giới Board game phong phú từ www.vuigame.vui
-                        Đến với vui game bạn sẽ được trải nghiệm những board game siêu hot và mua với mức giá SIÊU
-                        HỜI!!!</p>
+                    <p> Sign in to purchase and explore the rich world of Board games from www.vuigame.vui. Coming to fun game you will experience super hot board games and buy at SUPER CHEAP prices!!!</p>
+
                 </div>
                 <div class="end_text">
-                    <p class="not_acc"> Bạn chưa có tài khoản?</p>
-                    <a href="signUp.html" class="sign_in">Đăng kí</a>
+                    <p class="not_acc"> Do not have an account?</p>
+                    <a href="signUp.html" class="sign_in">Sign up</a>
                 </div>
             </div>
             <div class="right">
@@ -67,17 +66,17 @@
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Mật Khẩu</label>
+                        <label for="password" class="form-label">Password</label>
                         <input type="password" minlength="6" class="form-control" name="password" id="password"
                                placeholder="Mật khẩu của bạn">
-                        <span id="err-mes" class="text-danger d-none">Email hoặc mật khẩu không chính xác</span>
+                        <span id="err-mes" class="text-danger d-none">Email or password not exactly</span>
                     </div>
 
                     <div class="forgot pb-3">
-                        <a href="ForgetPass.html" class="text">Quên Mật Khẩu?</a>
+                        <a href="ForgetPass.html" class="text">Forget password?</a>
                     </div>
                     <button type="submit" class="btn w-100 text-white">
-                        ĐĂNG NHẬP
+                        SIGN IN
                     </button>
                 </form>
             </div>
