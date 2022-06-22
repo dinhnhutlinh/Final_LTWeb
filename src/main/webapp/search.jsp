@@ -41,8 +41,8 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb-tree">
-                    <li><a href="index.html">Trang chủ</a></li>
-                    <li class="active">Tìm kiếm</li>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Search</li>
                 </ul>
             </div>
         </div>
@@ -56,7 +56,7 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-            <h4>Tìm kiếm được ${total} sản phẩm với từ khóa ${param["search"]}</h4>
+            <h4>Search ${total} product with key word ${param["search"]}</h4>
             <div class="card shadow">
                 <div class="card-body">
                     <!-- store products -->
@@ -81,7 +81,7 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <div class="add-to-cart">
-                                            <button class="add-to-cart-btn">Thêm vào giỏ</button>
+                                            <button class="add-to-cart-btn">Add to card</button>
                                         </div>
                                     </div>
                                 </div>

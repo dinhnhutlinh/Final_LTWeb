@@ -94,7 +94,7 @@
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
                 <h4 class="">Sản phẩm bán chạy</h4>
-                <a class="ps-3" href="store.html">Xem tất cả</a>
+                <a class="ps-3" href="store.html">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
@@ -116,7 +116,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -145,7 +145,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -174,7 +174,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -203,7 +203,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -233,7 +233,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -261,7 +261,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -277,8 +277,8 @@
         <!--Đang giảm giá-->
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4 class="">Sản phẩm đang giảm giá</h4>
-                <a class="ps-3" href="store.html">Xem tất cả</a>
+                <h4 class="">Saling products</h4>
+                <a class="ps-3" href="store.html">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
@@ -302,7 +302,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -331,7 +331,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -357,7 +357,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -384,7 +384,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -411,7 +411,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -440,7 +440,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -456,8 +456,8 @@
         <!--BroadGame chiến thuật-->
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4 class="">BroadGame Chiến thuật</h4>
-                <a class="ps-3" href="store.html">Xem tất cả</a>
+                <h4 class="">Wisdom BroadGame</h4>
+                <a class="ps-3" href="store.html">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
@@ -482,7 +482,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -510,7 +510,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -537,7 +537,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -563,7 +563,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -590,7 +590,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -616,7 +616,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -633,7 +633,7 @@
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
                 <h4>BroadGame Party</h4>
-                <a class="ps-3" href="store.html">Xem tất cả</a>
+                <a class="ps-3" href="store.html">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
@@ -656,7 +656,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -685,7 +685,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -712,7 +712,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -738,7 +738,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -767,7 +767,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -793,7 +793,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -808,8 +808,8 @@
         <!--Đang Gia Đình-->
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4 class="">Đồ chơi nhóm</h4>
-                <a class="ps-3" href="store.html">Xem tất cả</a>
+                <h4 class="">Group toys</h4>
+                <a class="ps-3" href="store.html">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
@@ -833,7 +833,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -862,7 +862,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -888,7 +888,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -915,7 +915,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -942,7 +942,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -971,7 +971,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -987,8 +987,8 @@
         <!--BroadGame Thẻ bài-->
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4 class="">BroadGame Thẻ Bài</h4>
-                <a class="ps-3" href="store.html">Xem tất cả</a>
+                <h4 class="">Card BroadGame</h4>
+                <a class="ps-3" href="store.html">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
@@ -1013,7 +1013,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1041,7 +1041,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1068,7 +1068,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1094,7 +1094,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1121,7 +1121,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1147,7 +1147,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1163,8 +1163,8 @@
         <!--Đang Gia Đình-->
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4 class="">BroadGame Gia đình</h4>
-                <a class="ps-3" href="store.html">Xem tất cả</a>
+                <h4 class="">Family BroadGame</h4>
+                <a class="ps-3" href="store.html">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
@@ -1188,7 +1188,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1217,7 +1217,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1243,7 +1243,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1270,7 +1270,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1297,7 +1297,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>
@@ -1326,7 +1326,7 @@
                                 </div>
                                 <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào giỏ</button>
+                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
                                     <button class="d-xl-none add-to-cart-btn w-100"><i
                                             class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                 </div>

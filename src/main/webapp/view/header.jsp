@@ -22,8 +22,8 @@
                 <div class="col-md-6">
                     <div class="header-search">
                         <form class="d-flex" action="Search" method="get">
-                            <input class="input flex-grow-1" name="search" placeholder="Tìm kiếm sản phẩm">
-                            <button type="submit" class="search-btn">TÌM KIẾM</button>
+                            <input class="input flex-grow-1" name="search" placeholder="SEARCH PRODUCT">
+                            <button type="submit" class="search-btn">SEARCH</button>
                         </form>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-user-circle-o"></i>
                                 <c:if test='${user==null}'>
-                                    <span>Tài khoản</span>
+                                    <span>account</span>
                                 </c:if>
                                 <c:if test='${user!=null}'>
                                     <span>${user.name}</span>
@@ -45,15 +45,15 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownUser">
                                 <c:if test='${user==null}'>
-                                    <li><a class="dropdown-item" href="Login">Đăng nhập</a></li>
-                                    <li><a class="dropdown-item" href="SignUp">Đăng ký</a></li>
+                                    <li><a class="dropdown-item" href="Login">Sign in</a></li>
+                                    <li><a class="dropdown-item" href="SignUp">Sign up</a></li>
                                 </c:if>
                                 <c:if test='${user!=null}'>
                                     <c:if test="${user.getRole()==Role.ADMIN}">
                                         <li><a class="dropdown-item" href="Admin-DashBroad">Dashbroad</a></li>
                                     </c:if>
-                                    <li><a class="dropdown-item" href="UserDetail">Tài khoản</a></li>
-                                    <li><a class="dropdown-item" href="Logout">Đăng xuất</a></li>
+                                    <li><a class="dropdown-item" href="UserDetail">Account</a></li>
+                                    <li><a class="dropdown-item" href="Logout">Log out</a></li>
                                 </c:if>
                             </ul>
                         </div>
@@ -63,7 +63,7 @@
                             <a href="#" class="dropdown-toggle" id="dropdownCart" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span>Giỏ hàng</span>
+                                <span>Cart</span>
                                 <div class="qty">3</div>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownCart">
@@ -74,11 +74,11 @@
                                                 <img class="img-thumbnail" src="./img/product02.png" alt="">
                                             </div>
                                             <div class="product-body col-7">
-                                                <h3 class="product-name"><a href="product.html">Sản phẩm 1</a></h3>
+                                                <h3 class="product-name"><a href="product.html">Product 1</a></h3>
                                                 <h4 class="product-price"><span class="qty">3x</span>98000</h4>
                                             </div>
                                             <a class="htn btn-close col-2" href="#"
-                                               onclick="return confirm('Bạn Muốn xóa sản phẩm?');"></a>
+                                               onclick="return confirm('Do you delete product?');"></a>
                                         </div>
 
                                         <div class="product-cart row align-items-center">
@@ -86,30 +86,30 @@
                                                 <img class="img-thumbnail" src="./img/product02.png" alt="">
                                             </div>
                                             <div class="product-body col-7">
-                                                <h3 class="product-name"><a href="product.html">Sản phẩm 2</a></h3>
+                                                <h3 class="product-name"><a href="product.html">Product 2</a></h3>
                                                 <h4 class="product-price"><span class="qty">3x</span>98000</h4>
                                             </div>
                                             <a class="htn btn-close col-2" href="#"
-                                               onclick="return confirm('Bạn Muốn xóa sản phẩm?');"></a>
+                                               onclick="return confirm('Do you delete product?');"></a>
                                         </div>
                                         <div class="product-cart row align-items-center">
                                             <div class="product-img col-3">
                                                 <img class="img-thumbnail" src="./img/product02.png" alt="">
                                             </div>
                                             <div class="product-body col-7">
-                                                <h3 class="product-name"><a href="product.html">Sản phẩm 3</a></h3>
+                                                <h3 class="product-name"><a href="product.html">Product 3</a></h3>
                                                 <h4 class="product-price"><span class="qty">3x</span>98000</h4>
                                             </div>
                                             <a class="htn btn-close col-2" href="#"
-                                               onclick="return confirm('Bạn Muốn xóa sản phẩm?');"></a>
+                                               onclick="return confirm('Do you delete product?');"></a>
                                         </div>
                                     </div>
                                     <div class="cart-summary ">
-                                        <small>Số sản phẩm: 3</small>
-                                        <h5>Tổng Tiền: 29400000</h5>
+                                        <small>Qty: 3</small>
+                                        <h5>Total money: 29400000</h5>
                                     </div>
-                                    <a href="Cart" class="btn btn-orange w-100 mb-2">Xem giỏ hàng</a>
-                                    <a href="CheckOut" class="p1 btn btn-dark w-100">Thanh toán</a>
+                                    <a href="Cart" class="btn btn-orange w-100 mb-2">View Cart</a>
+                                    <a href="CheckOut" class="p1 btn btn-dark w-100">Payment</a>
                                 </div>
 
                             </ul>
@@ -144,28 +144,28 @@
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav">
-                <li class="nav-item"><a href="index.html">TRANG CHỦ</a></li>
+                <li class="nav-item"><a href="index.html">Home</a></li>
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="dropdown-toggle text-white text-uppercase" id="dropdownMenuButton1"
                            data-bs-toggle="dropdown" aria-expanded="false" href="cart.html">
-                            Danh Mục Sản Phẩm
+                            Category
                         </a>
                         <ul class="dropdown-menu" style="margin: 0px;">
-                            <li><a class="dropdown-item" href="Store?cat=all">Tất Cả sản phẩm</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=sale">Sản phẩm sale</a></li>
-                            <li><a class="dropdown-item" href="Store">Broadgame gia đình</a></li>
-                            <li><a class="dropdown-item" href="Store">Broadgame trí tuệ</a></li>
-                            <li><a class="dropdown-item" href="Store">Broadgame Chiến thuật</a></li>
-                            <li><a class="dropdown-item" href="Store">Broadgame Thẻ bài</a></li>
-                            <li><a class="dropdown-item" href="Store">Đồ chơi nhóm</a></li>
-                            <li><a class="dropdown-item" href="Store">Phụ Kiện BroadGame</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=all">All products</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=sale">Sale products</a></li>
+                            <li><a class="dropdown-item" href="Store">Family Broadgame</a></li>
+                            <li><a class="dropdown-item" href="Store">Tactic Broadgame</a></li>
+                            <li><a class="dropdown-item" href="Store">Wisdom Broadgame</a></li>
+                            <li><a class="dropdown-item" href="Store">Cards Broadgame</a></li>
+                            <li><a class="dropdown-item" href="Store">Group toys</a></li>
+                            <li><a class="dropdown-item" href="Store">AccessoryBroadGame</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item"><a href="news.html">TIN TỨC</a></li>
-                <li class="nav-item"><a href="about_us.html">GIỚI THIỆU</a></li>
-                <li class="nav-item"><a href="store.html">KHUYẾN MÃI</a></li>
+                <li class="nav-item"><a href="news.html">NEWS</a></li>
+                <li class="nav-item"><a href="about_us.html">INTRODUCE</a></li>
+                <li class="nav-item"><a href="store.html">SALE</a></li>
             </ul>
             <!-- /NAV -->
         </div>

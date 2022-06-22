@@ -43,8 +43,8 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb-tree">
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Product</a></li>
                     <li class="">${product.getName()}</li>
                 </ul>
             </div>
@@ -109,10 +109,10 @@
                             <del class="product-old-price">150.000VND</del>
                         </h3>
                         <c:if test="${product.getInventory()>0}">
-                            <span class="product-available">còn hàng</span>
+                            <span class="product-available">stocking</span>
                         </c:if>
                         <c:if test="${product.getInventory()==0}">
-                            <span class="product-available">Hết hàng</span>
+                            <span class="product-available">Out of stock</span>
                         </c:if>
                     </div>
                     <div class="product-rating">
@@ -121,7 +121,7 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        ( 2 Đánh giá)
+                        ( 2 Raiting)
                     </div>
                     <div class="product-options d-flex flex-column">
                         <label class="mb-3">
@@ -141,12 +141,11 @@
                     </div>
                     <div class="add-to-cart">
                         <div class="qty-label mb-3">
-                            Số lượng đặt mua
+                            Qty
                             <input class="form-control w-50" type="number" name="" id="" value="1">
                         </div>
                     </div>
-                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ
-                        hàng
+                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to cart
                     </button>
                 </div>
             </div>
@@ -157,9 +156,9 @@
             <div id="product-tab">
                 <!-- product tab nav -->
                 <ul class="tab-nav">
-                    <li id="details"><a data-toggle="tab">Chi tiết sản phẩm</a></li>
-                    <li id="description" class="active"><a data-toggle="tab">Mô tả sản phẩm</a></li>
-                    <li id="rating_pro"><a data-toggle="tab">Đánh giá</a></li>
+                    <li id="details"><a data-toggle="tab">Product Details </a></li>
+                    <li id="description" class="active"><a data-toggle="tab">Product Description </a></li>
+                    <li id="rating_pro"><a data-toggle="tab">Raiting</a></li>
                 </ul>
                 <!-- /product tab nav -->
 
@@ -180,11 +179,11 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h6>${product.getName()}</h6>
-                                <h6>Mã hàng: ${product.getId()}</h6>
-                                <h6>Độ Tuổi: ${product.getAge()} +</h6>
-                                <h6>Tên Nhà Cung Cấp: ${product.getProducer().getName()}</h6>
-                                <h6>Trọng lượng (gr): ${product.getWeight()}</h6>
-                                <h6>Kích Thước: ${product.getWeight()} x ${product.getWidth()} x ${product.getTall()}
+                                <h6>Code: ${product.getId()}</h6>
+                                <h6>Age: ${product.getAge()} +</h6>
+                                <h6>Producer: ${product.getProducer().getName()}</h6>
+                                <h6>Weight (gr): ${product.getWeight()}</h6>
+                                <h6>Size: ${product.getWeight()} x ${product.getWidth()} x ${product.getTall()}
                                     cm</h6>
                             </div>
                         </div>
@@ -242,7 +241,7 @@
                                                 </div>
                                             </div>
                                             <div class="review-body">
-                                                <p>Sản phẩm chất lượng tốt</p>
+                                                <p>Product chất lượng tốt</p>
                                             </div>
                                         </li>
                                         <li>
@@ -258,7 +257,7 @@
                                                 </div>
                                             </div>
                                             <div class="review-body">
-                                                <p>Sản phẩm chất lượng tốt</p>
+                                                <p>Product chất lượng tốt</p>
                                             </div>
                                         </li>
                                         <li>
@@ -293,11 +292,11 @@
                             <div class="col-md-3">
                                 <div id="review-form">
                                     <form class="review-form">
-                                        <input class="input" type="text" placeholder="Tên của bạn">
+                                        <input class="input" type="text" placeholder="Your name">
                                         <input class="input" type="email" placeholder="Email">
-                                        <textarea class="input" placeholder="Nhận xét của bạn"></textarea>
+                                        <textarea class="input" placeholder="Your raiting"></textarea>
                                         <div class="input-rating">
-                                            <span>Đánh giá: </span>
+                                            <span>Raiting: </span>
                                             <div class="stars">
                                                 <input id="star5" name="rating" value="5" type="radio"><label
                                                     for="star5"></label>

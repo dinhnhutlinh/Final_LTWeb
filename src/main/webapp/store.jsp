@@ -40,8 +40,8 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb-tree">
-                    <li><a href="Home">Trang chủ</a></li>
-                    <li class="">Sản phẩm</li>
+                    <li><a href="Home">Home</a></li>
+                    <li class="">Product</li>
                 </ul>
             </div>
         </div>
@@ -60,12 +60,12 @@
                 <div class="aside card border-r10">
                     <div class="card-body">
                         <div class="filter">
-                            <h4 class="aside-title">Thể loại</h4>
+                            <h4 class="aside-title">Category</h4>
                             <div class="p-2">
-                                <h5><a href="Store?cat=all">Tất cả BroadGame</a></h5>
+                                <h5><a href="Store?cat=all">All BoardGame</a></h5>
                             </div>
                             <div class="p-2">
-                                <h5><a href="Store?cat=sale">BroadGame khuyến mãi</a></h5>
+                                <h5><a href="Store?cat=sale">Sale BroadGame</a></h5>
                             </div>
                             <c:forEach var="cat" items="${listCat}">
                                 <div class="p-2">
@@ -75,7 +75,7 @@
                         </div>
                         <div class="filter">
                             <div class="border mb-4"></div>
-                            <h4 class="aside-title">Mức giá</h4>
+                            <h4 class="aside-title">Price</h4>
                             <div class="form-check">
                                 <input class="form-check-input" name="price" type="checkbox" value=""
                                        id="moneyOption1">
@@ -101,13 +101,13 @@
                                 <input class="form-check-input" name="price" type="checkbox" value=""
                                        id="moneyOption4">
                                 <label class="form-check-label" for="moneyOption4">
-                                    500000 VND trở lên
+                                    500000 VND up
                                 </label>
                             </div>
                         </div>
                         <div class="filter">
                             <div class="border mb-4"></div>
-                            <h4 class="aside-title">Độ tuổi</h4>
+                            <h4 class="aside-title">Age</h4>
                             <div class="form-check">
                                 <input class="form-check-input" name="old" type="checkbox" value="" id="oldOption1">
                                 <label class="form-check-label" for="oldOption1">
@@ -146,23 +146,20 @@
                     <div class="store-filter clearfix">
                         <div class="row">
                             <div class="col-6">
-                                <h5 id="quantily-product">Tìm được ${total} sản phẩm</h5>
+                                <h5 id="quantily-product">Search ${total} product</h5>
                             </div>
                             <div class="col-6 text-end">
                                 <div class="store-sort">
                                     <div class="row align-items-baseline">
                                         <div class="col-6"><label class="form-label">
-                                            Sắp sếp theo:</label></div>
+                                            Sort by:</label></div>
                                         <div class="col-6">
                                             <select class="form-select" onchange="sort(this.value);">
-                                                <option value="new" <c:if test="${sort=='new'}"></c:if> >Sản phẩm mới
+                                                <option value="new" <c:if test="${sort=='new'}"></c:if> >New products
                                                 </option>
-                                                <option value="-price"  <c:if test="${sort=='-price'}"></c:if>>Giá từ
-                                                    thấp
-                                                    đển cao
+                                                <option value="-price"  <c:if test="${sort=='-price'}"></c:if>>Price up
                                                 </option>
-                                                <option value="price"  <c:if test="${sort=='price'}"></c:if>>Giá từ cao
-                                                    đển thấp
+                                                <option value="price"  <c:if test="${sort=='price'}"></c:if>>Price down
                                                 </option>
                                             </select>
                                         </div>
@@ -198,8 +195,7 @@
                                         </div>
                                         <div class="add-to-cart">
 
-                                            <button class="d-none d-xl-block add-to-cart-btn w-100">Thêm vào
-                                                giỏ
+                                            <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card
                                             </button>
                                             <button class="d-xl-none add-to-cart-btn w-100"><i
                                                     class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>

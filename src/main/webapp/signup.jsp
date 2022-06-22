@@ -42,53 +42,52 @@
             <div class="left">
                 <div class="signIn">
                     <!--						<i class="fa fa-user-circle-o"></i>-->
-                    <p class="text"> ĐĂNG KÝ</p>
+                    <p class="text"> SIGN UP</p>
                 </div>
                 <div class="text_mini">
-                    <p> Đăng nhập để mua hàng và khám phá thế giới Board game phong phú từ www.vuigame.vui
-                        Đến với vui game bạn sẽ được trải nghiệm những board game siêu hot và mua với mức giá SIÊU
-                        HỜI!!!</p>
+                    <p> Sign in to purchase and explore the rich world of Board games from www.vuigame.vui. Coming to fun game you will experience super hot board games and buy at SUPER CHEAP prices!!!</p>
+
                 </div>
                 <div class="end_text">
-                    <p class="not_acc"> Bạn đã có tài khoản?</p>
-                    <a href="signIn" class="sign_in">Đăng nhập</a>
+                    <p class="not_acc"> Do you have account?</p>
+                    <a href="signIn" class="sign_in">Sign in</a>
                 </div>
             </div>
             <div class="right">
                 <form class="needs-validation" action="SignUp" method="post">
                     <div class="mb-3">
-                        <label for="lastname" class="form-label">Họ</label>
+                        <label for="lastname" class="form-label">First name</label>
                         <input class="form-control" id="lastname" name="lastname"
-                               placeholder="Họ" required>
+                               placeholder="First name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="firstname" class="form-label">Tên</label>
+                        <label for="firstname" class="form-label">Last name</label>
                         <input class="form-control" id="firstname" name="firstname"
-                               placeholder="Tên" required>
+                               placeholder="Last name" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Số điện thoại</label>
+                        <label for="phone" class="form-label">Number phone</label>
                         <input type="text" class="form-control" id="phone" name="phone"
-                               placeholder="Số điện thoại" required>
+                               placeholder="Number phone" required>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Nhập mật khẩu</label>
+                        <label for="password" class="form-label">Enter your password</label>
                         <input type="password" minlength="6" class="form-control" name="password" id="password"
-                               placeholder="Mật khẩu của bạn" required>
+                               placeholder="Password" required>
                     </div>
                     <div class="mb-3">
-                        <label for="rePassword" class="form-label">Nhập lại mật khẩu</label>
+                        <label for="rePassword" class="form-label">Enter your password again</label>
                         <input type="password" minlength="6" class="form-control" name="password" id="rePassword"
-                               placeholder="Mật khẩu của bạn" required>
-                        <span id="err-mes" class="text-danger d-none">Nhập lại mật khẩu không chính xác!</span>
+                               placeholder="Password" required>
+                        <span id="err-mes" class="text-danger d-none">Enter your password again not exacly!</span>
                     </div>
                     <div class="sign_up">
                         <button type="submit" class="btn btn-orange w-100">
-                            <span>TẠO TÀI KHOẢN</span></button>
+                            <span>CREATE ACCOUNT</span></button>
                     </div>
                 </form>
             </div>

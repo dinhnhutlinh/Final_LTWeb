@@ -9,8 +9,8 @@
             <div class="row">
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">Vể chúng tôi</h3>
-                        <p>BroadStore là công ti phân phối và bán sảm phẩm game broad</p>
+                        <h3 class="footer-title">About us</h3>
+                        <p>BroadStore is a copamy provider and sale board game</p>
                         <ul class="footer-links">
                             <li><a href="#"><i class="fa fa-map-marker"></i>25/5 Thăng Long, Phường 4, Quận Tân
                                 Bình, TP. Hồ Chí Minh</a></li>
@@ -22,22 +22,22 @@
                 </div>
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">Danh Mục</h3>
+                        <h3 class="footer-title">Category</h3>
                         <ul class="footer-links">
-                            <li><a href="#">Board Game Chiến thuật</a></li>
-                            <li><a href="#">Board Game Gia đình</a></li>
+                            <li><a href="#">Wisdom Board Game</a></li>
+                            <li><a href="#">Family Board Game</a></li>
                             <li><a href="#">Card Game</a></li>
                             <li><a href="#">Board Game Party</a></li>
-                            <li><a href="#">Phụ kiện Board Game</a></li>
+                            <li><a href="#">Accessory Board Game</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">Thông tin</h3>
+                        <h3 class="footer-title">Information</h3>
                         <ul class="footer-links">
-                            <li><a href="about_us.html">Vể chúng tôi</a></li>
-                            <li><a href="termsAndConditions.html">Chính sách và điều khoản</a></li>
+                            <li><a href="about_us.html">About us</a></li>
+                            <li><a href="termsAndConditions.html">Terms and Conditions</a></li>
 
                         </ul>
                     </div>
@@ -45,10 +45,10 @@
 
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">Dịch vụ</h3>
+                        <h3 class="footer-title">Service</h3>
                         <ul class="footer-links">
-                            <li><a href="InforUser.html">Tài khoản</a></li>
-                            <li><a href="cart.html">Giỏ hàng</a></li>
+                            <li><a href="InforUser.html">Account</a></li>
+                            <li><a href="cart.html">Cart</a></li>
 
                         </ul>
                     </div>
