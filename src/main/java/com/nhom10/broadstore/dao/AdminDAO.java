@@ -1,6 +1,5 @@
 package com.nhom10.broadstore.dao;
 
-import com.nhom10.broadstore.bean.Admin;
 import com.nhom10.broadstore.bean.UserSession;
 import org.jdbi.v3.sqlobject.SingleValue;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;

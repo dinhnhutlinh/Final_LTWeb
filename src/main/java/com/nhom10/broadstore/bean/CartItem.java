@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 
 public class CartItem {
     private int cartId;
+    @Nested(value="prod")
     private Product product;
     private int quantity;
     private int price;
@@ -78,7 +79,7 @@ public class CartItem {
     public String toString() {
         return "CartItem{" +
                 "cartId=" + cartId +
-                ", productId=" + product +
+                ", product=" + product +
                 ", quantity=" + quantity +
                 ", price=" + price +
                 ", createAt=" + createAt +

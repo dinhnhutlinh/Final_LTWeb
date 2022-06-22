@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 
 public class OrderItem {
     private int orderId;
+    @Nested(value="prod")
     private Product product;
     private int quantity;
     private int price;

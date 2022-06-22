@@ -1,17 +1,20 @@
 package com.nhom10.broadstore.bean;
 
+import org.jdbi.v3.core.mapper.Nested;
+
 import java.time.LocalDateTime;
 
 public class Cart {
     private int id;
-    private int customerId;
+    @Nested(value="cus")
+    private Customer customer;
     private int totalPrice;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Cart(int id, int customerId, int totalPrice, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Cart(int id,@Nested(value="cus") Customer customer, int totalPrice, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
-        this.customerId = customerId;
+        this.customer = customer;
         this.totalPrice = totalPrice;
         this.createAt = createAt;
         this.updateAt = updateAt;
@@ -27,13 +30,13 @@ public class Cart {
     public void setId(int id) {
         this.id = id;
     }
-
-    public int getCustomerId() {
-        return customerId;
+    @Nested(value="cus")
+    public Customer getCustomerId() {
+        return customer;
     }
-
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    @Nested(value="cus")
+    public void setCustomerId(Customer customerId) {
+        this.customer = customer;
     }
 
     public int getTotalPrice() {
@@ -64,7 +67,7 @@ public class Cart {
     public String toString() {
         return "Cart{" +
                 "id=" + id +
-                ", customer_id=" + customerId +
+                ", customer =" + customer +
                 ", total_price=" + totalPrice +
                 ", createAt=" + createAt +
                 ", updateAt=" + updateAt +

@@ -1,20 +1,24 @@
 package com.nhom10.broadstore.bean;
 
+import org.jdbi.v3.core.mapper.Nested;
+
 import java.time.LocalDateTime;
 
 public class Rating {
     private int id;
-    private int customerId;
-    private int productId;
+    @Nested(value = "cus")
+    private Customer customer;
+    @Nested(value = "prod")
+    private Product product;
     private int starRaiting;
     private String content;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    public Rating(int id, int customerId, int productId, int starRaiting, String content, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Rating(int id, @Nested("cus") Customer customer, @Nested("prod") Product product, int starRaiting, String content, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
-        this.customerId = customerId;
-        this.productId = productId;
+        this.customer = customer;
+        this.product = product;
         this.starRaiting = starRaiting;
         this.content = content;
         this.createAt = createAt;
@@ -32,20 +36,21 @@ public class Rating {
         this.id = id;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    @Nested("cus")
+    public Customer getCustomerId() {
+        return customer;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    @Nested("cus")
+    public void setCustomerId(Customer customer) {
+        this.customer = customer;
     }
 
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
+    @Nested("prod")
+    public Product getProduct() { return product;}
+    @Nested("prod")
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public int getStarRaiting() {
@@ -84,9 +89,9 @@ public class Rating {
     public String toString() {
         return "Rating{" +
                 "id=" + id +
-                ", customerId=" + customerId +
-                ", productId=" + productId +
-                ", starRaiting=" + starRaiting +
+                ", customer=" + customer +
+                ", product=" + product +
+                ", starRating=" + starRaiting +
                 ", content='" + content + '\'' +
                 ", createAt=" + createAt +
                 ", updateAt=" + updateAt +
