@@ -7,7 +7,7 @@
 
         <filter-name>EncodingFilter</filter-name>
         <filter-class>
-            com.nhom10.broadstore.fillter.EncodingFilter
+            com.nhom10.broadstore.fillters.EncodingFilter
         </filter-class>
 
         <init-param>
@@ -27,7 +27,7 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>Home</servlet-name>
-        <servlet-class>com.nhom10.broadstore.control.user.HomeControl</servlet-class>
+        <servlet-class>com.nhom10.broadstore.controller.user.HomeController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
