@@ -3,17 +3,9 @@ package com.nhom10.broadstore;
 import com.nhom10.broadstore.bean.Address;
 import com.nhom10.broadstore.bean.Product;
 import com.nhom10.broadstore.bean.UserSession;
-import com.nhom10.broadstore.dao.AddressDAO;
-import com.nhom10.broadstore.dao.CustomerDAO;
-import com.nhom10.broadstore.dao.ProductDAO;
-import com.nhom10.broadstore.db.JDBIConnector;
-import com.nhom10.broadstore.service.PasswordHash;
-import com.nhom10.broadstore.service.ProductService;
-import com.nhom10.broadstore.service.UserService;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.util.List;
 
 public class MainTest {
     public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
