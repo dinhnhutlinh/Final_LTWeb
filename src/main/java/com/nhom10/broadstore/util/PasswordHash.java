@@ -1,4 +1,4 @@
-package com.nhom10.broadstore.utils;
+package com.nhom10.broadstore.util;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
