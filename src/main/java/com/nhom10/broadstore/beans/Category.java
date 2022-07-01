@@ -1,5 +1,9 @@
 package com.nhom10.broadstore.beans;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.text.DateFormat;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -9,6 +13,7 @@ public class Category {
     private String desc;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
+    public  Category(){}
 
     public Category(String id, String name, String desc, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
