@@ -32,7 +32,9 @@ public class User {
         this.updateAt = updateAt;
         this.role = role;
     }
-
+    public String getName(){
+        return firstName+" "+lastName;
+    }
     public String getId() {
         return id;
     }

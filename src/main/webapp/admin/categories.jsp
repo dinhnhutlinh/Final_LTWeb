@@ -176,61 +176,7 @@
                 {"className": "text-end", "targets": 4},
             ],
         });
-        $('#modalCat').on('hidden.bs.modal', function (event) {
-            $('#idCat').val('');
-            $('#nameCat').val('');
-            $('#descCat').val('');
-        });
-        $('#addBtn').on('click', function () {
-            $('#modalCat').modal('show');
-        });
-        $('#tableCat').on('click', 'tbody .editBtn', function () {
-            let data = table.row($(this).closest('tr')).data();
-            $('#idCat').val(data.id);
-            $('#nameCat').val(data.name);
-            $('#descCat').val(data.desc);
-            $('#modalCat').modal('show');
 
-        });
-        $('#tableCat').on('click', 'tbody .removeBtn', function () {
-            let row = table.row($(this).closest('tr'));
-            let data = row.data();
-            if (confirm('Delete this category?'))
-                $.ajax({
-                    url: 'CategoryController?action=delete&id=' + data.id,
-                    method: "DELETE",
-                    success: function (data) {
-                        row.remove().draw();
-                        mess.html('<div class="alert alert-success" role="alert">' +
-                            'Delete done! </div>'
-                        );
-                    },
-                    error: function (error) {
-                        mess.html('<div class="alert  alert-danger" role="alert">' +
-                            'Delete Fail! </div>'
-                        );
-                    }
-                });
-        });
-        $('#saveBtn').on('click', function () {
-            let id = $('#idCat').val();
-            let name = $('#nameCat').val();
-            let desc = $('#descCat').val();
-            $.ajax({
-                url: 'CategoryController',
-                method: "POST",
-                data: {id: id, name: name, desc: desc},
-                success: function (data) {
-                    $('#modalCat').modal('hide');
-                    table.ajax.reload();
-                },
-                error: function (error) {
-                    mess.html('<div class="alert  alert-danger" role="alert">' +
-                        'Delete Fail! </div>'
-                    );
-                }
-            });
-        })
     });
 
 

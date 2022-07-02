@@ -1,17 +1,16 @@
-package com.nhom10.broadstore.dto;
+package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.beans.Category;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
-import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
 import java.util.List;
 
 @RegisterBeanMapper(Category.class)
-public interface CategoryDTO {
+public interface CategoryDAO {
 
     @SqlQuery("select *\n" +
             "from Category")
