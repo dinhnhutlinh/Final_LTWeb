@@ -56,11 +56,7 @@
             </div>
             <div class="right">
                 <form action="Login" method="post">
-                    <c:if test='${mess!=""}'>
-                        <div class="mb-3">
-                            <div class="alert alert-danger" role="alert">${mess}</div>
-                        </div>
-                    </c:if>
+
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email">
@@ -71,7 +67,11 @@
                                placeholder="Mật khẩu của bạn">
                         <span id="err-mes" class="text-danger d-none">Email or password not exactly</span>
                     </div>
-
+                    <c:if test='${mess!=null&&mess!=""}'>
+                        <div class="mb-3">
+                            <div class="alert alert-danger" role="alert">${mess}</div>
+                        </div>
+                    </c:if>
                     <div class="forgot pb-3">
                         <a href="ForgetPass.html" class="text">Forget password?</a>
                     </div>

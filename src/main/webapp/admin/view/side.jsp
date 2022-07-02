@@ -1,14 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <aside class="sidebar-nav-wrapper">
     <div class="navbar-logo">
-        <a href="Admin-DashBroad">
+        <a href="Admin-Dashboard">
             <img src="img/BoardStore.png" style="height: 70px;" alt="logo"/>
         </a>
     </div>
     <nav class="sidebar-nav">
         <ul>
             <li class="nav-item">
-                <a href="Admin-DashBroad">
+                <a href="Admin-Dashboard">
             <span class="icon">
               <i class="fas fa-tachometer-alt"></i>
             </span>
@@ -20,7 +20,7 @@
             <span class="icon">
               <i class="fas fa-users"></i>
             </span>
-                    <span class="text">Khách hàng</span>
+                    <span class="text">Customers</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -28,15 +28,15 @@
             <span class="icon">
               <i class="fas fa-shopping-cart"></i>
             </span>
-                    <span class="text">Đơn Hàng</span>
+                    <span class="text">Order</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Category">
+                <a href="Admin-Categories">
             <span class="icon">
               <i class="fas fa-tags"></i>
             </span>
-                    <span class="text">Danh Mục</span>
+                    <span class="text">Categories</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -44,11 +44,11 @@
             <span class="icon">
               <i class="fas fa-archive"></i>
             </span>
-                    <span class="text">Sản phẩm</span>
+                    <span class="text">Products</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Blog">
+                <a href="Admin-Blogs">
             <span class="icon">
               <i class="far fa-newspaper"></i>
             </span>
@@ -56,19 +56,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Producer">
+                <a href="Admin-Producers">
             <span class="icon">
               <i class="fas fa-store"></i>
             </span>
-                    <span class="text">Nhà cung cấp</span>
+                    <span class="text">Producers</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Discount">
+                <a href="Admin-Discounts">
             <span class="icon">
               <i class="fas fa-percent"></i>
             </span>
-                    <span class="text">Khuyến mãi</span>
+                    <span class="text">Discounts</span>
                 </a>
             </li>
             <li class="nav-item">

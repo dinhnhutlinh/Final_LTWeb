@@ -3,37 +3,36 @@ package com.nhom10.broadstore.beans;
 import java.time.LocalDateTime;
 
 public class Discount {
-    private int id;
+    private String id;
     private String name;
     private String desc;
-    private int discountPercent;
+    private double discountPercent;
     private int active;
-    private LocalDateTime fromAt;
-    private LocalDateTime toAt;
+    private LocalDateTime startAt;
+    private LocalDateTime finishAt;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
+    public Discount() {
+    }
 
-    public Discount(int id, String name, String desc, int discountPercent, int active, LocalDateTime fromAt, LocalDateTime toAt, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Discount(String id, String name, String desc, double discountPercent, int active, LocalDateTime startAt, LocalDateTime finishAt, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.desc = desc;
         this.discountPercent = discountPercent;
         this.active = active;
-        this.fromAt = fromAt;
-        this.toAt = toAt;
+        this.startAt = startAt;
+        this.finishAt = finishAt;
         this.createAt = createAt;
         this.updateAt = updateAt;
     }
 
-    public Discount() {
-    }
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -53,11 +52,11 @@ public class Discount {
         this.desc = desc;
     }
 
-    public int getDiscountPercent() {
+    public double getDiscountPercent() {
         return discountPercent;
     }
 
-    public void setDiscountPercent(int discountPercent) {
+    public void setDiscountPercent(double discountPercent) {
         this.discountPercent = discountPercent;
     }
 
@@ -69,20 +68,20 @@ public class Discount {
         this.active = active;
     }
 
-    public LocalDateTime getFromAt() {
-        return fromAt;
+    public LocalDateTime getStartAt() {
+        return startAt;
     }
 
-    public void setFromAt(LocalDateTime fromAt) {
-        this.fromAt = fromAt;
+    public void setStartAt(LocalDateTime startAt) {
+        this.startAt = startAt;
     }
 
-    public LocalDateTime getToAt() {
-        return toAt;
+    public LocalDateTime getFinishAt() {
+        return finishAt;
     }
 
-    public void setToAt(LocalDateTime toAt) {
-        this.toAt = toAt;
+    public void setFinishAt(LocalDateTime finishAt) {
+        this.finishAt = finishAt;
     }
 
     public LocalDateTime getCreateAt() {
@@ -93,16 +92,24 @@ public class Discount {
         this.createAt = createAt;
     }
 
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
+    }
+
     @Override
     public String toString() {
         return "Discount{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", desc='" + desc + '\'' +
                 ", discountPercent=" + discountPercent +
                 ", active=" + active +
-                ", fromAt=" + fromAt +
-                ", toAt=" + toAt +
+                ", startAt=" + startAt +
+                ", finishAt=" + finishAt +
                 ", createAt=" + createAt +
                 ", updateAt=" + updateAt +
                 '}';

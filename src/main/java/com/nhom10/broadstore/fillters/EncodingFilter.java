@@ -1,4 +1,4 @@
-package com.nhom10.broadstore.util;
+package com.nhom10.broadstore.fillters;
 
 import javax.servlet.*;
 import java.io.IOException;

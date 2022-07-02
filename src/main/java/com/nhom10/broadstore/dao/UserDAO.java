@@ -1,4 +1,4 @@
-package com.nhom10.broadstore.dto;
+package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.beans.User;
 import org.jdbi.v3.sqlobject.config.RegisterFieldMapper;
@@ -6,7 +6,7 @@ import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 
 @RegisterFieldMapper(User.class)
-public interface UserDTO {
+public interface UserDAO {
 
     @SqlQuery("select *\n" +
             "from Admin\n" +
