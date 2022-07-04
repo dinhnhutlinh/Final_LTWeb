@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon"/>
-    <title>Admin Discounts</title>
+    <title>Admin Producers</title>
 
     <!-- ========== All CSS files linkup ========= -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -59,39 +59,23 @@
                                        placeholder="Category" value="">
                             </div>
                             <div class="mb-3">
-                                <label for="discountPercent" class="labels">DiscountPercent</label>
-                                <input id="discountPercent" type="number" step="0.1" class="form-control"
-                                       placeholder="Category" value="0">
-                            </div>
-                            <div class="mb-3">
-                                <label for="active" class="labels">Active</label>
-                                <select id="active" class="form-select" aria-label="Default select example">
-                                    <option value="0">Inactive</option>
-                                    <option value="1">Active</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="startAt" class="labels">Start at</label>
-                                <input id="startAt" type="datetime-local" class="form-control"
+                                <label for="address" class="labels">Address</label>
+                                <input id="address" type="text" class="form-control"
                                        placeholder="Category" value="">
                             </div>
                             <div class="mb-3">
-                                <label for="finishAt" class="labels">Finish at</label>
-                                <input id="finishAt" type="datetime-local" class="form-control"
+                                <label for="phone" class="labels">Phone</label>
+                                <input id="phone" type="text" class="form-control"
                                        placeholder="Category" value="">
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="desc">Description</label>
-                                <textarea id="desc" class="form-control" rows="6"></textarea>
+                            <div id="modelMess"></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Cancel
+                                </button>
+                                <button id="saveBtn" type="button" class="btn btn-orange">Save
+                                </button>
                             </div>
-                        </div>
-                        <div id="modelMess"></div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                Cancel
-                            </button>
-                            <button id="saveBtn" type="button" class="btn btn-orange">Save
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -120,17 +104,15 @@
             </div>
             <div class="row">
                 <div class="content-header">
-                    <h2 class="content-title">Discounts</h2>
+                    <h2 class="content-title">Producers</h2>
                     <div>
                         <button id="addBtn" class="btn btn-orange"></i>Add</button>
                     </div>
                 </div>
                 <div class="card mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <table id="table" class="table table-hover pt-3 nowrap" style="width: 100%">>
-                            </table>
-                        </div>
+                    <div class="card-body">
+                        <table id="table" class="table table-hover pt-3 nowrap" style="width: 100%">
+                        </table>
                     </div>
                 </div>
             </div>
@@ -158,40 +140,29 @@
             info: false,
             scrollX: true,
             ajax: {
-                url: 'DiscountController?action=all',
+                url: 'ProducerController?action=all',
                 dataSrc: '',
             },
-
             columns: [
                 {
                     title: '#id',
                     data: 'id'
                 },
                 {
-                    title: '#Desciptions',
-                    data: 'desc'
+                    title: 'Name',
+                    data: 'name'
                 }, {
-                    title: 'Discount',
-                    data: 'discountPercent',
+                    title: 'address',
+                    data: 'address',
                     render: function (data) {
-                        return data + " %";
+                        return data == null ? null : data;
                     }
                 }, {
-                    title: 'Active',
-                    data: 'active',
+                    title: 'phone',
+                    data: 'phone',
                     render: function (data) {
-                        if (data == 1)
-                            return '<span class="badge rounded-pill alert-success">Active</span>';
-                        else
-                            return '<span class="badge rounded-pill alert-danger">Active</span>';
+                        return data == null ? null : data;
                     }
-
-                }, {
-                    title: 'Start',
-                    data: 'startAt'
-                }, {
-                    title: 'Finish',
-                    data: 'finishAt'
                 },
                 {
                     title: 'Action',
@@ -207,25 +178,20 @@
         $('#modal').on('hidden.bs.modal', function (event) {
             $('#id').val('');
             $('#name').val('');
-            $('#discountPercent').val('');
-            $('#desc').val('');
-            $('#active').val('')
-            $('#startAt').val('');
-            $('#finishAt').val('');
+            $('#address').val('');
+            $('#email').val('');
+            $('#phone').val('');
         });
         $('#addBtn').on('click', function () {
             $('#modal').modal('show');
         });
         $('#table').on('click', 'tbody .editBtn', function () {
             let data = table.row($(this).closest('tr')).data();
-            console.log(data);
             $('#id').val(data.id);
             $('#name').val(data.name);
-            $('#discountPercent').val(data.discountPercent);
-            $('#desc').val(data.desc);
-            $('#active').val(data.active);
-            $('#startAt').val(data.startAt);
-            $('#finishAt').val(data.finishAt);
+            $('#address').val(data.address);
+            $('#email').val(data.email);
+            $('#phone').val(data.phone);
             $('#modal').modal('show');
 
         });
@@ -234,7 +200,7 @@
             let data = row.data();
             if (confirm('Delete this category?'))
                 $.ajax({
-                    url: 'DiscountController?id=' + data.id,
+                    url: 'ProducerController?id=' + data.id,
                     method: "DELETE",
                     success: function (data) {
                         row.remove().draw();
@@ -251,22 +217,18 @@
         $('#saveBtn').on('click', function () {
             let id = $('#id').val();
             let name = $('#name').val();
-            let desc = $('#desc').val();
-            let discountPercent = $('#discountPercent').val();
-            let active = $('#active').val();
-            let startAt = $('#startAt').val();
-            let finishAt = $('#finishAt').val();
+            let address = $('#address').val();
+            let email = $('#email').val();
+            let phone = $('#phone').val();
             $.ajax({
-                url: 'DiscountController',
+                url: 'ProducerController',
                 method: "POST",
                 data: {
                     id: id,
                     name: name,
-                    discountPercent: discountPercent,
-                    desc: desc,
-                    active: active,
-                    startAt: startAt,
-                    finishAt: finishAt,
+                    address: address,
+                    email: email,
+                    phone: phone,
                 },
                 success: function (data) {
                     $('#modal').modal('hide');
@@ -283,10 +245,6 @@
             });
         });
     });
-
-    function deleteDis(id) {
-
-    }
 </script>
 </body>
 </html>

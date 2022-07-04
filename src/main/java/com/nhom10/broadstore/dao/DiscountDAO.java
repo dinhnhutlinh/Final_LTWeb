@@ -21,9 +21,9 @@ public interface DiscountDAO {
     int delete(@Bind("id") String id);
 
     @SqlUpdate("insert into `Discount` (`id`, `name`, `desc`, `discount_percent`, `active`, `start_at`, `finish_at`, `create_at`, `update_at`)" +
-            " values (:id, :name, :desc,:discountPercent, :active, :startAt, :finishAt ,now(), now())")
+            " values (:id, :name, :desc, :discountPercent, :active, :startAt, :finishAt ,now(), now())")
     int insert(@BindBean Discount discount);
 
-    @SqlUpdate("UPDATE `Discount` SET `name`=:name,`desc`=:desc,`discount_percent`=discontPercent,`active`=:active,`start_at`=:startAt,`finish_at`=:finishAt,`update_at`=now() WHERE `id`=:id")
+    @SqlUpdate("UPDATE `Discount` SET `name`=:name,`desc`=:desc,`discount_percent`=:discountPercent,`active`=:active,`start_at`=:startAt,`finish_at`=:finishAt,`update_at`=now() WHERE `id`=:id")
     int update(@BindBean Discount discount);
 }

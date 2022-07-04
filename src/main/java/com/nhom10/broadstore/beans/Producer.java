@@ -7,17 +7,17 @@ public class Producer {
     private String id;
     private String name;
     private String address;
-    private String mail;
+    private String email;
     private String phone;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
     public Producer(){}
-    public Producer(String id, String name, String address, String mail, String phone, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Producer(String id, String name, String address, String email, String phone, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.mail = mail;
+        this.email = email;
         this.phone = phone;
         this.createAt = createAt;
         this.updateAt = updateAt;
@@ -47,12 +47,12 @@ public class Producer {
         this.address = address;
     }
 
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhone() {
@@ -84,12 +84,12 @@ public class Producer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Producer producer = (Producer) o;
-        return Objects.equals(id, producer.id) && Objects.equals(name, producer.name) && Objects.equals(address, producer.address) && Objects.equals(mail, producer.mail) && Objects.equals(phone, producer.phone) && Objects.equals(createAt, producer.createAt) && Objects.equals(updateAt, producer.updateAt);
+        return Objects.equals(id, producer.id) && Objects.equals(name, producer.name) && Objects.equals(address, producer.address) && Objects.equals(email, producer.email) && Objects.equals(phone, producer.phone) && Objects.equals(createAt, producer.createAt) && Objects.equals(updateAt, producer.updateAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, address, mail, phone, createAt, updateAt);
+        return Objects.hash(id, name, address, email, phone, createAt, updateAt);
     }
     @Override
     public String toString() {
@@ -97,7 +97,7 @@ public class Producer {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", mail='" + mail + '\'' +
+                ", mail='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", createAt=" + createAt +
                 ", updateAt=" + updateAt +
