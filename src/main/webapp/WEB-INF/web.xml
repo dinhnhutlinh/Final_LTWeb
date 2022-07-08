@@ -13,6 +13,7 @@
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
+
         </init-param>
 
     </filter>
@@ -28,6 +29,10 @@
     <servlet>
         <servlet-name>Home</servlet-name>
         <servlet-class>com.nhom10.broadstore.controllers.HomeControl</servlet-class>
+        <init-param>
+            <param-name>FILE_UPLOAD_PATH</param-name>
+            <param-value>/opt/myuser/files/upload</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>

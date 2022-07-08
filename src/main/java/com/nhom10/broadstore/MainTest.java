@@ -16,6 +16,6 @@ public class MainTest {
 //        JDBIConnector.get().useExtension(AddressDAO.class, dao->{
 //            dao.insert(new Address());
 //        });
-        System.out.println("ĐỬ");
+
     }
 }

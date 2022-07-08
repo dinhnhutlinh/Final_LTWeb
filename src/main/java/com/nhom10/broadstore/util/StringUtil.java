@@ -1,5 +1,6 @@
 package com.nhom10.broadstore.util;
 
+import java.nio.file.Files;
 import java.util.Random;
 
 public class StringUtil {
@@ -15,5 +16,26 @@ public class StringUtil {
                 .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                 .toString();
         return generatedString;
+    }
+
+    static public String getNameFile(String fileName) {
+        if (fileName == null) {
+            throw new IllegalArgumentException("fileName must not be null!");
+        }
+        int dotIndex = fileName.lastIndexOf('.');
+        return (dotIndex == -1) ? fileName : fileName.substring(0, dotIndex);
+    }
+
+    static public String getExtension(String fileName) {
+        if (fileName == null) {
+            throw new IllegalArgumentException("fileName must not be null!");
+        }
+        String extension = "";
+
+        int index = fileName.lastIndexOf('.');
+        if (index > 0) {
+            extension = fileName.substring(index + 1);
+        }
+        return extension;
     }
 }

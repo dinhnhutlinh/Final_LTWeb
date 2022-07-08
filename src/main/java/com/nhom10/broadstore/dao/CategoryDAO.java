@@ -14,16 +14,16 @@ public interface CategoryDAO {
 
     @SqlQuery("select *\n" +
             "from Category")
-    List<Category> queryAll();
+    List<Category> list();
 
     @SqlQuery("select *\n" +
             "from Category WHERE id=:id")
-    Category findWithId(@Bind("id") String id);
+    Category findById(@Bind("id") String id);
 
     @SqlUpdate("delete\n" +
             "from Category\n" +
             "where id=:id")
-    int deleteCat(@Bind("id") String id);
+    int deleteById(@Bind("id") String id);
 
     @SqlUpdate("insert into Category (`id`, `name`, `desc`, `create_at`, `update_at`) values (:id, :name, :desc, now(), now())")
     int insert(@BindBean Category category);

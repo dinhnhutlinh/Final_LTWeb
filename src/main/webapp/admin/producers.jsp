@@ -56,17 +56,22 @@
                             <div class="mb-3">
                                 <label for="name" class="labels">Name</label>
                                 <input id="name" type="text" class="form-control"
-                                       placeholder="Category" value="">
+                                       placeholder="Name" value="">
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="labels">Address</label>
                                 <input id="address" type="text" class="form-control"
-                                       placeholder="Category" value="">
+                                       placeholder="Address" value="">
                             </div>
                             <div class="mb-3">
                                 <label for="phone" class="labels">Phone</label>
                                 <input id="phone" type="text" class="form-control"
-                                       placeholder="Category" value="">
+                                       placeholder="Phone" value="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="labels">Email</label>
+                                <input id="email" type="text" class="form-control"
+                                       placeholder="Email" value="">
                             </div>
                             <div id="modelMess"></div>
                             <div class="modal-footer">
@@ -150,16 +155,27 @@
                 },
                 {
                     title: 'Name',
-                    data: 'name'
+                    data: 'name',
+                    render: function (data) {
+                        return data == null ? null : data;
+                    }
                 }, {
                     title: 'address',
                     data: 'address',
                     render: function (data) {
                         return data == null ? null : data;
                     }
-                }, {
+                },
+                {
                     title: 'phone',
                     data: 'phone',
+                    render: function (data) {
+                        return data == null ? null : data;
+                    }
+                },
+                {
+                    title: 'email',
+                    data: 'email',
                     render: function (data) {
                         return data == null ? null : data;
                     }
