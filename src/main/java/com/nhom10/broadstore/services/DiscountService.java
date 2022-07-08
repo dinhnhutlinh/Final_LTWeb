@@ -11,7 +11,7 @@ public class DiscountService {
     Jdbi connect = JDBIConnector.get();
 
     public List<Discount> getAllDiscount() {
-        return connect.withExtension(DiscountDAO.class, handle -> handle.queryAll());
+        return connect.withExtension(DiscountDAO.class, handle -> handle.list());
     }
 
     public void delete(String id) {

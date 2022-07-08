@@ -19,9 +19,9 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="profile-info">
                                 <div class="info">
-                                    <h5>${user.getName()}</h5>
+                                    <h5>${userSession.getName()}</h5>
                                     <div class="image">
-                                        <img src="${user.getAvatar()}" alt="avatar"/>
+                                        <img src="${userSession.getAvatar()}" alt="avatar"/>
                                         <span class="status"></span>
                                     </div>
                                 </div>

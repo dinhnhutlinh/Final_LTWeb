@@ -3,6 +3,7 @@ package com.nhom10.broadstore.controllers;
 import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.emun.Role;
 import com.nhom10.broadstore.services.UserService;
+import com.nhom10.broadstore.util.Defind;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,7 +38,7 @@ public class LoginController extends HttpServlet {
                 rd.forward(req, resp);
             } else {
                 HttpSession session = req.getSession(true);
-                session.setAttribute("user", user);
+                session.setAttribute(Defind.userSession, user);
                 if (user.getRole() == Role.ADMIN) {
                     resp.sendRedirect("Admin-Dashboard");
                 } else {

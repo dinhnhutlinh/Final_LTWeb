@@ -35,6 +35,7 @@ public class ProducerController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
         String name = req.getParameter("name");
+        String address= req.getParameter("address");
         String email = req.getParameter("email");
         String phone = req.getParameter("phone");
 
@@ -49,6 +50,7 @@ public class ProducerController extends HttpServlet {
             producer.setName(name);
             producer.setEmail(email);
             producer.setPhone(phone);
+            producer.setName(email);
         } catch (Exception e) {
             resp.setStatus(400);
             printWriter.println(new ExceptionModel(e.toString()));
