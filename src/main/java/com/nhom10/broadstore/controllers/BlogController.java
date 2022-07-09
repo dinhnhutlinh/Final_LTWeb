@@ -4,7 +4,7 @@ import com.nhom10.broadstore.beans.Blog;
 import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.services.BlogService;
 import com.nhom10.broadstore.services.ImageFromPartService;
-import com.nhom10.broadstore.util.Defind;
+import com.nhom10.broadstore.util.Define;
 import com.nhom10.broadstore.util.JsonUtil;
 import com.nhom10.broadstore.util.StringUtil;
 
@@ -49,7 +49,7 @@ public class BlogController extends HttpServlet {
         BlogService blogService = new BlogService();
         PrintWriter printWriter = resp.getWriter();
         Blog blog = new Blog();
-        User admin = (User) session.getAttribute(Defind.userSession);
+        User admin = (User) session.getAttribute(Define.userSession);
 
         try {
             if (id == null || id.equals(""))
@@ -63,7 +63,7 @@ public class BlogController extends HttpServlet {
 
             if (image != null) {
                 System.out.println("OK");
-                String path = ImageFromPartService.storeBlogImage(image, getServletContext().getRealPath(Defind.blogImageFolder), id);
+                String path = ImageFromPartService.storeBlogImage(image, getServletContext().getRealPath(Define.blogImageFolder), id);
                 blog.setImage(path);
             } else {
                 System.out.println("loi");

@@ -126,6 +126,7 @@
         initialPreview: [
             'upload/blogs/${blog.getImage()}'
         ],
+        showUpload: false,
         initialPreviewAsData: true,
         initialPreviewFileType: 'image',
     }).on('filesorted', function (e, params) {
