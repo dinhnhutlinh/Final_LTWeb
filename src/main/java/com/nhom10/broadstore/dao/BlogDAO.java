@@ -20,10 +20,14 @@ public interface BlogDAO {
     @SqlUpdate("delete from Blog where id=:id")
     int deleteById(@Bind("id") String id);
 
-    @SqlUpdate("INSERT INTO `Blog`(`id`, `admin_id`, `title`, `image`, `content`, `create_at`, `update_at`) VALUES (:id,:adminId,:title,:image,:content,now(),now())")
+    @SqlUpdate("INSERT INTO `Blog`(`id`, `admin_id`, `title`, `content`, `create_at`, `update_at`) " +
+            "VALUES (:id, :adminId, :title, :content,now(),now())")
     int insert(@BindBean Blog Blog);
 
-    @SqlUpdate("UPDATE `Blog` SET `admin_id`=:adminId,`title`=:title,`image`=:image,`content`=:content,`update_at`=now() WHERE `id`=:id")
+    @SqlUpdate("UPDATE `Blog` SET `admin_id`=:adminId,`title`=:title,`content`=:content,`update_at`=now() WHERE `id`=:id")
     int update(@BindBean Blog Blog);
+
+    @SqlUpdate("UPDATE Blog SET image=:image where id=:blogId")
+    int updateImage(@Bind("blogId") String blogId,@Bind("image") String image);
 }
 

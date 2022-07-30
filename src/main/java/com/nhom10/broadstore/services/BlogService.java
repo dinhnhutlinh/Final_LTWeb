@@ -23,11 +23,15 @@ public class BlogService {
         return connect.withExtension(BlogDAO.class, handle -> handle.insert(blog));
     }
 
-    public int update(Blog Blog) {
-        return connect.withExtension(BlogDAO.class, handle -> handle.update(Blog));
+    public int update(Blog blog) {
+        return connect.withExtension(BlogDAO.class, handle -> handle.update(blog));
     }
 
     public Blog findById(String id) {
         return connect.withExtension(BlogDAO.class, handle -> handle.findById(id));
+    }
+
+    public int updateImage(String blogId,String image){
+        return connect.withExtension(BlogDAO.class, handle -> handle.updateImage(blogId,image));
     }
 }

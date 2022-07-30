@@ -123,7 +123,7 @@
                     title: 'Image',
                     data: 'image',
                     render: function (data) {
-                        return '<img src="upload/blogs/' + data +
+                        return '<img src="' + data +
                             '" height="100 px">';
                     }
                 },

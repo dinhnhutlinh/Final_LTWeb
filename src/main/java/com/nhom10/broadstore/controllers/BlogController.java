@@ -1,17 +1,22 @@
 package com.nhom10.broadstore.controllers;
 
+import com.google.gson.Gson;
 import com.nhom10.broadstore.beans.Blog;
+import com.nhom10.broadstore.beans.ResponseModel;
 import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.services.BlogService;
-import com.nhom10.broadstore.services.ImageFromPartService;
 import com.nhom10.broadstore.util.Define;
 import com.nhom10.broadstore.util.JsonUtil;
 import com.nhom10.broadstore.util.StringUtil;
+import com.nhom10.broadstore.util.UploadFileHelper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -40,39 +45,42 @@ public class BlogController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(true);
-        boolean isInsert = true;
+
         String id = req.getParameter("id");
         String title = req.getParameter("title");
-        Part image = req.getPart("image");
+
         String content = req.getParameter("content");
 
         BlogService blogService = new BlogService();
         PrintWriter printWriter = resp.getWriter();
-        Blog blog = new Blog();
+
         User admin = (User) session.getAttribute(Define.userSession);
 
         try {
-            if (id == null || id.equals(""))
-                id = StringUtil.genIDWithLength(10);
-            else
-                isInsert = false;
-
-
-            blog.setId(id);
+            Blog blog = blogService.findById(id);
+            boolean isInsert = blog == null;
+            if (blog == null) {
+                blog = new Blog();
+                blog.setId(StringUtil.genIDWithLength(8));
+            } else blog.setId(id);
             blog.setTitle(title);
-
-            if (image != null) {
-                System.out.println("OK");
-                String path = ImageFromPartService.storeBlogImage(image, getServletContext().getRealPath(Define.blogImageFolder), id);
-                blog.setImage(path);
-            } else {
-                System.out.println("loi");
-            }
-            blog.setAdminId(admin.getId());
+            blog.setAdminId("admin");
+//        blog.setAdminId(admin.getId());
             blog.setContent(content);
             if (isInsert)
                 blogService.insert(blog);
             else blogService.update(blog);
+
+            // update image
+            List<String> images = UploadFileHelper.uploadFile(Define.blogImageFolder + "/" + blog.getId(), req, "image");
+            System.out.println(images);
+            if (images != null) {
+                blogService.updateImage(blog.getId(), images.get(0));
+                blog.setImage(images.get(0));
+            }
+
+            printWriter.println(new Gson().toJson(new ResponseModel<Blog>(200, "Success !!!", blog)));
+            printWriter.close();
         } catch (Exception e) {
             System.out.println(e);
             resp.setStatus(400);

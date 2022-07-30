@@ -124,7 +124,7 @@
 <script>
     $("#file-input").fileinput({
         initialPreview: [
-            'upload/blogs/${blog.getImage()}'
+            <c:if test="${blog.getImage()!=null}"> '${blog.getImage()}'</c:if>
         ],
         showUpload: false,
         initialPreviewAsData: true,
@@ -178,6 +178,9 @@
             formData.append('title', $('#title').val());
             formData.append('image', $('#file-input').prop('files')[0]);
             formData.append('content', quill.root.innerHTML);
+            for (const value of formData.values()) {
+                console.log(value);
+            }
             $.ajax({
                 url: 'BlogController',
                 method: "POST",
@@ -186,8 +189,12 @@
                 data: formData,
                 success: function (data) {
                     $('#modal').modal('hide');
-                    mess.html('<div class="alert  alert-success" role="alert">' +
-                        'Success !!!</div>'
+                    let resp = JSON.parse(data);
+
+                    $('#id').val(resp.data.id);
+
+                    mess.html('<div class="alert  alert-success" role="alert">' + resp.mess +
+                        '</div>'
                     );
 
                 },
