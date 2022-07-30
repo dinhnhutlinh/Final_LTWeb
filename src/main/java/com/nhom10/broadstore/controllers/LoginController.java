@@ -1,6 +1,5 @@
 package com.nhom10.broadstore.controllers;
 
-import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.emun.Role;
 import com.nhom10.broadstore.services.UserService;
 import com.nhom10.broadstore.util.Define;

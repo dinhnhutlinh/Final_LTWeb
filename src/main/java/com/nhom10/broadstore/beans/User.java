@@ -10,31 +10,39 @@ public class User {
     private String lastName;
     private String firstName;
     private String avatar;
+
+    private String password;
     private String address;
     private String phone;
     private String mail;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
+
+    private int active;
     private Role role;
 
     public User() {
     }
 
-    public User(String id, String lastName, String firstName, String avatar, String address, String phone, String mail, LocalDateTime createAt, LocalDateTime updateAt, Role role) {
+    public User(String id, String lastName, String firstName, String avatar, String password, String address, String phone, String mail, LocalDateTime createAt, LocalDateTime updateAt, int active, Role role) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
         this.avatar = avatar;
+        this.password=password;
         this.address = address;
         this.phone = phone;
         this.mail = mail;
         this.createAt = createAt;
         this.updateAt = updateAt;
+        this.active=active;
         this.role = role;
     }
-    public String getName(){
-        return firstName+" "+lastName;
+
+    public String getName() {
+        return firstName + " " + lastName;
     }
+
     public String getId() {
         return id;
     }
@@ -65,6 +73,14 @@ public class User {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getAddress() {
@@ -107,6 +123,14 @@ public class User {
         this.updateAt = updateAt;
     }
 
+    public void setActive(int active) {
+        this.active = active;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
     public Role getRole() {
         return role;
     }
@@ -120,11 +144,11 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(lastName, user.lastName) && Objects.equals(firstName, user.firstName) && Objects.equals(avatar, user.avatar) && Objects.equals(address, user.address) && Objects.equals(phone, user.phone) && Objects.equals(mail, user.mail) && Objects.equals(createAt, user.createAt) && Objects.equals(updateAt, user.updateAt) && role == user.role;
+        return Objects.equals(id, user.id) && Objects.equals(lastName, user.lastName) && Objects.equals(firstName, user.firstName) && Objects.equals(avatar, user.avatar)   && Objects.equals(address, user.address) && Objects.equals(phone, user.phone) && Objects.equals(mail, user.mail) && Objects.equals(createAt, user.createAt) && Objects.equals(updateAt, user.updateAt) && role == user.role;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, lastName, firstName, avatar, address, phone, mail, createAt, updateAt, role);
+        return Objects.hash(id, lastName, firstName, avatar,password, address, phone, mail, createAt, updateAt,active, role);
     }
 }
