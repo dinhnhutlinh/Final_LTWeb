@@ -6,11 +6,13 @@ import com.nhom10.broadstore.dao.UserDAO;
 import com.nhom10.broadstore.emun.Role;
 import org.jdbi.v3.core.Jdbi;
 
+import java.security.GeneralSecurityException;
+
 public class UserService {
 
     Jdbi connector = JDBIConnector.get();
 
-    public User login(String email, String password) {
+    public User login(String email, String password) throws GeneralSecurityException {
         return connector.withExtension(UserDAO.class, handle -> {
             User user;
 
@@ -18,12 +20,20 @@ public class UserService {
                 user.setRole(Role.ADMIN);
                 return user;
             }
-            user = handle.loginCustomer(email, password);
+
+            String hashPassCustomer = PasswordHash.createHash(password);
+            user = handle.loginCustomer(email, hashPassCustomer);
             if (user != null)
                 user.setRole(Role.CUSTOMER);
 
             return user;
         });
+    }
+
+    public int signUp(User user) {
+//
+        //
+        return connector.withExtension(UserDAO.class, handle -> handle.signUpCustomer(user));
     }
 
     public boolean isContainUserWithEmail(String email) {

@@ -55,14 +55,19 @@
             </div>
             <div class="right">
                 <form class="needs-validation" action="SignUp" method="post">
+                    <c:if test='${mess!=""}'>
+                        <div class="mb-3">
+                            <div class="alert alert-danger" role="alert">${mess}</div>
+                        </div>
+                    </c:if>
                     <div class="mb-3">
                         <label for="lastname" class="form-label">First name</label>
-                        <input class="form-control" id="lastname" name="lastname"
+                        <input class="form-control" id="lastname" name="first_name"
                                placeholder="First name" required>
                     </div>
                     <div class="mb-3">
                         <label for="firstname" class="form-label">Last name</label>
-                        <input class="form-control" id="firstname" name="firstname"
+                        <input class="form-control" id="firstname" name="last_name"
                                placeholder="Last name" required>
                     </div>
                     <div class="mb-3">
@@ -81,7 +86,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="rePassword" class="form-label">Enter your password again</label>
-                        <input type="password" minlength="6" class="form-control" name="password" id="rePassword"
+                        <input type="password" minlength="6" class="form-control" name="re_password" id="rePassword"
                                placeholder="Password" required>
                         <span id="err-mes" class="text-danger d-none">Enter your password again not exacly!</span>
                     </div>
