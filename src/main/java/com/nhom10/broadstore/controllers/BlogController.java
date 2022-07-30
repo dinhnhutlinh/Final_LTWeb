@@ -1,6 +1,7 @@
 package com.nhom10.broadstore.controllers;
 
 import com.nhom10.broadstore.beans.Blog;
+import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.services.BlogService;
 import com.nhom10.broadstore.services.ImageFromPartService;
 import com.nhom10.broadstore.util.Define;

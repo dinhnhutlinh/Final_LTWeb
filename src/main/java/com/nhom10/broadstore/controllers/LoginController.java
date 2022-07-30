@@ -1,5 +1,6 @@
 package com.nhom10.broadstore.controllers;
 
+import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.emun.Role;
 import com.nhom10.broadstore.services.UserService;
 import com.nhom10.broadstore.util.Define;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 
 @WebServlet(urlPatterns = "/Login")
 public class LoginController extends HttpServlet {
@@ -30,7 +32,12 @@ public class LoginController extends HttpServlet {
 
         if (userService.isContainUserWithEmail(email)) {
 
-            User user = userService.login(email, password);
+            User user = null;
+            try {
+                user = userService.login(email, password);
+            } catch (GeneralSecurityException e) {
+                throw new RuntimeException(e);
+            }
             if (user == null) {
                 req.setAttribute("mess", "Email or password is wrong!!!");
                 RequestDispatcher rd = req.getRequestDispatcher("login.jsp");

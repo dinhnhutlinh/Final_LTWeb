@@ -1,5 +1,6 @@
 package com.nhom10.broadstore.services;
 
+import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.db.JDBIConnector;
 import com.nhom10.broadstore.dao.UserDAO;
 import com.nhom10.broadstore.emun.Role;
