@@ -1,12 +1,14 @@
 package com.nhom10.broadstore.services;
 
 import com.nhom10.broadstore.beans.User;
-import com.nhom10.broadstore.db.JDBIConnector;
 import com.nhom10.broadstore.dao.UserDAO;
+import com.nhom10.broadstore.db.JDBIConnector;
 import com.nhom10.broadstore.emun.Role;
 import org.jdbi.v3.core.Jdbi;
 
 import java.security.GeneralSecurityException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserService {
 
@@ -31,8 +33,6 @@ public class UserService {
     }
 
     public int signUp(User user) {
-//
-        //
         return connector.withExtension(UserDAO.class, handle -> handle.signUpCustomer(user));
     }
 
@@ -49,4 +49,33 @@ public class UserService {
         });
     }
 
+    public List<User> listCustomer() {
+        return connector.withExtension(UserDAO.class, handle ->
+                handle.listCustomer().stream().map(user -> {
+                    user.setRole(Role.CUSTOMER);
+                    return user;
+                }).collect(Collectors.toList()));
+    }
+    public List<User> listAdmin() {
+        return connector.withExtension(UserDAO.class, handle ->
+                handle.listAdmin().stream().map(user -> {
+                    user.setRole(Role.ADMIN);
+                    return user;
+                }).collect(Collectors.toList()));
+    }
+
+    public int deleteAdmin(String id) {
+        return connector.withExtension(UserDAO.class
+        ,handle -> handle.deleteAdmin(id));
+    }
+    public int deleteCustomer(String id) {
+        return connector.withExtension(UserDAO.class
+                ,handle -> handle.deleteCustomer(id));
+    }
+
+
+    public int setActiveAdmin(String id, int active) {
+        return connector.withExtension(UserDAO.class
+                ,handle -> handle.setActiveAdmin(id,active));
+    }
 }

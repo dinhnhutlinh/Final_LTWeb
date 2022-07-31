@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon"/>
-    <title>Danh sách danh mục</title>
+    <title>Admin Categories</title>
 
     <!-- ========== All CSS files linkup ========= -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -130,8 +130,6 @@
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
 <script>
-
-
     $(document).ready(function () {
         let table;
         let mess = $('#mess');
@@ -176,10 +174,61 @@
                 {"className": "text-end", "targets": 4},
             ],
         });
-
+        $('#modalCat').on('hidden.bs.modal', function (event) {
+            $('#idCat').val('');
+            $('#nameCat').val('');
+            $('#descCat').val('');
+        });
+        $('#addBtn').on('click', function () {
+            $('#modalCat').modal('show');
+        });
+        $('#tableCat').on('click', 'tbody .editBtn', function () {
+            let data = table.row($(this).closest('tr')).data();
+            $('#idCat').val(data.id);
+            $('#nameCat').val(data.name);
+            $('#descCat').val(data.desc);
+            $('#modalCat').modal('show');
+        });
+        $('#tableCat').on('click', 'tbody .removeBtn', function () {
+            let row = table.row($(this).closest('tr'));
+            let data = row.data();
+            if (confirm('Delete this category?'))
+                $.ajax({
+                    url: 'CategoryController?action=delete&id=' + data.id,
+                    method: "DELETE",
+                    success: function (data) {
+                        row.remove().draw();
+                        mess.html('<div class="alert alert-success" role="alert">' +
+                            'Delete done! </div>'
+                        );
+                    },
+                    error: function (error) {
+                        mess.html('<div class="alert  alert-danger" role="alert">' +
+                            'Delete Fail! </div>'
+                        );
+                    }
+                });
+        });
+        $('#saveBtn').on('click', function () {
+            let id = $('#idCat').val();
+            let name = $('#nameCat').val();
+            let desc = $('#descCat').val();
+            $.ajax({
+                url: 'CategoryController',
+                method: "POST",
+                data: {id: id, name: name, desc: desc},
+                success: function (data) {
+                    $('#modalCat').modal('hide');
+                    table.ajax.reload();
+                },
+                error: function (error) {
+                    mess.html('<div class="alert  alert-danger" role="alert">' +
+                        'Delete Fail! </div>'
+                    );
+                }
+            });
+        });
     });
-
-
 </script>
 </body>
 

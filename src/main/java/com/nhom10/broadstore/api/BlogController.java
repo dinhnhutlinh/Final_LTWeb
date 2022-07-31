@@ -34,9 +34,9 @@ public class BlogController extends HttpServlet {
 
         if (action.equalsIgnoreCase("all")) {
             BlogService BlogService = new BlogService();
-            List<Blog> BlogList = BlogService.getAllBlog();
+            List<Blog> blogList = BlogService.getAllBlog();
             PrintWriter printWriter = resp.getWriter();
-            printWriter.println(new JsonUtil().toJSon(BlogList));
+            printWriter.println(new JsonUtil().toJSon(blogList));
             printWriter.flush();
             printWriter.close();
         }
