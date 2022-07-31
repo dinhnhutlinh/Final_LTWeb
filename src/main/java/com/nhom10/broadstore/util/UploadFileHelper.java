@@ -21,8 +21,6 @@ public class UploadFileHelper {
                     File projectFolder= new File(Define.projectPath+File.separator+uploadDir);
                     if (!tomcatFolder.exists()) tomcatFolder.mkdirs();
                     if(!projectFolder.exists()) projectFolder.mkdirs();
-                    System.out.println(tomcatFolder.getAbsolutePath()+File.separator+fileName);
-                    System.out.println(projectFolder.getAbsolutePath()+File.separator+fileName);
                     part.write(tomcatFolder.getAbsolutePath()+File.separator+fileName);
                     part.write(projectFolder.getAbsolutePath()+File.separator+fileName);
                     fileNames.add(uploadDir+File.separator+fileName);
