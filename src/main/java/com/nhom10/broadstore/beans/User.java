@@ -17,7 +17,6 @@ public class User {
     private String mail;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
-
     private int active;
     private Role role;
 

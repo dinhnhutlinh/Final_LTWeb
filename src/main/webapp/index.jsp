@@ -278,7 +278,7 @@
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
                 <h4 class="">Saling products</h4>
-                <a class="ps-3" href="store.html">View all</a>
+                <a class="ps-3" href="Store">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">

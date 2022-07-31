@@ -13,7 +13,7 @@ public class Product {
     private int minPlaytime;
     private int maxPlaytime;
     private String desc;
-    private String imageDisplay;
+    private String imgDisplay;
     private double weightAmount;
     private String weightUnits;
     private double sizeHeight;
@@ -27,10 +27,15 @@ public class Product {
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
+    //
+    private String producerId;
+    private String categoryId;
+    private String discountId;
+
     public Product() {
     }
 
-    public Product(String id, String name, double price, int minAge, int minPlayer, int maxPlayer, int minPlaytime, int maxPlaytime, String desc, String imageDisplay, double weightAmount, String weightUnits, double sizeHeight, double sizeDepth, String sizeUnits, int active, int inventory, Producer producer, Category category, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
+    public Product(String id, String name, double price, int minAge, int minPlayer, int maxPlayer, int minPlaytime, int maxPlaytime, String desc, String imgDisplay, double weightAmount, String weightUnits, double sizeHeight, double sizeDepth, String sizeUnits, int active, int inventory, Producer producer, Category category, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -40,7 +45,7 @@ public class Product {
         this.minPlaytime = minPlaytime;
         this.maxPlaytime = maxPlaytime;
         this.desc = desc;
-        this.imageDisplay = imageDisplay;
+        this.imgDisplay = imgDisplay;
         this.weightAmount = weightAmount;
         this.weightUnits = weightUnits;
         this.sizeHeight = sizeHeight;
@@ -127,12 +132,12 @@ public class Product {
         this.desc = desc;
     }
 
-    public String getImageDisplay() {
-        return imageDisplay;
+    public String getImgDisplay() {
+        return imgDisplay;
     }
 
-    public void setImageDisplay(String imageDisplay) {
-        this.imageDisplay = imageDisplay;
+    public void setImgDisplay(String imgDisplay) {
+        this.imgDisplay = imgDisplay;
     }
 
     public double getWeightAmount() {
@@ -236,12 +241,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Double.compare(product.price, price) == 0 && minAge == product.minAge && minPlayer == product.minPlayer && maxPlayer == product.maxPlayer && minPlaytime == product.minPlaytime && maxPlaytime == product.maxPlaytime && Double.compare(product.weightAmount, weightAmount) == 0 && Double.compare(product.sizeHeight, sizeHeight) == 0 && Double.compare(product.sizeDepth, sizeDepth) == 0 && active == product.active && inventory == product.inventory && Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(desc, product.desc) && Objects.equals(imageDisplay, product.imageDisplay) && Objects.equals(weightUnits, product.weightUnits) && Objects.equals(sizeUnits, product.sizeUnits) && Objects.equals(producer, product.producer) && Objects.equals(category, product.category) && Objects.equals(discount, product.discount) && Objects.equals(createAt, product.createAt) && Objects.equals(updateAt, product.updateAt);
+        return Double.compare(product.price, price) == 0 && minAge == product.minAge && minPlayer == product.minPlayer && maxPlayer == product.maxPlayer && minPlaytime == product.minPlaytime && maxPlaytime == product.maxPlaytime && Double.compare(product.weightAmount, weightAmount) == 0 && Double.compare(product.sizeHeight, sizeHeight) == 0 && Double.compare(product.sizeDepth, sizeDepth) == 0 && active == product.active && inventory == product.inventory && Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(desc, product.desc) && Objects.equals(imgDisplay, product.imgDisplay) && Objects.equals(weightUnits, product.weightUnits) && Objects.equals(sizeUnits, product.sizeUnits) && Objects.equals(producer, product.producer) && Objects.equals(category, product.category) && Objects.equals(discount, product.discount) && Objects.equals(createAt, product.createAt) && Objects.equals(updateAt, product.updateAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, minAge, minPlayer, maxPlayer, minPlaytime, maxPlaytime, desc, imageDisplay, weightAmount, weightUnits, sizeHeight, sizeDepth, sizeUnits, active, inventory, producer, category, discount, createAt, updateAt);
+        return Objects.hash(id, name, price, minAge, minPlayer, maxPlayer, minPlaytime, maxPlaytime, desc, imgDisplay, weightAmount, weightUnits, sizeHeight, sizeDepth, sizeUnits, active, inventory, producer, category, discount, createAt, updateAt);
     }
 
     @Override
@@ -256,7 +261,7 @@ public class Product {
                 ", minPlaytime=" + minPlaytime +
                 ", maxPlaytime=" + maxPlaytime +
                 ", desc='" + desc + '\'' +
-                ", imageDisplay='" + imageDisplay + '\'' +
+                ", imgDisplay='" + imgDisplay + '\'' +
                 ", weightAmount=" + weightAmount +
                 ", weightUnits='" + weightUnits + '\'' +
                 ", sizeHeight=" + sizeHeight +

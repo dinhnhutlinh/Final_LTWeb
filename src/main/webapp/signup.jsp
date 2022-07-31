@@ -55,7 +55,7 @@
             </div>
             <div class="right">
                 <form class="needs-validation" action="SignUp" method="post">
-                    <c:if test='${mess!=""}'>
+                    <c:if test='${mess!=null}'>
                         <div class="mb-3">
                             <div class="alert alert-danger" role="alert">${mess}</div>
                         </div>

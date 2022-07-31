@@ -1,4 +1,4 @@
-package com.nhom10.broadstore.controllers;
+package com.nhom10.broadstore.controllers.customerController;
 
 import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.emun.Role;
