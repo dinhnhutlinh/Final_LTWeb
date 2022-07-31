@@ -1,10 +1,10 @@
-package com.nhom10.broadstore.controllers;
+package com.nhom10.broadstore.api;
 
 import com.google.gson.Gson;
-import com.nhom10.broadstore.beans.Blog;
 import com.nhom10.broadstore.beans.ResponseModel;
-import com.nhom10.broadstore.beans.User;
+import com.nhom10.broadstore.beans.Slider;
 import com.nhom10.broadstore.services.BlogService;
+import com.nhom10.broadstore.services.SliderService;
 import com.nhom10.broadstore.util.Define;
 import com.nhom10.broadstore.util.JsonUtil;
 import com.nhom10.broadstore.util.StringUtil;
@@ -16,27 +16,27 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/BlogController")
+@WebServlet(urlPatterns = "/SliderController")
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
         maxFileSize = 1024 * 1024 * 10,      // 10 MB
         maxRequestSize = 1024 * 1024 * 100   // 100 MB
 )
-public class BlogController extends HttpServlet {
+public class SliderController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
 
         if (action.equalsIgnoreCase("all")) {
-            BlogService BlogService = new BlogService();
-            List<Blog> BlogList = BlogService.getAllBlog();
+            SliderService sliderService = new SliderService();
+            List<Slider> sliderList = sliderService.getAllSlider();
             PrintWriter printWriter = resp.getWriter();
-            printWriter.println(new JsonUtil().toJSon(BlogList));
+            printWriter.println(new JsonUtil().toJSon(sliderList));
             printWriter.flush();
             printWriter.close();
         }
@@ -44,42 +44,37 @@ public class BlogController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession(true);
 
-        String id = req.getParameter("id");
-        String title = req.getParameter("title");
-
-        String content = req.getParameter("content");
-
-        BlogService blogService = new BlogService();
         PrintWriter printWriter = resp.getWriter();
+        String id = req.getParameter("id");
+        String name = req.getParameter("name");
+        String link = req.getParameter("link");
 
-        User admin = (User) session.getAttribute(Define.userSession);
-
+        SliderService sliderService = new SliderService();
         try {
-            Blog blog = blogService.findById(id);
-            boolean isInsert = blog == null;
-            if (blog == null) {
-                blog = new Blog();
-                blog.setId(StringUtil.genIDWithLength(8));
-            } else blog.setId(id);
-            blog.setTitle(title);
-            blog.setAdminId("admin");
-//        blog.setAdminId(admin.getId());
-            blog.setContent(content);
-            if (isInsert)
-                blogService.insert(blog);
-            else blogService.update(blog);
+            Slider slider = sliderService.findById(id);
+            boolean
+                    isNew = slider == null;
+            if (isNew) {
+                slider = new Slider();
+                slider.setId(StringUtil.genIDWithLength(8));
+            } else slider.setId(id);
 
-            // update image
-            List<String> images = UploadFileHelper.uploadFile(Define.blogImageFolder + "/" + blog.getId(), req, "image");
-            System.out.println(images);
-            if (images != null) {
-                blogService.updateImage(blog.getId(), images.get(0));
-                blog.setImage(images.get(0));
+            slider.setName(name);
+            slider.setLink(link);
+
+            if (isNew) {
+                sliderService.insert(slider);
+            } else {
+                sliderService.update(slider);
             }
 
-            printWriter.println(new Gson().toJson(new ResponseModel<Blog>(200, "Success !!!", blog)));
+            List<String> images = UploadFileHelper.uploadFile(Define.sliderFolder + File.separator + slider.getId(), req, "image");
+            if (images != null) {
+                sliderService.updateImage(slider.getId(), images.get(0));
+                slider.setImage(images.get(0));
+            }
+            printWriter.println(new Gson().toJson(new ResponseModel<Slider>(200, "Success !!!", slider)));
             printWriter.close();
         } catch (Exception e) {
             System.out.println(e);
@@ -91,11 +86,12 @@ public class BlogController extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String id = req.getParameter("id");
-        BlogService BlogService = new BlogService();
+        SliderService sliderService = new SliderService();
         PrintWriter printWriter = resp.getWriter();
         try {
-            BlogService.delete(id);
+            sliderService.delete(id);
             printWriter.println("Delete Done");
             printWriter.close();
         } catch (Exception e) {
