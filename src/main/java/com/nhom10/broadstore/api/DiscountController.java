@@ -1,4 +1,4 @@
-package com.nhom10.broadstore.controllers;
+package com.nhom10.broadstore.api;
 
 import com.nhom10.broadstore.beans.Discount;
 import com.nhom10.broadstore.beans.ExceptionModel;

@@ -33,7 +33,7 @@ public class UploadFileHelper {
             System.out.println(e);
             fileNames = null;
         }
-        if(fileNames.isEmpty())
+        if(fileNames==null || fileNames.isEmpty())
             return null;
         return fileNames;
     }

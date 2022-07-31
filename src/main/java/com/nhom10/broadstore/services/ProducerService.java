@@ -1,12 +1,10 @@
 package com.nhom10.broadstore.services;
 
 import com.nhom10.broadstore.beans.Producer;
-import com.nhom10.broadstore.controllers.ProducerController;
 import com.nhom10.broadstore.dao.ProducerDAO;
 import com.nhom10.broadstore.db.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
 
-import javax.servlet.annotation.WebServlet;
 import java.util.List;
 
 public class ProducerService {
