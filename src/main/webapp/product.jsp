@@ -35,7 +35,6 @@
 </head>
 
 <body>
-
 <jsp:include page="view/header.jsp"></jsp:include>
 
 <div id="breadcrumb" class="section">
@@ -52,6 +51,7 @@
     </div>
 </div>
 <!-- SECTION -->
+
 <div class="section">
     <!-- container -->
     <div class="container">
@@ -60,21 +60,13 @@
             <!-- Product main img -->
             <div class="col-md-5 col-md-push-2 border rounded-1">
                 <div id="product-main-img">
-                    <div class="product-preview">
-                        <img src="img/Cờ Tỷ Phú - Sato 039/8936146680399-_1__1.jpg"/>
-                    </div>
+                    <jsp:useBean id="images" scope="request" type="java.util.List"/>
+                    <c:forEach var="i" items="${images}">
+                        <div class="product-preview d-flex ">
+                            <img src="${i}"/>
+                        </div>
+                    </c:forEach>
 
-                    <div class="product-preview">
-                        <img src="img/Cờ Tỷ Phú - Sato 039/8936146680399-_2__1.jpg"/>
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="img/Cờ Tỷ Phú - Sato 039/8936146680399-_3__1.jpg"/>
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="img/Cờ Tỷ Phú - Sato 039/image_244718_1_1762.jpg"/>
-                    </div>
                 </div>
             </div>
             <!-- /Product main img -->
@@ -82,36 +74,27 @@
             <!-- Product thumb imgs -->
             <div class="col-md-2  col-md-pull-5">
                 <div id="product-imgs">
-                    <div class="product-preview">
-                        <img src="img/Cờ Tỷ Phú - Sato 039/8936146680399-_1__1.jpg"/>
-                    </div>
 
-                    <div class="product-preview">
-                        <img src="img/Cờ Tỷ Phú - Sato 039/8936146680399-_2__1.jpg"/>
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="img/Cờ Tỷ Phú - Sato 039/8936146680399-_3__1.jpg"/>
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="img/Cờ Tỷ Phú - Sato 039/image_244718_1_1762.jpg"/>
-                    </div>
+                    <c:forEach var="i" items="${images}">
+                        <div class="product-preview">
+                            <img src="${i}"/>
+                        </div>
+                    </c:forEach>
                 </div>
             </div>
             <!-- /Product thumb imgs -->
             <!-- Product details -->
             <div class="col-md-5">
                 <div class="product-details">
-                    <h2 class="product-name">${product.getName()}</h2>
+                    <h2 class="product-name">${product.name}</h2>
                     <div>
-                        <h3 class="product-price">${product.getPrice()}
-                            <del class="product-old-price">150.000VND</del>
+                        <h3 class="product-price">${product.price}
+                            <%--                            <del class="product-old-price">150.000VND</del>--%>
                         </h3>
-                        <c:if test="${product.getInventory()>0}">
+                        <c:if test="${product.inventory>0}">
                             <span class="product-available">stocking</span>
                         </c:if>
-                        <c:if test="${product.getInventory()==0}">
+                        <c:if test="${product.inventory==0}">
                             <span class="product-available">Out of stock</span>
                         </c:if>
                     </div>
@@ -126,27 +109,27 @@
                     <div class="product-options d-flex flex-column">
                         <label class="mb-3">
                             <b>Số người chơi: </b>
-                            <output>${product.getMinPlayer()} - ${product.getMaxPlayer()} người</output>
+                            <output>${product.minPlayer} - ${product.maxPlayer} người</output>
                         </label>
 
                         <label class="mb-3">
                             <b>Thời gian chơi: </b>
-                            <output>${product.getTimePlay()} phút</output>
+                            <output>${product.minPlaytime} phút</output>
                         </label>
 
                         <label class="mb-3">
                             <b>Độ tuổi: </b>
-                            <output>Từ ${product.getAge()} tuồi</output>
+                            <output>Từ ${product.minAge} tuồi</output>
                         </label>
                     </div>
                     <div class="add-to-cart">
                         <div class="qty-label mb-3">
                             Qty
-                            <input class="form-control w-50" type="number" name="" id="" value="1">
+                            <input class="form-control w-50" type="number" name="qty" id="" value="1">
                         </div>
                     </div>
-                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to cart
-                    </button>
+                    <a href="AddToCart">   <button  class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to cart
+                    </button></a>
                 </div>
             </div>
             <!-- /Product details -->
@@ -168,7 +151,7 @@
                     <div id="tab1" class="tab-pane  in active">
                         <div class="row">
                             <div class="col-md-12">
-                                <p>${product.getDesc()}</p>
+                                <p>${product.desc}</p>
                             </div>
                         </div>
                     </div>
@@ -178,12 +161,12 @@
                     <div id="tab2" class="tab-pane  in">
                         <div class="row">
                             <div class="col-md-12">
-                                <h6>${product.getName()}</h6>
-                                <h6>Code: ${product.getId()}</h6>
-                                <h6>Age: ${product.getAge()} +</h6>
-                                <h6>Producer: ${product.getProducer().getName()}</h6>
-                                <h6>Weight (gr): ${product.getWeight()}</h6>
-                                <h6>Size: ${product.getWeight()} x ${product.getWidth()} x ${product.getTall()}
+                                <h6>${product.name}</h6>
+                                <h6>Code: ${product.id}</h6>
+                                <h6>Age: ${product.minAge} +</h6>
+                                <%--                                <h6>Producer: ${product.getProducer().getName()}</h6>--%>
+                                <h6>Weight (gr): ${product.weightAmount}</h6>
+                                <h6>Size: ${product.weightAmount} x ${product.sizeHeight} x ${product.sizeDepth}
                                     cm</h6>
                             </div>
                         </div>
@@ -326,6 +309,7 @@
     </div>
     <!-- /row -->
 </div>
+<%--</c:>--%>
 <!-- /container -->
 <!-- /SECTION -->
 

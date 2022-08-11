@@ -28,6 +28,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxrs:3.4.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-core:3.4.5" level="project" />
@@ -66,6 +67,5 @@
     <orderEntry type="library" name="Maven: org.jdbi:jdbi3-sqlobject:3.27.0" level="project" />
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.9" level="project" />
-    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
 </module>

@@ -6,7 +6,16 @@ public class CartItem {
     private Product product;
     private int quantity;
     private double price;
+    private String productId;
+    private String cartId;
     public CartItem(){}
+    public CartItem(String cartId, String productId, int quantity, double price){
+        this.cartId = cartId;
+        this.productId = productId;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
     public CartItem(Product product, int quantity, double price) {
         this.product = product;
         this.quantity = quantity;

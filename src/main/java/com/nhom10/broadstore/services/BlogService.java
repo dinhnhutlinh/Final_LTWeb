@@ -9,7 +9,22 @@ import java.util.List;
 
 public class BlogService {
 
+    private static BlogService instance = null;
+
+    public BlogService() {
+    }
+
+    public static BlogService getInstance() {
+        if (instance == null)
+            instance = new BlogService();
+
+        return instance;
+    }
+
     Jdbi connect = JDBIConnector.get();
+    public List<Blog> getLast() {
+        return connect.withExtension(BlogDAO.class, handle -> handle.getLast());
+    }
 
     public List<Blog> getAllBlog() {
         return connect.withExtension(BlogDAO.class, handle -> handle.list());
