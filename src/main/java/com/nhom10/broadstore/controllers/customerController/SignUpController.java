@@ -1,17 +1,23 @@
-package com.nhom10.broadstore.controllers;
+package com.nhom10.broadstore.controllers.customerController;
 
+import com.nhom10.broadstore.beans.Cart;
 import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.emun.Role;
+import com.nhom10.broadstore.services.CartService;
 import com.nhom10.broadstore.services.PasswordHash;
 import com.nhom10.broadstore.services.UserService;
 import com.nhom10.broadstore.util.StringUtil;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
+import java.util.ArrayList;
 
 @WebServlet(urlPatterns = "/SignUp")
 public class SignUpController extends HttpServlet {
@@ -65,6 +71,7 @@ public class SignUpController extends HttpServlet {
                 throw new RuntimeException(e);
             }
             us.signUp(user);
+            CartService.getInstance().createCart(new Cart(StringUtil.genIDWithLength(10),user.getId(), 0, null,null,new ArrayList<>()));
 
 
 //        response.sendRedirect("Home");

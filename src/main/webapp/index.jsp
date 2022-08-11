@@ -90,1258 +90,475 @@
 <div class="section">
     <!-- container -->
     <div class="container">
-        <!--san pham ban chay-->
+
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4 class="">Sản phẩm bán chạy</h4>
-                <a class="ps-3" href="store.html">View all</a>
+                <h4 class="">Family Game</h4>
+                <a class="ps-3" href="Store">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">140.000VND
-                                    <del class="product-old-price">190.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                    <jsp:useBean id="familyGame" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${familyGame}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
                                 </div>
-                                <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
 
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Splendor%20-%20Cuộc%20Chiến%20Đá%20Quý%20-%20SPACE%20Cowboys/3558380071068-1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name "><a href="product.html">Boardgame Splendor - Cuộc Chiến Đá
-                                    Quý - SPACE Cowboys</a></h3>
-                                <h4 class="product-price">250.000VND
-                                    <del class="product-old-price">330.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Thám%20Tử%20Lừng%20Danh%20Conan%20-%20Hồi%20Kết%20-%20Kèm%20Bộ%20Hồ%20Sơ%2025%20Nhân%20Vật%20Cực%20Chất/boardgameconan_1_.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Boardgame Thám Tử Lừng Danh Conan -
-                                    Hồi Kết - Kèm Bộ Hồ Sơ 25 Nhân Vật Cực Chất</a></h3>
-                                <h4 class="product-price">100.000VND
-                                    <del class="product-old-price">150.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
-                                    chơi giúp giỏi Tiếng Việt cho người Việt</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">280.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Board-Game-Dungeon-Mayhem-Dragons-mở-rộng-Battle-for-Baldur_s-Gate/00d975a7f27271fe9dc95617b192dc33.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a
-                                        href="product.html">Board-Game-Dungeon-Mayhem-Dragons-mở-rộng-Battle-for-Baldur_s-Gate</a>
-                                </h3>
-                                <h4 class="product-price">320.000VND
-                                    <del class="product-old-price">350.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Bom Lắc - Trò Chơi Định Mệnh</a>
-                                </h3>
-                                <h4 class="product-price">240.000VND
-                                    <del class="product-old-price">260.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    </c:forEach>
 
                 </div>
             </div>
         </div>
-        <!--San pham ban chay-->
-        <!--Đang giảm giá-->
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4 class="">Saling products</h4>
-                <a class="ps-3" href="store.html">View all</a>
+                <h4 class="">Card Game</h4>
+                <a class="ps-3" href="Store">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Bom Lắc - Trò Chơi Định Mệnh</a>
-                                </h3>
-                                <h4 class="product-price">240.000VND
-                                    <del class="product-old-price">260.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                    <jsp:useBean id="cardGame" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${cardGame}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
                                 </div>
-                                <div class="add-to-cart">
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
-                                    chơi giúp giỏi Tiếng Việt cho người Việt</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">280.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">140.000VND
-                                    <del class="product-old-price">190.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
-                                <h4 class="product-price">520.000VND
-                                    <del class="product-old-price">550.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Domino AAA LHT HD3A</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">230.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
-                                    chơi giúp giỏi Tiếng Việt cho người Việt</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">280.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    </c:forEach>
 
                 </div>
             </div>
         </div>
-        <!--Đang giảm giá-->
-        <!--BroadGame chiến thuật-->
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4 class="">Wisdom BroadGame</h4>
-                <a class="ps-3" href="store.html">View all</a>
+                <h4 class="">Art</h4>
+                <a class="ps-3" href="Store">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Cờ%20Tướng%20Gỗ%20KINGDOM%20TOYS%20-%200111/co_tuong_go_0111_2_2020_07_29_14_38_45.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tướng Gỗ KINGDOM TOYS - 0111</a>
-                                </h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">280.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                    <jsp:useBean id="art" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${art}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
                                 </div>
-                                <div class="add-to-cart">
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20trí%20tuệ%20U_K.N.O.W%20phiên%20bản%20Star%20Wars/image_188801%20(1).jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ trí tuệ U_K.N.O.W phiên bản Star
-                                    Wars</a></h3>
-                                <h4 class="product-price">320.000VND
-                                    <del class="product-old-price">340.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/image_244718_1_1762.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">120.000VND
-                                    <del class="product-old-price">150.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">140.000VND
-                                    <del class="product-old-price">190.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
-                                <h4 class="product-price">520.000VND
-                                    <del class="product-old-price">550.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">140.000VND
-                                    <del class="product-old-price">190.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    </c:forEach>
 
                 </div>
             </div>
         </div>
-        <!--BroadGame chiến thuật-->
-        <!--BroadGame Party-->
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4>BroadGame Party</h4>
-                <a class="ps-3" href="store.html">View all</a>
+                <h4 class="">Dice</h4>
+                <a class="ps-3" href="Store">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
-                                <h4 class="product-price">520.000VND
-                                    <del class="product-old-price">550.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                    <jsp:useBean id="dice" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${dice}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
                                 </div>
-                                <div class="add-to-cart">
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
-                                    chơi giúp giỏi Tiếng Việt cho người Việt</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">280.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Domino AAA LHT HD3A</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">230.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">140.000VND
-                                    <del class="product-old-price">190.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Splendor%20-%20Cuộc%20Chiến%20Đá%20Quý%20-%20SPACE%20Cowboys/3558380071068-1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name "><a href="product.html">Boardgame Splendor - Cuộc Chiến Đá
-                                    Quý - SPACE Cowboys</a></h3>
-                                <h4 class="product-price">250.000VND
-                                    <del class="product-old-price">330.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">140.000VND
-                                    <del class="product-old-price">190.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--BroadGame Party-->
-        <!--Đang Gia Đình-->
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Group toys</h4>
-                <a class="ps-3" href="store.html">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Bom Lắc - Trò Chơi Định Mệnh</a>
-                                </h3>
-                                <h4 class="product-price">240.000VND
-                                    <del class="product-old-price">260.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
-                                    chơi giúp giỏi Tiếng Việt cho người Việt</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">280.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">140.000VND
-                                    <del class="product-old-price">190.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
-                                <h4 class="product-price">520.000VND
-                                    <del class="product-old-price">550.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Domino AAA LHT HD3A</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">230.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
-                                    chơi giúp giỏi Tiếng Việt cho người Việt</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">280.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    </c:forEach>
 
                 </div>
             </div>
         </div>
-        <!--Đang Gia đình-->
-        <!--BroadGame Thẻ bài-->
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4 class="">Card BroadGame</h4>
-                <a class="ps-3" href="store.html">View all</a>
+                <h4 class="">Battle Royale</h4>
+                <a class="ps-3" href="Store">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Cờ%20Tướng%20Gỗ%20KINGDOM%20TOYS%20-%200111/co_tuong_go_0111_2_2020_07_29_14_38_45.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tướng Gỗ KINGDOM TOYS - 0111</a>
-                                </h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">280.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                    <jsp:useBean id="battleRoyale" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${battleRoyale}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
                                 </div>
-                                <div class="add-to-cart">
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20trí%20tuệ%20U_K.N.O.W%20phiên%20bản%20Star%20Wars/image_188801%20(1).jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ trí tuệ U_K.N.O.W phiên bản Star
-                                    Wars</a></h3>
-                                <h4 class="product-price">320.000VND
-                                    <del class="product-old-price">340.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/image_244718_1_1762.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">120.000VND
-                                    <del class="product-old-price">150.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">140.000VND
-                                    <del class="product-old-price">190.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
-                                <h4 class="product-price">520.000VND
-                                    <del class="product-old-price">550.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">140.000VND
-                                    <del class="product-old-price">190.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    </c:forEach>
 
                 </div>
             </div>
         </div>
-        <!--BroadGame chiến thuật-->
-        <!--Đang Gia Đình-->
         <div class="mb-3">
             <div class="d-flex align-items-baseline">
-                <h4 class="">Family BroadGame</h4>
-                <a class="ps-3" href="store.html">View all</a>
+                <h4 class="">Fighting</h4>
+                <a class="ps-3" href="Store">View all</a>
             </div>
             <div>
                 <div class="row filtering  pe-3 ps-3">
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Bom%20Lắc%20-%20Trò%20Chơi%20Định%20Mệnh/8936130670160.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Bom Lắc - Trò Chơi Định Mệnh</a>
-                                </h3>
-                                <h4 class="product-price">240.000VND
-                                    <del class="product-old-price">260.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                    <jsp:useBean id="fighting" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${fighting}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
                                 </div>
-                                <div class="add-to-cart">
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
 
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
-                                    chơi giúp giỏi Tiếng Việt cho người Việt</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">280.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Tỷ%20Phú%20-%20Sato%20039/8936146680399-_1__1.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Tỷ Phú - Sato 039</a></h3>
-                                <h4 class="product-price">140.000VND
-                                    <del class="product-old-price">190.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20cổ%20tích/wjr1614571666.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ cổ tích</a></h3>
-                                <h4 class="product-price">520.000VND
-                                    <del class="product-old-price">550.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img src="img/Cờ%20Domino%20AAA%20LHT%20HD3A/image_188853.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Cờ Domino AAA LHT HD3A</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">230.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img zoom">
-                                <img
-                                        src="img/Boardgame%20Việt%20Nam%20Ti%20Tỉ%20Từ%20-%20trò%20chơi%20giúp%20giỏi%20Tiếng%20Việt%20cho%20người%20Việt/0747a50cf8d86dc21ee6a9674b122520.jpg"/>
-                            </div>
-                            <div class="product-body">
-                                <h3 class="product-name"><a href="product.html">Boardgame Việt Nam Ti Tỉ Từ - trò
-                                    chơi giúp giỏi Tiếng Việt cho người Việt</a></h3>
-                                <h4 class="product-price">220.000VND
-                                    <del class="product-old-price">280.000VND</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="add-to-cart">
-
-                                    <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                    <button class="d-xl-none add-to-cart-btn w-100"><i
-                                            class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    </c:forEach>
 
                 </div>
             </div>
         </div>
-        <!--Đang Gia đình-->
+        <div class="mb-3">
+            <div class="d-flex align-items-baseline">
+                <h4 class="">Puzzle</h4>
+                <a class="ps-3" href="Store">View all</a>
+            </div>
+            <div>
+                <div class="row filtering  pe-3 ps-3">
+                    <jsp:useBean id="puzzle" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${puzzle}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
+
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </c:forEach>
+
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="d-flex align-items-baseline">
+                <h4 class="">Party Game</h4>
+                <a class="ps-3" href="Store">View all</a>
+            </div>
+            <div>
+                <div class="row filtering  pe-3 ps-3">
+                    <jsp:useBean id="partyGame" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${partyGame}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
+
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </c:forEach>
+
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="d-flex align-items-baseline">
+                <h4 class="">Fantasy</h4>
+                <a class="ps-3" href="Store">View all</a>
+            </div>
+            <div>
+                <div class="row filtering  pe-3 ps-3">
+                    <jsp:useBean id="fantasy" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${fantasy}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
+
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </c:forEach>
+
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="d-flex align-items-baseline">
+                <h4 class="">Combat</h4>
+                <a class="ps-3" href="Store">View all</a>
+            </div>
+            <div>
+                <div class="row filtering  pe-3 ps-3">
+                    <jsp:useBean id="combat" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${combat}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
+
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </c:forEach>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex align-items-baseline">
+                <h4 class="">Adventure</h4>
+                <a class="ps-3" href="Store">View all</a>
+            </div>
+            <div>
+                <div class="row filtering  pe-3 ps-3">
+                    <jsp:useBean id="adventure" scope="request" type="java.util.List"/>
+                    <c:forEach var="p" items="${adventure}">
+                        <div class="item col-md-4 col-xs-6">
+                            <div class="product">
+                                <div class="product-img zoom d-flex justify-content-center">
+                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <h4 class="product-price">${p.price} $
+                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
+                                    </h4>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="add-to-cart">
+
+                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                        <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </c:forEach>
+
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 
-    <!-- /SECTION -->
 </div>
 <jsp:include page="view/footer.jsp"></jsp:include>
 

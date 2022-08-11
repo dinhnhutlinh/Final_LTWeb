@@ -12,6 +12,9 @@ import java.util.List;
 
 @RegisterBeanMapper(Blog.class)
 public interface BlogDAO {
+    @SqlQuery("select * from Blog order by update_at desc ")
+    List<Blog> getLast();
+
     @SqlQuery("select * from Blog")
     List<Blog> list();
 

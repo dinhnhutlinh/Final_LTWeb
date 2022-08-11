@@ -1,6 +1,8 @@
 package com.nhom10.broadstore.beans;
 
 import com.nhom10.broadstore.emun.Role;
+import com.nhom10.broadstore.services.CartService;
+import com.nhom10.broadstore.services.ProductService;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -17,7 +19,6 @@ public class User {
     private String mail;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
-
     private int active;
     private Role role;
 
@@ -29,13 +30,13 @@ public class User {
         this.lastName = lastName;
         this.firstName = firstName;
         this.avatar = avatar;
-        this.password=password;
+        this.password = password;
         this.address = address;
         this.phone = phone;
         this.mail = mail;
         this.createAt = createAt;
         this.updateAt = updateAt;
-        this.active=active;
+        this.active = active;
         this.role = role;
     }
 
@@ -144,11 +145,17 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(lastName, user.lastName) && Objects.equals(firstName, user.firstName) && Objects.equals(avatar, user.avatar)   && Objects.equals(address, user.address) && Objects.equals(phone, user.phone) && Objects.equals(mail, user.mail) && Objects.equals(createAt, user.createAt) && Objects.equals(updateAt, user.updateAt) && role == user.role;
+        return Objects.equals(id, user.id) && Objects.equals(lastName, user.lastName) && Objects.equals(firstName, user.firstName) && Objects.equals(avatar, user.avatar) && Objects.equals(address, user.address) && Objects.equals(phone, user.phone) && Objects.equals(mail, user.mail) && Objects.equals(createAt, user.createAt) && Objects.equals(updateAt, user.updateAt) && role == user.role;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, lastName, firstName, avatar,password, address, phone, mail, createAt, updateAt,active, role);
+        return Objects.hash(id, lastName, firstName, avatar, password, address, phone, mail, createAt, updateAt, active, role);
     }
+
+    public int numCartItems() {
+        return CartService.getInstance().getCartItems(CartService.getInstance().getIdCart(this.id)).size();
+    }
+
+
 }

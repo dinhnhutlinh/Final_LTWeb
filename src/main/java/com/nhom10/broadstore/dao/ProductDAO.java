@@ -8,6 +8,7 @@ import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RegisterBeanMapper(Product.class)
@@ -36,5 +37,47 @@ public interface ProductDAO {
             "`inventory`=:inventory,`producer_id`=:producerId,`category_id`=:categoryId,`discount_id`=:discountId," +
             "`update_at`=now() WHERE `id`=:id")
     int update(@BindBean Product product);
+
+    @SqlQuery("select * from Product where name like :keyWord")
+    ArrayList<Product> findByName(@Bind("keyWord") String keyWord);
+
+    @SqlQuery("select * from Product order by price asc ")
+    ArrayList<Product> allPriceUp();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Family Game') ")
+    ArrayList<Product> getProductFamilyGame();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Combat') ")
+    ArrayList<Product> getProductCombat();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Card Game') ")
+    ArrayList<Product> getProductCardGame();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Art') ")
+    ArrayList<Product> getProductArt();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Adventure') ")
+    ArrayList<Product> getProductAdventure();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Dice') ")
+    ArrayList<Product> getProductDice();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Battle Royale') ")
+    ArrayList<Product> getProductBattleRoyale();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Fighting') ")
+    ArrayList<Product> getProductFighting();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Puzzle') ")
+    ArrayList<Product> getProductPuzzle();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Party Game') ")
+    ArrayList<Product> getProductPartyGame();
+
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Fantasy') ")
+    ArrayList<Product> getProductFantasy();
+
+    @SqlQuery("select * from Product WHERE id=:id")
+    Product findWithId(@Bind("id") String id);
 
 }

@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="com.nhom10.broadstore.emun.Role" %>
+<%@ page import="com.nhom10.broadstore.beans.User" %>
+<%@ page import="com.nhom10.broadstore.util.Define" %>
 <!-- HEADER -->
 <header>
     <!-- MAIN HEADER -->
@@ -21,7 +23,7 @@
                 <!-- SEARCH BAR -->
                 <div class="col-md-6">
                     <div class="header-search">
-                        <form class="d-flex" action="Search" method="get">
+                        <form class="d-flex" action="Store" method="get">
                             <input class="input flex-grow-1" name="search" placeholder="SEARCH PRODUCT">
                             <button type="submit" class="search-btn">SEARCH</button>
                         </form>
@@ -36,20 +38,23 @@
                             <a href="#" class="dropdown-toggle" role="button" id="dropdownUser"
                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-user-circle-o"></i>
-                                <c:if test='${user==null}'>
+
+                                <c:if test='${userSession==null}'>
                                     <span>account</span>
+
                                 </c:if>
-                                <c:if test='${user!=null}'>
-                                    <span>${user.name}</span>
+                                <c:if test='${userSession!=null}'>
+                                    <span>${userSession.getName()}</span>
+
                                 </c:if>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownUser">
-                                <c:if test='${user==null}'>
+                                <c:if test='${userSession==null}'>
                                     <li><a class="dropdown-item" href="Login">Sign in</a></li>
                                     <li><a class="dropdown-item" href="SignUp">Sign up</a></li>
                                 </c:if>
-                                <c:if test='${user!=null}'>
-                                    <c:if test="${user.getRole()==Role.ADMIN}">
+                                <c:if test='${userSession!=null}'>
+                                    <c:if test="${userSession.getRole()==Role.ADMIN}">
                                         <li><a class="dropdown-item" href="Admin-DashBroad">Dashbroad</a></li>
                                     </c:if>
                                     <li><a class="dropdown-item" href="UserDetail">Account</a></li>
@@ -60,59 +65,16 @@
                         <!-- /Wishlist -->
                         <!-- Cart -->
                         <div class="dropdown">
-                            <a href="#" class="dropdown-toggle" id="dropdownCart" role="button"
+                            <a href="Cart" class="dropdown-toggle" id="dropdownCart" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span>Cart</span>
-                                <div class="qty">3</div>
+                                <c:if test='${userSession!=null}'>
+                                    <div class="qty">${userSession.numCartItems()}</div>
+                                </c:if>
+
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownCart">
-                                <div style="width: 360px; padding: 10px;">
-                                    <div class="cart-list border-bottom">
-                                        <div class="product-cart row align-items-center">
-                                            <div class="product-img col-3">
-                                                <img class="img-thumbnail" src="./img/product02.png" alt="">
-                                            </div>
-                                            <div class="product-body col-7">
-                                                <h3 class="product-name"><a href="product.html">Product 1</a></h3>
-                                                <h4 class="product-price"><span class="qty">3x</span>98000</h4>
-                                            </div>
-                                            <a class="htn btn-close col-2" href="#"
-                                               onclick="return confirm('Do you delete product?');"></a>
-                                        </div>
 
-                                        <div class="product-cart row align-items-center">
-                                            <div class="product-img col-3">
-                                                <img class="img-thumbnail" src="./img/product02.png" alt="">
-                                            </div>
-                                            <div class="product-body col-7">
-                                                <h3 class="product-name"><a href="product.html">Product 2</a></h3>
-                                                <h4 class="product-price"><span class="qty">3x</span>98000</h4>
-                                            </div>
-                                            <a class="htn btn-close col-2" href="#"
-                                               onclick="return confirm('Do you delete product?');"></a>
-                                        </div>
-                                        <div class="product-cart row align-items-center">
-                                            <div class="product-img col-3">
-                                                <img class="img-thumbnail" src="./img/product02.png" alt="">
-                                            </div>
-                                            <div class="product-body col-7">
-                                                <h3 class="product-name"><a href="product.html">Product 3</a></h3>
-                                                <h4 class="product-price"><span class="qty">3x</span>98000</h4>
-                                            </div>
-                                            <a class="htn btn-close col-2" href="#"
-                                               onclick="return confirm('Do you delete product?');"></a>
-                                        </div>
-                                    </div>
-                                    <div class="cart-summary ">
-                                        <small>Qty: 3</small>
-                                        <h5>Total money: 29400000</h5>
-                                    </div>
-                                    <a href="Cart" class="btn btn-orange w-100 mb-2">View Cart</a>
-                                    <a href="CheckOut" class="p1 btn btn-dark w-100">Payment</a>
-                                </div>
-
-                            </ul>
                         </div>
                         <!-- /Cart -->
 
@@ -144,26 +106,30 @@
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav">
-                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="Home">Home</a></li>
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="dropdown-toggle text-white text-uppercase" id="dropdownMenuButton1"
-                           data-bs-toggle="dropdown" aria-expanded="false" href="cart.html">
+                           data-bs-toggle="dropdown" aria-expanded="false" >
                             Category
                         </a>
                         <ul class="dropdown-menu" style="margin: 0px;">
                             <li><a class="dropdown-item" href="Store?cat=all">All products</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=sale">Sale products</a></li>
-                            <li><a class="dropdown-item" href="Store">Family Broadgame</a></li>
-                            <li><a class="dropdown-item" href="Store">Tactic Broadgame</a></li>
-                            <li><a class="dropdown-item" href="Store">Wisdom Broadgame</a></li>
-                            <li><a class="dropdown-item" href="Store">Cards Broadgame</a></li>
-                            <li><a class="dropdown-item" href="Store">Group toys</a></li>
-                            <li><a class="dropdown-item" href="Store">AccessoryBroadGame</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=family">Family Game</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=card">Card Game</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=combat">Combat</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=art">Art</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=adventure">Adventure</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=dice">Dice</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=battle">Battle Royale</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=fighting">Fighting</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=puzzle">Puzzle</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=party">Party Game</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=fantasy">Fantasy</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item"><a href="news.html">NEWS</a></li>
+                <li class="nav-item"><a href="Blog">NEWS</a></li>
                 <li class="nav-item"><a href="about_us.html">INTRODUCE</a></li>
                 <li class="nav-item"><a href="store.html">SALE</a></li>
             </ul>
