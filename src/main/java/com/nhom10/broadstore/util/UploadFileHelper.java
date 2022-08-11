@@ -28,7 +28,6 @@ public class UploadFileHelper {
                 }
             }
         } catch (Exception e) {
-            System.out.println(e);
             fileNames = null;
         }
         if(fileNames==null || fileNames.isEmpty())

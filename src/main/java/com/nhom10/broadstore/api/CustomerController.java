@@ -1,9 +1,9 @@
 package com.nhom10.broadstore.api;
 
-import com.nhom10.broadstore.beans.Category;
-import com.nhom10.broadstore.services.CategoryService;
+import com.nhom10.broadstore.beans.ResponseModel;
+import com.nhom10.broadstore.beans.User;
+import com.nhom10.broadstore.services.UserService;
 import com.nhom10.broadstore.util.JsonUtil;
-import com.nhom10.broadstore.util.StringUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,73 +14,49 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/CategoryController")
-public class CategoryController extends HttpServlet {
+@WebServlet(urlPatterns = "/CustomerController")
+public class CustomerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String action = req.getParameter("action");
 
         if (action.equalsIgnoreCase("all")) {
-            CategoryService categoryService = new CategoryService();
-            List<Category> categoryList = categoryService.getAllCategory();
-
+            UserService userService = new UserService();
+            List<User> users = userService.listCustomer();
             PrintWriter printWriter = resp.getWriter();
-
-            printWriter.println(new JsonUtil().toJSon(categoryList));
-
+            printWriter.println(new JsonUtil().toJSon(users));
+            printWriter.flush();
             printWriter.close();
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Update");
-        String id = req.getParameter("id");
-        String name = req.getParameter("name");
-        String desc = req.getParameter("desc");
-
-        CategoryService categoryService = new CategoryService();
-        Category category = new Category();
-        category.setId(id);
-        category.setName(name);
-        category.setDesc(desc);
         PrintWriter printWriter = resp.getWriter();
 
-        try {
-            if (id == null || id.equals("")) {
-                id = StringUtil.genIDWithLength(10);
-                category.setId(id);
-                System.out.println(category);
-                categoryService.insert(category);
-                printWriter.println("Insert Success");
-            } else {
-                // update
-                categoryService.update(category);
-                printWriter.println("Update Success");
-            }
+        String id = req.getParameter("id");
+        String active = req.getParameter("active");
+        UserService userService = new UserService();
 
-            printWriter.flush();
+        try {
+            userService.setActiveAdmin(id, Integer.parseInt(active));
+            printWriter.println(new JsonUtil().toJSon(new ResponseModel<String>(200, "Success !!!", null)));
             printWriter.close();
         } catch (Exception e) {
-            System.out.println(e);
             resp.setStatus(400);
             printWriter.println("Error");
             printWriter.close();
         }
-        // insert
-
-
     }
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String id = req.getParameter("id");
-        CategoryService categoryService = new CategoryService();
+        UserService userService = new UserService();
         PrintWriter printWriter = resp.getWriter();
         try {
-            categoryService.deleteCat(id);
-
+            userService.deleteCustomer(id);
             printWriter.println("Delete Done");
             printWriter.close();
         } catch (Exception e) {

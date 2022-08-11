@@ -128,13 +128,6 @@
                     }
                 },
                 {
-                    title: 'AdminID',
-                    data: 'adminId',
-                    render: function (data) {
-                        return data == null ? null : data;
-                    }
-                },
-                {
                     title: 'Action',
                     data: 'id',
                     render: function (data) {
@@ -154,6 +147,7 @@
                     url: 'BlogController?id=' + data.id,
                     method: "DELETE",
                     success: function (data) {
+
                         row.remove().draw();
                         mess.html('<div class="alert alert-success" role="alert">' +
                             'Delete done! </div>');

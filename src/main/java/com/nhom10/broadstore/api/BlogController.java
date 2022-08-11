@@ -31,11 +31,12 @@ public class BlogController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
-
         if (action.equalsIgnoreCase("all")) {
             BlogService BlogService = new BlogService();
             List<Blog> blogList = BlogService.getAllBlog();
+            // ghi dư liệu
             PrintWriter printWriter = resp.getWriter();
+            // ghi dư lieh vô
             printWriter.println(new JsonUtil().toJSon(blogList));
             printWriter.flush();
             printWriter.close();
@@ -82,7 +83,6 @@ public class BlogController extends HttpServlet {
             printWriter.println(new Gson().toJson(new ResponseModel<Blog>(200, "Success !!!", blog)));
             printWriter.close();
         } catch (Exception e) {
-            System.out.println(e);
             resp.setStatus(400);
             printWriter.println("Error");
             printWriter.close();

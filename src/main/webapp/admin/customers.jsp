@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon"/>
-    <title>Admins</title>
+    <title>Customers</title>
 
     <!-- ========== All CSS files linkup ========= -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -128,7 +128,7 @@
                         <div class="card">
                             <div class="card-header ">
                                 <div class="d-flex justify-content-between">
-                                    <h3>Admin</h3>
+                                    <h3>Customer</h3>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -155,7 +155,7 @@
 <script src="admin/js/main.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-<script src="admin/js/admins.js"></script>
+<script src="admin/js/customers.js"></script>
 </body>
 
 </html>

@@ -10,6 +10,9 @@ public class ImageProduct {
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
+    public ImageProduct() {
+    }
+
     public ImageProduct(String id, String link, String productId, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.link = link;

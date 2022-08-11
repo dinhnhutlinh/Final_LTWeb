@@ -1,14 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <aside class="sidebar-nav-wrapper">
     <div class="navbar-logo">
-        <a href="Admin-Dashboard">
+        <a href="dashboard">
             <img src="img/BoardStore.png" style="height: 70px;" alt="logo"/>
         </a>
     </div>
     <nav class="sidebar-nav">
         <ul>
             <li class="nav-item">
-                <a href="Admin-Dashboard">
+                <a href="dashboard">
             <span class="icon">
               <i class="fas fa-tachometer-alt"></i>
             </span>
@@ -16,7 +16,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Customers">
+                <a href="admin_customers">
             <span class="icon">
               <i class="fas fa-users"></i>
             </span>
@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Orders">
+                <a href="admin_orders">
             <span class="icon">
               <i class="fas fa-shopping-cart"></i>
             </span>
@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Categories">
+                <a href="admin_categories">
             <span class="icon">
               <i class="fas fa-tags"></i>
             </span>
@@ -40,7 +40,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Products">
+                <a href="admin_products">
             <span class="icon">
               <i class="fas fa-archive"></i>
             </span>
@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Blogs">
+                <a href="admin_blogs">
             <span class="icon">
               <i class="far fa-newspaper"></i>
             </span>
@@ -56,7 +56,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Producers">
+                <a href="admin_producer">
             <span class="icon">
               <i class="fas fa-store"></i>
             </span>
@@ -64,7 +64,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Discounts">
+                <a href="admin_discount">
             <span class="icon">
               <i class="fas fa-percent"></i>
             </span>
@@ -72,7 +72,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Slider">
+                <a href="admin_sliders">
             <span class="icon">
               <i class="fas fa-sliders-h"></i>
             </span>
@@ -80,7 +80,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="Admin-Admin">
+                <a href="admin_admin">
             <span class="icon">
               <i class="fas fa-users-cog"></i>
             </span>

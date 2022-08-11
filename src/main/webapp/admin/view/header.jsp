@@ -29,10 +29,10 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
                             <li>
-                                <a href="Home">Trở về Trang mua hàng </a>
+                                <a href="Home">Back top shop</a>
                             </li>
                             <li>
-                                <a href="Logout">Đăng xuất</a>
+                                <a href="LogoutController">Log out</a>
                             </li>
                         </ul>
                     </div>

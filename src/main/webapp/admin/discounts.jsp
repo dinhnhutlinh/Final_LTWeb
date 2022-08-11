@@ -183,7 +183,7 @@
                         if (data == 1)
                             return '<span class="badge rounded-pill alert-success">Active</span>';
                         else
-                            return '<span class="badge rounded-pill alert-danger">Active</span>';
+                            return '<span class="badge rounded-pill alert-danger">InActive</span>';
                     }
 
                 }, {

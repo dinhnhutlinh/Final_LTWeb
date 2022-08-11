@@ -1,6 +1,7 @@
 package com.nhom10.broadstore.dao;
 
 import com.nhom10.broadstore.beans.Category;
+import com.nhom10.broadstore.beans.ImageProduct;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
@@ -30,4 +31,5 @@ public interface CategoryDAO {
 
     @SqlUpdate("UPDATE `Category` SET `name`=:name,`desc`=:desc,`update_at`=now() WHERE `id`=:id")
     int update(@BindBean Category category);
+
 }
