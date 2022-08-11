@@ -13,7 +13,7 @@ public class Product {
     private int minPlaytime;
     private int maxPlaytime;
     private String desc;
-    private String imageDisplay;
+    private String imgDisplay;
     private double weightAmount;
     private String weightUnits;
     private double sizeHeight;
@@ -21,6 +21,9 @@ public class Product {
     private String sizeUnits;
     private int active;
     private int inventory;
+    private String producerId;
+    private String categoryId;
+    private String discountId;
     private Producer producer;
     private Category category;
     private Discount discount;
@@ -30,29 +33,17 @@ public class Product {
     public Product() {
     }
 
-    public Product(String id, String name, double price, int minAge, int minPlayer, int maxPlayer, int minPlaytime, int maxPlaytime, String desc, String imageDisplay, double weightAmount, String weightUnits, double sizeHeight, double sizeDepth, String sizeUnits, int active, int inventory, Producer producer, Category category, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.minAge = minAge;
-        this.minPlayer = minPlayer;
-        this.maxPlayer = maxPlayer;
-        this.minPlaytime = minPlaytime;
-        this.maxPlaytime = maxPlaytime;
-        this.desc = desc;
-        this.imageDisplay = imageDisplay;
-        this.weightAmount = weightAmount;
-        this.weightUnits = weightUnits;
-        this.sizeHeight = sizeHeight;
-        this.sizeDepth = sizeDepth;
-        this.sizeUnits = sizeUnits;
-        this.active = active;
-        this.inventory = inventory;
-        this.producer = producer;
-        this.category = category;
-        this.discount = discount;
-        this.createAt = createAt;
-        this.updateAt = updateAt;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+        Product product = (Product) o;
+        return Double.compare(product.getPrice(), getPrice()) == 0 && getMinAge() == product.getMinAge() && getMinPlayer() == product.getMinPlayer() && getMaxPlayer() == product.getMaxPlayer() && getMinPlaytime() == product.getMinPlaytime() && getMaxPlaytime() == product.getMaxPlaytime() && Double.compare(product.getWeightAmount(), getWeightAmount()) == 0 && Double.compare(product.getSizeHeight(), getSizeHeight()) == 0 && Double.compare(product.getSizeDepth(), getSizeDepth()) == 0 && getActive() == product.getActive() && getInventory() == product.getInventory() && Objects.equals(getId(), product.getId()) && Objects.equals(getName(), product.getName()) && Objects.equals(getDesc(), product.getDesc()) && Objects.equals(getImgDisplay(), product.getImgDisplay()) && Objects.equals(getWeightUnits(), product.getWeightUnits()) && Objects.equals(getSizeUnits(), product.getSizeUnits()) && Objects.equals(getProducerId(), product.getProducerId()) && Objects.equals(getCategoryId(), product.getCategoryId()) && Objects.equals(getDiscountId(), product.getDiscountId()) && Objects.equals(getProducer(), product.getProducer()) && Objects.equals(getCategory(), product.getCategory()) && Objects.equals(getDiscount(), product.getDiscount()) && Objects.equals(getCreateAt(), product.getCreateAt()) && Objects.equals(getUpdateAt(), product.getUpdateAt());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getPrice(), getMinAge(), getMinPlayer(), getMaxPlayer(), getMinPlaytime(), getMaxPlaytime(), getDesc(), getImgDisplay(), getWeightAmount(), getWeightUnits(), getSizeHeight(), getSizeDepth(), getSizeUnits(), getActive(), getInventory(), getProducerId(), getCategoryId(), getDiscountId(), getProducer(), getCategory(), getDiscount(), getCreateAt(), getUpdateAt());
     }
 
     public String getId() {
@@ -127,12 +118,12 @@ public class Product {
         this.desc = desc;
     }
 
-    public String getImageDisplay() {
-        return imageDisplay;
+    public String getImgDisplay() {
+        return imgDisplay;
     }
 
-    public void setImageDisplay(String imageDisplay) {
-        this.imageDisplay = imageDisplay;
+    public void setImgDisplay(String imgDisplay) {
+        this.imgDisplay = imgDisplay;
     }
 
     public double getWeightAmount() {
@@ -191,6 +182,30 @@ public class Product {
         this.inventory = inventory;
     }
 
+    public String getProducerId() {
+        return producerId;
+    }
+
+    public void setProducerId(String producerId) {
+        this.producerId = producerId;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getDiscountId() {
+        return discountId;
+    }
+
+    public void setDiscountId(String discountId) {
+        this.discountId = discountId;
+    }
+
     public Producer getProducer() {
         return producer;
     }
@@ -231,17 +246,32 @@ public class Product {
         this.updateAt = updateAt;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return Double.compare(product.price, price) == 0 && minAge == product.minAge && minPlayer == product.minPlayer && maxPlayer == product.maxPlayer && minPlaytime == product.minPlaytime && maxPlaytime == product.maxPlaytime && Double.compare(product.weightAmount, weightAmount) == 0 && Double.compare(product.sizeHeight, sizeHeight) == 0 && Double.compare(product.sizeDepth, sizeDepth) == 0 && active == product.active && inventory == product.inventory && Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(desc, product.desc) && Objects.equals(imageDisplay, product.imageDisplay) && Objects.equals(weightUnits, product.weightUnits) && Objects.equals(sizeUnits, product.sizeUnits) && Objects.equals(producer, product.producer) && Objects.equals(category, product.category) && Objects.equals(discount, product.discount) && Objects.equals(createAt, product.createAt) && Objects.equals(updateAt, product.updateAt);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, price, minAge, minPlayer, maxPlayer, minPlaytime, maxPlaytime, desc, imageDisplay, weightAmount, weightUnits, sizeHeight, sizeDepth, sizeUnits, active, inventory, producer, category, discount, createAt, updateAt);
+    public Product(String id, String name, double price, int minAge, int minPlayer, int maxPlayer, int minPlaytime, int maxPlaytime, String desc, String imageDisplay, double weightAmount, String weightUnits, double sizeHeight, double sizeDepth, String sizeUnits, int active, int inventory, String producerId, String categoryId, String discountId, Producer producer, Category category, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.minAge = minAge;
+        this.minPlayer = minPlayer;
+        this.maxPlayer = maxPlayer;
+        this.minPlaytime = minPlaytime;
+        this.maxPlaytime = maxPlaytime;
+        this.desc = desc;
+        this.imgDisplay = imageDisplay;
+        this.weightAmount = weightAmount;
+        this.weightUnits = weightUnits;
+        this.sizeHeight = sizeHeight;
+        this.sizeDepth = sizeDepth;
+        this.sizeUnits = sizeUnits;
+        this.active = active;
+        this.inventory = inventory;
+        this.producerId = producerId;
+        this.categoryId = categoryId;
+        this.discountId = discountId;
+        this.producer = producer;
+        this.category = category;
+        this.discount = discount;
+        this.createAt = createAt;
+        this.updateAt = updateAt;
     }
 
     @Override
@@ -256,7 +286,7 @@ public class Product {
                 ", minPlaytime=" + minPlaytime +
                 ", maxPlaytime=" + maxPlaytime +
                 ", desc='" + desc + '\'' +
-                ", imageDisplay='" + imageDisplay + '\'' +
+                ", imageDisplay='" + imgDisplay + '\'' +
                 ", weightAmount=" + weightAmount +
                 ", weightUnits='" + weightUnits + '\'' +
                 ", sizeHeight=" + sizeHeight +
@@ -264,6 +294,9 @@ public class Product {
                 ", sizeUnits='" + sizeUnits + '\'' +
                 ", active=" + active +
                 ", inventory=" + inventory +
+                ", producerId='" + producerId + '\'' +
+                ", categoryId='" + categoryId + '\'' +
+                ", discountId='" + discountId + '\'' +
                 ", producer=" + producer +
                 ", category=" + category +
                 ", discount=" + discount +

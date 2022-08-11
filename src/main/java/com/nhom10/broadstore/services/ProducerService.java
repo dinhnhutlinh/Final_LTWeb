@@ -16,7 +16,7 @@ public class ProducerService {
     }
 
     public Producer findById(String id) {
-        return connect.withExtension(ProducerDAO.class, handle -> handle.findWithId(id));
+        return connect.withExtension(ProducerDAO.class, handle -> handle.findById(id));
     }
 
     public void delete(String id) {

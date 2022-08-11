@@ -1,4 +1,4 @@
-package com.nhom10.broadstore.controllers;
+package com.nhom10.broadstore.controllers.admin;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,16 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/Admin-Dashboard")
-public class AdminDashBoardController extends HttpServlet {
+@WebServlet(urlPatterns = "/admin_producer")
+public class ProducerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("admin/dashboard.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("admin/producers.jsp");
         rd.forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
     }
 }

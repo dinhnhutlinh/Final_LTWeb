@@ -15,7 +15,7 @@ public interface ProducerDAO {
     List<Producer> queryAll();
 
     @SqlQuery("select * from Producer WHERE id=:id")
-    Producer findWithId(@Bind("id") String id);
+    Producer findById(@Bind("id") String id);
 
     @SqlUpdate("delete from Producer where id=:id")
     int delete(@Bind("id") String id);
@@ -25,4 +25,5 @@ public interface ProducerDAO {
 
     @SqlUpdate("UPDATE `Producer` SET `name`=:name,`address`=:address,`email`=:email,`phone`=:phone,`update_at`=now() WHERE `id`=:id")
     int update(@BindBean Producer producer);
+
 }

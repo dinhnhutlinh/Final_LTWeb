@@ -213,11 +213,13 @@
             let id = $('#idCat').val();
             let name = $('#nameCat').val();
             let desc = $('#descCat').val();
+
             $.ajax({
                 url: 'CategoryController',
                 method: "POST",
                 data: {id: id, name: name, desc: desc},
                 success: function (data) {
+
                     $('#modalCat').modal('hide');
                     table.ajax.reload();
                 },

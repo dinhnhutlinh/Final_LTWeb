@@ -78,4 +78,8 @@ public class UserService {
         return connector.withExtension(UserDAO.class
                 ,handle -> handle.setActiveAdmin(id,active));
     }
+    public int setActiveCustomer(String id,int active){
+        return connector.withExtension(UserDAO.class
+                ,handle -> handle.setActiveCustomer(id,active));
+    }
 }

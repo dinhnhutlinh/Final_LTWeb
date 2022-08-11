@@ -1,4 +1,4 @@
-package com.nhom10.broadstore.controllers;
+package com.nhom10.broadstore.controllers.admin;
 
 import com.nhom10.broadstore.beans.Blog;
 import com.nhom10.broadstore.services.BlogService;
@@ -19,7 +19,6 @@ public class BlogEditController extends HttpServlet {
         BlogService service = new BlogService();
         Blog blog = service.findById(id);
         req.setAttribute("blog", blog);
-        System.out.println(blog);
         RequestDispatcher rd = req.getRequestDispatcher("admin/blog_edit.jsp");
         rd.forward(req, resp);
     }

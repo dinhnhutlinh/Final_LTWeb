@@ -1,4 +1,4 @@
-package com.nhom10.broadstore.controllers;
+package com.nhom10.broadstore.controllers.admin;
 
 import com.nhom10.broadstore.beans.Blog;
 import com.nhom10.broadstore.beans.Slider;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/slider_edit")
+@WebServlet(urlPatterns = "/admin_slider_edit")
 public class SliderEditController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,7 +21,7 @@ public class SliderEditController extends HttpServlet {
         SliderService service = new SliderService();
         Slider slider = service.findById(id);
         req.setAttribute("slider", slider);
-        System.out.println(slider);
+
         RequestDispatcher rd = req.getRequestDispatcher("admin/slider_edit.jsp");
         rd.forward(req, resp);
     }

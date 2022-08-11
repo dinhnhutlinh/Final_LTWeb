@@ -22,6 +22,7 @@
           href="https://unpkg.com/file-upload-with-preview/dist/file-upload-with-preview.min.css">
     <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput.min.css" media="all"
           rel="stylesheet" type="text/css"/>
+
 </head>
 
 <body>
@@ -90,7 +91,7 @@
 
                         <div class="custom-file-container" data-upload-id="myUploader"></div>
                         <div class="mb-3">
-                            <label for="title" class="form-label">Nội dung</label>
+                            <label for="title" class="form-label">Desc</label>
                             <div id="editor"></div>
                         </div>
                     </div>
@@ -121,6 +122,10 @@
 <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/fileinput.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/sortable.min.js"
         type="text/javascript"></script>
+<script src="admin/js/quill.js"></script>
+<script>
+    quill.root.innerHTML = "${blog.getContent()}";
+</script>
 <script>
     $("#file-input").fileinput({
         initialPreview: [
@@ -136,42 +141,9 @@
     });
 </script>
 <script>
-    let toolbarOptions = [
-        ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-        ['blockquote', 'code-block'],
-
-        [{'header': 1}, {'header': 2}],               // custom button values
-        [{'list': 'ordered'}, {'list': 'bullet'}],
-        [{'script': 'sub'}, {'script': 'super'}],      // superscript/subscript
-        [{'indent': '-1'}, {'indent': '+1'}],          // outdent/indent
-        [{'direction': 'rtl'}],                         // text direction
-
-        [{'size': ['small', false, 'large', 'huge']}],  // custom dropdown
-        [{'header': [1, 2, 3, 4, 5, 6, false]}],
-        ['link', 'image'],          // add's image support
-        [{'color': []}, {'background': []}],          // dropdown with defaults from theme
-        [{'font': []}],
-        [{'align': []}],
-
-        ['clean']                                         // remove formatting button
-    ];
-
-    let quill = new Quill('#editor', {
-        modules: {
-            toolbar: toolbarOptions
-        },
-        ImageResize: {
-            modules: ['Resize', 'DisplaySize', 'Toolbar']
-        },
-        theme: 'snow'
-    });
-    quill.root.innerHTML = "${blog.getContent()}";
-</script>
-<script>
 
     $(document).ready(function () {
         let mess = $('#mess');
-
         $('#saveBtn').on('click', function () {
             let formData = new FormData();
             formData.append('id', $('#id').val());
@@ -190,9 +162,7 @@
                 success: function (data) {
                     $('#modal').modal('hide');
                     let resp = JSON.parse(data);
-
                     $('#id').val(resp.data.id);
-
                     mess.html('<div class="alert  alert-success" role="alert">' + resp.mess +
                         '</div>'
                     );

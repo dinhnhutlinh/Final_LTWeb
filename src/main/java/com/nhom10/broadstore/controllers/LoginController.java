@@ -46,7 +46,7 @@ public class LoginController extends HttpServlet {
                 HttpSession session = req.getSession(true);
                 session.setAttribute(Define.userSession, user);
                 if (user.getRole() == Role.ADMIN) {
-                    resp.sendRedirect("Admin-Dashboard");
+                    resp.sendRedirect("dashboard");
                 } else {
                     resp.sendRedirect("Home");
                 }
