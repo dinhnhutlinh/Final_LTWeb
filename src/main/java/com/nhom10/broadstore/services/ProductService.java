@@ -26,20 +26,29 @@ public class ProductService {
         List<Product> products = connect.withExtension(ProductDAO.class, handle -> handle.list());
         return products.stream().map(product -> mapOtherBean(product)).collect(Collectors.toList());
     }
-    public Product findById(String id){
-        return connect.withExtension(ProductDAO.class,handle -> mapOtherBean(handle.findById(id)));
-    }
-    public int insertProduct(Product product){
-        return connect.withExtension(ProductDAO.class,handle-> handle.insert(product));
-    }
-    public int updateProduct(Product product){
-        return connect.withExtension(ProductDAO.class,handle-> handle.update(product));
+
+    public Product findById(String id) {
+        return connect.withExtension(ProductDAO.class, handle -> mapOtherBean(handle.findById(id)));
     }
 
-   private Product mapOtherBean(Product product){
-        Category category= connect.withExtension(CategoryDAO.class, handle-> handle.findById(product.getCategoryId()));
-        Producer producer= connect.withExtension(ProducerDAO.class, handle-> handle.findById(product.getProducerId()));
-        Discount discount = connect.withExtension(DiscountDAO.class,handle-> handle.findById(product.getDiscountId()));
+    public int insertProduct(Product product) {
+        return connect.withExtension(ProductDAO.class, handle -> handle.insert(product));
+    }
+
+    public int updateProduct(Product product) {
+        return connect.withExtension(ProductDAO.class, handle -> handle.update(product));
+    }
+
+    public int delete(String id) {
+        return connect.withExtension(ProductDAO.class, handle -> handle.delete(id));
+    }
+
+    private Product mapOtherBean(Product product) {
+        if(product==null)
+            return new Product();
+        Category category = connect.withExtension(CategoryDAO.class, handle -> handle.findById(product.getCategoryId()));
+        Producer producer = connect.withExtension(ProducerDAO.class, handle -> handle.findById(product.getProducerId()));
+        Discount discount = connect.withExtension(DiscountDAO.class, handle -> handle.findById(product.getDiscountId()));
         product.setCategory(category);
         product.setProducer(producer);
         product.setDiscount(discount);
@@ -47,7 +56,15 @@ public class ProductService {
     }
 
     public List<ImageProduct> findImageByProductId(String id) {
-        return connect.withExtension(ImageProductDAO.class, handle-> handle.findByProductId(id));
+        return connect.withExtension(ImageProductDAO.class, handle -> handle.findByProductId(id));
+    }
+
+    public int insertImage(ImageProduct imageProduct) {
+        return connect.withExtension(ImageProductDAO.class, handle -> handle.insert(imageProduct));
+    }
+
+    public int removeImage(String id) {
+        return connect.withExtension(ImageProductDAO.class, handle -> handle.delete(id));
     }
 
 

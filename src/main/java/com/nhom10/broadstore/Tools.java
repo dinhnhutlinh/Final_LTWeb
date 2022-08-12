@@ -7,12 +7,15 @@ import com.nhom10.broadstore.beans.User;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Tools {
     public static void main(String[] args) {
-        new Tools().genInput();
+        new Tools().genClass();
     }
 
     void genInsert() {
@@ -27,6 +30,25 @@ public class Tools {
         System.out.println(query.replace(":inserted", inserted));
     }
 
+    void getGetParem() {
+        String param = "req.getParameter(\":name\")";
+        String paramString = "String :name = req.getParameter(\":name\");";
+        String paramInt = "int :name = Integer.parseInt(req.getParameter(\":name\")!=null?req.getParameter(\":name\"):\"-1\");";
+        String paramDouble = "double :name= Double.parseDouble(req.getParameter(\":name\") != null ? req.getParameter(\":name\") : \"-1\");";
+
+
+        Class theClass = Product.class;
+        for (Field field : theClass.getDeclaredFields()) {
+//            inserted += ":" + field.getName() + ",";
+            if (field.getType().isAssignableFrom(String.class))
+                System.out.println(paramString.replaceAll(":name", field.getName()));
+            if (field.getType().isAssignableFrom(double.class))
+                System.out.println(paramDouble.replaceAll(":name", field.getName()));
+            if (field.getType().isAssignableFrom(int.class))
+                System.out.println(paramInt.replaceAll(":name", field.getName()));
+        }
+    }
+
     void insertValue() throws FileNotFoundException {
         String path = "";
         Gson gson = new Gson();
@@ -34,12 +56,23 @@ public class Tools {
     }
 
     void genClass() {
-        String txt = "$('#:name').val(''data.:name);";
-        Class theClass = User.class;
+//        String txt = "$('#:name').val(data.:name);";
+        String txt = ":name : $('#:name').val();";
+        Class theClass = Product.class;
         for (Field field : theClass.getDeclaredFields()) {
             System.out.println(txt.replaceAll(":name", field.getName()));
         }
     }
+    void genMethod(){
+        String txt = "product.:method(:name)";
+        Class theClass = Product.class;
+        Field[] fields= theClass.getDeclaredFields();
+        Method[] methods= Arrays.stream(theClass.getDeclaredMethods()).filter(field1 -> field1.getName().contains("set")).toArray(Method[]::new);
+        for (int i = 0; i < fields.length; i++) {
+            System.out.println(txt.replaceFirst(":method",methods[i].getName()).replaceFirst(":name",fields[i].getName()));
+        }
+    }
+
 
     void genInput() {
         String html = " <div class=\"form-group mb-3\">\n" +
@@ -49,7 +82,7 @@ public class Tools {
                 "                        </div>";
         Class theClass = Product.class;
         for (Field field : theClass.getDeclaredFields()) {
-            System.out.println(html.replaceAll(":name",field.getName()));
+            System.out.println(html.replaceAll(":name", field.getName()));
         }
     }
 }

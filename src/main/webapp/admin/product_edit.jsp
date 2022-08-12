@@ -54,6 +54,8 @@
                 </div>
                 <!-- end row -->
             </div>
+            <div id="mess">
+            </div>
             <section class="content-main">
                 <div class="content-header">
 
@@ -258,9 +260,9 @@
                     <div class="card mt-3">
                         <div class="card-body">
                             <div class="form-group mb-3">
-                                <label for="productImages">Image Display</label>
+                                <label for="imageProducts">Image Display</label>
                                 <div class="file-loading">
-                                    <input id="productImages" name="file-input[]" type="file" class="file" multiple>
+                                    <input id="imageProducts" name="file-input[]" type="file" class="file" multiple >
                                 </div>
                             </div>
                         </div>
@@ -299,6 +301,7 @@
 <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/sortable.min.js"
         type="text/javascript"></script>
 <script src="admin/js/quill.js"></script>
+<script src="admin/js/product_edit.js"></script>
 <script>
     $("#imgDisplay").fileinput({
         initialPreview: [
@@ -323,6 +326,8 @@
                 </c:forEach>
             </c:if>
         ],
+        maxFileCount: 10,
+        allowedFileTypes: ["image"],
         showUpload: false,
         initialPreviewAsData: true,
         initialPreviewFileType: 'image',
@@ -334,69 +339,7 @@
 </script>
 <script>
     $(document).ready(function () {
-        var imgDisplay = [];
-        var imgArr = [];
         quill.root.innerHTML = "${product.getDesc()}";
-        $("#imageDisplay").change(function () {
-            if (imgDisplay.length > 0) imgDisplay = [];
-            $('#image_preview').html("");
-            var total_file = document.getElementById("imageDisplay").files;
-            if (!total_file.length) return;
-            for (var i = 0; i < total_file.length; i++) {
-                if (total_file[i].size > 1048576) {
-                    return false;
-                } else {
-                    imgDisplay.push(total_file[i]);
-                    $('#image_preview').append("<div class='img-div' id='img-div" + i + "'><img src='"
-                        + URL.createObjectURL(event.target.files[i]) + "' class='img-responsive image img-thumbnail'" +
-                        " title='" + total_file[i].name + "'><div class='middle'><button id='action-icon' value='img-div"
-                        + i + "' class='btn btn-danger' role='" + total_file[i].name + "'><i class='fa fa-trash'></i>" +
-                        "</button></div></div>");
-                }
-            }
-        });
-        $("#images").change(function () {
-            $('#images').html("");
-            var total_file = document.getElementById("images").files;
-            if (!total_file.length) return;
-            for (var i = 0; i < total_file.length; i++) {
-                if (total_file[i].size > 1048576) {
-                    return false;
-                } else {
-                    imgArr.push(total_file[i]);
-                    $('#image_previews').append("<div class='img-div' id='img-div" + i + "'><img src='" +
-                        URL.createObjectURL(event.target.files[i]) + "' class='img-responsive image img-thumbnail' title='"
-                        + total_file[i].name + "'><div class='middle'><button id='action-icon' value='img-div" + i +
-                        "' class='btn btn-danger' role='" + total_file[i].name + "'><i class='fa fa-trash'></i></button>" +
-                        "</div></div>");
-                }
-            }
-        });
-        $('body').on('click', '#action-icon', function (evt) {
-            var divName = this.value;
-            var fileName = $(this).attr('role');
-            $('#' + divName).remove();
-            if ($('#' + divName).parent().parent().attr('id') === 'imageDisplay') {
-                imgDisplay = [];
-                $('#imageDisplay').files = imgDisplay;
-                $('#imageDisplay').val('');
-            } else {
-                for (var i = 0; i < imgArr.length; i++) {
-                    if (imgArr[i].name === fileName) {
-                        imgArr.splice(i, 1);
-                    }
-                }
-                $('#images').files = FileListItem(imgArr);
-            }
-        });
-
-        function FileListItem(file) {
-            file = [].slice.call(Array.isArray(file) ? file : arguments)
-            for (var c, b = c = file.length, d = !0; b-- && d;) d = file[b] instanceof File
-            if (!d) throw new TypeError("expected argument to FileList is File or array of File objects")
-            for (b = (new ClipboardEvent("")).clipboardData || new DataTransfer; c--;) b.items.add(file[c])
-            return b.files
-        }
     });
 </script>
 </body>
