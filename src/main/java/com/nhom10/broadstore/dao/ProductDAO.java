@@ -16,6 +16,15 @@ public interface ProductDAO {
     @SqlQuery("select * from Product")
     List<Product> list();
 
+    @SqlQuery("select * from Product where active=1")
+    List<Product> listClient();
+
+    @SqlQuery("select  * from Product limit 9")
+    List<Product> load9Product();
+
+//    @SqlQuery("select  * from Product offset :s rows fetch next 9 rows only")
+//    List<Product> loadMore9Product(@Bind("s") int s);
+
     @SqlQuery("select * from Product WHERE id=:id")
     Product findById(@Bind("id") String id);
 
@@ -44,37 +53,37 @@ public interface ProductDAO {
     @SqlQuery("select * from Product order by price asc ")
     ArrayList<Product> allPriceUp();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Family Game') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Family Game')  and active=1")
     ArrayList<Product> getProductFamilyGame();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Combat') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Combat')  and active=1")
     ArrayList<Product> getProductCombat();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Card Game') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Card Game')  and active=1")
     ArrayList<Product> getProductCardGame();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Art') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Art')  and active=1")
     ArrayList<Product> getProductArt();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Adventure') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Adventure')  and active=1")
     ArrayList<Product> getProductAdventure();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Dice') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Dice')  and active=1")
     ArrayList<Product> getProductDice();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Battle Royale') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Battle Royale')  and active=1")
     ArrayList<Product> getProductBattleRoyale();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Fighting') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Fighting')  and active=1")
     ArrayList<Product> getProductFighting();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Puzzle') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Puzzle')  and active=1")
     ArrayList<Product> getProductPuzzle();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Party Game') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Party Game')  and active=1")
     ArrayList<Product> getProductPartyGame();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Fantasy') ")
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Fantasy')  and active=1")
     ArrayList<Product> getProductFantasy();
 
     @SqlQuery("select * from Product WHERE id=:id")

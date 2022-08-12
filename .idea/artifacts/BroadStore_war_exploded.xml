@@ -45,6 +45,8 @@
           <element id="library" level="project" name="Maven: org.jdbi:jdbi3-sqlobject:3.27.0" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.9" />
+          <element id="library" level="project" name="Maven: antlr:stringtemplate:2.3b6" />
+          <element id="library" level="project" name="Maven: antlr:antlr:2.7.6" />
         </element>
       </element>
       <element id="directory" name="META-INF">

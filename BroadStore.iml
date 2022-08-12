@@ -67,5 +67,7 @@
     <orderEntry type="library" name="Maven: org.jdbi:jdbi3-sqlobject:3.27.0" level="project" />
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.9" level="project" />
+    <orderEntry type="library" name="Maven: antlr:stringtemplate:2.3b6" level="project" />
+    <orderEntry type="library" name="Maven: antlr:antlr:2.7.6" level="project" />
   </component>
 </module>

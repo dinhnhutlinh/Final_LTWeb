@@ -1,5 +1,6 @@
 package com.nhom10.broadstore.controllers.customerController;
 
+import com.nhom10.broadstore.beans.Product;
 import com.nhom10.broadstore.services.ProductService;
 
 import javax.servlet.ServletException;
@@ -8,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet(urlPatterns = "/Store")
 public class StoreController extends HttpServlet {
@@ -22,8 +25,9 @@ public class StoreController extends HttpServlet {
         String cat = String.valueOf(req.getParameter("cat"));
         String keyWord = req.getParameter("search");
 
+
         if (cat.equals("all"))
-            req.setAttribute("products", ProductService.getInstance().getAllProducts());
+            req.setAttribute("products", ProductService.getInstance().getTop9());
         else if (cat.equals("family"))
             req.setAttribute("products", ProductService.getInstance().getProductFamilyGame());
         else if (cat.equals("card"))
@@ -46,6 +50,8 @@ public class StoreController extends HttpServlet {
             req.setAttribute("products", ProductService.getInstance().getProductPartyGame());
         else if (cat.equals("fantasy"))
             req.setAttribute("products", ProductService.getInstance().getProductFantasy());
+
+
 
 
 //        if (keyWord != null) {

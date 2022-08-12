@@ -66,6 +66,12 @@
             <artifactId>gson</artifactId>
             <version>2.8.9</version>
         </dependency>
+
+        <dependency>
+            <groupId>antlr</groupId>
+            <artifactId>stringtemplate</artifactId>
+            <version>2.3b6</version> <!-- I am not sure if this specific version is meant to be used though -->
+        </dependency>
     </dependencies>
 
     <build>

@@ -23,9 +23,14 @@ public class ProductService {
     }
 
     public List<Product> list() {
-        List<Product> products = connect.withExtension(ProductDAO.class, handle -> handle.list());
+        List<Product> products = connect.withExtension(ProductDAO.class, handle -> handle.listClient());
         return products.stream().map(product -> mapOtherBean(product)).collect(Collectors.toList());
     }
+
+//    public List<Product> loadMore9Product(int start) {
+//      return   connect.withExtension(ProductDAO.class, handle -> handle.loadMore9Product(start));
+////        return products.stream().map(product -> mapOtherBean(product)).collect(Collectors.toList());
+//    }
     public Product findById(String id){
         return connect.withExtension(ProductDAO.class,handle -> mapOtherBean(handle.findById(id)));
     }
@@ -112,4 +117,18 @@ public class ProductService {
     public ArrayList<Product> searchByName(String keyWord) {
         return connect.withExtension(ProductDAO.class, handle -> handle.findByName("UNO"));
     }
+
+    public List<Product> getTop9() {
+        return connect.withExtension(ProductDAO.class, handle -> handle.load9Product());
+    }
+
+//    public static void main(String[] args) {
+//        for (Product p:        ProductService.getInstance().loadMore9Product(1)
+//
+//        ) {
+//            System.out.println(p);
+//        }
+//    }
 }
+
+

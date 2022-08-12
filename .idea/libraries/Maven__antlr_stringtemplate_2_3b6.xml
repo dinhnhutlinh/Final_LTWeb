@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: antlr:stringtemplate:2.3b6">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/antlr/stringtemplate/2.3b6/stringtemplate-2.3b6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/antlr/stringtemplate/2.3b6/stringtemplate-2.3b6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/antlr/stringtemplate/2.3b6/stringtemplate-2.3b6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
