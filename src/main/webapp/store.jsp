@@ -24,7 +24,7 @@
 
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="templete/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!-- Custom stlylesheet -->
     <link type="text/css" rel="stylesheet" href="templete/css/style.css"/>
     <link rel="stylesheet" href="templete/css/header.css">
@@ -223,8 +223,10 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <div class="add-to-cart">
-                                            <a href="AddToCart?idproduct=${p.id}">   <button class="d-none d-xl-block add-to-cart-btn w-100">Add to cart
-                                            </button></a>
+                                            <a href="AddToCart?idproduct=${p.id}">
+                                                <button class="d-none d-xl-block add-to-cart-btn w-100">Add to cart
+                                                </button>
+                                            </a>
                                             <button class="d-xl-none add-to-cart-btn w-100"><i
                                                     class="fa fa-shopping-cart m-auto" aria-hidden="true"></i>
                                             </button>
@@ -234,18 +236,11 @@
                                 </div>
                             </div>
                         </c:forEach>
-                        <%--                        </jsp:useBean>--%>
 
                         <!-- /product -->
                     </div>
                     <!-- /store products -->
-                    <ul id="page" class="reviews-pagination">
-                        <li class="active">1</li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                    </ul>
+                    <button onclick="seeMore()" class="btn primary-btn">See more</button>
                 </div>
             </div>
             <!-- /STORE -->
@@ -348,6 +343,7 @@
 
 <script src="templete/js/jquery.zoom.min.js"></script>
 <script src="templete/js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     $("input:checkbox").on('click', function () {
         var $box = $(this);
@@ -359,6 +355,24 @@
             $box.prop("checked", false);
         }
     });
+
+    function seeMore() {
+        // var countProduct = document.getElementsByClassName("product").length;
+        $.ajax({
+            url: 'load',
+            method: "POST",
+            data:{
+                exits: document.getElementsByClassName("product").length,
+            },
+            success: function (data) {
+                var container_product = document.getElementById("product-list");
+                container_product.innerHTML += data;
+            },
+            error: function (error) {
+
+            }
+        });
+    }
 </script>
 </body>
 

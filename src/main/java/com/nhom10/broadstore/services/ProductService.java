@@ -27,8 +27,17 @@ public class ProductService {
         return products.stream().map(product -> mapOtherBean(product)).collect(Collectors.toList());
     }
 
+    public List<Product> listClient() {
+        List<Product> products = connect.withExtension(ProductDAO.class, handle -> handle.listClient());
+        return products.stream().map(product -> mapOtherBean(product)).collect(Collectors.toList());
+    }
+
     public Product findById(String id) {
         return connect.withExtension(ProductDAO.class, handle -> mapOtherBean(handle.findById(id)));
+    }
+
+    public List<Product> getTop9() {
+        return connect.withExtension(ProductDAO.class, handle -> handle.load9Product());
     }
 
     public int insertProduct(Product product) {

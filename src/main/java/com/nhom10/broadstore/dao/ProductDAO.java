@@ -21,7 +21,11 @@ public interface ProductDAO {
 
     @SqlUpdate("delete from Product where id=:id")
     int delete(@Bind("id") String id);
+    @SqlQuery("select * from Product where active=1")
+    List<Product> listClient();
 
+    @SqlQuery("select  * from Product limit 9")
+    List<Product> load9Product();
     @SqlUpdate("INSERT INTO `Product`(`id`, `name`, `price`, `min_age`, `min_player`, `max_player`, `min_playtime`," +
             " `max_playtime`, `desc`, `img_display`, `weight_amount`, `weight_units`, `size_height`, `size_depth`, " +
             "`size_units`, `active`, `inventory`, `producer_id`, `category_id`, `discount_id`, `create_at`, `update_at`)" +
