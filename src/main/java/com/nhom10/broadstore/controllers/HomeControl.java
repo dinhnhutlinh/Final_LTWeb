@@ -1,4 +1,4 @@
-package com.nhom10.broadstore.controllers.customerController;
+package com.nhom10.broadstore.controllers;
 
 import com.nhom10.broadstore.services.ProductService;
 

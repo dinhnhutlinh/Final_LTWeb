@@ -162,7 +162,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h6>${product.name}</h6>
-                                <h6>Code: ${product.id}</h6>
+                                <h6>Code: <p id="product-id">${product.id}</p></h6>
                                 <h6>Age: ${product.minAge} +</h6>
                                 <%--                                <h6>Producer: ${product.getProducer().getName()}</h6>--%>
                                 <h6>Weight (gr): ${product.weightAmount}</h6>
