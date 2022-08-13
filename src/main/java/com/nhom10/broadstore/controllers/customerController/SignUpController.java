@@ -42,16 +42,15 @@ public class SignUpController extends HttpServlet {
             numberPhone = Integer.parseInt(request.getParameter("phone"));
             isNumPhone = true;
         } catch (Exception e) {
-            isNumPhone=false;
+            isNumPhone = false;
         }
         String password = request.getParameter("password");
         String rePassword = request.getParameter("re_password");
-        if(!isNumPhone){
+        if (!isNumPhone) {
             request.setAttribute("mess", "Error number phone!");
             RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
             rd.forward(request, response);
-        }
-        else if (us.isContainUserWithEmail(email)) {
+        } else if (us.isContainUserWithEmail(email)) {
             request.setAttribute("mess", "Email exist!");
             RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
             rd.forward(request, response);
@@ -72,9 +71,7 @@ public class SignUpController extends HttpServlet {
                 throw new RuntimeException(e);
             }
             us.signUp(user);
-            CartService.getInstance().createCart(new Cart(StringUtil.genIDWithLength(10),user.getId(), 0, null,null,new ArrayList<>()));
-
-
+            CartService.getInstance().createCart(new Cart(StringUtil.genIDWithLength(10), user.getId(), 0, null, null, new ArrayList<>()));
 //        response.sendRedirect("Home");
             RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
             rd.forward(request, response);

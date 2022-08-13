@@ -14,6 +14,9 @@
           <element id="module-output" name="BroadStore" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="BroadStore-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="BroadStore" />
+          </element>
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxrs:3.4.5" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-core:3.4.5" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.4" />
@@ -45,8 +48,6 @@
           <element id="library" level="project" name="Maven: org.jdbi:jdbi3-sqlobject:3.27.0" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.9" />
-          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
-          <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

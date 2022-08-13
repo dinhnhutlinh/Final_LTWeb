@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns = "/DetailProduct")
 public class DetailProductController extends HttpServlet {
@@ -18,7 +19,7 @@ public class DetailProductController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String productId = String.valueOf(request.getParameter("idproduct"));
         Product product = ProductService.getInstance().getProductById(productId);
-        List<String> images = ImageService.getInstance().getImagesProduct(productId);
+        List<String> images = ImageService.getInstance().getImagesProduct(productId).stream().map(imageProduct -> imageProduct.getLink()).collect(Collectors.toList());
         request.setAttribute("product", product);
         request.setAttribute("images", images);
         request.getRequestDispatcher("product.jsp").forward(request, response);
