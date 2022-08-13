@@ -43,8 +43,8 @@ public interface ProductDAO {
             "`update_at`=now() WHERE `id`=:id")
     int update(@BindBean Product product);
 
-    @SqlQuery("select * from Product where name like :keyWord")
-    ArrayList<Product> findByName(@Bind("keyWord") String keyWord);
+    @SqlQuery("select * from Product where name like ?")
+    List<Product> findByName(String keyword);
 
     @SqlQuery("select * from Product order by price asc ")
     ArrayList<Product> allPriceUp();

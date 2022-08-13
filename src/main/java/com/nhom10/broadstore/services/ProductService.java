@@ -5,7 +5,6 @@ import com.nhom10.broadstore.dao.*;
 import com.nhom10.broadstore.db.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -78,8 +77,9 @@ public class ProductService {
     }
 
 
-    public ArrayList<Product> searchByName(String keyWord) {
-        return connect.withExtension(ProductDAO.class, handle -> handle.findByName(keyWord));
+    public List<Product> searchByName(String keyword) {
+
+        return connect.withExtension(ProductDAO.class, handle -> handle.findByName("%" + keyword + "%"));
     }
 
     public List<Product> findByCategoryId(String id) {

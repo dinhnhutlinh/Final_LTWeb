@@ -106,9 +106,10 @@
                                         <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
                                     </div>
                                     <div class="product-body">
-                                        <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                        <h3 class="product-name"><a href="product?id=${p.id}">${p.name}</a>
                                         </h3>
-                                        <h4 class="product-price">${p.price} $
+                                        <h4 class="product-price">${p.getPrice()}
+                                            <del class="product-old-price">${p.getPrice()}</del>
                                         </h4>
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>

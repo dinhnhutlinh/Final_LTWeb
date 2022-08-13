@@ -56,7 +56,7 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-            <h4>Search ${total} product with key word ${param["search"]}</h4>
+            <h4>Search ${total} product with keyword ${param["keyword"]}</h4>
             <div class="card shadow">
                 <div class="card-body">
                     <!-- store products -->
@@ -65,11 +65,11 @@
                             <div class="item col-md-3 col-xs-6">
                                 <div class="product">
                                     <div class="product-img zoom">
-                                        <img src="img/icon-timeline/sp.png"/>
+                                        <img src="${product.getImgDisplay()}"/>
                                     </div>
                                     <div class="product-body">
                                         <h3 class="product-name"><a
-                                                href="Product?id=${product.getId()}">${product.getName()}</a></h3>
+                                                href="product?id=${product.getId()}">${product.getName()}</a></h3>
                                         <h4 class="product-price">${product.getPrice()}
                                             <del class="product-old-price">${product.getPrice()}</del>
                                         </h4>
@@ -88,30 +88,6 @@
                             </div>
                         </c:forEach>
                     </div>
-                    <!-- /store products -->
-                    <ul class="reviews-pagination">
-                        <c:if test="${currentPage!=1}">
-                            <li><a href="Search?search=${param["search"]}&page=${1}"><i
-                                    class="fa fa-angle-left"></i></a></li>
-                        </c:if>
-                        <c:forEach begin="1" end="${totalPage}" var="i">
-                            <c:if test="${i==currentPage}">
-                                <li class="active">
-                                        ${currentPage}
-                                </li>
-                            </c:if>
-                            <c:if test="${i!=currentPage}">
-                                <li>
-                                    <a href="Search?search=${param["search"]}&page=${i}">${i}</a>
-                                </li>
-                            </c:if>
-                        </c:forEach>
-                        <c:if test="${currentPage!=totalPage}">
-                            <li><a href="Search?search=${param["search"]}&page=${totalPage}"><i
-                                    class="fa fa-angle-right"></i></a>
-                            </li>
-                        </c:if>
-                    </ul>
                 </div>
             </div>
         </div>
