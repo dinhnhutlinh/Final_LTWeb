@@ -75,8 +75,7 @@ public class ProductService {
     public Product getProductById(String id) {
         return connect.withExtension(ProductDAO.class, handle -> handle.findWithId(id));
     }
-
-
+    
     public List<Product> searchByName(String keyword) {
 
         return connect.withExtension(ProductDAO.class, handle -> handle.findByName("%" + keyword + "%"));

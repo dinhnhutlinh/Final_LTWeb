@@ -3,6 +3,7 @@ package com.nhom10.broadstore.controllers.customerController;
 import com.nhom10.broadstore.beans.Product;
 import com.nhom10.broadstore.services.ProductService;
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,18 +13,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+
 @WebServlet(urlPatterns = "/search")
+
 public class SearchController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String keyword = req.getParameter("keyword");
         ProductService productService = new ProductService();
-        System.out.println(keyword);
         List<Product> findOut = productService.searchByName(keyword);
-        System.out.println(findOut);
         req.setAttribute("keyword", keyword);
         req.setAttribute("findOut", findOut);
         req.setAttribute("total", findOut.size());
+
 
         RequestDispatcher rd = req.getRequestDispatcher("search.jsp");
         rd.forward(req, resp);
