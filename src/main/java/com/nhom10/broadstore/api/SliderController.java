@@ -70,7 +70,7 @@ public class SliderController extends HttpServlet {
             }
 
             List<String> images = UploadFileHelper.uploadFile(Define.sliderFolder + File.separator + slider.getId(), req, "image");
-            if (images != null) {
+            if (images != null&& images.size()!=0) {
                 sliderService.updateImage(slider.getId(), images.get(0));
                 slider.setImage(images.get(0));
             }

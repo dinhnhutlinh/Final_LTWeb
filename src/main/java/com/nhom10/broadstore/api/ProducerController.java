@@ -49,13 +49,14 @@ public class ProducerController extends HttpServlet {
             producer.setId(id);
             producer.setName(name);
             producer.setEmail(email);
+            producer.setAddress(address);
             producer.setPhone(phone);
-            producer.setName(email);
         } catch (Exception e) {
             resp.setStatus(400);
             printWriter.println(new ExceptionModel(e.toString()));
             printWriter.close();
         }
+        System.out.println(producer);
         try {
             if (id == null || id.equals("")) {
                 id = StringUtil.genIDWithLength(10);
@@ -67,7 +68,6 @@ public class ProducerController extends HttpServlet {
                 producerService.update(producer);
                 printWriter.println("Update Success");
             }
-            printWriter.flush();
             printWriter.close();
         } catch (Exception e) {
             System.out.println(e);

@@ -59,7 +59,7 @@
             <section class="content-main">
                 <div class="content-header">
 
-                    <div class="d-flex">
+                    <div class="d-flex justify-content-between">
                         <h2 class="content-title">Edit Product</h2>
                         <div>
                             <button class="btn btn-orange ms-3 btnSave">Save</button>

@@ -14,7 +14,7 @@ public interface ImageProductDAO {
     @SqlQuery(value = "SELECT * FROM `ProductImage` WHERE id=:id")
     ImageProduct findById(@Bind("id") String id);
 
-    @SqlQuery("select link from productimage where product_id = :productId")
+    @SqlQuery("select link from ProductImage where product_id = :productId")
     ArrayList<String> getImagesProduct(@Bind("productId") String productId);
 
     @SqlQuery(value = "SELECT * FROM `ProductImage` WHERE `product_id`=:id")

@@ -29,7 +29,7 @@ $(document).ready(function () {
         console.log('upload image')
         let formData = new FormData();
         formData.append('id', id);
-        formData.append('imageProducts', $('#imageProducts').prop('files'));
+        formData.append('imageProducts', $('#imageProducts').files);
         for (const value of formData.values()) {
             console.log(value);
         }
