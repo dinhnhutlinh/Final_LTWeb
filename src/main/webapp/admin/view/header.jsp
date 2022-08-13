@@ -32,7 +32,7 @@
                                 <a href="Home">Back top shop</a>
                             </li>
                             <li>
-                                <a href="LogoutController">Log out</a>
+                                <a href="Logout">Log out</a>
                             </li>
                         </ul>
                     </div>

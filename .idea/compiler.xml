@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="BroadStore" target="1.8" />
+      <module name="BroadStore" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

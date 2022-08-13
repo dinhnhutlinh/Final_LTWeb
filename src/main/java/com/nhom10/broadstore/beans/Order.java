@@ -1,11 +1,10 @@
 package com.nhom10.broadstore.beans;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Order {
+
     private String id;
     private String customerId;
     private double shipPrice;
@@ -18,12 +17,10 @@ public class Order {
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 
-    private List<OrderItem> orderItemList = new ArrayList<OrderItem>();
+    private List<OrderItem> orderItems;
 
-    public Order() {
-    }
 
-    public Order(String id, String customerId, double shipPrice, double total, String status, String name, String phone, String email, String address, LocalDateTime createAt, LocalDateTime updateAt, List<OrderItem> orderItemList) {
+    public Order(String id, String customerId, double shipPrice, double total, String status, String name, String phone, String email, String address, LocalDateTime createAt, LocalDateTime updateAt, List<OrderItem> orderItems) {
         this.id = id;
         this.customerId = customerId;
         this.shipPrice = shipPrice;
@@ -35,7 +32,10 @@ public class Order {
         this.address = address;
         this.createAt = createAt;
         this.updateAt = updateAt;
-        this.orderItemList = orderItemList;
+        this.orderItems = orderItems;
+    }
+
+    public Order() {
     }
 
     public String getId() {
@@ -126,43 +126,20 @@ public class Order {
         this.updateAt = updateAt;
     }
 
-    public List<OrderItem> getOrderItemList() {
-        return orderItemList;
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
     }
 
-    public void setOrderItemList(List<OrderItem> orderItemList) {
-        this.orderItemList = orderItemList;
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
     }
 
-    @Override
-    public boolean equals(Object o) {
-
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Order order = (Order) o;
-        return Double.compare(order.shipPrice, shipPrice) == 0 && Double.compare(order.total, total) == 0 && Objects.equals(id, order.id) && Objects.equals(customerId, order.customerId) && Objects.equals(status, order.status) && Objects.equals(name, order.name) && Objects.equals(phone, order.phone) && Objects.equals(email, order.email) && Objects.equals(address, order.address) && Objects.equals(createAt, order.createAt) && Objects.equals(updateAt, order.updateAt) && Objects.equals(orderItemList, order.orderItemList);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, customerId, shipPrice, total, status, name, phone, email, address, createAt, updateAt, orderItemList);
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id='" + id + '\'' +
-                ", customerId='" + customerId + '\'' +
-                ", shipPrice=" + shipPrice +
-                ", total=" + total +
-                ", status='" + status + '\'' +
-                ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", createAt=" + createAt +
-                ", updateAt=" + updateAt +
-                ", orderItemList=" + orderItemList +
-                '}';
+    public double getAllTotal() {
+        double total = 0;
+        for (OrderItem item : orderItems) {
+            total += item.getPrice();
+        }
+        total += shipPrice;
+        return total;
     }
 }

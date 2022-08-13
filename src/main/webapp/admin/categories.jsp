@@ -107,7 +107,7 @@
                                 <!--modal input-->
                             </div>
                             <div class="card-body">
-                                <table id="tableCat" class="table table-hover nowrap" style="width: 100%">>
+                                <table id="tableCat" class="table table-hover nowrap" style="width: 100%">
 
                                 </table>
                             </div> <!-- card-body end// -->

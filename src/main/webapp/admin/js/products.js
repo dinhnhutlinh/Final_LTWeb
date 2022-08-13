@@ -26,6 +26,10 @@ $(document).ready(function () {
                 }
             },
             {
+                title: 'Inventory',
+                data: 'inventory'
+            },
+            {
                 title: 'Price',
                 data: 'price'
             },
@@ -56,7 +60,7 @@ $(document).ready(function () {
         let data = row.data();
         if (confirm('Delete this blog?'))
             $.ajax({
-                url: '/BlogController?id=' + data.id,
+                url: 'ProductController?id=' + data.id,
                 method: "DELETE",
                 success: function (data) {
 

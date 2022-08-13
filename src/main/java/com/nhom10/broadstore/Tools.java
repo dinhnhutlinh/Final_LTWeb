@@ -1,8 +1,9 @@
 package com.nhom10.broadstore;
 
 import com.google.gson.Gson;
+import com.nhom10.broadstore.beans.Order;
+import com.nhom10.broadstore.beans.OrderItem;
 import com.nhom10.broadstore.beans.Product;
-import com.nhom10.broadstore.beans.User;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -11,11 +12,13 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class Tools {
     public static void main(String[] args) {
-        new Tools().genClass();
+        Class theClass = OrderItem.class;
+        for (Field field : theClass.getDeclaredFields())
+            System.out.print(",:" + field.getName());
+//        new Tools().genClass();
     }
 
     void genInsert() {
@@ -63,13 +66,14 @@ public class Tools {
             System.out.println(txt.replaceAll(":name", field.getName()));
         }
     }
-    void genMethod(){
+
+    void genMethod() {
         String txt = "product.:method(:name)";
         Class theClass = Product.class;
-        Field[] fields= theClass.getDeclaredFields();
-        Method[] methods= Arrays.stream(theClass.getDeclaredMethods()).filter(field1 -> field1.getName().contains("set")).toArray(Method[]::new);
+        Field[] fields = theClass.getDeclaredFields();
+        Method[] methods = Arrays.stream(theClass.getDeclaredMethods()).filter(field1 -> field1.getName().contains("set")).toArray(Method[]::new);
         for (int i = 0; i < fields.length; i++) {
-            System.out.println(txt.replaceFirst(":method",methods[i].getName()).replaceFirst(":name",fields[i].getName()));
+            System.out.println(txt.replaceFirst(":method", methods[i].getName()).replaceFirst(":name", fields[i].getName()));
         }
     }
 
