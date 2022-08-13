@@ -125,11 +125,13 @@
                     <div class="add-to-cart">
                         <div class="qty-label mb-3">
                             Qty
-                            <input class="form-control w-50" type="number" name="qty" id="" value="1">
+                            <input class="form-control w-50" type="number" name="qty" id="qty" value="1">
                         </div>
                     </div>
-                    <a href="AddToCart">   <button  class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to cart
-                    </button></a>
+<%--                    <a href="AddToCart"> --%>
+                        <button onclick="addToCart()" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to cart
+                    </button>
+<%--                    </a>--%>
                 </div>
             </div>
             <!-- /Product details -->
@@ -162,7 +164,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h6>${product.name}</h6>
-                                <h6>Code: ${product.id}</h6>
+                                <h6>Code: <p id="product-id">${product.id}</p></h6>
                                 <h6>Age: ${product.minAge} +</h6>
                                 <%--                                <h6>Producer: ${product.getProducer().getName()}</h6>--%>
                                 <h6>Weight (gr): ${product.weightAmount}</h6>
@@ -328,7 +330,7 @@
 <script src="js/nouislider.min.js"></script>
 <script src="js/jquery.zoom.min.js"></script>
 <script src="js/main.js"></script>
-
+<script src="js/cartJS.js"></script>
 <script>
     $(document).ready(function () {
         $("#description").click(function () {
@@ -358,6 +360,8 @@
             $("#tab3").show();
         })
     })
+
+
 </script>
 </body>
 

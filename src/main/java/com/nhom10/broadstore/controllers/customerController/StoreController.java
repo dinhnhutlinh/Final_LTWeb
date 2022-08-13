@@ -22,8 +22,9 @@ public class StoreController extends HttpServlet {
         String cat = String.valueOf(req.getParameter("cat"));
         String keyWord = req.getParameter("search");
 
+
         if (cat.equals("all"))
-            req.setAttribute("products", ProductService.getInstance().getAllProducts());
+            req.setAttribute("products", ProductService.getInstance().getTop9());
         else if (cat.equals("family"))
             req.setAttribute("products", ProductService.getInstance().getProductFamilyGame());
         else if (cat.equals("card"))
@@ -47,12 +48,6 @@ public class StoreController extends HttpServlet {
         else if (cat.equals("fantasy"))
             req.setAttribute("products", ProductService.getInstance().getProductFantasy());
 
-
-//        if (keyWord != null) {
-//            req.setAttribute("products", ProductService.getInstance().searchByName(keyWord));
-//        } else if (keyWord == null) {
-//            req.setAttribute("products", ProductService.getInstance().getAllProducts());
-//        }
         req.getRequestDispatcher("store.jsp").forward(req, resp);
     }
 }

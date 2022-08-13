@@ -50,6 +50,25 @@ public class CartItem {
         return quantity == cartItem.quantity && Double.compare(cartItem.price, price) == 0 && Objects.equals(product, cartItem.product);
     }
 
+
+    public String getCartId() {
+        return cartId;
+    }
+
+    public void setCartId(String cartId) {
+        this.cartId = cartId;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+
+
     @Override
     public int hashCode() {
         return Objects.hash(product, quantity, price);
