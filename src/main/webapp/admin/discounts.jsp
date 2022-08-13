@@ -128,7 +128,7 @@
                 <div class="card mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <table id="table" class="table table-hover pt-3 nowrap" style="width: 100%">>
+                            <table id="table" class="table table-hover pt-3 nowrap" style="width: 100%">
                             </table>
                         </div>
                     </div>

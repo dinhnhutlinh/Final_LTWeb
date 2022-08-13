@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 public class ProductService {
     private static ProductService instance = null;
     Jdbi connect = JDBIConnector.get();
+
     public ProductService() {
     }
 
@@ -53,7 +54,7 @@ public class ProductService {
     }
 
     private Product mapOtherBean(Product product) {
-        if(product==null)
+        if (product == null)
             return new Product();
         Category category = connect.withExtension(CategoryDAO.class, handle -> handle.findById(product.getCategoryId()));
         Producer producer = connect.withExtension(ProducerDAO.class, handle -> handle.findById(product.getProducerId()));
@@ -72,70 +73,16 @@ public class ProductService {
         return connect.withExtension(ImageProductDAO.class, handle -> handle.insert(imageProduct));
     }
 
-    public int removeImage(String id) {
-        return connect.withExtension(ImageProductDAO.class, handle -> handle.delete(id));
-    }
-
-
-    public List<Product> getProductFamilyGame() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductFamilyGame());
-    }
-
-    public List<Product> getProductCombat() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductCombat());
-    }
-
-    public List<Product> getProductCardGame() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductCardGame());
-    }
-
-    public List<Product> getProductArt() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductArt());
-    }
-
-    public List<Product> getProductAdventure() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductAdventure());
-    }
-
-    public List<Product> getProductDice() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductDice());
-    }
-
-    public List<Product> getProductBattleRoyale() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductBattleRoyale());
-    }
-
-    public List<Product> getProductFighting() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductFighting());
-    }
-
-    public List<Product> getProductPartyGame() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductPartyGame());
-    }
-
-    public List<Product> getProductPuzzle() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductPuzzle());
-    }
-
-    public List<Product> getProductFantasy() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.getProductFantasy());
-    }
-
-
-
-    public ArrayList<Product> getAllProducts() {
-        return (ArrayList<Product>) connect.withExtension(ProductDAO.class, handle -> handle.list());
-    }
-
     public Product getProductById(String id) {
         return connect.withExtension(ProductDAO.class, handle -> handle.findWithId(id));
     }
 
-    public ArrayList<Product> allPriceUp() {
-        return connect.withExtension(ProductDAO.class, handle -> handle.allPriceUp());
-    }
 
     public ArrayList<Product> searchByName(String keyWord) {
-        return connect.withExtension(ProductDAO.class, handle -> handle.findByName("UNO"));
+        return connect.withExtension(ProductDAO.class, handle -> handle.findByName(keyWord));
+    }
+
+    public List<Product> findByCategoryId(String id) {
+        return connect.withExtension(ProductDAO.class, handle -> handle.findByCategoryId(id));
     }
 }
