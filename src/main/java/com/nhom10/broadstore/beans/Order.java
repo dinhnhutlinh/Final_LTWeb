@@ -133,13 +133,5 @@ public class Order {
     public void setOrderItems(List<OrderItem> orderItems) {
         this.orderItems = orderItems;
     }
-
-    public double getAllTotal() {
-        double total = 0;
-        for (OrderItem item : orderItems) {
-            total += item.getPrice();
-        }
-        total += shipPrice;
-        return total;
-    }
 }
+

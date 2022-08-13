@@ -107,7 +107,7 @@ public class MailHelper {
         }
         content = content.replaceAll("$listItem", lisItemHtml);
         content = content.replaceAll("$ship", order.getShipPrice() + "");
-        content = content.replaceAll("$total", order.getAllTotal() + "");
+        content = content.replaceAll("$total", 0 + "");
         sendMail("", to, from, "Order", content, true);
     }
 }

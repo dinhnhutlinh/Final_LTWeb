@@ -8,30 +8,28 @@ import com.nhom10.broadstore.dao.OrderItemDAO;
 import com.nhom10.broadstore.dao.ProductDAO;
 import com.nhom10.broadstore.db.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
-import org.jdbi.v3.sqlobject.customizer.Bind;
-import org.jdbi.v3.sqlobject.customizer.BindBean;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class OrderService {
+public class OrderServices {
     Jdbi connector = JDBIConnector.get();
 
-    List<Order> list() {
-        return connector.withExtension(OrderDAO.class, handle -> handle.list().stream().map(order -> mapOrder(order)).collect(Collectors.toList()));
+    public List<Order> list() {
+
+        return connector.withExtension(OrderDAO.class, OrderDAO::list);
     }
 
 
-    Order findById(@Bind("id") String id) {
+    public Order findById(String id) {
         return connector.withExtension(OrderDAO.class, handle -> mapOrder(handle.findById(id)));
     }
 
-
-    List<Order> findByCustomerId(@Bind("id") String id) {
+    public List<Order> findByCustomerId(String id) {
         return connector.withExtension(OrderDAO.class, handle -> handle.findByCustomerId(id).stream().map(order -> mapOrder(order)).collect(Collectors.toList()));
     }
 
-    int insert(@BindBean Order order) {
+    public int insert(Order order) {
         int status = connector.withExtension(OrderDAO.class, handle -> handle.insert(order));
         for (OrderItem orderItem : order.getOrderItems()) {
             connector.withExtension(OrderItemDAO.class, handle -> handle.insert(orderItem));
@@ -39,7 +37,7 @@ public class OrderService {
         return status;
     }
 
-    int update(@BindBean Order order) {
+    public int update(Order order) {
         int status = connector.withExtension(OrderDAO.class, handle -> handle.update(order));
         for (OrderItem orderItem : order.getOrderItems()) {
             connector.withExtension(OrderItemDAO.class, handle -> handle.update(orderItem));
@@ -60,4 +58,6 @@ public class OrderService {
         order.setOrderItems(orderItems);
         return order;
     }
+
+
 }
