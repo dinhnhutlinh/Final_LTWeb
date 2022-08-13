@@ -46,9 +46,10 @@
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner " style=" width:100%; height: 600px !important;">
             <div class=" carousel-item active">
-                <a href="product.html"><img style=" width:100%; height: 600px !important;"
-                                            src="img/slider/8464f02e806c667286ffa47153243965.jpg" class="d-block w-100"
-                                            alt="...">
+                <a href="product.html">
+                    <img style=" width:100%; height: 600px !important;"
+                         src="img/slider/8464f02e806c667286ffa47153243965.jpg" class="d-block w-100"
+                         alt="...">
                 </a>
                 <div class="carousel-caption w-100 bg-lg-shadow bottom-0">
                     <h4 class="text-white">Lớp Học Mật Mã</h4>
@@ -90,473 +91,48 @@
 <div class="section">
     <!-- container -->
     <div class="container">
-
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Family Game</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="familyGame" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${familyGame}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+        <c:forEach var="item" items="${map}">
+            <div class="mb-3">
+                <div class="d-flex align-items-baseline">
+                    <h4>${item.getKey()}</h4>
+                    <a class="ps-3" href="/Store?name=${item.getKey()}">View all</a>
+                </div>
+                <div>
+                    <div class="row filtering  pe-3 ps-3">
+                        <c:forEach var="p" items="${item.getValue()}">
+                            <div class="item col-md-4 col-xs-6">
+                                <div class="product">
+                                    <div class="product-img zoom d-flex justify-content-center">
+                                        <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
                                     </div>
-                                    <div class="add-to-cart">
+                                    <div class="product-body">
+                                        <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                        </h3>
+                                        <h4 class="product-price">${p.price} $
+                                        </h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="add-to-cart">
 
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                            <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                            <button class="d-xl-none add-to-cart-btn w-100"><i
+                                                    class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
+                                        </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
-                        </div>
-                    </c:forEach>
+                        </c:forEach>
 
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Card Game</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="cardGame" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${cardGame}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="add-to-cart">
-
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Art</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="art" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${art}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="add-to-cart">
-
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Dice</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="dice" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${dice}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="add-to-cart">
-
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Battle Royale</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="battleRoyale" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${battleRoyale}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="add-to-cart">
-
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Fighting</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="fighting" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${fighting}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="add-to-cart">
-
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Puzzle</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="puzzle" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${puzzle}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="add-to-cart">
-
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Party Game</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="partyGame" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${partyGame}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="add-to-cart">
-
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Fantasy</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="fantasy" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${fantasy}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="add-to-cart">
-
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Combat</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="combat" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${combat}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="add-to-cart">
-
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <div class="d-flex align-items-baseline">
-                <h4 class="">Adventure</h4>
-                <a class="ps-3" href="Store">View all</a>
-            </div>
-            <div>
-                <div class="row filtering  pe-3 ps-3">
-                    <jsp:useBean id="adventure" scope="request" type="java.util.List"/>
-                    <c:forEach var="p" items="${adventure}">
-                        <div class="item col-md-4 col-xs-6">
-                            <div class="product">
-                                <div class="product-img zoom d-flex justify-content-center">
-                                    <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
-                                    </h3>
-                                    <h4 class="product-price">${p.price} $
-                                            <%--                                        <del class="product-old-price">260.000VND</del>--%>
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="add-to-cart">
-
-                                        <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
-                                        <button class="d-xl-none add-to-cart-btn w-100"><i
-                                                class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-
-                </div>
-            </div>
-        </div>
-
-
-
+        </c:forEach>
     </div>
 
 </div>
