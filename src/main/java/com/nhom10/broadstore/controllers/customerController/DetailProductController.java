@@ -13,11 +13,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@WebServlet(urlPatterns = "/DetailProduct")
+@WebServlet(urlPatterns = "/product")
 public class DetailProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String productId = String.valueOf(request.getParameter("idproduct"));
+        String productId = String.valueOf(request.getParameter("id"));
         Product product = ProductService.getInstance().getProductById(productId);
         List<String> images = ImageService.getInstance().getImagesProduct(productId).stream().map(imageProduct -> imageProduct.getLink()).collect(Collectors.toList());
         request.setAttribute("product", product);

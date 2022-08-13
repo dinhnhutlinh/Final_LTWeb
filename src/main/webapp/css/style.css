@@ -525,6 +525,7 @@ textarea.input {
     position: relative;
     overflow: hidden;
     margin: 0 auto;
+    height: 256px;
 }
 
 .product .product-img > img {

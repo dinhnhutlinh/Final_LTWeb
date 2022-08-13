@@ -23,8 +23,8 @@
                 <!-- SEARCH BAR -->
                 <div class="col-md-6">
                     <div class="header-search">
-                        <form class="d-flex" action="Store" method="get">
-                            <input class="input flex-grow-1" name="search" placeholder="SEARCH PRODUCT">
+                        <form class="d-flex" action="search" method="get">
+                            <input class="input flex-grow-1" name="keyword" placeholder="SEARCH PRODUCT">
                             <button type="submit" class="search-btn">SEARCH</button>
                         </form>
                     </div>
@@ -55,9 +55,9 @@
                                 </c:if>
                                 <c:if test='${userSession!=null}'>
                                     <c:if test="${userSession.getRole()==Role.ADMIN}">
-                                        <li><a class="dropdown-item" href="Admin-DashBroad">Dashbroad</a></li>
+                                        <li><a class="dropdown-item" href="dashboard">Dashbroad</a></li>
                                     </c:if>
-                                    <li><a class="dropdown-item" href="UserDetail">Account</a></li>
+                                    <li><a class="dropdown-item" href="user_detail">Account</a></li>
                                     <li><a class="dropdown-item" href="Logout">Log out</a></li>
                                 </c:if>
                             </ul>
