@@ -1,6 +1,5 @@
 package com.nhom10.broadstore.dao;
 
-import com.nhom10.broadstore.beans.Discount;
 import com.nhom10.broadstore.beans.Product;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
@@ -21,11 +20,13 @@ public interface ProductDAO {
 
     @SqlUpdate("delete from Product where id=:id")
     int delete(@Bind("id") String id);
+
     @SqlQuery("select * from Product where active=1")
     List<Product> listClient();
 
     @SqlQuery("select  * from Product limit 9")
     List<Product> load9Product();
+
     @SqlUpdate("INSERT INTO `Product`(`id`, `name`, `price`, `min_age`, `min_player`, `max_player`, `min_playtime`," +
             " `max_playtime`, `desc`, `img_display`, `weight_amount`, `weight_units`, `size_height`, `size_depth`, " +
             "`size_units`, `active`, `inventory`, `producer_id`, `category_id`, `discount_id`, `create_at`, `update_at`)" +
@@ -48,40 +49,12 @@ public interface ProductDAO {
     @SqlQuery("select * from Product order by price asc ")
     ArrayList<Product> allPriceUp();
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Family Game') ")
-    ArrayList<Product> getProductFamilyGame();
+    @SqlQuery("select * from Product where category_id = (select id from Category where name = :name)")
+    List<Product> getProductByCategoryName(@Bind("name") String name);
 
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Combat') ")
-    ArrayList<Product> getProductCombat();
-
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Card Game') ")
-    ArrayList<Product> getProductCardGame();
-
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Art') ")
-    ArrayList<Product> getProductArt();
-
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Adventure') ")
-    ArrayList<Product> getProductAdventure();
-
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Dice') ")
-    ArrayList<Product> getProductDice();
-
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Battle Royale') ")
-    ArrayList<Product> getProductBattleRoyale();
-
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Fighting') ")
-    ArrayList<Product> getProductFighting();
-
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Puzzle') ")
-    ArrayList<Product> getProductPuzzle();
-
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Party Game') ")
-    ArrayList<Product> getProductPartyGame();
-
-    @SqlQuery("select * from Product where category_id = (select id from Category where name = 'Fantasy') ")
-    ArrayList<Product> getProductFantasy();
+    @SqlQuery("select * from Product where category_id = :id")
+    List<Product> findByCategoryId(@Bind("id") String id);
 
     @SqlQuery("select * from Product WHERE id=:id")
     Product findWithId(@Bind("id") String id);
-
 }

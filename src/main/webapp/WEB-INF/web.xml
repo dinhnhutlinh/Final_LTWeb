@@ -28,7 +28,7 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>Home</servlet-name>
-        <servlet-class>com.nhom10.broadstore.controllers.customerController.HomeControl</servlet-class>
+        <servlet-class>com.nhom10.broadstore.controllers.HomeController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
