@@ -51,12 +51,11 @@
                 </div>
                 <div class="end_text">
                     <p class="not_acc"> Do not have an account?</p>
-                    <a href="signUp.html" class="sign_in">Sign up</a>
+                    <a href="sign_up" class="sign_in">Sign up</a>
                 </div>
             </div>
             <div class="right">
                 <form action="Login" method="post">
-
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email">
@@ -64,7 +63,7 @@
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" minlength="6" class="form-control" name="password" id="password"
-                               placeholder="Mật khẩu của bạn">
+                               placeholder="Forget password">
                         <span id="err-mes" class="text-danger d-none">Email or password not exactly</span>
                     </div>
                     <c:if test='${mess!=null&&mess!=""}'>
@@ -73,7 +72,7 @@
                         </div>
                     </c:if>
                     <div class="forgot pb-3">
-                        <a href="ForgetPass.html" class="text">Forget password?</a>
+                        <a href="forget_password" class="text">Forget password?</a>
                     </div>
                     <button type="submit" class="btn w-100 text-white">
                         SIGN IN

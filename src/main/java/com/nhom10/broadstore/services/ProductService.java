@@ -82,6 +82,6 @@ public class ProductService {
     }
 
     public List<Product> findByCategoryId(String id) {
-        return connect.withExtension(ProductDAO.class, handle -> handle.findByCategoryId(id));
+        return connect.withExtension(ProductDAO.class, handle -> handle.findByCategoryId(id).stream().map(product -> mapOtherBean(product)).collect(Collectors.toList()));
     }
 }

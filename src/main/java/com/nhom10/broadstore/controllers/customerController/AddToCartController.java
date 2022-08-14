@@ -2,10 +2,12 @@ package com.nhom10.broadstore.controllers.customerController;
 
 import com.nhom10.broadstore.beans.CartItem;
 import com.nhom10.broadstore.beans.Product;
+import com.nhom10.broadstore.beans.ResponseModel;
 import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.services.CartService;
 import com.nhom10.broadstore.services.ProductService;
 import com.nhom10.broadstore.util.Define;
+import com.nhom10.broadstore.util.JsonUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,26 +16,39 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AddToCart")
 public class AddToCartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        PrintWriter printWriter = response.getWriter();
         HttpSession session = request.getSession(true);
         User user = (User) session.getAttribute(Define.userSession);
+        System.out.println(user);
+        if (user == null) {
+            response.setStatus(404);
 
-        String cartId = CartService.getInstance().getCart(user.getId()).getId();
-        String productId = String.valueOf(request.getParameter("productId"));
-        Product product = ProductService.getInstance().getProductById(productId);
-        int qty = Integer.parseInt(String.valueOf(request.getParameter("qty")));
+            printWriter.println(new JsonUtil().toJSon(new ResponseModel(404, "You must login to add cart", "")));
+            printWriter.close();
 
-        List<String> allProductId = CartService.getInstance().getAllProductId(cartId);
-        if (allProductId.contains(productId)) {
-            int newQty = CartService.getInstance().getQty(cartId, productId) + qty;
-            CartService.getInstance().updateQty(cartId, productId, newQty, newQty * product.getPrice());
-        } else
-            CartService.getInstance().insertCartItem(new CartItem(cartId, productId, qty, qty * product.getPrice()));
+        } else {
+            System.out.println(user.getId());
+            String cartId = CartService.getInstance().getCart(user.getId()).getId();
+            String productId = String.valueOf(request.getParameter("productId"));
+            Product product = ProductService.getInstance().getProductById(productId);
+            int qty = Integer.parseInt(String.valueOf(request.getParameter("qty")));
+
+            List<String> allProductId = CartService.getInstance().getAllProductId(cartId);
+            if (allProductId.contains(productId)) {
+                int newQty = CartService.getInstance().getQty(cartId, productId) + qty;
+                CartService.getInstance().updateQty(cartId, productId, newQty, newQty * product.getPrice());
+            } else
+                CartService.getInstance().insertCartItem(new CartItem(cartId, productId, qty, qty * product.getPrice()));
+
+        }
 
     }
 

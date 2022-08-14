@@ -1009,6 +1009,11 @@ textarea.input {
     text-transform: uppercase;
     font-size: 12px;
 }
+.slick-list draggable{
+    height: 450px;
+    weight: 450px;
+}
+
 
 
 #product-main-img .slick-prev {
