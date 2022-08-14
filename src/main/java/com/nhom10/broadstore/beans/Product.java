@@ -33,6 +33,34 @@ public class Product {
     public Product() {
     }
 
+    public Product(String id, String name, double price, int minAge, int minPlayer, int maxPlayer, int minPlaytime, int maxPlaytime, String desc, String imageDisplay, double weightAmount, String weightUnits, double sizeHeight, double sizeDepth, String sizeUnits, int active, int inventory, String producerId, String categoryId, String discountId, Producer producer, Category category, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.minAge = minAge;
+        this.minPlayer = minPlayer;
+        this.maxPlayer = maxPlayer;
+        this.minPlaytime = minPlaytime;
+        this.maxPlaytime = maxPlaytime;
+        this.desc = desc;
+        this.imgDisplay = imageDisplay;
+        this.weightAmount = weightAmount;
+        this.weightUnits = weightUnits;
+        this.sizeHeight = sizeHeight;
+        this.sizeDepth = sizeDepth;
+        this.sizeUnits = sizeUnits;
+        this.active = active;
+        this.inventory = inventory;
+        this.producerId = producerId;
+        this.categoryId = categoryId;
+        this.discountId = discountId;
+        this.producer = producer;
+        this.category = category;
+        this.discount = discount;
+        this.createAt = createAt;
+        this.updateAt = updateAt;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -246,32 +274,8 @@ public class Product {
         this.updateAt = updateAt;
     }
 
-    public Product(String id, String name, double price, int minAge, int minPlayer, int maxPlayer, int minPlaytime, int maxPlaytime, String desc, String imageDisplay, double weightAmount, String weightUnits, double sizeHeight, double sizeDepth, String sizeUnits, int active, int inventory, String producerId, String categoryId, String discountId, Producer producer, Category category, Discount discount, LocalDateTime createAt, LocalDateTime updateAt) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.minAge = minAge;
-        this.minPlayer = minPlayer;
-        this.maxPlayer = maxPlayer;
-        this.minPlaytime = minPlaytime;
-        this.maxPlaytime = maxPlaytime;
-        this.desc = desc;
-        this.imgDisplay = imageDisplay;
-        this.weightAmount = weightAmount;
-        this.weightUnits = weightUnits;
-        this.sizeHeight = sizeHeight;
-        this.sizeDepth = sizeDepth;
-        this.sizeUnits = sizeUnits;
-        this.active = active;
-        this.inventory = inventory;
-        this.producerId = producerId;
-        this.categoryId = categoryId;
-        this.discountId = discountId;
-        this.producer = producer;
-        this.category = category;
-        this.discount = discount;
-        this.createAt = createAt;
-        this.updateAt = updateAt;
+    public double getPriceWasDiscount() {
+        return price - price * discount.getDiscountPercent();
     }
 
     @Override

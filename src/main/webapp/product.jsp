@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:useBean id="blConfig" scope="application" class="com.nhom10.broadstore.beans.Product"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>product</title>
+    <title>${product.getName()}</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -42,8 +43,8 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb-tree">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Product</a></li>
+                    <li><a href="Home">Home</a></li>
+                    <li><a href="Store">Product</a></li>
                     <li class="">${product.getName()}</li>
                 </ul>
             </div>
@@ -88,11 +89,17 @@
                 <div class="product-details">
                     <h2 class="product-name">${product.name}</h2>
                     <div>
-                        <h3 class="product-price">${product.price}
-                            <%--                            <del class="product-old-price">150.000VND</del>--%>
-                        </h3>
+                        <c:if test="${product.getPriceWasDiscount()==product.price}">
+                            <h3 class="product-price">${product.price} $</h3>
+                        </c:if>
+                        <c:if test="${product.getPriceWasDiscount()!=product.price}">
+                            <h3 class="product-price">${product.getPriceWasDiscount()} $
+                                <del class="product-old-price">${product.price} $</del>
+                            </h3>
+                        </c:if>
+
                         <c:if test="${product.inventory>0}">
-                            <span class="product-available">stocking</span>
+                            <span class="product-available"> ${product.inventory} Stocking</span>
                         </c:if>
                         <c:if test="${product.inventory==0}">
                             <span class="product-available">Out of stock</span>
@@ -104,34 +111,33 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        ( 2 Raiting)
                     </div>
                     <div class="product-options d-flex flex-column">
                         <label class="mb-3">
-                            <b>Số người chơi: </b>
-                            <output>${product.minPlayer} - ${product.maxPlayer} người</output>
+                            <b>Player: </b>
+                            <output>${product.minPlayer} - ${product.maxPlayer} player</output>
                         </label>
 
                         <label class="mb-3">
-                            <b>Thời gian chơi: </b>
-                            <output>${product.minPlaytime} phút</output>
+                            <b>Playtime: </b>
+                            <output>${product.minPlaytime} - ${product.maxPlaytime} Mins</output>
                         </label>
 
                         <label class="mb-3">
-                            <b>Độ tuổi: </b>
-                            <output>Từ ${product.minAge} tuồi</output>
+                            <b>Min age: </b>
+                            <output>${product.minAge} years old</output>
                         </label>
                     </div>
                     <div class="add-to-cart">
                         <div class="qty-label mb-3">
-                            Qty
-                            <input class="form-control w-50" type="number" name="qty" id="qty" value="1">
+                            Qty ${product.inventory}
                         </div>
                     </div>
-<%--                    <a href="AddToCart"> --%>
-                        <button onclick="addToCart()" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to cart
+
+                    <button onclick="addToCart()" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to
+                        cart
                     </button>
-<%--                    </a>--%>
+
                 </div>
             </div>
             <!-- /Product details -->
@@ -143,7 +149,6 @@
                 <ul class="tab-nav">
                     <li id="details"><a data-toggle="tab">Product Details </a></li>
                     <li id="description" class="active"><a data-toggle="tab">Product Description </a></li>
-                    <li id="rating_pro"><a data-toggle="tab">Raiting</a></li>
                 </ul>
                 <!-- /product tab nav -->
 
@@ -174,135 +179,6 @@
                         </div>
                     </div>
                     <!-- /tab2  -->
-
-                    <!-- tab3  -->
-                    <div id="tab3" class="tab-pane  in">
-                        <div class="row">
-                            <!-- Rating -->
-                            <div class="col-md-3">
-                                <div id="rating">
-                                    <div class="rating-avg">
-                                        <span>4.5</span>
-                                        <div class="rating-stars">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <ul class="rating">
-                                        <li>
-                                            <div class="rating-stars">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <div class="rating-progress">
-                                                <div style="width: 80%;"></div>
-                                            </div>
-                                            <span class="sum">3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- /Rating -->
-                            <!-- Reviews -->
-                            <div class="col-md-6">
-                                <div id="reviews">
-                                    <ul class="reviews">
-                                        <li>
-                                            <div class="review-heading">
-                                                <h5 class="name">John</h5>
-                                                <p class="date">23/11/2021</p>
-                                                <div class="review-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o empty"></i>
-                                                </div>
-                                            </div>
-                                            <div class="review-body">
-                                                <p>Product chất lượng tốt</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="review-heading">
-                                                <h5 class="name">John</h5>
-                                                <p class="date">23/11/2021</p>
-                                                <div class="review-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o empty"></i>
-                                                </div>
-                                            </div>
-                                            <div class="review-body">
-                                                <p>Product chất lượng tốt</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="review-heading">
-                                                <h5 class="name">John</h5>
-                                                <p class="date">23/11/2021</p>
-                                                <div class="review-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o empty"></i>
-                                                </div>
-                                            </div>
-                                            <div class="review-body">
-                                                <p>Trò chơi vui</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul class="reviews-pagination">
-                                        <li class="active">1</li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- /Reviews -->
-
-                            <!-- Review Form -->
-                            <div class="col-md-3">
-                                <div id="review-form">
-                                    <form class="review-form">
-                                        <input class="input" type="text" placeholder="Your name">
-                                        <input class="input" type="email" placeholder="Email">
-                                        <textarea class="input" placeholder="Your raiting"></textarea>
-                                        <div class="input-rating">
-                                            <span>Raiting: </span>
-                                            <div class="stars">
-                                                <input id="star5" name="rating" value="5" type="radio"><label
-                                                    for="star5"></label>
-                                                <input id="star4" name="rating" value="4" type="radio"><label
-                                                    for="star4"></label>
-                                                <input id="star3" name="rating" value="3" type="radio"><label
-                                                    for="star3"></label>
-                                                <input id="star2" name="rating" value="2" type="radio"><label
-                                                    for="star2"></label>
-                                                <input id="star1" name="rating" value="1" type="radio"><label
-                                                    for="star1"></label>
-                                            </div>
-                                        </div>
-                                        <button class="primary-btn">Xác nhận</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- /Review Form -->
-                        </div>
-                    </div>
-                    <!-- /tab3  -->
                 </div>
                 <!-- /product tab content  -->
             </div>
@@ -332,7 +208,9 @@
 <script src="js/main.js"></script>
 <script src="js/cartJS.js"></script>
 <script>
+
     $(document).ready(function () {
+
         $("#description").click(function () {
             $(this).addClass("active")
             $("#details").removeClass("active")

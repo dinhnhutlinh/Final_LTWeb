@@ -45,7 +45,8 @@
                     <p class="text"> SIGN UP</p>
                 </div>
                 <div class="text_mini">
-                    <p> Sign in to purchase and explore the rich world of Board games from www.vuigame.vui. Coming to fun game you will experience super hot board games and buy at SUPER CHEAP prices!!!</p>
+                    <p> Sign in to purchase and explore the rich world of Board games from www.boardstore.vui. Coming to
+                        fun game you will experience super hot board games and buy at SUPER CHEAP prices!!!</p>
 
                 </div>
                 <div class="end_text">
@@ -55,7 +56,7 @@
             </div>
             <div class="right">
                 <form class="needs-validation" action="SignUp" method="post">
-                    <c:if test='${mess!=""}'>
+                    <c:if test='${mess!=null && mess!=""}'>
                         <div class="mb-3">
                             <div class="alert alert-danger" role="alert">${mess}</div>
                         </div>

@@ -18,8 +18,10 @@ public class DetailProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String productId = String.valueOf(request.getParameter("id"));
-        Product product = ProductService.getInstance().getProductById(productId);
+        Product product = ProductService.getInstance().findById(productId);
+
         List<String> images = ImageService.getInstance().getImagesProduct(productId).stream().map(imageProduct -> imageProduct.getLink()).collect(Collectors.toList());
+        System.out.println(product);
         request.setAttribute("product", product);
         request.setAttribute("images", images);
         request.getRequestDispatcher("product.jsp").forward(request, response);

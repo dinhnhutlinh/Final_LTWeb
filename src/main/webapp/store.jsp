@@ -2,8 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,7 +44,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb-tree">
-                    <li><a href="templete/index.html">Home</a></li>
+                    <li><a href="/Home">Home</a></li>
                     <li class="">Product</li>
                 </ul>
             </div>
@@ -65,105 +63,66 @@
                 <!-- aside Widget -->
                 <div class="aside card border-r10">
                     <div class="card-body">
-                        <div class="filter">
-                            <h4 class="aside-title">Category</h4>
-                            <div class="p-2">
-                                <h5><a href="#">All BroadGame</a></h5>
+                        <form id="form" action="Store" method="get">
+                            <div class="filter">
+                                <h4 class="aside-title">Category</h4>
+                                <div class="p-2">
+                                    <h5><a href="Store?cat=all">All BroadGame</a></h5>
+                                </div>
+                                <c:forEach var="cat" items="${categories}">
+                                    <div class="p-2">
+                                        <h5><a href="Store?cat=${cat.getId()}">${cat.getName()}</a></h5>
+                                    </div>
+                                </c:forEach>
                             </div>
-                            <div class="p-2">
-                                <h5><a href="#">Family Game</a></h5>
+                            <input type="hidden" name="cat" value="${param["cat"]}">
+                            <div class="store-sort">
+                                <div class="row align-items-baseline">
+                                    <div class="col-6"><label class="form-label">
+                                        Sort by:</label></div>
+                                    <div class="col-6"><select id="sort" class="form-select" name="sort">
+                                        <option value="price" <c:if test="${param['sort']=='price'}">selected</c:if>>
+                                            Price up
+                                        </option>
+                                        <option value="-price" <c:if test="${param['sort']=='-price'}">selected</c:if>>
+                                            Price down
+                                        </option>
+                                    </select></div>
+                                </div>
                             </div>
-                            <div class="p-2">
-                                <h5><a href="#">Card Game</a></h5>
+                            <div class="filter">
+                                <div class="border mb-4"></div>
+                                <h4 class="aside-title">Age</h4>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="old" type="checkbox" value="3"
+                                           id="oldOption1" <c:if test="${param['old']=='3'}">checked</c:if>>
+                                    <label class="form-check-label" for="oldOption1">
+                                        3+
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="old" type="checkbox" value="6"
+                                           id="oldOption2" <c:if test="${param['old']=='6'}">checked</c:if>>
+                                    <label class="form-check-label" for="oldOption2">
+                                        6+
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="old" type="checkbox" value="10"
+                                           id="oldOption3" <c:if test="${param['old']=='10'}">checked</c:if>>
+                                    <label class="form-check-label" for="oldOption3">
+                                        10+
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="old" type="checkbox" value="14"
+                                           id="oldOption4" <c:if test="${param['old']=='14'}">checked</c:if>>
+                                    <label class="form-check-label" for="oldOption4">
+                                        14+
+                                    </label>
+                                </div>
                             </div>
-                            <div class="p-2">
-                                <h5><a href="#">Combat</a></h5>
-                            </div>
-                            <div class="p-2">
-                                <h5><a href="#">Art</a></h5>
-                            </div>
-                            <div class="p-2">
-                                <h5><a href="#">Adventure</a></h5>
-                            </div>
-                            <div class="p-2">
-                                <h5><a href="#">Dice</a></h5>
-                            </div>
-                            <div class="p-2">
-                                <h5><a href="#">Battle Royale</a></h5>
-                            </div>
-                            <div class="p-2">
-                                <h5><a href="#">Fighting</a></h5>
-                            </div>
-                            <div class="p-2">
-                                <h5><a href="#">Puzzle</a></h5>
-                            </div>
-                            <div class="p-2">
-                                <h5><a href="#">Party Game</a></h5>
-                            </div>
-                            <div class="p-2">
-                                <h5><a href="#">Fantasy</a></h5>
-                            </div>
-                        </div>
-                        <div class="filter">
-                            <div class="border mb-4"></div>
-                            <h4 class="aside-title">Price</h4>
-                            <div class="form-check">
-                                <input class="form-check-input" name="price" type="checkbox" value=""
-                                       id="moneyOption1">
-                                <label class="form-check-label" for="moneyOption1">
-                                    0 - 150000 VND
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" name="price" type="checkbox" value=""
-                                       id="moneyOption2">
-                                <label class="form-check-label" for="moneyOption2">
-                                    150000 - 300000 VND
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" name="price" type="checkbox" value=""
-                                       id="moneyOption3">
-                                <label class="form-check-label" for="moneyOption3">
-                                    300000 - 500000 VND
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" name="price" type="checkbox" value=""
-                                       id="moneyOption4">
-                                <label class="form-check-label" for="moneyOption4">
-                                    500000 VND up
-                                </label>
-                            </div>
-                        </div>
-                        <div class="filter">
-                            <div class="border mb-4"></div>
-                            <h4 class="aside-title">Age</h4>
-                            <div class="form-check">
-                                <input class="form-check-input" name="old" type="checkbox" value="" id="oldOption1">
-                                <label class="form-check-label" for="oldOption1">
-                                    3+
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" name="old" type="checkbox" value="" id="oldOption2">
-                                <label class="form-check-label" for="oldOption2">
-                                    6+
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" name="old" type="checkbox" value="" id="oldOption3">
-                                <label class="form-check-label" for="oldOption3">
-                                    10+
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" name="old" type="checkbox" value="" id="oldOption4">
-                                <label class="form-check-label" for="oldOption4">
-                                    14+
-                                </label>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                     <!-- /aside Widget -->
                 </div>
@@ -179,20 +138,7 @@
                             <div class="col-6">
                                 <h5 id="quantily-product">${products.size()} products</h5>
                             </div>
-                            <div class="col-6 text-end">
-                                <div class="store-sort">
-                                    <div class="row align-items-baseline">
-                                        <div class="col-6"><label class="form-label">
-                                            Sort by:</label></div>
-                                        <div class="col-6"><select class="form-select" name="option-sort">
-                                            <option value="popular">All</option>
-                                            <option value="price">Price up</option>
-                                            <option value="-price">Price down</option>
 
-                                        </select></div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <!-- /store top filter -->
@@ -200,21 +146,16 @@
                     <!-- store products -->
                     <div id="product-list" class="row">
                         <!-- product -->
-                        <jsp:useBean id="products" scope="request" type="java.util.List"/>
                         <c:forEach var="p" items="${products}">
-
                             <div class="item col-md-4 col-xs-6">
                                 <div class="product">
                                     <div class="product-img zoom d-flex justify-content-center">
                                         <img src="${p.imgDisplay}" style="width: 200px; height: 250px"/>
                                     </div>
                                     <div class="product-body">
-                                        <h3 class="product-name"><a href="DetailProduct?idproduct=${p.id}">${p.name}</a>
+                                        <h3 class="product-name"><a href="product?id=${p.id}">${p.name}</a>
                                         </h3>
-                                        <h4 class="product-price">${p.price} $
-                                                <%--                                            <c:if test="${p.discount_id !=null}"> <del class="product-old-price">190.000VND</del></c:if>--%>
-
-                                        </h4>
+                                        <h4 class="product-price">${p.price} $</h4>
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -223,10 +164,10 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <div class="add-to-cart">
-                                            <a href="AddToCart?idproduct=${p.id}">
-                                                <button class="d-none d-xl-block add-to-cart-btn w-100">Add to cart
-                                                </button>
-                                            </a>
+
+                                            <button class="d-none d-xl-block add-to-cart-btn w-100">Add to cart
+                                            </button>
+
                                             <button class="d-xl-none add-to-cart-btn w-100"><i
                                                     class="fa fa-shopping-cart m-auto" aria-hidden="true"></i>
                                             </button>
@@ -239,8 +180,6 @@
 
                         <!-- /product -->
                     </div>
-                    <!-- /store products -->
-                    <button onclick="seeMore()" class="btn primary-btn">See more</button>
                 </div>
             </div>
             <!-- /STORE -->
@@ -250,90 +189,7 @@
     <!-- /container -->
 </div>
 <!-- /SECTION -->
-<!-- FOOTER -->
-<footer id="footer">
-    <!-- top footer -->
-    <div class="section">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-3 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-title">about us</h3>
-                        <p>BroadStore is a copamy provider and sale board game</p>
-                        <ul class="footer-links">
-                            <li><a href="#"><i class="fa fa-map-marker"></i>25/5 Thăng Long, Phường 4, Quận Tân
-                                Bình, TP. Hồ Chí Minh</a></li>
-                            <li><a href="#"><i class="fa fa-phone"></i>0938 424 289
-                            </a></li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i>admin@BoardStore.vn</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-title">Category</h3>
-                        <ul class="footer-links">
-                            <li><a href="#">Wisdom Board Game</a></li>
-                            <li><a href="#">Family Board Game</a></li>
-                            <li><a href="#">Card Game</a></li>
-                            <li><a href="#">Board Game Party</a></li>
-                            <li><a href="#">Accessory Board Game</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-title">Information</h3>
-                        <ul class="footer-links">
-                            <li><a href="templete/about_us.html">About us</a></li>
-                            <li><a href="templete/termsAndConditions.html">Terms and Conditions</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-title">Service</h3>
-                        <ul class="footer-links">
-                            <li><a href="templete/InforUser.html">Account</a></li>
-                            <li><a href="templete/cart.html">Shopping cart</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /top footer -->
-
-    <!-- bottom footer -->
-    <div id="bottom-footer" class="section">
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <ul class="footer-payments">
-                        <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-                        <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-                        <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /bottom footer -->
-</footer>
-<!-- /FOOTER -->
+<jsp:include page="view/footer.jsp"></jsp:include>
 
 
 <!-- jQuery Plugins -->
@@ -346,33 +202,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     $("input:checkbox").on('click', function () {
-        var $box = $(this);
-        if ($box.is(":checked")) {
-            var group = "input:checkbox[name='" + $box.attr("name") + "']";
-            $(group).prop("checked", false);
-            $box.prop("checked", true);
-        } else {
-            $box.prop("checked", false);
-        }
+        $("#form").submit();
     });
-
-    function seeMore() {
-        // var countProduct = document.getElementsByClassName("product").length;
-        $.ajax({
-            url: 'load',
-            method: "POST",
-            data:{
-                exits: document.getElementsByClassName("product").length,
-            },
-            success: function (data) {
-                var container_product = document.getElementById("product-list");
-                container_product.innerHTML += data;
-            },
-            error: function (error) {
-
-            }
-        });
-    }
+    $("#sort").change(function () {
+        $("#form").submit();
+    });
 </script>
 </body>
 
