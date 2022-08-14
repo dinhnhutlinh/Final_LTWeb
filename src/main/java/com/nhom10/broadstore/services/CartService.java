@@ -3,13 +3,16 @@ package com.nhom10.broadstore.services;
 
 import com.nhom10.broadstore.beans.Cart;
 import com.nhom10.broadstore.beans.CartItem;
+import com.nhom10.broadstore.beans.Product;
 import com.nhom10.broadstore.dao.CartDAO;
 import com.nhom10.broadstore.dao.CartItemDAO;
+import com.nhom10.broadstore.dao.ProductDAO;
 import com.nhom10.broadstore.db.JDBIConnector;
 import com.nhom10.broadstore.util.StringUtil;
 import org.jdbi.v3.core.Jdbi;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CartService {
 
@@ -40,6 +43,7 @@ public class CartService {
     }
 
     public int updateQty(String cartId, String productId, int quantity, double price) {
+
         return connector.withExtension(CartItemDAO.class, handle -> handle.updateQty(cartId, productId, quantity, price));
     }
 
@@ -52,11 +56,24 @@ public class CartService {
             cart.setTotalPrice(0);
             createCart(cart);
         }
+        return mapCart(cart);
+    }
+
+    Cart mapCart(Cart cart) {
+        List<CartItem> cartItems = getCartItems(cart.getId());
+        cart.setCartItemList(cartItems);
         return cart;
     }
 
+    CartItem cartItem(CartItem cartItem) {
+        Product product = connector.withExtension(ProductDAO.class, handle -> handle.findById(cartItem.getProductId()));
+        cartItem.setProduct(product);
+        return cartItem;
+    }
+
     public List<CartItem> getCartItems(String cartId) {
-        return connector.withExtension(CartItemDAO.class, handle -> handle.getCartItems(cartId));
+        return connector.withExtension(CartItemDAO.class, handle -> handle.getCartItems(cartId).stream().map(cartItem ->
+                cartItem(cartItem)).collect(Collectors.toList()));
     }
 
     public int insertCartItem(CartItem cartItem) {

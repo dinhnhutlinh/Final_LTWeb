@@ -81,7 +81,7 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <div class="add-to-cart">
-                                            <button class="add-to-cart-btn">Add to card</button>
+                                            <button class="add-to-cart-btn" data-id="${product.id}">Add to card</button>
                                         </div>
                                     </div>
                                 </div>
@@ -98,8 +98,7 @@
 <!-- /SECTION -->
 
 <jsp:include page="view/footer.jsp"></jsp:include>
-<!-- jQuery Plugins -->
-<script src="js/jquery.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

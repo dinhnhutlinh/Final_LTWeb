@@ -120,7 +120,9 @@
                                         </div>
                                         <div class="add-to-cart">
 
-                                            <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                            <button class="d-none d-xl-block add-to-cart-btn w-100" data-id="${p.id}">
+                                                Add to card
+                                            </button>
                                             <button class="d-xl-none add-to-cart-btn w-100"><i
                                                     class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                         </div>
@@ -144,9 +146,9 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 <script src="js/slick.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/jquery.zoom.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="js/main.js"></script>
+<script src="js/cartJS.js"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"

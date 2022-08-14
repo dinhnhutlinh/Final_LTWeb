@@ -65,16 +65,14 @@
                         <!-- /Wishlist -->
                         <!-- Cart -->
                         <div class="dropdown">
-                            <a href="Cart" class="dropdown-toggle" id="dropdownCart" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
+                            <a href="cart" class="dropdown-toggle" id="dropdownCart" role="button"
+                               aria-expanded="false">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span>Cart</span>
                                 <c:if test='${userSession!=null}'>
-                                    <div class="qty">${userSession.numCartItems()}</div>
+                                    <div id="cartQty" class="qty"></div>
                                 </c:if>
-
                             </a>
-
                         </div>
                         <!-- /Cart -->
 
@@ -110,7 +108,7 @@
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="dropdown-toggle text-white text-uppercase" id="dropdownMenuButton1"
-                           data-bs-toggle="dropdown" aria-expanded="false" >
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             Category
                         </a>
                         <ul class="dropdown-menu" style="margin: 0px;">

@@ -14,19 +14,19 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="templete/css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="templete/css/slick.css"/>
-    <link type="text/css" rel="stylesheet" href="templete/css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="templete/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="templete/css/style.css"/>
-    <link rel="stylesheet" href="templete/css/header.css">
-    <link rel="stylesheet" href="templete/css/footer.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 
 </head>
 
@@ -168,7 +168,7 @@
                                             <button class="d-none d-xl-block add-to-cart-btn w-100">Add to cart
                                             </button>
 
-                                            <button class="d-xl-none add-to-cart-btn w-100"><i
+                                            <button class="d-xl-none add-to-cart-btn w-100" data-id="${product.id}"><i
                                                     class="fa fa-shopping-cart m-auto" aria-hidden="true"></i>
                                             </button>
                                         </div>
@@ -193,13 +193,12 @@
 
 
 <!-- jQuery Plugins -->
-<script src="templete/js/jquery.min.js"></script>
-<script src="templete/js/bootstrap.bundle.js"></script>
-<script src="templete/js/slick.min.js"></script>
-
-<script src="templete/js/jquery.zoom.min.js"></script>
-<script src="templete/js/main.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cartJS.js"></script>
 <script>
     $("input:checkbox").on('click', function () {
         $("#form").submit();

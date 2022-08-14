@@ -1,9 +1,6 @@
 package com.nhom10.broadstore.controllers.customerController;
 
-import com.nhom10.broadstore.beans.CartItem;
-import com.nhom10.broadstore.beans.Product;
-import com.nhom10.broadstore.beans.ResponseModel;
-import com.nhom10.broadstore.beans.User;
+import com.nhom10.broadstore.beans.*;
 import com.nhom10.broadstore.services.CartService;
 import com.nhom10.broadstore.services.ProductService;
 import com.nhom10.broadstore.util.Define;
@@ -30,26 +27,40 @@ public class AddToCartController extends HttpServlet {
         System.out.println(user);
         if (user == null) {
             response.setStatus(404);
-
             printWriter.println(new JsonUtil().toJSon(new ResponseModel(404, "You must login to add cart", "")));
             printWriter.close();
 
         } else {
-            System.out.println(user.getId());
-            String cartId = CartService.getInstance().getCart(user.getId()).getId();
+
+            Cart cart = CartService.getInstance().getCart(user.getId());
             String productId = String.valueOf(request.getParameter("productId"));
-            Product product = ProductService.getInstance().getProductById(productId);
-            int qty = Integer.parseInt(String.valueOf(request.getParameter("qty")));
+            Product product = ProductService.getInstance().findById(productId);
 
-            List<String> allProductId = CartService.getInstance().getAllProductId(cartId);
-            if (allProductId.contains(productId)) {
-                int newQty = CartService.getInstance().getQty(cartId, productId) + qty;
-                CartService.getInstance().updateQty(cartId, productId, newQty, newQty * product.getPrice());
-            } else
-                CartService.getInstance().insertCartItem(new CartItem(cartId, productId, qty, qty * product.getPrice()));
-
+            List<CartItem> cartItems = cart.getCartItemList();
+            System.out.println(cartItems);
+            if (cartItems.stream().anyMatch(cartItem -> cartItem.getProductId().equals(productId))) {
+                System.out.println("old");
+                CartItem cartItem = cartItems.stream().filter(cartItem1 -> cartItem1.getProductId().equals(productId)).findFirst().get();
+                if (product.getInventory() >= cartItem.getQuantity() + 1) {
+                    CartService.getInstance().updateQty(cart.getId(), productId, cartItem.getQuantity() + 1, cartItem.getQuantity() + 1 * product.getPriceWasDiscount());
+                    printWriter.println(new JsonUtil().toJSon(new ResponseModel(200, "Product " + product.getName() + " was add in your cart", 0)));
+                    printWriter.close();
+                } else {
+                    printWriter.println(new JsonUtil().toJSon(new ResponseModel(201, "Product out of stock", "")));
+                    printWriter.close();
+                }
+            } else {
+                System.out.println(product);
+                if (product.getInventory() > 0) {
+                    CartService.getInstance().insertCartItem(new CartItem(cart.getId(), productId, 1, 1 * product.getPriceWasDiscount()));
+                    printWriter.println(new JsonUtil().toJSon(new ResponseModel(200, "Product " + product.getName() + " was add in your cart", 0)));
+                    printWriter.close();
+                } else {
+                    printWriter.println(new JsonUtil().toJSon(new ResponseModel(201, "Product out of stock", "")));
+                    printWriter.close();
+                }
+            }
         }
-
     }
 
     @Override
