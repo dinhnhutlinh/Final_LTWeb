@@ -38,49 +38,53 @@
 <jsp:include page="view/header.jsp"></jsp:include>
 <!--BODY-->
 <div id="main">
-    <div class="container">
-        <div class="two_main shadow">
-            <div class="left">
-                <div class="signIn">
+    <!--/BODY-->
 
-                    <p class="text"> SIGN IN</p>
+    <div class="container ">
+        <div class="two_main shadow m-auto mt-5 mb-5 p-4">
+            <div class="left">
+                <div class="d-flex justify-content-center">
+                    <i class="fa fa-user"></i>
+                    <p class="ps-2"> FORGET PASSWORD?</p>
                 </div>
                 <div class="text_mini">
-                    <p> Sign in to purchase and explore the rich world of Board games from www.vuigame.vui. Coming to fun game you will experience super hot board games and buy at SUPER CHEAP prices!!!</p>
-
+                    <p> Sign in to purchase and explore the rich world of Board games from the BoradStore. Coming to fun
+                        game you will experience super hot board games and buy at SUPER CHEAP prices!!!</p>
                 </div>
                 <div class="end_text">
-                    <p class="not_acc"> Do not have an account?</p>
-                    <a href="SignUp" class="sign_in">Sign up</a>
+                    <p class="not_acc"> Do you have an account?</p>
+                    <a href="Login" class="sign_in"></a>
                 </div>
             </div>
             <div class="right">
-                <form action="Login" method="post">
+                <div class="text-foget">
+                    <p class="text">Enter the Gmail address registered with this account. Click the continue button the
+                        password will be sent to your Gmail!!!</p>
+                </div>
+                <c:if test='${mess!=null&&mess!=""}'>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                        <div class="alert alert-danger" role="alert">${mess}</div>
                     </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" minlength="6" class="form-control" name="password" id="password"
-                               placeholder="Forget password">
-                        <span id="err-mes" class="text-danger d-none">Email or password not exactly</span>
-                    </div>
-                    <c:if test='${mess!=null&&mess!=""}'>
-                        <div class="mb-3">
-                            <div class="alert alert-danger" role="alert">${mess}</div>
+                </c:if>
+                <div class="same">
+                    <form action="forget_password" method="post">
+                        <p class="nav1"> Your gmail address?</p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="email" class="form-control" placeholder="email" aria-label="email"
+                                   aria-describedby="basic-addon1" name="email">
+                            <span id="err-mes" class="text-danger d-none">Email esxits</span>
                         </div>
-                    </c:if>
-                    <div class="forgot pb-3">
-                        <a href="forget_password" class="text">Forget password?</a>
-                    </div>
-                    <button type="submit" class="btn w-100 text-white">
-                        SIGN IN
-                    </button>
-                </form>
+
+                        <button class="btn btn-orange w-100" type="submit">
+                            Send confirmation
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
 <jsp:include page="view/footer.jsp"></jsp:include>
 
