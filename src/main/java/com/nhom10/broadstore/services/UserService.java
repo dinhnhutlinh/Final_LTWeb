@@ -56,6 +56,7 @@ public class UserService {
                     return user;
                 }).collect(Collectors.toList()));
     }
+
     public List<User> listAdmin() {
         return connector.withExtension(UserDAO.class, handle ->
                 handle.listAdmin().stream().map(user -> {
@@ -66,20 +67,39 @@ public class UserService {
 
     public int deleteAdmin(String id) {
         return connector.withExtension(UserDAO.class
-        ,handle -> handle.deleteAdmin(id));
+                , handle -> handle.deleteAdmin(id));
     }
+
     public int deleteCustomer(String id) {
         return connector.withExtension(UserDAO.class
-                ,handle -> handle.deleteCustomer(id));
+                , handle -> handle.deleteCustomer(id));
     }
 
 
     public int setActiveAdmin(String id, int active) {
         return connector.withExtension(UserDAO.class
-                ,handle -> handle.setActiveAdmin(id,active));
+                , handle -> handle.setActiveAdmin(id, active));
     }
-    public int setActiveCustomer(String id,int active){
+
+    public int setActiveCustomer(String id, int active) {
         return connector.withExtension(UserDAO.class
-                ,handle -> handle.setActiveCustomer(id,active));
+                , handle -> handle.setActiveCustomer(id, active));
+    }
+
+    public String findWithEmail(String email) {
+        String id = connector.withExtension(UserDAO.class
+                , handle -> handle.getAdminIDWithMail(email));
+        if (id == null) {
+            id = connector.withExtension(UserDAO.class
+                    , handle -> handle.getCustomerIDWithMail(email));
+        }
+        return id;
+    }
+
+    public void changePassword(String id, String password) {
+        connector.useExtension(UserDAO.class
+                , handle -> handle.changePasswordCustomer(id, password));
+        connector.useExtension(UserDAO.class
+                , handle -> handle.changePasswordAdmin(id, password));
     }
 }

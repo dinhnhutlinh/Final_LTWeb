@@ -51,7 +51,7 @@
                 </div>
                 <div class="end_text">
                     <p class="not_acc"> Do you have account?</p>
-                    <a href="signIn" class="sign_in">Sign in</a>
+                    <a href="Login" class="sign_in">Sign in</a>
                 </div>
             </div>
             <div class="right">

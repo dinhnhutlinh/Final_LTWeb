@@ -38,49 +38,38 @@
 <jsp:include page="view/header.jsp"></jsp:include>
 <!--BODY-->
 <div id="main">
-    <div class="container">
-        <div class="two_main shadow">
-            <div class="left">
-                <div class="signIn">
+    <!--/BODY-->
 
-                    <p class="text"> SIGN IN</p>
-                </div>
-                <div class="text_mini">
-                    <p> Sign in to purchase and explore the rich world of Board games from www.vuigame.vui. Coming to fun game you will experience super hot board games and buy at SUPER CHEAP prices!!!</p>
+    <div class="container ">
+        <div class="card  w-25 m-auto">
+            <div class="card-body">
+                <h5 class="mx-auto">Reset password</h5>
+                <c:if test='${mess!=null && mess!=""}'>
+                    <div class="mb-3">
+                        <div class="alert alert-danger" role="alert">${mess}</div>
+                    </div>
+                </c:if>
+                <form action="change_password" method="post">
+                    <input type="hidden" name="id" class="form-control" value="${param["id"]}">
+                    <div class="mt-3">
+                        <label for="inputNewPassword" class="form-label">Enter your new password:</label>
+                        <input type="password" name="password" class="form-control" id="inputNewPassword">
+                    </div>
+                    <div class="mt-3">
+                        <label for="inputNewPassword2" class="form-label ">Enter your new password again:</label>
+                        <input type="password" name="repassword" class="form-control" id="inputNewPassword2">
+                    </div>
 
-                </div>
-                <div class="end_text">
-                    <p class="not_acc"> Do not have an account?</p>
-                    <a href="SignUp" class="sign_in">Sign up</a>
-                </div>
-            </div>
-            <div class="right">
-                <form action="Login" method="post">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" minlength="6" class="form-control" name="password" id="password"
-                               placeholder="Forget password">
-                        <span id="err-mes" class="text-danger d-none">Email or password not exactly</span>
-                    </div>
-                    <c:if test='${mess!=null&&mess!=""}'>
-                        <div class="mb-3">
-                            <div class="alert alert-danger" role="alert">${mess}</div>
-                        </div>
-                    </c:if>
-                    <div class="forgot pb-3">
-                        <a href="forget_password" class="text">Forget password?</a>
-                    </div>
-                    <button type="submit" class="btn w-100 text-white">
-                        SIGN IN
-                    </button>
+                    <button type="submit" class="btn mt-3 btn-orange w-100">Submit</button>
+
                 </form>
             </div>
+
         </div>
+        <!-- /row -->
     </div>
+</div>
+
 </div>
 <jsp:include page="view/footer.jsp"></jsp:include>
 

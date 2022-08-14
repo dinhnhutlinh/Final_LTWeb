@@ -6,10 +6,11 @@ import com.nhom10.broadstore.beans.OrderItem;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.ServletContext;
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Properties;
 
@@ -63,36 +64,37 @@ public class MailHelper {
         return status;
     }
 
-    static void sendActiveUserMail(String to, String link) throws IOException, MessagingException {
+    public static void sendActiveUserMail(String to, String link) throws IOException, MessagingException {
 
-        Path filePath = Path.of("src/main/webapp/html_mail/active-email.html");
+        File file = new File("/home/linh/Desktop/Final_LTWeb/src/main/webapp/html_mail/active-email.html");
 
-        String content = Files.readString(filePath);
-        String replayLink = "$link";
+        String content = Files.readString(file.toPath());
+        String replayLink = ":link:";
 
         content = content.replaceAll(replayLink, link);
 
         sendMail("", to, from, "Active Account", content, true);
     }
 
-    static void sendResetPassword(String to, String link) throws IOException, MessagingException {
+    public static void sendResetPassword(String to, String link) throws IOException, MessagingException {
 
-        Path filePath = Path.of("src/main/webapp/html_mail/reset-password.html");
 
-        String content = Files.readString(filePath);
-        String replayLink = "$link";
+        File file = new File("/home/linh/Desktop/Final_LTWeb/src/main/webapp/html_mail/reset-password.html");
+        System.out.println(file.exists());
+        String content = Files.readString(file.toPath());
+        String replayLink = ":link:";
 
         content = content.replaceAll(replayLink, link);
 
         sendMail("", to, from, "Reset password", content, true);
     }
 
-    static void sentOrderMail(String to, Order order, List<OrderItem> itemList) throws IOException, MessagingException {
-        Path filePath = Path.of("src/main/webapp/html_mail/reset-password.html");
-        String content = Files.readString(filePath);
+    public static void sentOrderMail(String to, Order order, List<OrderItem> itemList) throws IOException, MessagingException {
+        File file = new File("/home/linh/Desktop/Final_LTWeb/src/main/webapp/html_mail/invoice.html");
+        String content = Files.readString(file.toPath());
 
-        content = content.replace("$name", order.getName()).replaceAll("$email", order.getEmail())
-                .replaceAll("$phone", order.getPhone()).replaceAll("$address", order.getAddress());
+        content = content.replace(":name:", order.getName()).replaceAll(":email:", order.getEmail())
+                .replaceAll(":phone:", order.getPhone()).replaceAll(":address:", order.getAddress());
 
         String itemHtml = "<tr>\n" +
                 "<td style=\"padding: 5px 15px 5px 0;\">:item</td>\n" +
@@ -105,9 +107,9 @@ public class MailHelper {
                     .replaceAll(":quantity", item.getQuantity() + "")
                     .replaceAll(":price", item.getPrice() + "");
         }
-        content = content.replaceAll("$listItem", lisItemHtml);
-        content = content.replaceAll("$ship", order.getShipPrice() + "");
-        content = content.replaceAll("$total", 0 + "");
+        content = content.replaceAll(":listItem:", lisItemHtml);
+        content = content.replaceAll(":ship:", order.getShipPrice() + "");
+        content = content.replaceAll(":total:", 0 + "");
         sendMail("", to, from, "Order", content, true);
     }
 }

@@ -6,8 +6,10 @@ import com.nhom10.broadstore.emun.Role;
 import com.nhom10.broadstore.services.CartService;
 import com.nhom10.broadstore.services.PasswordHash;
 import com.nhom10.broadstore.services.UserService;
+import com.nhom10.broadstore.util.MailHelper;
 import com.nhom10.broadstore.util.StringUtil;
 
+import javax.mail.MessagingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -64,16 +66,20 @@ public class SignUpController extends HttpServlet {
 
             User user;
             try {
-                user = new User(StringUtil.genIDWithLength(10), firstName, lastName, null, PasswordHash.createHash(password), null, numberPhone + "", email, null, null, 1, Role.CUSTOMER);
+                user = new User(StringUtil.genIDWithLength(10), firstName, lastName, null, PasswordHash.createHash(password), null, numberPhone + "", email, null, null, 0, Role.CUSTOMER);
+                MailHelper.sendActiveUserMail(user.getMail(),"http://localhost:8080/BroadStore/active?id="+user.getId());
+                request.setAttribute("mess", "Check your mail to active");
             } catch (NoSuchAlgorithmException e) {
                 throw new RuntimeException(e);
             } catch (InvalidKeySpecException e) {
+                throw new RuntimeException(e);
+            } catch (MessagingException e) {
                 throw new RuntimeException(e);
             }
             us.signUp(user);
             CartService.getInstance().createCart(new Cart(StringUtil.genIDWithLength(10), user.getId(), 0, null, null, new ArrayList<>()));
 //        response.sendRedirect("Home");
-            RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
             rd.forward(request, response);
 
         }

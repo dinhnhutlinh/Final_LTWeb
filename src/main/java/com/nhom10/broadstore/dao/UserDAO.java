@@ -12,10 +12,10 @@ import java.util.List;
 @RegisterFieldMapper(User.class)
 public interface UserDAO {
 
-    @SqlQuery("select * from Admin where email = :email AND password = :password")
+    @SqlQuery("select * from Admin where email = :email AND password = :password AND active=1")
     User loginAdmin(@Bind("email") String email, @Bind("password") String password);
 
-    @SqlQuery("select * from Customer where email = :email AND password = :password")
+    @SqlQuery("select * from Customer where email = :email AND password = :password AND active=1")
     User loginCustomer(@Bind("email") String email, @Bind("password") String password);
 
     @SqlQuery("select id from Admin where email = :email")
@@ -44,4 +44,11 @@ public interface UserDAO {
 
     @SqlUpdate("UPDATE  Customer SET active=:active where id=:id")
     int setActiveCustomer(@Bind("id") String id, @Bind("active") int active);
+
+    @SqlUpdate("UPDATE  Customer SET password=:password where id=:id")
+    void changePasswordCustomer(@Bind("id") String id, @Bind("password") String password);
+
+    @SqlUpdate("UPDATE  Admin SET password=:password where id=:id")
+    void changePasswordAdmin(@Bind("id") String id, @Bind("password") String password);
+
 }
