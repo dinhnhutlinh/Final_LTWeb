@@ -105,31 +105,10 @@
             <!-- NAV -->
             <ul class="main-nav nav">
                 <li class="nav-item"><a href="Home">Home</a></li>
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a class="dropdown-toggle text-white text-uppercase" id="dropdownMenuButton1"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Category
-                        </a>
-                        <ul class="dropdown-menu" style="margin: 0px;">
-                            <li><a class="dropdown-item" href="Store?cat=all">All products</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=family">Family Game</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=card">Card Game</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=combat">Combat</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=art">Art</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=adventure">Adventure</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=dice">Dice</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=battle">Battle Royale</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=fighting">Fighting</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=puzzle">Puzzle</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=party">Party Game</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=fantasy">Fantasy</a></li>
-                        </ul>
-                    </div>
-                </li>
+                <li class="nav-item"><a href="Store?cat=all">CATEGORY</a></li>
                 <li class="nav-item"><a href="Blog">NEWS</a></li>
-                <li class="nav-item"><a href="about_us.html">INTRODUCE</a></li>
-                <li class="nav-item"><a href="store.html">SALE</a></li>
+                <li class="nav-item"><a href="about_us">INTRODUCE</a></li>
+
             </ul>
             <!-- /NAV -->
         </div>

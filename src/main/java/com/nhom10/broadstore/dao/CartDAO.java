@@ -24,6 +24,7 @@ public interface CartDAO {
     @SqlUpdate("INSERT INTO `Cart`(`id`, `customer_id`, `total_price`, `create_at`, `update_at`) VALUES (:id,:customerId,:totalPrice,now(),now())")
     int createCart(@BindBean Cart Cart);
 
-
+    @SqlUpdate("UPDATE `Cart` SET `total_price`=0,`update_at`=now() WHERE id=:id")
+    int setCartEmpty(@Bind("id") String id);
 }
 

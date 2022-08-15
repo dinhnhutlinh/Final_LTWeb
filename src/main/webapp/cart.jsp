@@ -93,7 +93,7 @@
                             <h5>Total</h5>
                             <div><strong class="order-total" id="total"></strong></div>
                         </div>
-                        <a class="btn primary-btn order-submit w-100" href="payment">
+                        <a class="btn primary-btn order-submit w-100" href="checkout">
                             PAYMENT</a>
                     </div>
                 </div>

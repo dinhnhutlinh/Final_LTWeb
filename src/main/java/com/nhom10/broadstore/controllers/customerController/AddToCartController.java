@@ -37,12 +37,12 @@ public class AddToCartController extends HttpServlet {
             Product product = ProductService.getInstance().findById(productId);
 
             List<CartItem> cartItems = cart.getCartItemList();
-            System.out.println(cartItems);
+
             if (cartItems.stream().anyMatch(cartItem -> cartItem.getProductId().equals(productId))) {
                 System.out.println("old");
                 CartItem cartItem = cartItems.stream().filter(cartItem1 -> cartItem1.getProductId().equals(productId)).findFirst().get();
                 if (product.getInventory() >= cartItem.getQuantity() + 1) {
-                    CartService.getInstance().updateQty(cart.getId(), productId, cartItem.getQuantity() + 1, cartItem.getQuantity() + 1 * product.getPriceWasDiscount());
+                    CartService.getInstance().updateQty(cart.getId(), productId, cartItem.getQuantity() + 1, (cartItem.getQuantity() + 1) * product.getPriceWasDiscount());
                     printWriter.println(new JsonUtil().toJSon(new ResponseModel(200, "Product " + product.getName() + " was add in your cart", 0)));
                     printWriter.close();
                 } else {

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/DetailBlog")
-public class DetailBlogController extends HttpServlet {
+public class DetailBlogPage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String blogId = String.valueOf(request.getParameter("blogId"));

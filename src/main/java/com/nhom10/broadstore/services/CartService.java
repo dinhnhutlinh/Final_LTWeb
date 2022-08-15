@@ -85,4 +85,14 @@ public class CartService {
     }
 
 
+    public void deleteCartItem(String cartId, String productId) {
+        connector.withExtension(CartItemDAO.class, handle -> handle.delete(cartId, productId));
+    }
+
+    public void setCartEmpty(Cart cart) {
+        for (CartItem item : cart.getCartItemList()) {
+            connector.withExtension(CartItemDAO.class, handle -> handle.delete(cart.getId(), item.getProductId()));
+        }
+        connector.withExtension(CartDAO.class,handle -> handle.setCartEmpty(cart.getId()));
+    }
 }

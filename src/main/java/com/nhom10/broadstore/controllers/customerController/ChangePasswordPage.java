@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
 @WebServlet(urlPatterns = "/change_password")
-public class ChangePasswordController extends HttpServlet {
+public class ChangePasswordPage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher rd = req.getRequestDispatcher("change_password.jsp");

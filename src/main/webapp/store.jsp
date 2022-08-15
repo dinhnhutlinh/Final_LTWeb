@@ -193,12 +193,12 @@
 
 
 <!-- jQuery Plugins -->
-<script src="js/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
 <script src="js/slick.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="js/main.js"></script>
 <script src="js/cartJS.js"></script>
+<script src="js/cart_controller.js"></script>
 <script>
     $("input:checkbox").on('click', function () {
         $("#form").submit();
