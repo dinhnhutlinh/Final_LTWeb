@@ -32,8 +32,8 @@
                     <div class="footer">
                         <h3 class="footer-title">Information</h3>
                         <ul class="footer-links">
-                            <li><a href="AboutUs">About us</a></li>
-                            <li><a href="AboutUs">Terms and Conditions</a></li>
+                            <li><a href="about_us">About us</a></li>
+                            <li><a href="about_us">Terms and Conditions</a></li>
 
                         </ul>
                     </div>
@@ -43,7 +43,7 @@
                     <div class="footer">
                         <h3 class="footer-title">Service</h3>
                         <ul class="footer-links">
-                            <li><a href="Login">Account</a></li>
+                            <li><a href="user_detail">Account</a></li>
                             <li><a href="cart">Cart</a></li>
 
                         </ul>

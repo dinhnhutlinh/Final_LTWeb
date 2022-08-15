@@ -21,6 +21,9 @@ public class UserPage extends HttpServlet {
 
         HttpSession session = req.getSession(true);
         User user = (User) session.getAttribute(Define.userSession);
+        if(user==null){
+            resp.sendRedirect("Login");
+        }
         OrderServices orderServices = new OrderServices();
         List<Order> orders = orderServices.findByCustomerId(user.getId());
         req.setAttribute("user", user);

@@ -19,11 +19,8 @@ public class CartPage extends HttpServlet {
 
         HttpSession session = req.getSession(true);
         User user = (User) session.getAttribute(Define.userSession);
-
-        if (user == null) {
-            req.setAttribute("mess", "You need login");
-            RequestDispatcher rd = req.getRequestDispatcher("success.jsp");
-            rd.forward(req, resp);
+        if(user==null){
+            resp.sendRedirect("Login");
             return;
         }
         RequestDispatcher rd = req.getRequestDispatcher("cart.jsp");
