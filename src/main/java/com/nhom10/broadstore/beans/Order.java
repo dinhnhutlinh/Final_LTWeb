@@ -9,7 +9,7 @@ public class Order {
     private String customerId;
     private double shipPrice;
     private double total;
-    private String status;
+    private int status;
     private String name;
     private String phone;
     private String email;
@@ -19,8 +19,10 @@ public class Order {
 
     private List<OrderItem> orderItems;
 
+    public Order() {
+    }
 
-    public Order(String id, String customerId, double shipPrice, double total, String status, String name, String phone, String email, String address, LocalDateTime createAt, LocalDateTime updateAt, List<OrderItem> orderItems) {
+    public Order(String id, String customerId, double shipPrice, double total, int status, String name, String phone, String email, String address, LocalDateTime createAt, LocalDateTime updateAt, List<OrderItem> orderItems) {
         this.id = id;
         this.customerId = customerId;
         this.shipPrice = shipPrice;
@@ -33,9 +35,6 @@ public class Order {
         this.createAt = createAt;
         this.updateAt = updateAt;
         this.orderItems = orderItems;
-    }
-
-    public Order() {
     }
 
     public String getId() {
@@ -70,11 +69,11 @@ public class Order {
         this.total = total;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

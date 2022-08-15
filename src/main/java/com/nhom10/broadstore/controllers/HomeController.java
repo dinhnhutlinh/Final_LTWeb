@@ -2,8 +2,10 @@ package com.nhom10.broadstore.controllers;
 
 import com.nhom10.broadstore.beans.Category;
 import com.nhom10.broadstore.beans.Product;
+import com.nhom10.broadstore.beans.Slider;
 import com.nhom10.broadstore.services.CategoryService;
 import com.nhom10.broadstore.services.ProductService;
+import com.nhom10.broadstore.services.SliderService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,7 +24,11 @@ public class HomeController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CategoryService categoryService = new CategoryService();
         ProductService productService = new ProductService();
+        SliderService sliderService = new SliderService();
         List<Category> categories = categoryService.getAllCategory();
+        List<Slider> sliders = sliderService.getAllSlider();
+        System.out.println(sliders);
+        req.setAttribute("sliders", sliders);
 
         Map<String, List<Product>> map = new HashMap<>();
 
@@ -30,10 +36,7 @@ public class HomeController extends HttpServlet {
             List<Product> products = productService.findByCategoryId(category.getId());
             map.put(category.getName(), products);
         }
-//        for (Map.Entry<String,List<Product>> entry:map.entrySet()) {
-////            entry.getValue()
-//        }
-//
+
         req.setAttribute("map", map);
         RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
         rd.forward(req, resp);

@@ -44,35 +44,19 @@
 <div class="container-fluid ps-0 pe-0">
     <!--slide show-->
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner " style=" width:100%; height: 600px !important;">
-            <div class=" carousel-item active">
-                <a href="product.html">
-                    <img style=" width:100%; height: 600px !important;"
-                         src="img/slider/8464f02e806c667286ffa47153243965.jpg" class="d-block w-100"
-                         alt="...">
-                </a>
-                <div class="carousel-caption w-100 bg-lg-shadow bottom-0">
-                    <h4 class="text-white">Lớp Học Mật Mã</h4>
+        <div class="carousel-inner " style=" height: 600px !important;">
+            <c:forEach var="slider" items="${sliders}">
+                <div class=" carousel-item <c:if test="${slider.getId()==sliders.get(0).getId()}">active</c:if>">
+                    <a href="${slider.getLink()}">
+                        <img style=" width: 100%;  height: 600px    ; object-fit: cover;"
+                             src="${slider.image}" class="d-block w-100"
+                             alt="...">
+                    </a>
+                    <div class="carousel-caption w-100 bg-lg-shadow bottom-0">
+                        <h4 class="text-white">${slider.getName()}</h4>
+                    </div>
                 </div>
-            </div>
-            <div class=" carousel-item ">
-                <a href="product.html"><img style=" width:100%; height: 600px !important;"
-                                            src="img/slider/10-tro-choi-board-game-kinh-dien-cua-tre-em-my-1280x720.jpg"
-                                            class="d-block w-100" alt="...">
-                </a>
-                <div class="carousel-caption w-100 bg-lg-shadow bottom-0">
-                    <h4 class="text-white">Top 10 trò chơi broadgame kinh điển</h4>
-                </div>
-            </div>
-            <div class=" carousel-item">
-                <a href="product.html"><img style=" width:100%; height: 600px !important;"
-                                            src="img/slider/8464f02e806c667286ffa47153243965.jpg" class="d-block w-100"
-                                            alt="...">
-                </a>
-                <div class="carousel-caption w-100 bg-lg-shadow bottom-0">
-                    <h4 class="text-white">Lớp Học Mật Mã</h4>
-                </div>
-            </div>
+            </c:forEach>
         </div>
         <button class="carousel-control-prev" style="width: 10%;" type="button" data-bs-target="#myCarousel"
                 data-bs-slide="prev">
@@ -120,7 +104,9 @@
                                         </div>
                                         <div class="add-to-cart">
 
-                                            <button class="d-none d-xl-block add-to-cart-btn w-100">Add to card</button>
+                                            <button class="d-none d-xl-block add-to-cart-btn w-100" data-id="${p.id}">
+                                                Add to card
+                                            </button>
                                             <button class="d-xl-none add-to-cart-btn w-100"><i
                                                     class="fa fa-shopping-cart m-auto" aria-hidden="true"></i></button>
                                         </div>
@@ -140,13 +126,14 @@
 <jsp:include page="view/footer.jsp"></jsp:include>
 
 <!-- jQuery Plugins -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="js/jquery.zoom.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 <script src="js/slick.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/jquery.zoom.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/cartJS.js"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"

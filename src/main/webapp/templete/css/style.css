@@ -523,6 +523,8 @@ textarea.input {
 }
 
 .product .product-img {
+  height: 212px;
+  width: 212px;
   position: relative;
   overflow: hidden;
   margin: 0 auto;

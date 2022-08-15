@@ -22,7 +22,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 
 @WebServlet(urlPatterns = "/SignUp")
-public class SignUpController extends HttpServlet {
+public class SignUpPage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");

@@ -1,12 +1,14 @@
-function addToCart() {
-    let id = document.getElementById("product-id").textContent
+function addToCart(id) {
+
     $.ajax({
         url: 'AddToCart?productId=' + id,
         method: "GET",
         processData: false,
         contentType: false,
         success: function (data) {
-            var parsed = JSON.parse(data.responseText);
+            console.log(data);
+            var parsed = JSON.parse(data);
+            loadQty();
             alert(parsed.mess);
         },
         error: function (error) {
@@ -17,3 +19,28 @@ function addToCart() {
         }
     });
 }
+
+function loadQty() {
+    $.ajax({
+        url: 'CartQty',
+        method: "GET",
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            var parsed = JSON.parse(data);
+            $("#cartQty").html(parsed.data);
+        },
+        error: function (error) {
+            var parsed = JSON.parse(error);
+            alert(parsed.mess);
+        }
+    });
+}
+
+$(document).ready(function () {
+    loadQty()
+    $('.add-to-cart-btn').on('click', function () {
+        let id = $(this).data('id');
+        addToCart(id);
+    });
+});

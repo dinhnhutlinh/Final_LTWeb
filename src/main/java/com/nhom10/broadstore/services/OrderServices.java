@@ -29,11 +29,30 @@ public class OrderServices {
         return connector.withExtension(OrderDAO.class, handle -> handle.findByCustomerId(id).stream().map(order -> mapOrder(order)).collect(Collectors.toList()));
     }
 
-    public int insert(Order order) {
+    synchronized public int insert(Order order) {
         int status = connector.withExtension(OrderDAO.class, handle -> handle.insert(order));
         for (OrderItem orderItem : order.getOrderItems()) {
             connector.withExtension(OrderItemDAO.class, handle -> handle.insert(orderItem));
+            connector.useExtension(ProductDAO.class, handle -> {
+                Product product = orderItem.getProduct();
+                product.setInventory(product.getInventory() - orderItem.getQuantity());
+                handle.update(product);
+            });
         }
+
+        return status;
+    }
+
+    synchronized public int cancelOrder(Order order) {
+        int status = connector.withExtension(OrderDAO.class, handle -> handle.update(order));
+        for (OrderItem orderItem : order.getOrderItems()) {
+            connector.useExtension(ProductDAO.class, handle -> {
+                Product product = orderItem.getProduct();
+                product.setInventory(product.getInventory() - orderItem.getQuantity());
+                handle.update(product);
+            });
+        }
+
         return status;
     }
 

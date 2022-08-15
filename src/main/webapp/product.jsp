@@ -134,7 +134,7 @@
                         </div>
                     </div>
 
-                    <button onclick="addToCart()" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to
+                    <button class="add-to-cart-btn" data-id="${product.id}"><i class="fa fa-shopping-cart"></i> Add to
                         cart
                     </button>
 
@@ -198,13 +198,13 @@
 <jsp:include page="view/footer.jsp"></jsp:include>
 
 <!-- jQuery Plugins -->
-<script src="js/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="js/jquery.zoom.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/nouislider.min.js"></script>
-<script src="js/jquery.zoom.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/cartJS.js"></script>
 <script>

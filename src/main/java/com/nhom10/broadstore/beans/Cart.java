@@ -97,4 +97,12 @@ public class Cart {
                 ", cartItemList=" + cartItemList +
                 '}';
     }
+
+    public int getTotal() {
+        int total = 0;
+        for (CartItem cartItem : cartItemList) {
+            total += cartItem.getQuantity();
+        }
+        return total;
+    }
 }

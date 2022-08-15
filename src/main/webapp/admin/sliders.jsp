@@ -64,7 +64,7 @@
                 <div class="content-header">
                     <h2 class="content-title">Blogs</h2>
                     <div>
-                        <a href="blog_edit" id="addBtn" class="btn btn-orange"></i>Add</a>
+                        <a href="slider_edit" id="addBtn" class="btn btn-orange"></i>Add</a>
                     </div>
                 </div>
                 <div class="card mb-4">
