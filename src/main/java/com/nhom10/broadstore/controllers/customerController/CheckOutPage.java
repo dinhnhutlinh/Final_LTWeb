@@ -31,18 +31,18 @@ public class CheckOutPage extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession(true);
+        User user = (User) session.getAttribute(Define.userSession);
+        if (user == null) {
+            resp.sendRedirect("Login");
+            return;
+        }
         String name = req.getParameter("name");
         String email = req.getParameter("email");
         String phone = req.getParameter("phone");
         String city = req.getParameter("city");
         String district = req.getParameter("district");
         String address = req.getParameter("address");
-        HttpSession session = req.getSession(true);
-        User user = (User) session.getAttribute(Define.userSession);
-        if (user == null) {
-            resp.sendRedirect("Home");
-            return;
-        }
         Cart cart = CartService.getInstance().getCart(user.getId());
         req.setAttribute("cart", cart);
 
@@ -70,10 +70,12 @@ public class CheckOutPage extends HttpServlet {
                     orderItem.setQuantity(cartItem.getQuantity());
                     return orderItem;
                 }).collect(Collectors.toList());
+                order.setTotal(cart.getTotalPrice());
+                order.setShipPrice(2);
                 order.setOrderItems(orderItems);
-                OrderServices orderServices= new OrderServices();
+                OrderServices orderServices = new OrderServices();
                 orderServices.insert(order);
-                CartService cartService= new CartService();
+                CartService cartService = new CartService();
                 cartService.setCartEmpty(cart);
 
                 req.setAttribute("mess", "Order success");

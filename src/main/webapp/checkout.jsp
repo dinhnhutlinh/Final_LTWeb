@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:useBean id="blConfig" scope="application" class="com.nhom10.broadstore.beans.Product"/>
+<jsp:useBean id="cart" scope="application" class="com.nhom10.broadstore.beans.Cart"/>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,8 +61,8 @@
                 <div class="alert alert-danger" role="alert">${mess}</div>
             </div>
         </c:if>
-        <div class="row">
-            <form action="checkout" method="post">
+        <form action="checkout" method="post">
+            <div class="row">
                 <div class="col-md-7">
                     <!-- Billing Details -->
                     <div class="billing-details">
@@ -99,30 +101,29 @@
                             <div><strong>TOTAL</strong></div>
                         </div>
                         <div class="order-products">
-                            <div class="order-col">
-                                <div>1x Sản phẩm 1</div>
-                                <div>120.000VND</div>
-                            </div>
-                            <div class="order-col">
-                                <div>2x Sản phẩm 2</div>
-                                <div>120.000VND</div>
-                            </div>
+                            <c:forEach var="item" items="${cart.cartItemList}">
+                                <div class="order-col">
+                                    <div>${item.quantity}x ${item.product.name}</div>
+                                    <div>${item.product.price}</div>
+                                </div>
+                            </c:forEach>
                         </div>
                         <div class="order-col">
                             <div>SHIPPING COST</div>
-                            <div><strong>Free</strong></div>
+                            <div><strong>2 $</strong></div>
                         </div>
                         <div class="order-col">
                             <div><strong>TOTAL MONEY</strong></div>
-                            <div><strong class="order-total">240.000VND</strong></div>
+                            <div><strong class="order-total">${cart.getTotalPrice()}</strong></div>
                         </div>
                     </div>
                     <button type="submit" class="primary-btn order-submit">Payment</button>
                 </div>
-            </form>
 
-            <!-- /Order Details -->
-        </div>
+
+                <!-- /Order Details -->
+            </div>
+        </form>
         <!-- /row -->
     </div>
     <!-- /container -->

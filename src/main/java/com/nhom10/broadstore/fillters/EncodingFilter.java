@@ -17,6 +17,7 @@ public class EncodingFilter implements Filter {
         this.response = response;
         this.filterChain = filterChain;
         request.setCharacterEncoding(encoding);
+        response.setCharacterEncoding(encoding);
         filterChain.doFilter(request, response);
     }
 

@@ -25,17 +25,6 @@
                         <h3 class="footer-title">Category</h3>
                         <ul class="footer-links">
                             <li><a class="dropdown-item" href="Store?cat=all">All products</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=family">Family Game</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=card">Card Game</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=combat">Combat</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=art">Art</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=adventure">Adventure</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=dice">Dice</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=battle">Battle Royale</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=fighting">Fighting</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=puzzle">Puzzle</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=party">Party Game</a></li>
-                            <li><a class="dropdown-item" href="Store?cat=fantasy">Fantasy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -43,8 +32,9 @@
                     <div class="footer">
                         <h3 class="footer-title">Information</h3>
                         <ul class="footer-links">
-                            <li><a href="AboutUs">About us</a></li>
-                            <li><a href="termsAndConditions.html">Terms and Conditions</a></li>
+
+                            <li><a href="about_us">About us</a></li>
+                            <li><a href="about_us">Terms and Conditions</a></li>
 
                         </ul>
                     </div>
@@ -54,9 +44,8 @@
                     <div class="footer">
                         <h3 class="footer-title">Service</h3>
                         <ul class="footer-links">
-                            <li><a href="Login">Account</a></li>
-                            <li><a href="Cart">Cart</a></li>
-
+                            <li><a href="user_detail">Account</a></li>
+                            <li><a href="cart">Cart</a></li>
                         </ul>
                     </div>
                 </div>

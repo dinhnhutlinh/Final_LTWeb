@@ -1,8 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="blConfig" scope="application" class="com.nhom10.broadstore.beans.Order"/>
+<jsp:useBean id="o" scope="application" class="com.nhom10.broadstore.beans.OrderItem"/>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8"/>
@@ -38,9 +40,8 @@
 
     <!-- ========== section start ========== -->
     <section class="section">
-
         <div class="container-fluid">
-            <!--title-wrapper start -->
+            <!-- ========== title-wrapper start ========== -->
             <div class="title-wrapper pt-3">
                 <div class="d-flex align-items-center">
                     <!-- end col -->
@@ -48,58 +49,115 @@
 
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="Admin-Dashboard">Dashboard</a>
+                                <a href="/dashboard">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Edit Blog
+                                Order
                             </li>
                         </ol>
+
                     </div>
                     <!-- end col -->
                 </div>
                 <!-- end row -->
             </div>
-            <div id="mess">
-            </div>
             <div class="row">
-                <div class="content-header">
-                    <h2 class="content-title">Edit Blogs</h2>
-                    <div>
-                        <button id="saveBtn" class="btn btn-orange"></i>Save</button>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="id" class="labels">ID</label>
-                            <fieldset disabled>
-                                <input id="id" type="text" class="form-control disabled"
-                                       placeholder="ID" value="${blog.getId()}">
-                            </fieldset>
-                        </div>
-                        <div class="mb-3">
-                            <label for="title" class="labels">Title</label>
-                            <input id="title" type="text" class="form-control"
-                                   placeholder="Title" value="${blog.getTitle()}">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="file-input">Upload Image</label>
-                            <div class="file-loading">
-                                <input id="file-input" name="file-input[]" type="file" class="file">
+                <div class="card">
+                    <header class="card-header bg-white">
+                        <div class="row align-items-center">
+                            <div class="col-6 ">
+                            </div>
+                            <div class="col-6 text-end">
+                                <button class="btn btn-orange">Save</button>
                             </div>
                         </div>
-
-                        <div class="custom-file-container" data-upload-id="myUploader"></div>
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Desc</label>
-                            <div id="editor"></div>
+                    </header> <!-- card-header end// -->
+                    <div class="card-body">
+                        <div class="row mb-5">
+                            <div class="col-5">
+                                <div class="row pb-3">
+                                    <div class="col-6 fw-bold">#Id</div>
+                                    <div class="col-6"><input type="text" id="id" class="form-control"
+                                                              value="${order.getId()}" disabled></div>
+                                </div>
+                                <div class="row pb-3">
+                                    <div class="col-6 fw-bold">Customer</div>
+                                    <div class="col-6"><input type="text" id="name" class="form-control"
+                                                              value="${order.getName()}"></div>
+                                </div>
+                                <div class="row pb-3">
+                                    <div class="col-6 fw-bold">Price</div>
+                                    <div class="col-6">${order.getTotal()}$</div>
+                                </div>
+                                <div class="row pb-3">
+                                    <div class="col-6 fw-bold">Ship</div>
+                                    <div class="col-6">${order.getShipPrice()} $</div>
+                                </div>
+                                <div class="row pb-3">
+                                    <div class="col-6 fw-bold">Total</div>
+                                    <div class="col-6">${order.getShipPrice()+order.getTotal()} $</div>
+                                </div>
+                                <div class="row pb-3">
+                                    <div class="col-6 fw-bold">Status</div>
+                                    <div class="col-6"><select class="form-select">
+                                        <option value="0"
+                                                <c:if test="${order.status==0}">selected</c:if>>Transmision
+                                        </option>
+                                        <option value="1"
+                                                <c:if test="${order.status==1}">selected</c:if>>Cancel
+                                        </option>
+                                        <option value="2"
+                                                <c:if test="${order.status==2}">selected</c:if>>Success
+                                        </option>
+                                    </select></div>
+                                </div>
+                            </div>
+                            <div class="col-2"></div>
+                            <div class="col-5 ">
+                                <div class="row pb-3">
+                                    <div class="col-6 fw-bold">Phone</div>
+                                    <div class="col-6"><input type="phone" id="phone" class="form-control"
+                                                              value="${order.phone}"></div>
+                                </div>
+                                <div class="row pb-3">
+                                    <div class="col-6 fw-bold">Address</div>
+                                    <div class="col-6"><input type="text" id="address" class="form-control"
+                                                              value="${order.address}"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="productTable" class="table table-hover">
+                                        <thead>
+                                        <th width="10%">#ID</th>
+                                        <th width="10%">Image</th>
+                                        <th width="50%">Product</th>
+                                        <th width="10%">Quantity</th>
+                                        <th width="20%">Price</th>
+                                        </thead>
+                                        <tbody>
+                                        <c:forEach var="item" items="${order.orderItems}">
+                                            <tr>
+                                                <td>1</td>
+                                                <td><img src="${item.product.imgDisplay}" width="70px"
+                                                         height="70px"
+                                                         alt=""></td>
+                                                <td>${item.product.name}</td>
+                                                <td>${item.quantity}</td>
+                                                <td>${item.price}$</td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div> <!-- table-responsive// -->
+                            </div> <!-- col// -->
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ========== title-wrapper end ========== -->
         </div>
-        <!-- end container -->
     </section>
     <!-- ========== section end ========== -->
 </main>

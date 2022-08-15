@@ -66,7 +66,8 @@ public class CartService {
     }
 
     CartItem cartItem(CartItem cartItem) {
-        Product product = connector.withExtension(ProductDAO.class, handle -> handle.findById(cartItem.getProductId()));
+        ProductService productService= new ProductService();
+        Product product =productService.findById(cartItem.getProductId());
         cartItem.setProduct(product);
         return cartItem;
     }
