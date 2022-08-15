@@ -1,5 +1,7 @@
 package com.nhom10.broadstore.controllers.customerController;
 
+import com.nhom10.broadstore.services.UserService;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,8 @@ public class ActivePage extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
         req.setAttribute("mess", "Active success");
+        UserService userService = new UserService();
+        userService.setActiveCustomer(id, 1);
         RequestDispatcher rd = req.getRequestDispatcher("success.jsp");
         rd.forward(req, resp);
     }

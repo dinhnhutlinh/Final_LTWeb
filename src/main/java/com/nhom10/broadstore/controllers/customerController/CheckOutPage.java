@@ -70,10 +70,12 @@ public class CheckOutPage extends HttpServlet {
                     orderItem.setQuantity(cartItem.getQuantity());
                     return orderItem;
                 }).collect(Collectors.toList());
+                order.setTotal(cart.getTotalPrice());
+                order.setShipPrice(2);
                 order.setOrderItems(orderItems);
-                OrderServices orderServices= new OrderServices();
+                OrderServices orderServices = new OrderServices();
                 orderServices.insert(order);
-                CartService cartService= new CartService();
+                CartService cartService = new CartService();
                 cartService.setCartEmpty(cart);
 
                 req.setAttribute("mess", "Order success");

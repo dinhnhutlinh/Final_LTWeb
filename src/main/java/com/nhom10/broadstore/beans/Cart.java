@@ -42,7 +42,12 @@ public class Cart {
     }
 
     public double getTotalPrice() {
-        return totalPrice;
+        int total = 0;
+        for (CartItem cartItem : cartItemList) {
+            total += cartItem.getProduct().getPriceWasDiscount() * cartItem.getQuantity();
+        }
+        return total;
+//        return totalPrice;
     }
 
     public void setTotalPrice(double totalPrice) {

@@ -13,7 +13,7 @@ import java.util.List;
 @RegisterBeanMapper(OrderItem.class)
 public interface OrderItemDAO {
 
-    @SqlQuery("SELECT * FROM `OrderItems` WHERE customer_id=:id")
+    @SqlQuery("SELECT * FROM `OrderItems` WHERE order_id=:id")
     List<OrderItem> findByOrderId(@Bind("id") String id);
 
     @SqlUpdate("INSERT INTO `OrderItems`(`order_id`, `product_id`, `quantity`, `price`, `create_at`, `update_at`) " +

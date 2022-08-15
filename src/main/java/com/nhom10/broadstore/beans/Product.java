@@ -275,7 +275,8 @@ public class Product {
     }
 
     public double getPriceWasDiscount() {
-        return price - price * discount.getDiscountPercent();
+
+        return price;
     }
 
     @Override

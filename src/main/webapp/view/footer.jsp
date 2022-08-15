@@ -24,11 +24,7 @@
                     <div class="footer">
                         <h3 class="footer-title">Category</h3>
                         <ul class="footer-links">
-                            <li><a href="#">Wisdom Board Game</a></li>
-                            <li><a href="#">Family Board Game</a></li>
-                            <li><a href="#">Card Game</a></li>
-                            <li><a href="#">Board Game Party</a></li>
-                            <li><a href="#">Accessory Board Game</a></li>
+                            <li><a class="dropdown-item" href="Store?cat=all">All products</a></li>
                         </ul>
                     </div>
                 </div>
@@ -36,8 +32,8 @@
                     <div class="footer">
                         <h3 class="footer-title">Information</h3>
                         <ul class="footer-links">
-                            <li><a href="about_us.html">About us</a></li>
-                            <li><a href="termsAndConditions.html">Terms and Conditions</a></li>
+                            <li><a href="AboutUs">About us</a></li>
+                            <li><a href="AboutUs">Terms and Conditions</a></li>
 
                         </ul>
                     </div>
@@ -47,8 +43,8 @@
                     <div class="footer">
                         <h3 class="footer-title">Service</h3>
                         <ul class="footer-links">
-                            <li><a href="InforUser.html">Account</a></li>
-                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="Login">Account</a></li>
+                            <li><a href="cart">Cart</a></li>
 
                         </ul>
                     </div>
