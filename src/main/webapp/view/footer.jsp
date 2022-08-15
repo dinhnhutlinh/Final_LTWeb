@@ -32,6 +32,7 @@
                     <div class="footer">
                         <h3 class="footer-title">Information</h3>
                         <ul class="footer-links">
+
                             <li><a href="about_us">About us</a></li>
                             <li><a href="about_us">Terms and Conditions</a></li>
 
@@ -45,7 +46,6 @@
                         <ul class="footer-links">
                             <li><a href="user_detail">Account</a></li>
                             <li><a href="cart">Cart</a></li>
-
                         </ul>
                     </div>
                 </div>
