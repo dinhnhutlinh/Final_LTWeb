@@ -1,4 +1,33 @@
-//package com.nhom10.broadstore.controllers.customerController;
+package com.nhom10.broadstore.controllers.customerController;
+
+import com.nhom10.broadstore.beans.Cart;
+import com.nhom10.broadstore.beans.User;
+import com.nhom10.broadstore.emun.Role;
+import com.nhom10.broadstore.services.CartService;
+import com.nhom10.broadstore.services.PasswordHash;
+import com.nhom10.broadstore.services.UserService;
+import com.nhom10.broadstore.util.MailHelper;
+import com.nhom10.broadstore.util.StringUtil;
+
+import javax.mail.MessagingException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.util.ArrayList;
+
+@WebServlet(urlPatterns = "/SignUp")
+public class SignUpPage extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
+        rd.forward(request, response);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
