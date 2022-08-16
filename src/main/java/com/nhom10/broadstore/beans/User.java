@@ -2,7 +2,6 @@ package com.nhom10.broadstore.beans;
 
 import com.nhom10.broadstore.emun.Role;
 import com.nhom10.broadstore.services.CartService;
-import com.nhom10.broadstore.services.ProductService;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -124,12 +123,12 @@ public class User {
         this.updateAt = updateAt;
     }
 
-    public void setActive(int active) {
-        this.active = active;
-    }
-
     public int getActive() {
         return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
     }
 
     public Role getRole() {
@@ -157,5 +156,21 @@ public class User {
         return CartService.getInstance().getCartItems(CartService.getInstance().getIdCart(this.id)).size();
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", password='" + password + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", mail='" + mail + '\'' +
+                ", createAt=" + createAt +
+                ", updateAt=" + updateAt +
+                ", active=" + active +
+                ", role=" + role +
+                '}';
+    }
 }

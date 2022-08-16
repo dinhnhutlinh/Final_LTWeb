@@ -26,7 +26,7 @@ public interface OrderDAO {
     int insert(@BindBean Order order);
 
     @SqlUpdate("UPDATE `Order` SET `ship_price`=:shipPrice,`customer_id`=:customerId,`address`=:address," +
-            "`total`=:total,`status`=:status,`name`=:name,`phone`=::phone,`email`=:email," +
+            "`total`=:total,`status`=:status,`name`=:name,`phone`=:phone,`email`=:email," +
             "`update_at`=now() WHERE `id`=:id")
     int update(@BindBean Order order);
 }

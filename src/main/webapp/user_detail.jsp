@@ -50,8 +50,8 @@
                                 <div class="name">
                                 </div>
                                 <div class="p-3 d-flex justify-content-around">
-                                    <a class="btn btn-orange" href="ecit_user">Edit
-                                    </a>
+<%--                                    <a class="btn btn-orange" href="ecit_user">Edit--%>
+<%--                                    </a>--%>
                                     <a class="btn btn-orange" href="change_password?id=${user.getId()}">Change password
                                     </a>
                                 </div>
@@ -70,7 +70,7 @@
                                         <h6>Address: <span id="cus_address_text">${user.getAddress()}</span></h6>
                                         </p>
                                         <p>
-                                        <h6>Email: <span id="cus_email_text">${user.getEmail()}</span></h6>
+                                        <h6>Email: <span id="cus_email_text">${user.getMail()}</span></h6>
                                         </p>
                                         <p>
                                         <h6>Number phone: <span id="cus_phone_text">${user.getPhone()}</span></h6>
@@ -96,7 +96,7 @@
                                             <th>State</th>
                                             <th>Price</th>
                                             <th>Qty</th>
-
+                                            <th>Order</th>
                                             </thead>
                                             <tbody>
                                             <c:forEach var="order" items="${orders}">
@@ -115,6 +115,9 @@
                                                     </td>
                                                     <td>${order.total}</td>
                                                     <td>${order.phone}</td>
+                                                    <td>
+                                                        <a href="order_detail?id=${order.id}" class="btn btn-success">View</a>
+                                                    </td>
                                                 </tr>
                                             </c:forEach>
                                             </tbody>

@@ -5,6 +5,7 @@ import com.nhom10.broadstore.beans.User;
 import com.nhom10.broadstore.services.OrderServices;
 import com.nhom10.broadstore.util.Define;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/user_detail")
-public class UserPage extends HttpServlet {
+public class UserDetailPage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -23,11 +24,14 @@ public class UserPage extends HttpServlet {
         User user = (User) session.getAttribute(Define.userSession);
         if(user==null){
             resp.sendRedirect("Login");
+            return;
         }
         OrderServices orderServices = new OrderServices();
         List<Order> orders = orderServices.findByCustomerId(user.getId());
         req.setAttribute("user", user);
+        System.out.println(user.toString());
         req.setAttribute("orders", orders);
-        req.getRequestDispatcher("user_detail.jsp").forward(req, resp);
+        RequestDispatcher rd = req.getRequestDispatcher("user_detail.jsp");
+        rd.forward(req, resp);
     }
 }
