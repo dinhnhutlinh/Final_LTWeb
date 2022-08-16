@@ -35,47 +35,47 @@
         <url-pattern></url-pattern>
     </servlet-mapping>
     <!-- servlet definition -->
-    <servlet>
-        <servlet-name>ErrorHandler</servlet-name>
-        <servlet-class>com.nhom10.broadstore.controllers.ErrorHandler</servlet-class>
-    </servlet>
-    <!-- servlet mappings -->
-    <servlet-mapping>
-        <servlet-name>ErrorHandler</servlet-name>
-        <url-pattern>/ErrorHandler</url-pattern>
-    </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>ErrorHandler</servlet-name>-->
+<!--        <servlet-class>com.nhom10.broadstore.controllers.ErrorHandler</servlet-class>-->
+<!--    </servlet>-->
+<!--    &lt;!&ndash; servlet mappings &ndash;&gt;-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>ErrorHandler</servlet-name>-->
+<!--        <url-pattern>/ErrorHandler</url-pattern>-->
+<!--    </servlet-mapping>-->
 
-    <!-- error-code related error pages -->
-    <error-page>
-        <error-code>404</error-code>
-        <location>/ErrorHandler</location>
-    </error-page>
-    <error-page>
-        <error-code>403</error-code>
-        <location>/ErrorHandler</location>
-    </error-page>
-    <error-page>
-        <error-code>405</error-code>
-        <location>/ErrorHandler</location>
-    </error-page>
-    <error-page>
-        <error-code>500</error-code>
-        <location>/ErrorHandler</location>
-    </error-page>
+<!--    &lt;!&ndash; error-code related error pages &ndash;&gt;-->
+<!--    <error-page>-->
+<!--        <error-code>404</error-code>-->
+<!--        <location>/ErrorHandler</location>-->
+<!--    </error-page>-->
+<!--    <error-page>-->
+<!--        <error-code>403</error-code>-->
+<!--        <location>/ErrorHandler</location>-->
+<!--    </error-page>-->
+<!--    <error-page>-->
+<!--        <error-code>405</error-code>-->
+<!--        <location>/ErrorHandler</location>-->
+<!--    </error-page>-->
+<!--    <error-page>-->
+<!--        <error-code>500</error-code>-->
+<!--        <location>/ErrorHandler</location>-->
+<!--    </error-page>-->
 
-    <!-- exception-type related error pages -->
-    <error-page>
-        <exception-type>
-            javax.servlet.ServletException
-        </exception-type>
-        <location>/ErrorHandler</location>
-    </error-page>
-    <error-page>
-        <exception-type>java.lang.NullPointerException</exception-type>
-        <location>/ErrorHandler</location>
-    </error-page>
-    <error-page>
-        <exception-type>java.io.IOException</exception-type>
-        <location>/ErrorHandler</location>
-    </error-page>
+<!--    &lt;!&ndash; exception-type related error pages &ndash;&gt;-->
+<!--    <error-page>-->
+<!--        <exception-type>-->
+<!--            javax.servlet.ServletException-->
+<!--        </exception-type>-->
+<!--        <location>/ErrorHandler</location>-->
+<!--    </error-page>-->
+<!--    <error-page>-->
+<!--        <exception-type>java.lang.NullPointerException</exception-type>-->
+<!--        <location>/ErrorHandler</location>-->
+<!--    </error-page>-->
+<!--    <error-page>-->
+<!--        <exception-type>java.io.IOException</exception-type>-->
+<!--        <location>/ErrorHandler</location>-->
+<!--    </error-page>-->
 </web-app>

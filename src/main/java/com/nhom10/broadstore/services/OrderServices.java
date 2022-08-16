@@ -44,11 +44,13 @@ public class OrderServices {
     }
 
     synchronized public int cancelOrder(Order order) {
+        order.setStatus(1);
+        System.out.println(order);
         int status = connector.withExtension(OrderDAO.class, handle -> handle.update(order));
         for (OrderItem orderItem : order.getOrderItems()) {
             connector.useExtension(ProductDAO.class, handle -> {
                 Product product = orderItem.getProduct();
-                product.setInventory(product.getInventory() - orderItem.getQuantity());
+                product.setInventory(product.getInventory() + orderItem.getQuantity());
                 handle.update(product);
             });
         }
