@@ -1,8 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="com.nhom10.broadstore.emun.Role" %>
-<%@ page import="com.nhom10.broadstore.beans.User" %>
-<%@ page import="com.nhom10.broadstore.util.Define" %>
 <!-- HEADER -->
 <header>
     <!-- MAIN HEADER -->
@@ -40,7 +38,7 @@
                                 <i class="fa fa-user-circle-o"></i>
 
                                 <c:if test='${userSession==null}'>
-                                    <span>account</span>
+                                    <span>Account</span>
 
                                 </c:if>
                                 <c:if test='${userSession!=null}'>
@@ -104,7 +102,7 @@
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav">
-                <li class="nav-item"><a href="Home">Home</a></li>
+                <li class="nav-item"><a href="Home">HOME</a></li>
                 <li class="nav-item"><a href="Store?cat=all">CATEGORY</a></li>
                 <li class="nav-item"><a href="Blog">NEWS</a></li>
                 <li class="nav-item"><a href="about_us">INTRODUCE</a></li>

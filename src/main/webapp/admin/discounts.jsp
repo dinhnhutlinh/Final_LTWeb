@@ -32,7 +32,6 @@
 
     <!-- ========== section start ========== -->
     <section class="section">
-
         <div class="container-fluid">
             <!--modal input-->
             <div class="modal fade" id="modal" tabindex="-1"
@@ -105,7 +104,7 @@
 
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="Admin-Dashboard">Dashboard</a>
+                                <a href="dashboard">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 Page

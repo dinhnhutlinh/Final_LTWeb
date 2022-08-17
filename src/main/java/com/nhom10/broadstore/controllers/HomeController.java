@@ -27,7 +27,7 @@ public class HomeController extends HttpServlet {
         SliderService sliderService = new SliderService();
         List<Category> categories = categoryService.getAllCategory();
         List<Slider> sliders = sliderService.getAllSlider();
-        System.out.println(sliders);
+
         req.setAttribute("sliders", sliders);
 
         Map<String, List<Product>> map = new HashMap<>();

@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:useBean id="blConfig" scope="application" class="com.nhom10.broadstore.beans.Product"/>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -10,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>${product.getName()}</title>
+    <title>${product.name}</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -61,7 +60,6 @@
             <!-- Product main img -->
             <div class="col-md-5 col-md-push-2 border rounded-1">
                 <div id="product-main-img">
-                    <jsp:useBean id="images" scope="request" type="java.util.List"/>
                     <c:forEach var="i" items="${images}">
                         <div class="product-preview d-flex ">
                             <img src="${i}"/>

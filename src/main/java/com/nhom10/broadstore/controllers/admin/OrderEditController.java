@@ -21,16 +21,45 @@ public class OrderEditController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(true);
         User user = (User) session.getAttribute(Define.userSession);
-        if(user==null || user.getRole()== Role.CUSTOMER){
+        if (user == null || user.getRole() == Role.CUSTOMER) {
             resp.sendRedirect("Login");
             return;
         }
         String id = req.getParameter("id");
-        OrderServices orderServices= new OrderServices();
-        Order order= orderServices.findById(id);
+        OrderServices orderServices = new OrderServices();
+        Order order = orderServices.findById(id);
 
-        req.setAttribute("order",order);
+        req.setAttribute("order", order);
         System.out.println(order.getTotal());
+        RequestDispatcher rd = req.getRequestDispatcher("admin/order_edit.jsp");
+        rd.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id = req.getParameter("id");
+
+        int status = Integer.parseInt(req.getParameter("status") != null ? req.getParameter("status") : "-1");
+        String name = req.getParameter("name");
+        String phone = req.getParameter("phone");
+        String email = req.getParameter("email");
+        String address = req.getParameter("address");
+
+        OrderServices orderServices = new OrderServices();
+        Order order = orderServices.findById(id);
+        order.setStatus(status);
+        order.setName(name);
+        order.setPhone(phone);
+        order.setAddress(address);
+
+        if (status == 1) {
+            orderServices.cancelOrder(order);
+        } else {
+            orderServices.update(order);
+        }
+        String mess = "Success";
+        req.setAttribute("mess", mess);
+        req.setAttribute("order", order);
         RequestDispatcher rd = req.getRequestDispatcher("admin/order_edit.jsp");
         rd.forward(req, resp);
     }

@@ -1,8 +1,8 @@
 package com.nhom10.broadstore;
 
 import com.google.gson.Gson;
+import com.nhom10.broadstore.beans.Cart;
 import com.nhom10.broadstore.beans.Order;
-import com.nhom10.broadstore.beans.OrderItem;
 import com.nhom10.broadstore.beans.Product;
 
 import java.io.FileNotFoundException;
@@ -15,10 +15,10 @@ import java.util.Objects;
 
 public class Tools {
     public static void main(String[] args) {
-        Class theClass = OrderItem.class;
-        for (Field field : theClass.getDeclaredFields())
-            System.out.print(",:" + field.getName());
-//        new Tools().genClass();
+//        Class theClass = OrderItem.class;
+//        for (Field field : theClass.getDeclaredFields())
+//            System.out.print(",:" + field.getName());
+        new Tools().getGetParem();
     }
 
     void genInsert() {
@@ -40,7 +40,7 @@ public class Tools {
         String paramDouble = "double :name= Double.parseDouble(req.getParameter(\":name\") != null ? req.getParameter(\":name\") : \"-1\");";
 
 
-        Class theClass = Product.class;
+        Class theClass = Order.class;
         for (Field field : theClass.getDeclaredFields()) {
 //            inserted += ":" + field.getName() + ",";
             if (field.getType().isAssignableFrom(String.class))

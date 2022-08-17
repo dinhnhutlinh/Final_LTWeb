@@ -6,6 +6,7 @@ import com.nhom10.broadstore.emun.Role;
 import com.nhom10.broadstore.services.CartService;
 import com.nhom10.broadstore.services.PasswordHash;
 import com.nhom10.broadstore.services.UserService;
+import com.nhom10.broadstore.util.Define;
 import com.nhom10.broadstore.util.MailHelper;
 import com.nhom10.broadstore.util.StringUtil;
 
@@ -66,7 +67,7 @@ public class SignUpPage extends HttpServlet {
             User user;
             try {
                 user = new User(StringUtil.genIDWithLength(10), lastName, firstName, "img/avatar.png", PasswordHash.createHash(password), "", request.getParameter("phone"), email, null, null, 0, Role.CUSTOMER);
-                MailHelper.sendActiveUserMail(user.getMail(), "http://localhost:8080/BroadStore/active?id=" + user.getId());
+                MailHelper.sendActiveUserMail(user.getMail(), Define.domain+"active?id=" + user.getId());
                 request.setAttribute("mess", "Check your mail to active");
             } catch (NoSuchAlgorithmException e) {
                 throw new RuntimeException(e);
