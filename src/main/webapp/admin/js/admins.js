@@ -62,9 +62,7 @@ $(document).ready(function () {
                 title: 'Action',
                 render: function (data) {
                     return '<button  class="btn btn-success text-white editBtn">' +
-                        '<i class="fa fa-eye" style="height: 24px;" aria-hidden="true"></i></button>' +
-                        '<button class="btn btn-danger removeBtn" >' +
-                        '<i class="fa fa-trash" style="height: 24px;" aria-hidden="true"></i></button>';
+                        '<i class="fa fa-eye" style="height: 24px;" aria-hidden="true"></i></button>';
                 }
 
             },

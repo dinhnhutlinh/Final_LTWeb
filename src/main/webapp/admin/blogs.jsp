@@ -37,7 +37,10 @@
 
     <!-- ========== section start ========== -->
     <section class="section">
-
+   System.out.println(id);
+        System.out.println(name);
+        System.out.println(phone);
+        System.out.println(address);
         <div class="container-fluid">
             <!--title-wrapper start -->
             <div class="title-wrapper pt-3">
@@ -47,7 +50,7 @@
 
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="Admin-Dashboard">Dashboard</a>
+                                <a href="dashboard">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 Page

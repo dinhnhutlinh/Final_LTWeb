@@ -1,6 +1,7 @@
 package com.nhom10.broadstore.controllers.customerController;
 
 import com.nhom10.broadstore.services.UserService;
+import com.nhom10.broadstore.util.Define;
 import com.nhom10.broadstore.util.MailHelper;
 
 import javax.mail.MessagingException;
@@ -30,7 +31,7 @@ public class ForgetPasswordPage extends HttpServlet {
 
             String user = userService.findWithEmail(email);
             try {
-                MailHelper.sendResetPassword(email, "http://localhost:8080/BroadStore/change_password?id=" + user);
+                MailHelper.sendResetPassword(email, Define.domain + "change_password?id=" + user);
             } catch (MessagingException e) {
                 System.out.println(e);
                 throw new RuntimeException(e);

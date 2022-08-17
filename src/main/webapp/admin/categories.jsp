@@ -41,7 +41,7 @@
 
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="Admin-DashBoard">Dashboard</a>
+                                <a href="dashboard">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 Category
