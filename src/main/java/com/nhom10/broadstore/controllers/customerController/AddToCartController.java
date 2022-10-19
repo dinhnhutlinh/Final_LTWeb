@@ -32,14 +32,14 @@ public class AddToCartController extends HttpServlet {
 
         } else {
 
-            Cart cart = CartService.getInstance().getCart(user.getId());
-            String productId = String.valueOf(request.getParameter("productId"));
-            Product product = ProductService.getInstance().findById(productId);
+                Cart cart = CartService.getInstance().getCart(user.getId());
+                String productId = String.valueOf(request.getParameter("productId"));
+                Product product = ProductService.getInstance().findById(productId);
 
-            List<CartItem> cartItems = cart.getCartItemList();
+                List<CartItem> cartItems = cart.getCartItemList();
 
             if (cartItems.stream().anyMatch(cartItem -> cartItem.getProductId().equals(productId))) {
-                System.out.println("old");
+
                 CartItem cartItem = cartItems.stream().filter(cartItem1 -> cartItem1.getProductId().equals(productId)).findFirst().get();
                 if (product.getInventory() >= cartItem.getQuantity() + 1) {
                     CartService.getInstance().updateQty(cart.getId(), productId, cartItem.getQuantity() + 1, (cartItem.getQuantity() + 1) * product.getPriceWasDiscount());

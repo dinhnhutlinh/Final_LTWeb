@@ -154,7 +154,7 @@
                 console.log(value);
             }
             $.ajax({
-                url: 'BlogController',
+                url: 'api/blog',
                 method: "POST",
                 processData: false,
                 contentType: false,

@@ -6,7 +6,7 @@ $(document).ready(function () {
         info: false,
         scrollX: true,
         ajax: {
-            url: 'AdminController?action=all',
+            url: 'api/admin?action=all',
             dataSrc: '',
         },
 
@@ -73,7 +73,7 @@ $(document).ready(function () {
         let data = row.data();
         if (confirm('Delete this blog?'))
             $.ajax({
-                url: 'AdminController?id=' + data.id,
+                url: 'api/admin?id=' + data.id,
                 method: "DELETE",
                 success: function (data) {
                     row.remove().draw();
@@ -92,7 +92,7 @@ $(document).ready(function () {
         let id = $('#id').val();
         let active = $('#active').val();
         $.ajax({
-            url: 'AdminController',
+            url: 'api/admin',
             method: "POST",
             data: {
                 id: id,
@@ -155,7 +155,7 @@ $(document).ready(function () {
         let data = row.data();
         if (confirm('Delete this admin?'))
             $.ajax({
-                url: 'AdminController?id=' + data.id,
+                url: 'api/admin?id=' + data.id,
                 method: "DELETE",
                 success: function (data) {
                     row.remove().draw();

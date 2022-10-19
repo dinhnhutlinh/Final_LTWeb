@@ -110,7 +110,7 @@
             info: false,
             scrollX: true,
             ajax: {
-                url: 'BlogController?action=all',
+                url: 'api/blog?action=all',
                 dataSrc: '',
             },
             columns: [
@@ -147,7 +147,7 @@
             let data = row.data();
             if (confirm('Delete this blog?'))
                 $.ajax({
-                    url: 'BlogController?id=' + data.id,
+                    url: 'api/blog?id=' + data.id,
                     method: "DELETE",
                     success: function (data) {
 
